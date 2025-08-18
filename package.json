@@ -25,22 +25,23 @@
     "clsx": "2.1.1",
     "framer-motion": "11.18.2",
     "intl-messageformat": "10.7.16",
-    "next": "15.3.1",
+    "next": "15.4.6",
     "next-themes": "0.4.6",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "15.3.4",
+    "@next/eslint-plugin-next": "15.4.6",
     "@react-types/shared": "3.30.0",
     "@tailwindcss/postcss": "4.1.11",
     "@types/node": "20.5.7",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
     "@typescript-eslint/eslint-plugin": "8.34.1",
     "@typescript-eslint/parser": "8.34.1",
+    "babel-plugin-react-compiler": "19.1.0-rc.2",
     "eslint": "9.25.1",
-    "eslint-config-next": "15.3.4",
+    "eslint-config-next": "15.4.6",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
@@ -55,5 +56,11 @@
     "tailwind-variants": "2.0.1",
     "tailwindcss": "4.1.11",
     "typescript": "5.6.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.1.10",
+      "@types/react-dom": "19.1.7"
+    }
   }
 }
