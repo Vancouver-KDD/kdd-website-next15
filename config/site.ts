@@ -10,37 +10,36 @@ export const siteConfig = {
       href: '/about',
     },
     {
-      label: 'Events',
+      label: '이벤트',
       href: '/events',
     },
     {
-      label: 'Contact',
+      label: '연락처',
       href: '/contact',
     },
   ],
   navMenuItems: [
     {
-      label: 'About',
+      label: '소개',
       href: '/about',
     },
     {
-      label: 'Events',
+      label: '이벤트',
       href: '/events',
     },
     {
-      label: 'Contact',
+      label: '연락처',
       href: '/contact',
     },
     {
-      label: 'Logout',
+      label: '로그아웃',
       href: '/logout',
     },
   ],
   links: {
     github: 'https://github.com/vancouver-kdd',
     threads: 'https://www.threads.com/@kdd.vancouver',
-    docs: 'https://heroui.com',
-    discord: 'https://discord.gg/9b6yyZKmH4',
-    sponsor: 'https://patreon.com/jrgarciadev',
+    discord: 'https://discord.gg/2BZB5GqWQf',
+    linkedin: 'https://ca.linkedin.com/company/vancouver-kdd',
   },
 }

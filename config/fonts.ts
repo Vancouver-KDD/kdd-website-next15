@@ -6,7 +6,7 @@ export const pretendard = localFont({
   weight: '45 920',
   style: 'normal',
   display: 'swap',
-  variable: '--font-pretendard',
+  variable: '--font-sans',
 })
 
 export const fontMono = FontMono({

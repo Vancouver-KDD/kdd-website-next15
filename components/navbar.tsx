@@ -13,6 +13,7 @@ import {Link} from '@heroui/link'
 import {Input} from '@heroui/input'
 import {link as linkStyles} from '@heroui/theme'
 import NextLink from 'next/link'
+import type {Route} from 'next'
 import clsx from 'clsx'
 
 import {siteConfig} from '@/config/site'
@@ -24,7 +25,10 @@ import {
   SearchIcon,
   Logo,
   ThreadsIcon,
+  LinkedInIcon,
 } from '@/components/icons'
+import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
+import {Snippet} from '@heroui/snippet'
 
 export const Navbar = () => {
   const searchInput = (
@@ -66,7 +70,7 @@ export const Navbar = () => {
                   'data-[active=true]:text-primary data-[active=true]:font-medium'
                 )}
                 color="foreground"
-                href={item.href}>
+                href={item.href as Route}>
                 {item.label}
               </NextLink>
             </NavbarItem>
@@ -79,6 +83,9 @@ export const Navbar = () => {
           <Link isExternal aria-label="Threads" href={siteConfig.links.threads}>
             <ThreadsIcon className="text-default-500" />
           </Link>
+          <Link isExternal aria-label="Threads" href={siteConfig.links.linkedin}>
+            <LinkedInIcon className="text-default-500" />
+          </Link>
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
           </Link>
@@ -89,15 +96,22 @@ export const Navbar = () => {
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat">
-            Sponsor
-          </Button>
+          <Popover placement="bottom-end">
+            <PopoverTrigger>
+              <Button
+                className="text-sm font-normal text-default-600 bg-default-100"
+                startContent={<HeartFilledIcon className="text-danger" />}
+                variant="flat">
+                스폰서
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <div className="px-1 py-2">
+                <div className="text-small font-bold pl-3 pb-1">Support us with $5 e-transfer</div>
+                <Snippet symbol="">vancouverkdd@gmail.com</Snippet>
+              </div>
+            </PopoverContent>
+          </Popover>
         </NavbarItem>
       </NavbarContent>
 
