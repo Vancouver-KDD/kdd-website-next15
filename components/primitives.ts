@@ -47,3 +47,7 @@ export const subtitle = tv({
     fullWidth: true,
   },
 })
+
+export const sectionTitle = tv({
+  base: 'text-2xl font-semibold md:text-3xl',
+})

@@ -6,6 +6,12 @@ const nextConfig = {
   typedRoutes: true,
   images: {
     qualities: [75, 100],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
+    ],
   },
 }
 
