@@ -1,58 +1,35 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: 'Next.js + HeroUI',
-  description: 'Make beautiful websites regardless of your design experience.',
+  name: 'Vancouver KDD Website',
+  description:
+    'Vancouver KDD Website for the Vancouver KDD Chapter. Korean Developers and Designers in Vancouver.',
   navItems: [
     {
-      label: 'Home',
-      href: '/',
-    },
-    {
-      label: 'Docs',
-      href: '/docs',
-    },
-    {
-      label: 'Pricing',
-      href: '/pricing',
-    },
-    {
-      label: 'Blog',
-      href: '/blog',
-    },
-    {
-      label: 'About',
+      label: '소개',
       href: '/about',
+    },
+    {
+      label: 'Events',
+      href: '/events',
+    },
+    {
+      label: 'Contact',
+      href: '/contact',
     },
   ],
   navMenuItems: [
     {
-      label: 'Profile',
-      href: '/profile',
+      label: 'About',
+      href: '/about',
     },
     {
-      label: 'Dashboard',
-      href: '/dashboard',
+      label: 'Events',
+      href: '/events',
     },
     {
-      label: 'Projects',
-      href: '/projects',
-    },
-    {
-      label: 'Team',
-      href: '/team',
-    },
-    {
-      label: 'Calendar',
-      href: '/calendar',
-    },
-    {
-      label: 'Settings',
-      href: '/settings',
-    },
-    {
-      label: 'Help & Feedback',
-      href: '/help-feedback',
+      label: 'Contact',
+      href: '/contact',
     },
     {
       label: 'Logout',
@@ -60,8 +37,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: 'https://github.com/heroui-inc/heroui',
-    twitter: 'https://twitter.com/hero_ui',
+    github: 'https://github.com/vancouver-kdd',
+    threads: 'https://www.threads.com/@kdd.vancouver',
     docs: 'https://heroui.com',
     discord: 'https://discord.gg/9b6yyZKmH4',
     sponsor: 'https://patreon.com/jrgarciadev',
