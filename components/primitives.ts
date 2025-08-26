@@ -1,7 +1,7 @@
 import {tv} from 'tailwind-variants'
 
 export const heroTitle = tv({
-  base: 'text-5xl font-normal tracking-tight first-letter:font-bold lg:text-6xl',
+  base: 'text-5xl font-medium tracking-tight first-letter:font-black lg:text-6xl',
 })
 
 export const title = tv({
@@ -37,7 +37,7 @@ export const title = tv({
 })
 
 export const subtitle = tv({
-  base: 'text-default-600 my-2 block w-full max-w-full text-lg md:w-1/2 lg:text-xl',
+  base: 'w-full max-w-full text-xl md:w-1/2 lg:text-2xl',
   variants: {
     fullWidth: {
       true: '!w-full',

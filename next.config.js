@@ -4,6 +4,9 @@ const nextConfig = {
     reactCompiler: true,
   },
   typedRoutes: true,
+  images: {
+    qualities: [75, 100],
+  },
 }
 
 module.exports = nextConfig

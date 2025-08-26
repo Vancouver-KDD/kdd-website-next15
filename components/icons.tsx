@@ -3,6 +3,7 @@ import * as React from 'react'
 import {IconSvgProps} from '@/types'
 
 import Image from 'next/image'
+import logo from './logo.png'
 
 export const Logo: React.FC<{
   size?: number
@@ -15,7 +16,7 @@ export const Logo: React.FC<{
     className={className}
     height={size || height || 48}
     quality={100}
-    src="/logo.png"
+    src={logo}
     width={size || width || 48}
   />
 )

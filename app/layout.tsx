@@ -28,18 +28,18 @@ export const viewport: Viewport = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html suppressHydrationWarning lang="ko">
       <head />
       <body
         className={clsx(
-          'min-h-screen text-foreground bg-background font-sans antialiased',
+          'text-foreground bg-background min-h-screen font-sans antialiased',
           fontSans.variable
         )}>
         <Providers themeProps={{attribute: 'class', defaultTheme: 'dark'}}>
-          <div className="relative flex flex-col h-screen">
+          <div className="relative flex h-screen flex-col">
             <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">{children}</main>
-            <footer className="w-full flex items-center justify-center py-3">
+            <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
+            <footer className="flex w-full items-center justify-center py-3">
               <span className="text-default-600">
                 Copyright © {new Date().getFullYear()} Vancouver KDD
               </span>

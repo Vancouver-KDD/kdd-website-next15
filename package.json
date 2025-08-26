@@ -18,6 +18,7 @@
     "@heroui/popover": "^2.3.24",
     "@heroui/shared-icons": "^2.1.10",
     "@heroui/snippet": "2.2.25",
+    "@heroui/spacer": "^2.2.18",
     "@heroui/switch": "2.2.22",
     "@heroui/system": "2.4.20",
     "@heroui/theme": "2.4.20",

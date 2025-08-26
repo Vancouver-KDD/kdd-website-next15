@@ -4,9 +4,8 @@ import localFont from 'next/font/local'
 export const fontSans = localFont({
   src: './PretendardVariable.woff2',
   weight: '45 920',
-  style: 'normal',
-  display: 'swap',
   variable: '--font-sans',
+  preload: true,
 })
 
 export const fontMono = FontMono({
