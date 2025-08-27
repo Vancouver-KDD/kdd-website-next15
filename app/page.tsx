@@ -5,13 +5,12 @@ import NextImage from 'next/image'
 import kddBgConference from './kdd-bg-conference.jpg'
 import {Spacer} from '@heroui/spacer'
 import {Divider} from '@heroui/divider'
-import WhatWeOfferSection from './WhatWeOfferSection'
 import UpcomingEvents from './UpcomingEvents'
 
 export default function Home() {
   return (
-    <div>
-      <section className="mx-auto flex max-w-lg flex-col py-8 md:py-10">
+    <div className="w-full">
+      <section className="mx-auto flex max-w-[588px] flex-col px-6 py-8 md:py-10">
         <span className={heroTitle()}>Knowledge.</span>
         <span className={heroTitle()}>Diversity.</span>
         <span className={heroTitle()}>Drive.</span>
@@ -69,7 +68,7 @@ export default function Home() {
       </section>
       <Spacer y={52} />
 
-      <section className="mx-auto w-full max-w-screen-lg text-center">
+      <section className="mx-auto max-w-screen-lg text-center">
         <div className={sectionTitle()}>Upcoming Events</div>
         <Spacer y={2} />
         <span className="text-content1-foreground text-xs font-semibold opacity-60 md:text-sm">
@@ -86,48 +85,45 @@ export default function Home() {
 
       {/* <WhatWeOfferSection /> */}
 
-      <section>
-        <div className="absolute right-0 left-0 bg-white">
-          <Spacer y={20} />
-          <div className="mx-auto w-full max-w-screen-lg text-center">
-            <div className={sectionTitle()}>Sponsors & Partners</div>
-            <Spacer y={16} />
-            <div className="flex flex-wrap justify-center gap-10">
-              {[
-                ...Array.from({length: 9}, () => ({
-                  name: 'UBC',
-                  img: `https://placehold.co/${Math.floor(Math.random() * 153) + 1}x${Math.floor(Math.random() * 73) + 1}@3x.png?font=noto%20sans`,
-                  link: 'https://www.ubc.ca',
-                })),
-              ].map((item, index) => (
-                <Link key={index} href={item.link}>
-                  <NextImage
-                    src={item.img}
-                    alt={item.name}
-                    width={153}
-                    height={73}
-                    className="max-h-[73px] max-w-[153px] object-contain"
-                  />
-                </Link>
-              ))}
-            </div>
-            <Spacer y={16} />
-            <Link
-              className={buttonStyles({
-                variant: 'shadow',
-                radius: 'sm',
-                size: 'md',
-                color: 'primary',
-                className: 'font-light',
-              })}
-              href={'/events'}>
-              스폰서십 문의하기
-            </Link>
-            <Spacer y={16} />
+      <section className="flex flex-col items-center bg-white px-6">
+        <Spacer y={40} />
+        <div className="max-w-screen-lg text-center">
+          <div className={sectionTitle()}>Sponsors & Partners</div>
+          <Spacer y={16} />
+          <div className="flex flex-wrap justify-center gap-10">
+            {[
+              ...Array.from({length: 9}, () => ({
+                name: 'UBC',
+                img: `https://placehold.co/${Math.floor(Math.random() * 153) + 1}x${Math.floor(Math.random() * 73) + 1}@3x.png?font=noto%20sans`,
+                link: 'https://www.ubc.ca',
+              })),
+            ].map((item, index) => (
+              <Link key={index} href={item.link}>
+                <NextImage
+                  src={item.img}
+                  alt={item.name}
+                  width={153}
+                  height={73}
+                  className="max-h-[73px] max-w-[153px] object-contain"
+                />
+              </Link>
+            ))}
           </div>
+          <Spacer y={16} />
+          <Link
+            className={buttonStyles({
+              variant: 'shadow',
+              radius: 'sm',
+              size: 'md',
+              color: 'primary',
+              className: 'font-light',
+            })}
+            href={'/events'}>
+            스폰서십 문의하기
+          </Link>
+          <Spacer y={40} />
         </div>
       </section>
-      <Spacer y={16} />
     </div>
   )
 }

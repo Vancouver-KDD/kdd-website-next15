@@ -1,5 +1,4 @@
 'use client'
-
 import {FC} from 'react'
 import {VisuallyHidden} from '@react-aria/visually-hidden'
 import {SwitchProps, useSwitch} from '@heroui/switch'
@@ -32,7 +31,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({className, classNames}) => {
     <Component
       {...getBaseProps({
         className: clsx(
-          'px-px transition-opacity hover:opacity-80 cursor-pointer',
+          'cursor-pointer px-px transition-opacity hover:opacity-80',
           className,
           classNames?.base
         ),
@@ -45,7 +44,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({className, classNames}) => {
         className={slots.wrapper({
           class: clsx(
             [
-              'w-auto h-auto',
+              'h-auto w-auto',
               'bg-transparent',
               'rounded-lg',
               'flex items-center justify-center',

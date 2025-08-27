@@ -1,12 +1,11 @@
 import '@/styles/globals.css'
 import {Metadata, Viewport} from 'next'
 import clsx from 'clsx'
-
 import {Providers} from './providers'
-
 import {siteConfig} from '@/config/site'
 import {fontSans} from '@/config/fonts'
 import {Navbar} from '@/components/navbar'
+import Footer from './Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -38,12 +37,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Providers themeProps={{attribute: 'class', defaultTheme: 'light'}}>
           <div className="relative flex h-screen flex-col">
             <Navbar />
-            <main className="container mx-auto max-w-7xl flex-grow px-6 pt-16">{children}</main>
-            <footer className="flex w-full items-center justify-center py-3">
-              <span className="text-default-600">
-                Copyright © {new Date().getFullYear()} Vancouver KDD
-              </span>
-            </footer>
+            <main className="flex-grow pt-16">{children}</main>
+            <Footer />
           </div>
         </Providers>
       </body>

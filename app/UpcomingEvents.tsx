@@ -1,5 +1,4 @@
 'use client'
-
 import {Spacer} from '@heroui/spacer'
 import {Link} from '@heroui/link'
 import {button as buttonStyles} from '@heroui/theme'
@@ -7,15 +6,15 @@ import NextImage from 'next/image'
 
 export default function UpcomingEvents() {
   return (
-    <div className="flex h-[433px] items-center justify-center gap-10">
+    <div className="flex h-[433px] items-center justify-center gap-6 px-4 md:gap-10 md:px-6">
       <NextImage
         src={'https://placehold.co/249x353/png?font=noto%20sans'}
         alt="upcoming event poster"
         width={249}
         height={353}
-        className="max-h-[353px] max-w-[400px] rounded-lg shadow-2xl"
+        className="max-h-[176px] max-w-[124px] rounded-lg shadow-2xl md:max-h-[353px] md:max-w-[249px]"
       />
-      <div className="flex h-full w-[445px] flex-col justify-center p-3 text-start">
+      <div className="flex h-full max-w-[445px] flex-col justify-center py-3 text-start">
         <div className="text-content1-foreground text-xs font-bold opacity-60">
           ANNUAL CONFERENCE
         </div>
@@ -43,7 +42,7 @@ export default function UpcomingEvents() {
           Similique, a reiciendis.
         </div>
         <Spacer y={6} />
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <Link
             className={buttonStyles({
               variant: 'shadow',

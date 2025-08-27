@@ -37,9 +37,13 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: 'https://github.com/vancouver-kdd',
+    instagram: 'https://www.instagram.com/kdd.vancouver/',
     threads: 'https://www.threads.com/@kdd.vancouver',
-    discord: 'https://discord.gg/2BZB5GqWQf',
     linkedin: 'https://ca.linkedin.com/company/vancouver-kdd',
+    youtube: 'https://www.youtube.com/@vancouverkdd',
+    discord: 'https://discord.gg/2BZB5GqWQf',
+    slack:
+      'https://join.slack.com/t/vancouverkdd/shared_invite/zt-1xyhcghtg-OIgE_8OO_SmBMpyOPuH5Ew',
+    github: 'https://github.com/vancouver-kdd',
   },
 }
