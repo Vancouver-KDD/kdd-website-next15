@@ -26,8 +26,8 @@ export default function Footer() {
           </Link>
           <div className="m-6 flex flex-col gap-5">
             <span className="text-sm font-semibold">About Us</span>
-            <Link className={footerLinkStyles()} href="/about#who-we-are">
-              <span className="text-sm">Who We Are</span>
+            <Link className={footerLinkStyles()} href="/about">
+              <span className="text-sm">Our Story</span>
             </Link>
             <Link className={footerLinkStyles()} href="/about#vision">
               <span className="text-sm">Vision</span>
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
           <div className="m-6 flex flex-col gap-5">
             <span className="text-sm font-semibold">Events</span>
-            <Link className={footerLinkStyles()} href="/events#upcoming-events">
+            <Link className={footerLinkStyles()} href="/events">
               <span className="text-sm">Upcoming Events</span>
             </Link>
             <Link className={footerLinkStyles()} href="/events#past-events">
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
           <div className="m-6 flex flex-col gap-5">
             <span className="text-sm font-semibold">Contact Us</span>
-            <Link className={footerLinkStyles()} href="/contact#contact-us">
+            <Link className={footerLinkStyles()} href="/contact">
               <span className="text-sm">Contact Us</span>
             </Link>
             <Link className={footerLinkStyles()} href="/contact#become-our-sponsor">

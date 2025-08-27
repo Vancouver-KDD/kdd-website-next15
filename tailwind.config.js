@@ -22,11 +22,13 @@ const config = {
         light: {
           colors: {
             background: '#fafafa',
+            background0: '#fff',
           },
         },
         dark: {
           colors: {
             background: '#0a0a0a',
+            background0: '#000',
           },
         },
       },

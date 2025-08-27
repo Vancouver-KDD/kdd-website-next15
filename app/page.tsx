@@ -1,6 +1,6 @@
 import {Link} from '@heroui/link'
 import {button as buttonStyles} from '@heroui/theme'
-import {subtitle, heroTitle, sectionTitle} from '@/components/primitives'
+import {subtitle, heroTitle, sectionTitle, sectionSubtitle} from '@/components/primitives'
 import NextImage from 'next/image'
 import kddBgConference from './kdd-bg-conference.jpg'
 import {Spacer} from '@heroui/spacer'
@@ -9,7 +9,7 @@ import UpcomingEvents from './UpcomingEvents'
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="mt-30 w-full">
       <section className="mx-auto flex max-w-[588px] flex-col px-6 py-8 md:py-10">
         <span className={heroTitle()}>Knowledge.</span>
         <span className={heroTitle()}>Diversity.</span>
@@ -70,10 +70,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-screen-lg text-center">
         <div className={sectionTitle()}>Upcoming Events</div>
-        <Spacer y={2} />
-        <span className="text-content1-foreground text-xs font-semibold opacity-60 md:text-sm">
-          다가오는 KDD 행사를 만나보세요
-        </span>
+        <span className={sectionSubtitle()}>다가오는 KDD 행사를 만나보세요</span>
         <Spacer y={10} />
         <Divider orientation="horizontal" className="bg-foreground-400 w-full" />
         <Spacer y={16} />
@@ -85,7 +82,7 @@ export default function Home() {
 
       {/* <WhatWeOfferSection /> */}
 
-      <section className="flex flex-col items-center bg-white px-6">
+      <section className="bg-background0 flex flex-col items-center px-6">
         <Spacer y={40} />
         <div className="max-w-screen-lg text-center">
           <div className={sectionTitle()}>Sponsors & Partners</div>

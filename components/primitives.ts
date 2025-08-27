@@ -5,10 +5,11 @@ export const heroTitle = tv({
 })
 
 export const title = tv({
-  base: 'inline font-semibold tracking-tight',
+  base: 'inline text-4xl font-black md:text-6xl',
   variants: {
     color: {
-      violet: 'from-[#FF1CF7] to-[#b249f8]',
+      kdd: 'from-[#c93796] from-25% via-[#6243b6] via-45% to-[#028fcf] to-80%',
+      violet: 'from-[#FF1CF7] to-[#FF7249f8]',
       yellow: 'from-[#FF705B] to-[#FFB457]',
       blue: 'from-[#5EA2EF] to-[#0072F5]',
       cyan: 'from-[#00b7fa] to-[#01cfea]',
@@ -30,8 +31,8 @@ export const title = tv({
   },
   compoundVariants: [
     {
-      color: ['violet', 'yellow', 'blue', 'cyan', 'green', 'pink', 'foreground'],
-      class: 'bg-gradient-to-b bg-clip-text text-transparent',
+      color: ['kdd', 'violet', 'yellow', 'blue', 'cyan', 'green', 'pink', 'foreground'],
+      class: 'bg-gradient-to-br bg-clip-text text-transparent',
     },
   ],
 })
@@ -49,5 +50,9 @@ export const subtitle = tv({
 })
 
 export const sectionTitle = tv({
-  base: 'text-2xl font-semibold md:text-3xl',
+  base: 'mb-2 text-2xl font-semibold md:text-3xl',
+})
+
+export const sectionSubtitle = tv({
+  base: 'text-content1-foreground text-xs font-semibold opacity-60 md:text-sm',
 })
