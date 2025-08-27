@@ -5,7 +5,7 @@ const nextConfig = {
   },
   typedRoutes: true,
   images: {
-    qualities: [75, 100],
+    qualities: [90, 100], // default is lowest which is 90
     remotePatterns: [
       {
         protocol: 'https',

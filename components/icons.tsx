@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import {IconSvgProps} from '@/types'
 
-import Image from 'next/image'
+import NextImage from 'next/image'
 import logo from './logo.png'
 
 export const Logo: React.FC<{
@@ -11,13 +11,13 @@ export const Logo: React.FC<{
   height?: number
   className?: string
 }> = ({size = 48, width, height, className}) => (
-  <Image
+  <NextImage
     alt="KDD Logo"
     className={className}
     height={size || height || 48}
-    quality={100}
     src={logo}
     width={size || width || 48}
+    quality={100}
   />
 )
 
