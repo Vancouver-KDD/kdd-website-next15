@@ -54,5 +54,5 @@ export const sectionTitle = tv({
 })
 
 export const sectionSubtitle = tv({
-  base: 'text-content1-foreground text-xs font-semibold opacity-60 md:text-sm',
+  base: 'text-content1-foreground font-medium opacity-60',
 })

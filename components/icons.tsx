@@ -176,9 +176,9 @@ export const UpArrowIcon = ({size = 24, width, height, ...props}: IconSvgProps) 
     <path
       d="M12 5V19M12 5L6 11M12 5L18 11"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 )
@@ -187,9 +187,9 @@ export const MoonFilledIcon = ({size = 24, width, height, ...props}: IconSvgProp
   <svg
     aria-hidden="true"
     focusable="false"
-    height={size || height}
     role="presentation"
     viewBox="0 0 24 24"
+    height={size || height}
     width={size || width}
     {...props}>
     <path
