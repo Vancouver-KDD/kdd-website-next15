@@ -173,6 +173,7 @@ export default function AboutPage() {
                     {type: 'email', url: 'yongju.kwon@gmail.com'},
                     {type: 'website', url: 'https://www.yongju-kwon.com'},
                     {type: 'instagram', url: 'https://www.instagram.com/yongju-kwon/'},
+                    {type: 'facebook', url: 'https://www.facebook.com/yongju-kwon/'},
                     {type: 'twitter', url: 'https://x.com/yongju-kwon'},
                     {type: 'discord', url: 'https://discord.com/users/yongju-kwon'},
                     {type: 'threads', url: 'https://www.threads.net/@yongju-kwon'},

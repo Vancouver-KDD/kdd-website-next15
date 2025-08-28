@@ -158,8 +158,16 @@ export const EmailIcon = ({size = 24, width, height, ...props}: IconSvgProps) =>
 )
 
 export const FacebookIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
-  <svg viewBox="-5.5 0 32 32" width={size || width} height={size || height} {...props}>
-    <path d="M1.19 5.6h18.44c.62 0 1.18.56 1.18 1.18v18.44c0 .63-.56 1.19-1.18 1.19H1.19C.56 26.4 0 25.84 0 25.22V6.78C0 6.16.56 5.6 1.19 5.6zm13.6 11.68h2.87l.12-2.75h-3V12.5c0-.78.16-1.22 1.16-1.22h1.75l.06-2.56s-.78-.13-1.9-.13c-2.76 0-3.98 1.72-3.98 3.57v2.37H9.84v2.75h2.03v7.63h2.91v-7.63z" />
+  <svg
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    width={size || width}
+    height={size || height}
+    {...props}>
+    <path
+      d="M20,2H4C2.9,2,2,2.9,2,4v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2z M18.4,7.4H17c-0.9,0-1,0.3-1,1v1.3
+	h2.1L18,12h-1.9v7h-3.2v-7h-1.2V9.6h1.2V8.1c0-2,0.8-3.1,3.1-3.1h2.4V7.4z"
+    />
   </svg>
 )
 
