@@ -133,6 +133,36 @@ export const GithubIcon: React.FC<IconSvgProps> = ({size, width, height, ...prop
   )
 }
 
+export const LinkIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
+  <svg fill="none" viewBox="0 0 24 24" width={size || width} height={size || height} {...props}>
+    <path
+      fill="currentColor"
+      d="M16.45 1.5c-1.6-.01-3.15.6-4.3 1.73l-.01.01-.5.49a1 1 0 0 0 0 1.41l.71.71a1 1 0 0 0 1.42 0l.48-.48a3.09 3.09 0 0 1 5.25 2.24c0 .82-.3 1.61-.87 2.2l-3.1 3.13a3.1 3.1 0 0 1-3.97.36c-.45-.32-1.07-.43-1.52-.1l-.8.6c-.44.33-.54.96-.14 1.34a6.1 6.1 0 0 0 8.55-.08l3.12-3.14.02-.02a6.15 6.15 0 0 0-4.34-10.4Z"
+    />
+    <path
+      fill="currentColor"
+      d="M11.1 7.16a6.08 6.08 0 0 0-4.75 1.78l-3.12 3.14-.02.02a6.15 6.15 0 0 0 4.34 10.4c1.6.01 3.15-.6 4.3-1.73l.01-.01.5-.49a1 1 0 0 0 0-1.41l-.71-.71a1 1 0 0 0-1.42 0l-.48.48a3.09 3.09 0 0 1-5.25-2.24c0-.82.3-1.61.87-2.2l3.1-3.13a3.1 3.1 0 0 1 3.97-.36c.45.32 1.07.43 1.52.1l.8-.6c.44-.33.54-.96.14-1.34a6.1 6.1 0 0 0-3.8-1.7Z"
+    />
+  </svg>
+)
+
+export const EmailIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
+  <svg
+    fill="currentColor"
+    viewBox="0 0 512 512"
+    width={size || width}
+    height={size || height}
+    {...props}>
+    <path d="M441 68H71c-39 0-71 32-71 71v234c0 39 32 71 71 71h370c39 0 71-32 71-71V139c0-39-32-71-71-71zM178 322l-99 85a17 17 0 1 1-22-26l99-85a17 17 0 1 1 22 26zm78-33c-13 0-26-4-36-13L67 144a17 17 0 1 1 22-26l153 133c3 3 8 5 14 5s11-2 14-5h1l152-133a17 17 0 1 1 22 26L292 276c-10 9-23 13-36 13zm201 116c-6 7-17 8-24 2l-99-85a17 17 0 1 1 22-26l99 85c7 6 8 17 2 24z" />
+  </svg>
+)
+
+export const FacebookIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
+  <svg viewBox="-5.5 0 32 32" width={size || width} height={size || height} {...props}>
+    <path d="M1.19 5.6h18.44c.62 0 1.18.56 1.18 1.18v18.44c0 .63-.56 1.19-1.18 1.19H1.19C.56 26.4 0 25.84 0 25.22V6.78C0 6.16.56 5.6 1.19 5.6zm13.6 11.68h2.87l.12-2.75h-3V12.5c0-.78.16-1.22 1.16-1.22h1.75l.06-2.56s-.78-.13-1.9-.13c-2.76 0-3.98 1.72-3.98 3.57v2.37H9.84v2.75h2.03v7.63h2.91v-7.63z" />
+  </svg>
+)
+
 export const MoonFilledIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
   <svg
     aria-hidden="true"

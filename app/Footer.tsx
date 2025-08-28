@@ -11,6 +11,7 @@ import {
 import {Link} from '@heroui/link'
 import {tv} from 'tailwind-variants'
 import {siteConfig} from '@/config/site'
+import {Spacer} from '@heroui/spacer'
 
 const footerLinkStyles = tv({
   base: 'text-foreground flex justify-center md:justify-start',
@@ -19,6 +20,7 @@ const footerLinkStyles = tv({
 export default function Footer() {
   return (
     <footer>
+      <Spacer className="h-10 md:h-20" />
       <div className="flex justify-center p-3">
         <div className="flex w-full max-w-screen-lg flex-col flex-wrap items-center justify-between text-center md:flex-row md:items-start md:text-start">
           <Link href="/">
@@ -60,53 +62,54 @@ export default function Footer() {
               aria-label="Instagram"
               href={siteConfig.links.instagram}
               className="p-2 drop-shadow-md drop-shadow-gray-400/50">
-              <InstagramIcon className="text-gray-900" size={24} />
+              <InstagramIcon className="text-default-800" size={24} />
             </Link>
             <Link
               isExternal
               aria-label="Threads"
               href={siteConfig.links.threads}
               className="p-2 drop-shadow-md drop-shadow-gray-400/50">
-              <ThreadsIcon className="text-gray-900" size={24} />
+              <ThreadsIcon className="text-default-800" size={24} />
             </Link>
             <Link
               isExternal
               aria-label="LinkedIn"
               href={siteConfig.links.linkedin}
               className="p-2 drop-shadow-md drop-shadow-gray-400/50">
-              <LinkedInIcon className="text-gray-900" size={24} />
+              <LinkedInIcon className="text-default-800" size={24} />
             </Link>
             <Link
               isExternal
               aria-label="Youtube"
               href={siteConfig.links.youtube}
               className="p-2 drop-shadow-md drop-shadow-gray-400/50">
-              <YoutubeIcon className="text-gray-900" size={24} />
+              <YoutubeIcon className="text-default-800" size={24} />
             </Link>
             <Link
               isExternal
               aria-label="Discord"
               href={siteConfig.links.discord}
               className="p-2 drop-shadow-md drop-shadow-gray-400/50">
-              <DiscordIcon className="text-gray-900" size={24} />
+              <DiscordIcon className="text-default-800" size={24} />
             </Link>
             <Link
               isExternal
               aria-label="Slack"
               href={siteConfig.links.slack}
               className="p-2 drop-shadow-md drop-shadow-gray-400/50">
-              <SlackIcon className="text-gray-900" size={24} />
+              <SlackIcon className="text-default-800" size={24} />
             </Link>
             <Link
               isExternal
               aria-label="Github"
               href={siteConfig.links.github}
               className="p-2 drop-shadow-md drop-shadow-gray-400/50">
-              <GithubIcon className="text-gray-900" size={24} />
+              <GithubIcon className="text-default-800" size={24} />
             </Link>
           </ul>
         </div>
       </div>
+      <Spacer className="h-10 md:h-20" />
       <div className="text-default-600 w-full p-2 text-center">
         Copyright © {new Date().getFullYear()} Vancouver KDD
       </div>

@@ -2,9 +2,21 @@ import {sectionSubtitle, sectionTitle, subtitle, title} from '@/components/primi
 import {Link} from '@heroui/link'
 import {button as buttonStyles, tv} from '@heroui/theme'
 import NextImage from 'next/image'
+import {Image} from '@heroui/image'
 import kddAbout from './kdd-about1.png'
 import {Divider} from '@heroui/divider'
 import {Spacer} from '@heroui/spacer'
+import {
+  DiscordIcon,
+  EmailIcon,
+  FacebookIcon,
+  GithubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  LinkIcon,
+  ThreadsIcon,
+  TwitterIcon,
+} from '@/components/icons'
 
 export default function AboutPage() {
   return (
@@ -63,10 +75,10 @@ export default function AboutPage() {
           </div>
         </section>
         <Divider orientation="horizontal" />
-        <Spacer y={40} />
+        <Spacer className="h-20 md:h-40" />
       </div>
       <div className="bg-background0 w-full">
-        <Spacer y={40} />
+        <Spacer className="h-20 md:h-40" />
         <div className="flex flex-col items-center">
           <h1 className={sectionTitle()}>핵심 가치</h1>
           <span className={sectionSubtitle()}>KDD가 함께 만들어가는 여섯 가지 마음</span>
@@ -102,10 +114,10 @@ export default function AboutPage() {
             />
           </section>
         </div>
-        <Spacer y={40} />
+        <Spacer className="h-20 md:h-40" />
       </div>
       <div className="bg-background w-full">
-        <Spacer y={40} />
+        <Spacer className="h-20 md:h-40" />
         <div className="flex flex-col items-center">
           <h1 className={sectionTitle()}>Meet the Team</h1>
           <span className={sectionSubtitle()}>
@@ -113,8 +125,148 @@ export default function AboutPage() {
           </span>
           <Spacer y={16} />
           <div className={labelStyles()}>Leadership</div>
+          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+            <div className="grid grid-cols-2 place-items-center gap-y-10 sm:gap-y-20 md:grid-cols-4">
+              {[...Array(4)]
+                .map(() => ({
+                  image: 'https://placehold.co/120x120.png',
+                  name: 'Yongju Kwon',
+                  description1: 'Sr.Software Engineer',
+                  description2: '@Mastercard',
+                  socialLinks: [],
+                }))
+                .map((member, index) => (
+                  <CardMember key={index} {...member} />
+                ))}
+            </div>
+            <Divider orientation="horizontal" className="my-9" />
+          </div>
+          <div className={labelStyles()}>Partner Team</div>
+          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+            <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
+              {[...Array(3)]
+                .map(() => ({
+                  image: 'https://placehold.co/120x120.png',
+                  name: 'Yongju Kwon',
+                  description1: 'Sr.Software Engineer',
+                  description2: '@Mastercard',
+                  socialLinks: [],
+                }))
+                .map((member, index) => (
+                  <CardMember key={index} {...member} />
+                ))}
+            </div>
+            <Divider orientation="horizontal" className="my-9" />
+          </div>
+          <div className={labelStyles()}>Study Team</div>
+          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+            <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
+              {[...Array(2)]
+                .map(() => ({
+                  image: 'https://placehold.co/120x120.png',
+                  name: 'Yongju Kwon',
+                  description1: 'Sr.Software Engineer',
+                  description2: '@Mastercard',
+                  socialLinks: [
+                    {type: 'linkedin', url: 'https://www.linkedin.com/in/yongju-kwon-0000000000/'},
+                    {type: 'github', url: 'https://github.com/yongju-kwon'},
+                    {type: 'email', url: 'yongju.kwon@gmail.com'},
+                    {type: 'website', url: 'https://www.yongju-kwon.com'},
+                    {type: 'instagram', url: 'https://www.instagram.com/yongju-kwon/'},
+                    {type: 'twitter', url: 'https://x.com/yongju-kwon'},
+                    {type: 'discord', url: 'https://discord.com/users/yongju-kwon'},
+                    {type: 'threads', url: 'https://www.threads.net/@yongju-kwon'},
+                  ] satisfies {
+                    type:
+                      | 'linkedin'
+                      | 'github'
+                      | 'email'
+                      | 'website'
+                      | 'instagram'
+                      | 'twitter'
+                      | 'discord'
+                      | 'threads'
+                      | 'facebook'
+                    url: string
+                  }[],
+                }))
+                .map((member, index) => (
+                  <CardMember key={index} {...member} />
+                ))}
+            </div>
+            <Divider orientation="horizontal" className="my-9" />
+          </div>
+          <div className={labelStyles()}>Design Team</div>
+          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+            <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
+              {[...Array(3)]
+                .map(() => ({
+                  image: 'https://placehold.co/120x120.png',
+                  name: 'Yongju Kwon',
+                  description1: 'Sr.Software Engineer',
+                  description2: '@Mastercard',
+                  socialLinks: [],
+                }))
+                .map((member, index) => (
+                  <CardMember key={index} {...member} />
+                ))}
+            </div>
+            <Divider orientation="horizontal" className="my-9" />
+          </div>
+          <div className={labelStyles()}>Marketing Team</div>
+          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+            <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
+              {[...Array(2)]
+                .map(() => ({
+                  image: 'https://placehold.co/120x120.png',
+                  name: 'Yongju Kwon',
+                  description1: 'Sr.Software Engineer',
+                  description2: '@Mastercard',
+                  socialLinks: [],
+                }))
+                .map((member, index) => (
+                  <CardMember key={index} {...member} />
+                ))}
+            </div>
+            <Divider orientation="horizontal" className="my-9" />
+          </div>
+          <div className={labelStyles()}>Operation Team</div>
+          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+            <div className="grid grid-cols-1 justify-center justify-items-center gap-10">
+              {[...Array(1)]
+                .map(() => ({
+                  image: 'https://placehold.co/120x120.png',
+                  name: 'Yongju Kwon',
+                  description1: 'Sr.Software Engineer',
+                  description2: '@Mastercard',
+                  socialLinks: [],
+                }))
+                .map((member, index) => (
+                  <CardMember key={index} {...member} />
+                ))}
+            </div>
+          </div>
+          <div className="bg-background0 flex flex-col items-center self-stretch">
+            <Spacer y={24} />
+            <div className={labelStyles()}>Board Members</div>
+            <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+              <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
+                {[...Array(3)]
+                  .map(() => ({
+                    image: 'https://placehold.co/120x120.png',
+                    name: 'Yongju Kwon',
+                    description1: 'Sr.Software Engineer',
+                    description2: '@Mastercard',
+                    socialLinks: [],
+                  }))
+                  .map((member, index) => (
+                    <CardMember key={index} {...member} />
+                  ))}
+              </div>
+            </div>
+            <Spacer className="h-20 md:h-40" />
+          </div>
         </div>
-        <Spacer y={40} />
       </div>
     </div>
   )
@@ -138,6 +290,70 @@ const Label = ({
       <div className="text-4xl">{icon}</div>
       <div className={labelStyles()}>{label}</div>
       <div className="text-default-500 text-lg">{description}</div>
+    </div>
+  )
+}
+
+const CardMember = ({
+  image,
+  name,
+  description1,
+  description2,
+  socialLinks,
+}: {
+  image: string
+  name: string
+  description1: string
+  description2: string
+  socialLinks: {
+    type:
+      | 'linkedin'
+      | 'github'
+      | 'email'
+      | 'website'
+      | 'instagram'
+      | 'facebook'
+      | 'twitter'
+      | 'discord'
+      | 'threads'
+    url: string
+  }[]
+}) => {
+  return (
+    <div className="flex max-w-[200px] flex-col items-center gap-5 text-center">
+      <Image
+        as={NextImage}
+        src={image}
+        alt={name}
+        width={120}
+        height={120}
+        radius="full"
+        isZoomed
+        shadow="md"
+      />
+      <div>
+        <div className="text-sm font-semibold">{name}</div>
+        <div className="text-default-500 text-sm">{description1}</div>
+        <div className="text-default-500 text-sm">{description2}</div>
+      </div>
+      <div className="flex flex-wrap gap-2 px-2 drop-shadow-md">
+        {socialLinks.map((link, index) => (
+          <Link
+            key={index}
+            href={link.type === 'email' ? `mailto:${link.url}` : link.url}
+            isExternal>
+            {link.type === 'linkedin' && <LinkedInIcon size={24} className="text-default-800" />}
+            {link.type === 'github' && <GithubIcon size={24} className="text-default-800" />}
+            {link.type === 'email' && <EmailIcon size={24} className="text-default-800" />}
+            {link.type === 'website' && <LinkIcon size={24} className="text-default-800" />}
+            {link.type === 'instagram' && <InstagramIcon size={24} className="text-default-800" />}
+            {link.type === 'facebook' && <FacebookIcon size={24} className="text-default-800" />}
+            {link.type === 'twitter' && <TwitterIcon size={24} className="text-default-800" />}
+            {link.type === 'discord' && <DiscordIcon size={24} className="text-default-800" />}
+            {link.type === 'threads' && <ThreadsIcon size={24} className="text-default-800" />}
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }
