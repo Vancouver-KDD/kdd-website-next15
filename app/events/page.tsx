@@ -1,9 +1,17 @@
-import {sectionSubtitle, sectionTitle, subtitle, title} from '@/components/primitives'
+import {
+  sectionSubtitle,
+  sectionTitle,
+  subtitle,
+  title,
+  label as labelStyles,
+} from '@/components/primitives'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
 import EventGroupSVG from './EventGroupSVG'
 import UpcomingEventsCarousel from './UpcomingEventsCarousel'
+import {Divider} from '@heroui/divider'
+import PastEventCard from './PastEventCard'
 
 export default function EventsPage() {
   return (
@@ -39,6 +47,40 @@ export default function EventsPage() {
       </h3>
       <Spacer y={24} />
       <UpcomingEventsCarousel />
+      <section className="mx-auto w-full max-w-screen-lg self-start px-6">
+        <div className="text-center">
+          <h1 className={title()}>Past Events</h1>
+          <Spacer y={4} />
+          <h3 className={subtitle()}>지난 KDD 행사들을 돌아보세요.</h3>
+        </div>
+        <Spacer y={9} />
+        <Divider />
+        <Spacer y={16} />
+        <h3 className={labelStyles()}>2025</h3>
+        <Spacer y={9} />
+        <div className="grid grid-cols-1 items-center gap-22 md:grid-cols-2 lg:grid-cols-3">
+          <PastEventCard
+            title="Technology Uncertainty is coming..."
+            image="https://picsum.photos/200/300"
+            date="2025-01-01"
+          />
+          <PastEventCard
+            title="Summer BBQ Party"
+            image="https://picsum.photos/300/300"
+            date="2025-01-01"
+          />
+          <PastEventCard
+            title="Available soon."
+            image="https://picsum.photos/500/200"
+            date="2025-01-01"
+          />
+          <PastEventCard
+            title="Available soon."
+            image="https://picsum.photos/50/300"
+            date="2025-01-01"
+          />
+        </div>
+      </section>
     </>
   )
 }

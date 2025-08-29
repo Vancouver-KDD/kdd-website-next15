@@ -1,6 +1,12 @@
-import {sectionSubtitle, sectionTitle, subtitle, title} from '@/components/primitives'
+import {
+  sectionSubtitle,
+  sectionTitle,
+  subtitle,
+  title,
+  label as labelStyles,
+} from '@/components/primitives'
 import {Link} from '@heroui/link'
-import {button as buttonStyles, tv} from '@heroui/theme'
+import {button as buttonStyles} from '@heroui/theme'
 import NextImage from 'next/image'
 import {Image} from '@heroui/image'
 import kddAbout from './kdd-about1.png'
@@ -272,10 +278,6 @@ export default function AboutPage() {
     </div>
   )
 }
-
-const labelStyles = tv({
-  base: 'text-xl font-semibold',
-})
 
 const Label = ({
   icon,
