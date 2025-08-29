@@ -93,24 +93,36 @@ export default function AboutPage() {
         <Spacer y={16} />
         <div className="mx-auto max-w-screen-lg px-6 md:px-12">
           <section className="grid grid-cols-1 justify-items-center gap-22 text-center sm:grid-cols-[repeat(2,minmax(0,249px))] sm:place-content-center sm:justify-items-start sm:text-start lg:grid-cols-[repeat(3,minmax(0,249px))]">
-            <Label icon="🤝" label="Sharing" description="지식과 경험의 공유" />
-            <Label icon="🌱" label="Growth" description="커리어 성장과 네트워크 확장" />
-            <Label icon="👥" label="Connections" description="성장의 뒤를 든든히 받쳐주는 기반" />
-            {/* <Label
-              icon="🇨🇦🏡"
-              label="Support"
-              description="캐나다 정착과 커리어 여정을 돕는 실질적인 지원을 제공합니다."
+            <Label
+              icon="🤝"
+              label="Sharing"
+              description="지식과 경험을 나누며 함께 성장할 수 있는 장을 제공합니다."
             />
             <Label
-              icon="📚"
-              label="Learn"
-              description="최신 기술 트렌드와 업계 인사이트를 공유하며 지속적인 학습 기회를 만듭니다."
+              icon="🌱"
+              label="Growth"
+              description="전문성을 키우고 네트워크를 확장할 기회를 제공합니다."
+            />
+            <Label
+              icon="👥"
+              label="Connections"
+              description="언제든 의지하고 도움을 얻을 수 있는 커뮤니티를 제공합니다."
             />
             <Label
               icon="✨"
-              label="Inspire"
-              description="선배들의 이야기와 커뮤니티의 성취를 통해 더 큰 도전을 꿈꾸게 합니다."
-            /> */}
+              label="Inspiration"
+              description="새로운 시도와 다양한 이야기로 창의적 변화를 이끌어냅니다."
+            />
+            <Label
+              icon="🌎"
+              label="Collaboration"
+              description="협력 프로젝트와 파트너십을 통해 더 큰 가능성을 만듭니다."
+            />
+            <Label
+              icon="💼"
+              label="Opportunity"
+              description="커리어와 성장을 위한 발판을 제공합니다."
+            />
           </section>
         </div>
         <Spacer className="h-20 md:h-40" />
