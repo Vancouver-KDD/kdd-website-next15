@@ -1,10 +1,5 @@
-import {
-  sectionSubtitle,
-  sectionTitle,
-  subtitle,
-  title,
-  label as labelStyles,
-} from '@/components/primitives'
+import {Suspense} from 'react'
+import {subtitle, title, label as labelStyles} from '@/components/primitives'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
@@ -12,8 +7,14 @@ import EventGroupSVG from './EventGroupSVG'
 import UpcomingEventsCarousel from './UpcomingEventsCarousel'
 import {Divider} from '@heroui/divider'
 import PastEventCard from './PastEventCard'
+import {Skeleton} from '@heroui/skeleton'
+import {sectionSubtitle, sectionTitle} from '@/components/primitives'
+import {getPastEvents} from '@/firebase/queries'
+import {use} from 'react'
 
 export default function EventsPage() {
+  const pastEvents = use(getPastEvents({currentDate: new Date('2025-10-01')}))
+
   return (
     <>
       <section className="mx-auto w-full max-w-screen-lg self-start px-6">
@@ -46,7 +47,27 @@ export default function EventsPage() {
         다가오는 KDD 행사를 만나보세요
       </h3>
       <Spacer y={24} />
-      <UpcomingEventsCarousel />
+      <Suspense
+        fallback={
+          <div className="h-96 w-56 space-y-5 p-4">
+            <Skeleton className="rounded-lg">
+              <div className="bg-default-300 h-24 rounded-lg" />
+            </Skeleton>
+            <div className="space-y-3">
+              <Skeleton className="w-3/5 rounded-lg">
+                <div className="bg-default-200 h-3 w-3/5 rounded-lg" />
+              </Skeleton>
+              <Skeleton className="w-4/5 rounded-lg">
+                <div className="bg-default-200 h-3 w-4/5 rounded-lg" />
+              </Skeleton>
+              <Skeleton className="w-2/5 rounded-lg">
+                <div className="bg-default-300 h-3 w-2/5 rounded-lg" />
+              </Skeleton>
+            </div>
+          </div>
+        }>
+        <UpcomingEventsCarousel />
+      </Suspense>
       <section className="mx-auto w-full max-w-screen-lg self-start px-6">
         <div className="text-center">
           <h1 className={title()}>Past Events</h1>
@@ -55,31 +76,31 @@ export default function EventsPage() {
         </div>
         <Spacer y={9} />
         <Divider />
-        <Spacer y={16} />
-        <h3 className={labelStyles()}>2025</h3>
-        <Spacer y={9} />
-        <div className="grid grid-cols-1 items-center gap-22 md:grid-cols-2 lg:grid-cols-3">
-          <PastEventCard
-            title="Technology Uncertainty is coming..."
-            image="https://picsum.photos/200/300"
-            date="2025-01-01"
-          />
-          <PastEventCard
-            title="Summer BBQ Party"
-            image="https://picsum.photos/300/300"
-            date="2025-01-01"
-          />
-          <PastEventCard
-            title="Available soon."
-            image="https://picsum.photos/500/200"
-            date="2025-01-01"
-          />
-          <PastEventCard
-            title="Available soon."
-            image="https://picsum.photos/50/300"
-            date="2025-01-01"
-          />
-        </div>
+        {(() => {
+          const groups = pastEvents.reduce((acc, event) => {
+            const year = event.date.toDate().getFullYear()
+            if (!acc.has(year)) acc.set(year, [])
+            acc.get(year)!.push(event)
+            return acc
+          }, new Map<number, typeof pastEvents>())
+
+          return Array.from(groups.entries()).map(([year, events]) => (
+            <div key={year}>
+              <Spacer y={16} />
+              <h3 className={labelStyles()}>{year}</h3>
+              <Spacer y={9} />
+              <div className="grid grid-cols-1 items-center gap-22 md:grid-cols-2 lg:grid-cols-3">
+                {events.map((event) => (
+                  <PastEventCard
+                    key={event.id}
+                    {...event}
+                    date={event.date.toDate().toLocaleDateString()}
+                  />
+                ))}
+              </div>
+            </div>
+          ))
+        })()}
       </section>
     </>
   )

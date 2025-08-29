@@ -5,7 +5,7 @@ import NextImage from 'next/image'
 import kddBgConference from './kdd-bg-conference.jpg'
 import {Spacer} from '@heroui/spacer'
 import {Divider} from '@heroui/divider'
-import UpcomingEvents from './UpcomingEvents'
+import UpcomingEventsCarousel from '../events/UpcomingEventsCarousel'
 
 export default function Home() {
   return (
@@ -74,7 +74,7 @@ export default function Home() {
         <Spacer y={10} />
         <Divider orientation="horizontal" className="bg-foreground-400 w-full" />
         <Spacer y={16} />
-        <UpcomingEvents />
+        <UpcomingEventsCarousel />
         <Spacer y={16} />
         <Divider orientation="horizontal" className="bg-foreground-400 w-full" />
         <Spacer y={20} />

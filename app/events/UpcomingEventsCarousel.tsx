@@ -6,20 +6,38 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import UpcomingEvents from '../UpcomingEvents'
+import UpcomingEvents from './UpcomingEvents'
 import UpcomingCalendarEvents from './UpcomingCalendarEvents'
+import {getFutureEvents} from '@/firebase/queries'
+import {use} from 'react'
+import {Timestamp} from 'firebase-admin/firestore'
+
+function firebaseTimestampToISO8601(timestamp: Timestamp) {
+  // Firebase timestamp to CalendarDate
+  return timestamp.toDate().toLocaleDateString('en-CA')
+}
 
 export default function UpocmingEventsCarousel() {
+  const upcomingEvents = use(getFutureEvents())
   return (
     <>
-      <UpcomingCalendarEvents />
+      <UpcomingCalendarEvents
+        selectedDate={
+          upcomingEvents[0] ? firebaseTimestampToISO8601(upcomingEvents[0].date) : undefined
+        }
+        dates={upcomingEvents.map((event) => firebaseTimestampToISO8601(event.date))}
+      />
       <Carousel className="w-full max-w-4xl">
         <CarouselContent>
-          {Array.from({length: 5}).map((_, index) => (
-            <CarouselItem key={index} className="py-10">
-              <UpcomingEvents />
-            </CarouselItem>
-          ))}
+          {upcomingEvents.map((event) => {
+            const {date, ...restEvent} = event
+            const dateString = date.toDate().toLocaleDateString()
+            return (
+              <CarouselItem key={event.id} className="py-10">
+                <UpcomingEvents {...restEvent} date={dateString} />
+              </CarouselItem>
+            )
+          })}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
