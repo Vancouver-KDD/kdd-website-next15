@@ -67,10 +67,5 @@
     "tailwind-variants": "3.1.0",
     "tailwindcss": "4.1.12",
     "typescript": "5.9.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "@internationalized/date": "3.9.0"
-    }
   }
 }

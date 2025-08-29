@@ -15,7 +15,7 @@ export default function UpcomingEventsCalendar({events}: {events: {date: string;
       <Calendar
         key={value?.toString()}
         aria-label="Upcoming Events Calendar"
-        value={value}
+        value={value as any}
         minValue={events[0] ? parseDate(events[0].date) : today(getLocalTimeZone())}
         maxValue={
           events[events.length - 1]
