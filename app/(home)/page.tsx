@@ -6,6 +6,15 @@ import kddBgConference from './kdd-bg-conference.jpg'
 import {Spacer} from '@heroui/spacer'
 import {Divider} from '@heroui/divider'
 import UpcomingEvents from '../events/UpcomingEvents'
+import foodlyLogo from './assets/foodly.png'
+import ubcLogo from './assets/ubc.png'
+import anvelyLogo from './assets/anvely.png'
+import cgrkLogo from './assets/cgrk.png'
+import korderLogo from './assets/korder.png'
+import marketRibbonLogo from './assets/market-ribbon.png'
+import photoByMeLogo from './assets/photobyme.png'
+import renuBioHealthLogo from './assets/renu-bio-health.png'
+import vplLogo from './assets/vpl.png'
 
 export default function Home() {
   return (
@@ -89,13 +98,57 @@ export default function Home() {
           <Spacer y={16} />
           <div className="flex flex-wrap justify-center gap-10">
             {[
-              ...Array.from({length: 9}, () => ({
+              {
+                name: 'foodly',
+                img: foodlyLogo,
+                link: 'https://foodly.ca',
+              },
+              {
                 name: 'UBC',
-                img: `https://placehold.co/${Math.floor(Math.random() * 153) + 1}x${Math.floor(Math.random() * 73) + 1}@3x.png?font=noto%20sans`,
-                link: 'https://www.ubc.ca',
-              })),
+                img: ubcLogo,
+                link: 'https://ubc.ca',
+              },
+
+              {
+                name: 'Anvely',
+                img: anvelyLogo,
+                link: 'https://anvelyonline.com/',
+              },
+
+              {
+                name: 'Consulate General of the Republic of Korea in Vancouver',
+                img: cgrkLogo,
+                link: 'https://overseas.mofa.go.kr/ca-vancouver-en/index.do',
+              },
+              {
+                name: 'KOrder',
+                img: korderLogo,
+                link: 'https://korder.app',
+              },
+
+              {
+                name: 'Market Ribbon',
+                img: marketRibbonLogo,
+                link: 'https://marketribbon.ca',
+              },
+
+              {
+                name: 'Photo by Me',
+                img: photoByMeLogo,
+                link: 'https://photobyme.ca/',
+              },
+              {
+                name: 'Renu Bio Health',
+                img: renuBioHealthLogo,
+                link: 'https://renubiohealth.com',
+              },
+              {
+                name: 'VPL',
+                img: vplLogo,
+                link: 'https://vpl.ca',
+              },
             ].map((item, index) => (
-              <Link key={index} href={item.link}>
+              <Link key={index} href={item.link} isExternal>
                 <NextImage
                   src={item.img}
                   alt={item.name}
@@ -115,7 +168,7 @@ export default function Home() {
               color: 'primary',
               className: 'font-light',
             })}
-            href={'/events'}>
+            href={'/contact'}>
             스폰서십 문의하기
           </Link>
           <Spacer y={40} />
