@@ -23,6 +23,7 @@ import {
   ThreadsIcon,
   TwitterIcon,
 } from '@/components/icons'
+import members from './members.json'
 
 export default function AboutPage() {
   return (
@@ -45,7 +46,7 @@ export default function AboutPage() {
               color: 'default',
               className: 'bg-default-100 font-light drop-shadow-lg',
             })}
-            href={'/about'}>
+            href={'/events'}>
             Join our Next Event
           </Link>
         </section>
@@ -92,21 +93,13 @@ export default function AboutPage() {
         <Spacer y={16} />
         <div className="mx-auto max-w-screen-lg px-6 md:px-12">
           <section className="grid grid-cols-1 justify-items-center gap-22 text-center sm:grid-cols-[repeat(2,minmax(0,249px))] sm:place-content-center sm:justify-items-start sm:text-start lg:grid-cols-[repeat(3,minmax(0,249px))]">
-            <Label icon="👥" label="Connect" description="한인 IT인들의 교류와 연결을 돕습니다." />
-            <Label
-              icon="🌱"
-              label="Grow"
-              description="멘토링과 밋업, 컨퍼런스를 통해 개인과 커뮤니티가 함께 성장합니다."
-            />
-            <Label
+            <Label icon="🤝" label="Sharing" description="지식과 경험의 공유" />
+            <Label icon="🌱" label="Growth" description="커리어 성장과 네트워크 확장" />
+            <Label icon="👥" label="Connections" description="성장의 뒤를 든든히 받쳐주는 기반" />
+            {/* <Label
               icon="🇨🇦🏡"
               label="Support"
               description="캐나다 정착과 커리어 여정을 돕는 실질적인 지원을 제공합니다."
-            />
-            <Label
-              icon="🤝"
-              label="Collaborate"
-              description="프로젝트와 파트너십을 통해 서로 협업하고 새로운 가치를 창출합니다."
             />
             <Label
               icon="📚"
@@ -117,7 +110,7 @@ export default function AboutPage() {
               icon="✨"
               label="Inspire"
               description="선배들의 이야기와 커뮤니티의 성취를 통해 더 큰 도전을 꿈꾸게 합니다."
-            />
+            /> */}
           </section>
         </div>
         <Spacer className="h-20 md:h-40" />
@@ -133,124 +126,54 @@ export default function AboutPage() {
           <div className={labelStyles()}>Leadership</div>
           <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-2 place-items-center gap-y-10 sm:gap-y-20 md:grid-cols-4">
-              {[...Array(4)]
-                .map(() => ({
-                  image: 'https://placehold.co/120x120.png',
-                  name: 'Yongju Kwon',
-                  description1: 'Sr.Software Engineer',
-                  description2: '@Mastercard',
-                  socialLinks: [],
-                }))
-                .map((member, index) => (
-                  <CardMember key={index} {...member} />
-                ))}
+              {members.Leadership.map((member, index) => (
+                <CardMember key={index} {...member} />
+              ))}
             </div>
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Partner Team</div>
           <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
-              {[...Array(3)]
-                .map(() => ({
-                  image: 'https://placehold.co/120x120.png',
-                  name: 'Yongju Kwon',
-                  description1: 'Sr.Software Engineer',
-                  description2: '@Mastercard',
-                  socialLinks: [],
-                }))
-                .map((member, index) => (
-                  <CardMember key={index} {...member} />
-                ))}
+              {members['Partner Team'].map((member, index) => (
+                <CardMember key={index} {...member} />
+              ))}
             </div>
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Study Team</div>
           <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
-              {[...Array(2)]
-                .map(() => ({
-                  image: 'https://placehold.co/120x120.png',
-                  name: 'Yongju Kwon',
-                  description1: 'Sr.Software Engineer',
-                  description2: '@Mastercard',
-                  socialLinks: [
-                    {type: 'linkedin', url: 'https://www.linkedin.com/in/yongju-kwon-0000000000/'},
-                    {type: 'github', url: 'https://github.com/yongju-kwon'},
-                    {type: 'email', url: 'yongju.kwon@gmail.com'},
-                    {type: 'website', url: 'https://www.yongju-kwon.com'},
-                    {type: 'instagram', url: 'https://www.instagram.com/yongju-kwon/'},
-                    {type: 'facebook', url: 'https://www.facebook.com/yongju-kwon/'},
-                    {type: 'twitter', url: 'https://x.com/yongju-kwon'},
-                    {type: 'discord', url: 'https://discord.com/users/yongju-kwon'},
-                    {type: 'threads', url: 'https://www.threads.net/@yongju-kwon'},
-                  ] satisfies {
-                    type:
-                      | 'linkedin'
-                      | 'github'
-                      | 'email'
-                      | 'website'
-                      | 'instagram'
-                      | 'twitter'
-                      | 'discord'
-                      | 'threads'
-                      | 'facebook'
-                    url: string
-                  }[],
-                }))
-                .map((member, index) => (
-                  <CardMember key={index} {...member} />
-                ))}
+              {members['Study Team'].map((member, index) => (
+                <CardMember key={index} {...member} />
+              ))}
             </div>
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Design Team</div>
           <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
-              {[...Array(3)]
-                .map(() => ({
-                  image: 'https://placehold.co/120x120.png',
-                  name: 'Yongju Kwon',
-                  description1: 'Sr.Software Engineer',
-                  description2: '@Mastercard',
-                  socialLinks: [],
-                }))
-                .map((member, index) => (
-                  <CardMember key={index} {...member} />
-                ))}
+              {members['Design Team'].map((member, index) => (
+                <CardMember key={index} {...member} />
+              ))}
             </div>
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Marketing Team</div>
           <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
-              {[...Array(2)]
-                .map(() => ({
-                  image: 'https://placehold.co/120x120.png',
-                  name: 'Yongju Kwon',
-                  description1: 'Sr.Software Engineer',
-                  description2: '@Mastercard',
-                  socialLinks: [],
-                }))
-                .map((member, index) => (
-                  <CardMember key={index} {...member} />
-                ))}
+              {members['Marketing Team'].map((member, index) => (
+                <CardMember key={index} {...member} />
+              ))}
             </div>
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Operation Team</div>
           <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-1 justify-center justify-items-center gap-10">
-              {[...Array(1)]
-                .map(() => ({
-                  image: 'https://placehold.co/120x120.png',
-                  name: 'Yongju Kwon',
-                  description1: 'Sr.Software Engineer',
-                  description2: '@Mastercard',
-                  socialLinks: [],
-                }))
-                .map((member, index) => (
-                  <CardMember key={index} {...member} />
-                ))}
+              {members['Operations Team'].map((member, index) => (
+                <CardMember key={index} {...member} />
+              ))}
             </div>
           </div>
           <div className="bg-background0 flex flex-col items-center self-stretch">
@@ -258,17 +181,9 @@ export default function AboutPage() {
             <div className={labelStyles()}>Board Members</div>
             <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
               <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
-                {[...Array(3)]
-                  .map(() => ({
-                    image: 'https://placehold.co/120x120.png',
-                    name: 'Yongju Kwon',
-                    description1: 'Sr.Software Engineer',
-                    description2: '@Mastercard',
-                    socialLinks: [],
-                  }))
-                  .map((member, index) => (
-                    <CardMember key={index} {...member} />
-                  ))}
+                {members['Board Members'].map((member, index) => (
+                  <CardMember key={index} {...member} />
+                ))}
               </div>
             </div>
             <Spacer className="h-20 md:h-40" />
@@ -298,12 +213,14 @@ const Label = ({
 }
 
 const CardMember = ({
+  title,
   image,
   name,
   description1,
   description2,
   socialLinks,
 }: {
+  title?: string
   image: string
   name: string
   description1: string
@@ -324,16 +241,20 @@ const CardMember = ({
 }) => {
   return (
     <div className="flex max-w-[200px] flex-col items-center gap-5 text-center">
-      <Image
-        as={NextImage}
-        src={image}
-        alt={name}
-        width={120}
-        height={120}
-        radius="full"
-        isZoomed
-        shadow="md"
-      />
+      <div>
+        <div className="text-default-500 mb-1 text-sm">{title}</div>
+        <Image
+          as={NextImage}
+          src={image}
+          alt={name}
+          width={120}
+          height={120}
+          radius="full"
+          isZoomed
+          shadow="md"
+          quality={100}
+        />
+      </div>
       <div>
         <div className="text-sm font-semibold">{name}</div>
         <div className="text-default-500 text-sm">{description1}</div>

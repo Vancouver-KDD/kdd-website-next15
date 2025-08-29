@@ -1,16 +1,14 @@
-import {Suspense} from 'react'
 import {subtitle, title, label as labelStyles} from '@/components/primitives'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
 import EventGroupSVG from './EventGroupSVG'
-import UpcomingEventsCarousel from './UpcomingEventsCarousel'
 import {Divider} from '@heroui/divider'
 import PastEventCard from './PastEventCard'
-import {Skeleton} from '@heroui/skeleton'
 import {sectionSubtitle, sectionTitle} from '@/components/primitives'
 import {getPastEvents} from '@/firebase/queries'
 import {use} from 'react'
+import UpcomingEvents from './UpcomingEvents'
 
 export default function EventsPage() {
   const pastEvents = use(getPastEvents({currentDate: new Date('2025-10-01')}))
@@ -41,33 +39,13 @@ export default function EventsPage() {
       <section className="flex justify-center">
         <EventGroupSVG width={458} />
       </section>
-      <Spacer y={40} />
+      <Spacer y={6} />
       <h1 className={sectionTitle({className: 'text-center'})}>Upcoming Events</h1>
       <h3 className={sectionSubtitle({className: 'text-center'})}>
         다가오는 KDD 행사를 만나보세요
       </h3>
-      <Spacer y={24} />
-      <Suspense
-        fallback={
-          <div className="h-96 w-56 space-y-5 p-4">
-            <Skeleton className="rounded-lg">
-              <div className="bg-default-300 h-24 rounded-lg" />
-            </Skeleton>
-            <div className="space-y-3">
-              <Skeleton className="w-3/5 rounded-lg">
-                <div className="bg-default-200 h-3 w-3/5 rounded-lg" />
-              </Skeleton>
-              <Skeleton className="w-4/5 rounded-lg">
-                <div className="bg-default-200 h-3 w-4/5 rounded-lg" />
-              </Skeleton>
-              <Skeleton className="w-2/5 rounded-lg">
-                <div className="bg-default-300 h-3 w-2/5 rounded-lg" />
-              </Skeleton>
-            </div>
-          </div>
-        }>
-        <UpcomingEventsCarousel />
-      </Suspense>
+      <Spacer y={6} />
+      <UpcomingEvents />
       <section className="mx-auto w-full max-w-screen-lg self-start px-6">
         <div className="text-center">
           <h1 className={title()}>Past Events</h1>
@@ -90,13 +68,16 @@ export default function EventsPage() {
               <h3 className={labelStyles()}>{year}</h3>
               <Spacer y={9} />
               <div className="grid grid-cols-1 items-center gap-22 md:grid-cols-2 lg:grid-cols-3">
-                {events.map((event) => (
-                  <PastEventCard
-                    key={event.id}
-                    {...event}
-                    date={event.date.toDate().toLocaleDateString()}
-                  />
-                ))}
+                {events.map(
+                  (event) =>
+                    event.image && (
+                      <PastEventCard
+                        key={event.id}
+                        {...event}
+                        date={event.date.toDate().toLocaleDateString()}
+                      />
+                    )
+                )}
               </div>
             </div>
           ))

@@ -1,40 +1,51 @@
+'use client'
+
 import * as React from 'react'
 import {
   Carousel,
+  CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import UpcomingEvents from './UpcomingEvents'
-import UpcomingCalendarEvents from './UpcomingCalendarEvents'
-import {getFutureEvents} from '@/firebase/queries'
-import {use} from 'react'
-import {Timestamp} from 'firebase-admin/firestore'
+import UpcomingEvent from './UpcomingEvent'
+import UpcomingEventsCalendar from './UpcomingEventsCalendar'
+import {Event} from '@/firebase/types'
+import {useSelectedEventStore} from './selectedEventStore'
 
-function firebaseTimestampToISO8601(timestamp: Timestamp) {
-  // Firebase timestamp to CalendarDate
-  return timestamp.toDate().toLocaleDateString('en-CA')
-}
+export default function UpcomingEventsCarousel({
+  events,
+}: {
+  events: (Omit<Event, 'date'> & {date: string; id: string})[]
+}) {
+  const [api, setApi] = React.useState<CarouselApi>()
+  const {selectedEventId, setSelectedEventId} = useSelectedEventStore()
 
-export default function UpocmingEventsCarousel() {
-  const upcomingEvents = use(getFutureEvents())
+  React.useEffect(() => {
+    if (api?.selectedScrollSnap() !== events.findIndex((e) => e.id === selectedEventId)) {
+      api?.scrollTo(events.findIndex((e) => e.id === selectedEventId))
+    }
+  }, [api, selectedEventId])
+
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    api.on('select', () => {
+      setSelectedEventId(events[api.selectedScrollSnap()].id)
+    })
+  }, [api])
   return (
     <>
-      <UpcomingCalendarEvents
-        selectedDate={
-          upcomingEvents[0] ? firebaseTimestampToISO8601(upcomingEvents[0].date) : undefined
-        }
-        dates={upcomingEvents.map((event) => firebaseTimestampToISO8601(event.date))}
-      />
-      <Carousel className="w-full max-w-4xl">
+      <UpcomingEventsCalendar events={events} />
+      <Carousel className="w-full max-w-4xl" setApi={setApi}>
         <CarouselContent>
-          {upcomingEvents.map((event) => {
-            const {date, ...restEvent} = event
-            const dateString = date.toDate().toLocaleDateString()
+          {events.map((event) => {
             return (
               <CarouselItem key={event.id} className="py-10">
-                <UpcomingEvents {...restEvent} date={dateString} />
+                <UpcomingEvent {...event} />
               </CarouselItem>
             )
           })}
