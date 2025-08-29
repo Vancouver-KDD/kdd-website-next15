@@ -3,7 +3,7 @@ import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
 import EventGroupSVG from './EventGroupSVG'
-import UpcomingEvents from './UpcomingCalendarEvents'
+import UpcomingEventsCarousel from './UpcomingEventsCarousel'
 
 export default function EventsPage() {
   return (
@@ -38,8 +38,7 @@ export default function EventsPage() {
         다가오는 KDD 행사를 만나보세요
       </h3>
       <Spacer y={24} />
-      <UpcomingEvents />
-      <Spacer y={24} />
+      <UpcomingEventsCarousel />
     </>
   )
 }

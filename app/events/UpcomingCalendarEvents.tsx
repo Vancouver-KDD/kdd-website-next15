@@ -1,8 +1,6 @@
 'use client'
 import {Calendar, DateValue} from '@heroui/calendar'
 import {today, getLocalTimeZone} from '@internationalized/date'
-import UpcomingEvents from '../UpcomingEvents'
-import {Spacer} from '@heroui/spacer'
 
 export default function UpcomingCalendarEvents() {
   return (
@@ -15,8 +13,6 @@ export default function UpcomingCalendarEvents() {
           return true
         }}
       />
-      <Spacer y={20} />
-      <UpcomingEvents />
     </>
   )
 }
