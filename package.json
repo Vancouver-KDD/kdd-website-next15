@@ -9,6 +9,7 @@
     "firebase:projects:list": "dotenv -e .env -- sh -c 'firebase projects:list --token \"$FIREBASE_CI_TOKEN\"'"
   },
   "dependencies": {
+    "@heroui/breadcrumbs": "^2.2.20",
     "@heroui/button": "2.2.24",
     "@heroui/calendar": "^2.2.24",
     "@heroui/card": "^2.2.23",

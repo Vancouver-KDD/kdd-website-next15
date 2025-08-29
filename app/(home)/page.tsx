@@ -1,5 +1,5 @@
 import {Link} from '@heroui/link'
-import {button as buttonStyles} from '@heroui/theme'
+import {button as buttonStyles, cn} from '@heroui/theme'
 import {subtitle, heroTitle, sectionTitle, sectionSubtitle} from '@/components/primitives'
 import NextImage from 'next/image'
 import kddBgConference from './kdd-bg-conference.jpg'
@@ -102,17 +102,19 @@ export default function Home() {
                 name: 'foodly',
                 img: foodlyLogo,
                 link: 'https://foodly.ca',
+                className: 'dark:brightness-125',
               },
               {
                 name: 'UBC',
                 img: ubcLogo,
                 link: 'https://ubc.ca',
+                className: 'dark:invert-50',
               },
-
               {
                 name: 'Anvely',
                 img: anvelyLogo,
                 link: 'https://anvelyonline.com/',
+                className: 'dark:invert',
               },
 
               {
@@ -124,23 +126,26 @@ export default function Home() {
                 name: 'KOrder',
                 img: korderLogo,
                 link: 'https://korder.app',
+                className: 'dark:brightness-125',
               },
 
               {
                 name: 'Market Ribbon',
                 img: marketRibbonLogo,
                 link: 'https://marketribbon.ca',
+                className: 'dark:invert-75',
               },
-
               {
                 name: 'Photo by Me',
                 img: photoByMeLogo,
                 link: 'https://photobyme.ca/',
+                className: 'dark:invert',
               },
               {
                 name: 'Renu Bio Health',
                 img: renuBioHealthLogo,
                 link: 'https://renubiohealth.com',
+                className: 'dark:invert-50',
               },
               {
                 name: 'VPL',
@@ -154,7 +159,7 @@ export default function Home() {
                   alt={item.name}
                   width={153}
                   height={73}
-                  className="max-h-[73px] max-w-[153px] object-contain"
+                  className={cn('max-h-[73px] max-w-[153px] object-contain', item.className)}
                 />
               </Link>
             ))}
