@@ -27,6 +27,8 @@ yarn-error.log*
 # local env files
 .env
 .env*.local
+.env.*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +41,13 @@ pnpm-lock.yaml
 yarn.lock
 package-lock.json
 bun.lockb
+
+# firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+storage-debug.log*
+.emulator/
+.firebase-*
+/firebase.json
+.firebaserc
