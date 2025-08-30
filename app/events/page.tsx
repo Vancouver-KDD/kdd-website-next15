@@ -40,11 +40,6 @@ export default function EventsPage() {
         <EventGroupSVG width={458} />
       </section>
       <Spacer y={6} />
-      <h1 className={sectionTitle({className: 'text-center'})}>Upcoming Events</h1>
-      <h3 className={sectionSubtitle({className: 'text-center'})}>
-        다가오는 KDD 행사를 만나보세요
-      </h3>
-      <Spacer y={6} />
       <UpcomingEvents />
       <section id="past-events" className="mx-auto w-full max-w-screen-lg self-start px-6">
         <div className="text-center">

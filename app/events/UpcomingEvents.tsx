@@ -2,6 +2,8 @@ import {Suspense, use} from 'react'
 import UpcomingEventsCarousel from './UpcomingEventsCarousel'
 import {Skeleton} from '@heroui/skeleton'
 import {getFutureEvents} from '@/firebase/queries'
+import {Spacer} from '@heroui/spacer'
+import {sectionSubtitle, sectionTitle, subtitle} from '@/components/primitives'
 
 export default function UpcomingEvents() {
   const events = use(getFutureEvents())
@@ -25,7 +27,24 @@ export default function UpcomingEvents() {
           </div>
         </div>
       }>
-      <UpcomingEventsCarousel events={events} />
+      {events.length > 0 ? (
+        <>
+          <h1 className={sectionTitle({className: 'text-center'})}>Upcoming Events</h1>
+          <h3 className={sectionSubtitle({className: 'text-center'})}>
+            다가오는 KDD 행사를 만나보세요
+          </h3>
+          <Spacer y={6} />
+          <UpcomingEventsCarousel events={events} />
+        </>
+      ) : (
+        <div className="flex flex-col items-center text-center">
+          <Spacer y={8} />
+          <div className="text-3xl font-bold">No Upcoming Events</div>
+          <Spacer y={4} />
+          <div className={subtitle({className: 'opacity-60'})}>Please check back later</div>
+          <Spacer y={8} />
+        </div>
+      )}
     </Suspense>
   )
 }
