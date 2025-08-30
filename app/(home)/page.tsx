@@ -15,14 +15,21 @@ import marketRibbonLogo from './assets/market-ribbon.png'
 import photoByMeLogo from './assets/photobyme.png'
 import renuBioHealthLogo from './assets/renu-bio-health.png'
 import vplLogo from './assets/vpl.png'
+import {KoreanTitle, DeveloperTitle, DesignTitle} from './HeroTitle'
 
 export default function Home() {
   return (
     <div className="w-full">
       <section className="mx-auto flex max-w-[588px] flex-col px-6 py-8 md:py-10">
-        <span className={heroTitle()}>Knowledge.</span>
-        <span className={heroTitle()}>Diversity.</span>
-        <span className={heroTitle()}>Drive.</span>
+        <span className={heroTitle()}>
+          <KoreanTitle />
+        </span>
+        <span className={heroTitle()}>
+          <DeveloperTitle />
+        </span>
+        <span className={heroTitle()}>
+          <DesignTitle />
+        </span>
         <div className={subtitle({className: 'mt-4 mb-6'})}>
           KDD는 지식을 나누고, 새로운 가능성을 발견하며, 함께 성장하는 한인 IT 커뮤니티입니다.
         </div>
