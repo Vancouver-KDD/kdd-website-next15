@@ -1,11 +1,16 @@
 import {Timestamp} from 'firebase-admin/firestore'
 
 export type Event = {
-  title: string
-  description: string
+  id: string
   date: Timestamp
-  duration: number // in minutes
-  location: string
-  image: string
-  registerLink?: string
+  title: string
+  location?: string
+  image: string // can be empty string
+  description?: string
+  locationDetails?: string
+  locationLink?: string
+  joinLink?: string
+  duration?: number // in minutes
+  price?: string // 10.00
+  quantity?: number
 }

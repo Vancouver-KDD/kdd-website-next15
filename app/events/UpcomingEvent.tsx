@@ -9,14 +9,14 @@ export default function UpcomingEvent({
   location,
   description,
   image,
-  registerLink,
+  joinLink,
   date,
   id,
 }: Omit<Event, 'date'> & {date: string; id: string}) {
   return (
     <div className="flex h-[433px] items-center justify-center gap-6 px-4 md:gap-10 md:px-6">
       <NextImage
-        src={image}
+        src={image ?? 'https://placehold.co/249x353'}
         alt="upcoming event poster"
         width={249}
         height={353}
@@ -55,8 +55,8 @@ export default function UpcomingEvent({
               color: 'primary',
               className: 'font-light',
             })}
-            isExternal={!!registerLink}
-            href={registerLink}>
+            isExternal={!!joinLink}
+            href={joinLink}>
             참여하기
           </Link>
         </div>

@@ -1,5 +1,5 @@
-Date,Event Title,Location,Location Detail,Poster,Event Description
-2025-07-27 10:00,KDD Summer BBQ Party,Stanley Park,Prospect Point Playing Field and Picnic Area,https://res.cloudinary.com/vancouverkdd/image/upload/v1756474990/2025.07_itwhjt.png,"밴쿠버 여름을 더 즐겁게 만드는, 2025 KDD 여름 바비큐 & 네트워킹 행사에 여러분을 초대합니다.
+id,date,duration,title,location,locationDetails,locationLink,image,description,joinLink,price,quantity
+recZvmUXouPfAqTTu,2025-07-27 10:00,,KDD Summer BBQ Party,Stanley Park,Prospect Point Playing Field and Picnic Area,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756474990/2025.07_itwhjt.png,"밴쿠버 여름을 더 즐겁게 만드는, 2025 KDD 여름 바비큐 & 네트워킹 행사에 여러분을 초대합니다.
 
 ​🎉 행사 개요
 - 일시: 7월 27일(일) 오전 10시 – 오후 3시
@@ -45,8 +45,8 @@ Date,Event Title,Location,Location Detail,Poster,Event Description
 환불: 7월 20일(일)까지만 가능합니다.
 문의: vancouverkdd@gmail.com
 
-​맛있는 바비큐와 즐거운 네트워킹, 즐거운 나눔이 어우러질 7월 27일, Stanley Park에서 만나요!"
-2025-06-21 12:15,"AI 시대, 데이터는 이렇게!",BPL McGill Branch,BPL McGill Branch,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475338/2025.06_sdhkdr.webp,"📣 Google, Stripe, Clause Technology, BC Hydro, Tradable Bits 에서 데이터 다루는 사람들이 모였습니다!
+​맛있는 바비큐와 즐거운 네트워킹, 즐거운 나눔이 어우러질 7월 27일, Stanley Park에서 만나요!",,,
+recUhpKA8d456FkeG,2025-06-21 12:15,,"AI 시대, 데이터는 이렇게!",BPL McGill Branch,BPL McGill Branch,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475338/2025.06_sdhkdr.webp,"📣 Google, Stripe, Clause Technology, BC Hydro, Tradable Bits 에서 데이터 다루는 사람들이 모였습니다!
 
 ​❓클라우드 기반 데이터 거버넌스와 AI시대에 따른 변화는? ❓텍스트 데이터를 다루는 방법과 협업? ❓데이터를 통해 디자이너와 엔지니어와 협업하며, 시각화와 의사결정을 이끌어내는 팁은? ❓실제로 데이터 애널리티스트/ BI 애널리스트는 무슨일을 하고, 무엇을 분석하지?
 
@@ -64,8 +64,8 @@ Date,Event Title,Location,Location Detail,Poster,Event Description
 
 ​📅 일시: 2025년 6월 21일 (토) | 12:15PM – 5:00PM 📍 장소: Burnaby Public Library McGill Branch (4595 Albert St, Burnaby, BC) 🔖참가 신청 : 링크 클릭
 
-​*참가 신청 후 노쇼하신 분들에게는 향후 이벤트에 대한 패널티 있을 예정입니다. *스피치 및 멘토 모집은 상시 진행 중입니다."
-2025-05-24 12:30,Level Up for the Next Chapter,7358 Edmonds St,7358 Edmonds St,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475073/2025.05_u4k9xz.jpg,"​밴쿠버에서 이직이나 취업을 준비하시며 커리어의 한 단계 레벨업을 꿈꾸는 분들을 위해, KDD가 5월 이벤트 ""Level Up for the Next Chapter""를 준비했습니다.
+​*참가 신청 후 노쇼하신 분들에게는 향후 이벤트에 대한 패널티 있을 예정입니다. *스피치 및 멘토 모집은 상시 진행 중입니다.",,,
+recsWnNuPrW8FMtKR,2025-05-24 12:30,,Level Up for the Next Chapter,7358 Edmonds St,7358 Edmonds St,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475073/2025.05_u4k9xz.jpg,"​밴쿠버에서 이직이나 취업을 준비하시며 커리어의 한 단계 레벨업을 꿈꾸는 분들을 위해, KDD가 5월 이벤트 ""Level Up for the Next Chapter""를 준비했습니다.
 
 ​밴쿠버에서 개발자, 디자이너, 그리고 다양한 분야에 계신 분들 모두 커리어에서 한 단계 더 도약하고 싶으실 텐데요. 하지만 어디서부터 시작해야 할지, 무엇을 강조해야 할지 막막하신 분들도 많을 거예요.
 
@@ -77,9 +77,8 @@ Date,Event Title,Location,Location Detail,Poster,Event Description
 
 ​📍 장소: 7358 Edmonds St, Burnaby, BC V3N 0H1
 
-​이메일로 밋업 체크인용 QR코드가 전송됩니다. 밋업 참석시 체크인을 위해 QR코드를 미리 준비해주세요😊"
-,,,,,
-2025-02-15 19:00,💗Love Algorithm (ver. hetero)💗,장소: 참가자에게 추후 전달예정,,,"2월 14일, 올해 2025년의 발렌타인데이에도 역시 솔로일 예정인 우리 Vancouver KDD 멤버님들은 주목해 주세요!
+​이메일로 밋업 체크인용 QR코드가 전송됩니다. 밋업 참석시 체크인을 위해 QR코드를 미리 준비해주세요😊",,,
+reclLSNvbVv80y4UG,2025-02-15 19:00,02:30,💗Love Algorithm (ver. hetero)💗,장소: 참가자에게 추후 전달예정,,,,"2월 14일, 올해 2025년의 발렌타인데이에도 역시 솔로일 예정인 우리 Vancouver KDD 멤버님들은 주목해 주세요!
 
 Vancouver KDD 역사상 최초로 준비해 드리는 💗Love Algorithm (ver. hetero)💗 은 벤쿠버에 거주하시는 IT Professionals 들의 그룹 데이팅 이벤트 입니다. 총 세 개의 액티비티를 통해 상대방을 더 자세히 알아가고 여러분의 퍼펙트 매치를 찾아가는 재밌고 유익한 시간을 함께 보내고 싶으신 Vancouver KDD 멤버 여러분들은 아래 안내사항을 꼭 읽어주세요!
 
@@ -96,8 +95,8 @@ Vancouver KDD 역사상 최초로 준비해 드리는 💗Love Algorithm (ver. h
 
 ⭐️특별 안내사항: 데이팅 이벤트 특성상 성비 조절등의 사유로 인해 신청이 취소 될 수 있습니다. 이에 관련하여 최대한 빠른 시일 내로 안내 이메일 발송드리겠습니다.
 
-많은 관심 부탁 드립니다☺️"
-2025-01-30 19:00,J vs P의 리얼 스토리: 주택 구매 X MBTI,장소: Zoom link 전달 예정,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475536/KakaoTalk_Photo_2025-01-22-22-29-41_zcearq.png,"🎉KDD 2025년 1월 온라인 모임 안내🎉
+많은 관심 부탁 드립니다☺️",https://docs.google.com/forms/d/e/1FAIpQLSfN9V6lZBoK3J6ZQ52SwfHgFnsQzT6OFjpBhKoGbiie3Cnc-A/viewform?usp=sharing,$45.00,30
+recD8P2DMzTmmNexu,2025-01-30 19:00,03:00,J vs P의 리얼 스토리: 주택 구매 X MBTI,장소: Zoom link 전달 예정,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475536/KakaoTalk_Photo_2025-01-22-22-29-41_zcearq.png,"🎉KDD 2025년 1월 온라인 모임 안내🎉
 J vs P의 리얼 스토리: 주택 구매 X MBTI
 
 MBTI로 보는 집 구매 과정의 차이, 궁금하지 않으세요?
@@ -113,8 +112,8 @@ MBTI J와 P가 집 구매를 어떻게 접근했는지 재미있는 경험담을
 
 💬 궁금한 점은 댓글이나 vancouverkdd@gmail.com으로 문의 바랍니다.
 
-*발표자들은 리얼터가 아닌 구매자의 입장으로 이야기를 나눕니다"
-2024-11-23 10:00,4th Annual KDD Korean Tech Conference 2024,"800 Robson Street Vancouver, BC V6Z 3B7 Canada",UBC Robson Square,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475604/KDDKoreanTechConference_2024_1-min_bb28va.png,"Exploring Tech Horizons: 💫Crafting Your Career Path
+*발표자들은 리얼터가 아닌 구매자의 입장으로 이야기를 나눕니다",https://forms.gle/8D3R4yyZ8Xmp8igC7,$0.00,50
+recVya4fGqaONiyhb,2024-11-23 10:00,07:00,4th Annual KDD Korean Tech Conference 2024,"800 Robson Street Vancouver, BC V6Z 3B7 Canada",UBC Robson Square,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475604/KDDKoreanTechConference_2024_1-min_bb28va.png,"Exploring Tech Horizons: 💫Crafting Your Career Path
 
 밴쿠버에 거주하는 한인 IT 전문가들과 커리어에 대해 고민하는 모든 분들을 위한 특별한 기회가 다시 찾아왔습니다! 
 
@@ -138,8 +137,8 @@ KDD와 주밴쿠버 대한민국 총영사관이 공동 주최하는 이번 컨�
 
 **This event will be held in Korean. English translation will not be provided.**
 
-"
-2024-12-14 19:00,A Christmas gathering with KDD,"Standing Egg Coffee, 4501 North Rd #109A, Burnaby, BC V3N 4R7",Standing Egg Coffee,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475699/KakaoTalk_Photo_2024-12-01-10-49-18_003_ru3rtd.jpg,"이번 크리스마스 시즌을 특별하게 보내고 싶으신가요? 🎄✨
+",https://vkdd_techcon.eventbrite.ca,$0.00,230
+recXDeVP6okKqFRtC,2024-12-14 19:00,05:00,A Christmas gathering with KDD,"Standing Egg Coffee, 4501 North Rd #109A, Burnaby, BC V3N 4R7",Standing Egg Coffee,https://maps.app.goo.gl/8pyHwxdMNYtocfFT7,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475699/KakaoTalk_Photo_2024-12-01-10-49-18_003_ru3rtd.jpg,"이번 크리스마스 시즌을 특별하게 보내고 싶으신가요? 🎄✨
 
 KDD와 함께하는 크리스마스 모임에 여러분을 초대합니다! 따뜻하고 즐거운 분위기 속에서 소중한 시간을 만들어보세요😊
 
@@ -153,8 +152,8 @@ KDD와 함께하는 크리스마스 모임에 여러분을 초대합니다! 따�
 
 준비된 특별한 프로그램과 함께 따뜻한 음료, 즐거운 대화, 그리고 크리스마스의 분위기를 만끽할 수 있는 자리입니다.
 조기 마감이 예상되오니 미리 신청을 꼭 해주세요!
-다가오는 크리스마스, 우리 함께 따뜻한 시간을 보내요! ❤️💚"
-2024-10-25 19:00,KDD Online Social Mini DataJam & Online BoardGame,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475751/KakaoTalk_Photo_2024-10-18-12-41-54_vgbd7s.png,"
+다가오는 크리스마스, 우리 함께 따뜻한 시간을 보내요! ❤️💚",https://forms.gle/USdawTovAZMCPMQcA,$35.00,50
+recCnWDsiy7Ci8QJ6,2024-10-25 19:00,02:30,KDD Online Social Mini DataJam & Online BoardGame,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475751/KakaoTalk_Photo_2024-10-18-12-41-54_vgbd7s.png,"
 
 안녕하세요, KDD입니다.
 이번 달에는 누구나 쉽고 즐겁게 참여할 수 있는 온라인 행사를 준비했습니다. 🧑‍💻
@@ -171,8 +170,8 @@ KDD와 함께하는 크리스마스 모임에 여러분을 초대합니다! 따�
 
 그럼 많은 신청 바랍니다. 감사합니다.
 
-"
-2024-09-28 14:00,송편다짐회🌕,"Community Room 1 at Burnaby Public Library, Bob Prittie Metrotown branch",Community Room 1,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475849/KakaoTalk_Photo_2024-09-17-21-39-13_002_uxpok0.jpg,"벌써 여름이 끝나고 선선한 가을이 찾아왔네요. 🍁
+",https://forms.gle/xt73vALNHcbn9mcs6,$0.00,30
+rec2ZecEQtJnez9iq,2024-09-28 14:00,03:30,송편다짐회🌕,"Community Room 1 at Burnaby Public Library, Bob Prittie Metrotown branch",Community Room 1,https://maps.app.goo.gl/nSZCK1tHQBw4DpLF7,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475849/KakaoTalk_Photo_2024-09-17-21-39-13_002_uxpok0.jpg,"벌써 여름이 끝나고 선선한 가을이 찾아왔네요. 🍁
 
 2024년의 3분의 2가 지나간 지금,
 조금 이른 1년 회고와 함께 남은 3개월을
@@ -186,8 +185,8 @@ KDD와 함께하는 크리스마스 모임에 여러분을 초대합니다! 따�
 행사 일정: 2024년 9월 28일(토) 2:00pm - 5:30pm
 장소: Community Room 1 at Burnaby Public Library, Bob Prittie Metrotown Branch
 모집 인원: 40명
-참가비: 무료"
-2024-10-25 19:00,KDD Online Social Mini DataJam & Online BoardGame,Zoom,,,"
+참가비: 무료",https://shorturl.at/ThT4Q,$0.00,40
+recdzjkjQvUL6zkZu,2024-10-25 19:00,02:30,KDD Online Social Mini DataJam & Online BoardGame,Zoom,,,,"
 
 안녕하세요, KDD입니다.
 이번 달에는 누구나 쉽고 즐겁게 참여할 수 있는 온라인 행사를 준비했습니다. 🧑‍💻
@@ -204,8 +203,8 @@ KDD와 함께하는 크리스마스 모임에 여러분을 초대합니다! 따�
 
 그럼 많은 신청 바랍니다. 감사합니다.
 
-"
-2024-07-27 11:00,KDD 썸머 피크닉 & 플리마켓,Port Royal Park Picnic Shelter,Picnic Shelter,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475905/KakaoTalk_Photo_2024-07-10-20-00-50_nveosv.png,"안녕하세요, KDD의 대표적인 여름 행사, 썸머 바베큐 피크닉이 돌아왔습니다!
+",https://forms.gle/xt73vALNHcbn9mcs6,$0.00,30
+recmVKh6OgGcv8itV,2024-07-27 11:00,04:00,KDD 썸머 피크닉 & 플리마켓,Port Royal Park Picnic Shelter,Picnic Shelter,https://maps.app.goo.gl/DiZ92Jw3WZLhk8GeA,https://res.cloudinary.com/vancouverkdd/image/upload/v1756475905/KakaoTalk_Photo_2024-07-10-20-00-50_nveosv.png,"안녕하세요, KDD의 대표적인 여름 행사, 썸머 바베큐 피크닉이 돌아왔습니다!
 
 플리마켓, 보드게임 존 등 한층 더 업그레이드 된 야외 피크닉에서
 맛있는 음식과 재미있는 이야기를 함께 즐겨요 😄
@@ -219,8 +218,8 @@ KDD와 함께하는 크리스마스 모임에 여러분을 초대합니다! 따�
 - 행사 내용: 바베큐 파티, 플리마켓, 네트워킹
 - 행사 일정:  11:00 - 13:00 점심 바베큐 / 13:00 - 15:00 플리마켓 & 네트워킹 이벤트
 
-행사 참여를 원할시에 아래 RSVP 버튼 클릭 한 뒤 폼을 작성해주시고, E-transfer까지 완료하시면 행사 참여 확정됩니다. KDD 가족들 및 새로 오신 분들 언제나 환영하며, 함께 토요일 여름 오후를 즐겨요!  "
-2024-04-27 10:30,4월 Spring Running,Science World,Science World,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476222/KakaoTalk_20240413_203908681_zm8ox4.png,"안녕하세요 KDD 여러분!
+행사 참여를 원할시에 아래 RSVP 버튼 클릭 한 뒤 폼을 작성해주시고, E-transfer까지 완료하시면 행사 참여 확정됩니다. KDD 가족들 및 새로 오신 분들 언제나 환영하며, 함께 토요일 여름 오후를 즐겨요!  ",https://forms.gle/ADH585ioZc1ciC3T7,$20.00,40
+recyYIppORTijseL2,2024-04-27 10:30,03:00,4월 Spring Running,Science World,Science World,https://maps.app.goo.gl/RXjzRuw6SzNFVvuJA,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476222/KakaoTalk_20240413_203908681_zm8ox4.png,"안녕하세요 KDD 여러분!
 벌써 4월입니다. 다들 새해 계획은 잘 실천하고 계신가요?
 저희 Vancouver KDD에서는 봄을 맞아 즐거운 러닝 이벤트를 계획하였습니다. 자연 속에서 건강을 쌓고, 함께 활동하는 시간을 가지고자 합니다.
 아래는 이벤트에 대한 세부 정보입니다.
@@ -243,8 +242,8 @@ KDD는 언제나 열려있습니다.
 
 그럼 여러분들의 많은 참여와 관심 기대하겠습니다.
 감사합니다!
-"
-2024-05-25 13:00,5월 KDD Meetup,Creekside Community Centre,Multipurpose room2,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476329/KakaoTalk_20240503_120255715_01_n0coys.jpg,"안녕하세요
+",,$0.00,15
+rec5007S2EEHeKWfH,2024-05-25 13:00,04:00,5월 KDD Meetup,Creekside Community Centre,Multipurpose room2,https://maps.app.goo.gl/juJURzeDKRTsuYd49,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476329/KakaoTalk_20240503_120255715_01_n0coys.jpg,"안녕하세요
 
 이번 5월에는 많은 분들께서 기다리셨던 오프라인 KDD 밋업을 아래와 같이 진행합니다.
 
@@ -277,9 +276,9 @@ KDD는 언제나 열려있습니다.
 
 학생, 구직자, 직장인분들을 모두 만족시킬수 있도록 알차게 구성했으니, 많은 신청 바랍니다.
 
-감사합니다."
-2024-03-23 11:00,3월 Let's Go Outside,Deep Cove,Caf/EH,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476225/DeepCovePost_bgalwo.png,"안녕하세요! 밴쿠버 KDD입니다. 날씨가 풀리고 봄이 성큼 다가오는 3월, 겨울 내내 굳어 있던 몸의 근육을 깨우고 시원한 공기를 잔뜩 들어마실 수 있는 야외 활동을 준비했습니다. KDD 멤버들과 딥코브를 오르며 특별한 추억을 쌓아 보아요! "
-2024-02-23 19:30,2월 KDD Online Meetup,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476224/poster_iugmdx.jpg,"안녕하세요! 어느덧 해가 길어지면서 밴쿠버에도 따뜻한 봄이 찾아오고 있음을 느낍니다. KDD가 2월을 맞이해 온라인 밋업 행사를 진행합니다. 이번 행사는 온라인으로 진행하는만큼, 한국에 계신분들과 캐나다에 계신분들 모두가 참여 가능할 수 있도록 준비하였습니다. 이번 밋업을 통해 다양한 정보들을 공유할 수 있는 좋은 기회의 장이 되길 바랍니다. 이번 행사는 3분의 전문가들을 모시고 스피치세션을 진행하고 후엔 취업, 재테크, 취미, 프로젝트등 다양한 카테고리로 나뉘어지는 네트워킹세션으로 진행됩니다.
+감사합니다.",,$0.00,50
+rec4I13yKmYkBAAqW,2024-03-23 11:00,03:00,3월 Let's Go Outside,Deep Cove,Caf/EH,https://maps.app.goo.gl/y7n5ZWnSMzYKKZGc6?g_st=ic,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476225/DeepCovePost_bgalwo.png,"안녕하세요! 밴쿠버 KDD입니다. 날씨가 풀리고 봄이 성큼 다가오는 3월, 겨울 내내 굳어 있던 몸의 근육을 깨우고 시원한 공기를 잔뜩 들어마실 수 있는 야외 활동을 준비했습니다. KDD 멤버들과 딥코브를 오르며 특별한 추억을 쌓아 보아요! ",,$0.00,29
+recdlOjCQZgRFyqDL,2024-02-23 19:30,05:00,2월 KDD Online Meetup,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476224/poster_iugmdx.jpg,"안녕하세요! 어느덧 해가 길어지면서 밴쿠버에도 따뜻한 봄이 찾아오고 있음을 느낍니다. KDD가 2월을 맞이해 온라인 밋업 행사를 진행합니다. 이번 행사는 온라인으로 진행하는만큼, 한국에 계신분들과 캐나다에 계신분들 모두가 참여 가능할 수 있도록 준비하였습니다. 이번 밋업을 통해 다양한 정보들을 공유할 수 있는 좋은 기회의 장이 되길 바랍니다. 이번 행사는 3분의 전문가들을 모시고 스피치세션을 진행하고 후엔 취업, 재테크, 취미, 프로젝트등 다양한 카테고리로 나뉘어지는 네트워킹세션으로 진행됩니다.
 많은 분들이 참여하셔서 유익한 시간이 되셨으면 좋겠습니다! 
 
 일시: 2024.02.23 금요일 7:30PM~ [캐나다]
@@ -300,8 +299,8 @@ by 이문희 Moonhee Lee
 
 3부 : 트루라이트 변호사님, 추후 업데이트 예정
 
-스피치 세션 이후에는 네트워킹 세션이 이어질 예정입니다. "
-2024-01-27 18:30,Bowling Night,"Grandview Lanes(2195 Commerical Drive Vancouver, BC V5N 4B3)",Grandview Lanes,,"안녕하세요 KDD 여러분, Happy New Year 2024! 
+스피치 세션 이후에는 네트워킹 세션이 이어질 예정입니다. ",,$0.00,0
+recHStD9xbNtJ5FX6,2024-01-27 18:30,03:00,Bowling Night,"Grandview Lanes(2195 Commerical Drive Vancouver, BC V5N 4B3)",Grandview Lanes,https://maps.app.goo.gl/VpMRKeYFqwmWRzJW9,,"안녕하세요 KDD 여러분, Happy New Year 2024! 
 새로운 한 해 에도 항상 건강하시고 행복한 하루 하루 보내시기를 진심으로 기원합니다.
 저희 Vancouver KDD 운영진은 2024년 새 해 더욱 알차고 재밌는 프로그램과 이벤트로 여러분들을 찾아 뵈려고 하니 앞으로도 많은 관심 부탁드립니다 :-)   
 
@@ -325,8 +324,8 @@ by 이문희 Moonhee Lee
 KDD는 언제나 열려있습니다.
 
 그럼 여러분들의 많은 참여와 관심 기대하겠습니다.
-감사합니다!"
-2023-12-16 18:00,KDD 크리스마스 파티,"앤블리 Anvely (9916 Lougheed Hwy, Burnaby, BC)",Anvely,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476223/12%E1%84%8B%E1%85%AF%E1%86%AF_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A1_%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%B5_hp3vqz.png,"안녕하세요. 즐거운 주말 보내고 계신가요?
+감사합니다!",,$0.00,22
+recDYQktv0PoSuPTc,2023-12-16 18:00,04:00,KDD 크리스마스 파티,"앤블리 Anvely (9916 Lougheed Hwy, Burnaby, BC)",Anvely,https://maps.app.goo.gl/25XnVHWMB6VMVyKR8,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476223/12%E1%84%8B%E1%85%AF%E1%86%AF_%E1%84%92%E1%85%A2%E1%86%BC%E1%84%89%E1%85%A1_%E1%84%80%E1%85%A9%E1%86%BC%E1%84%8C%E1%85%B5_hp3vqz.png,"안녕하세요. 즐거운 주말 보내고 계신가요?
 벌써 다음 주가 12월이라니...!
 시간이 정말 빠르네요.
 
@@ -341,8 +340,8 @@ KDD에서 모두를 위한 크리스마스 파티를 준비했습니다.
 
 네트워킹, 게임, 럭키드로우 등 다양한 활동이 준비되어 있으니 많은 관심 부탁드립니다!
 
-- 문의: marketing@vancouverkdd.com"
-2023-12-02 13:30,밴쿠버 IT회사 옆 대나무숲,"Kitsilano Community Center(2690 Larch St, Vancouver, BC V6K 4K9)",Kitsilano Community Center,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476228/2_xmrfla.png,"안녕하세요, KDD 여러분! KDD에서 현재 일하고 계신 분들을 위한 모임을 준비했습니다. 
+- 문의: marketing@vancouverkdd.com",,$15.00,52
+recCay7Taim9hFJbF,2023-12-02 13:30,03:00,밴쿠버 IT회사 옆 대나무숲,"Kitsilano Community Center(2690 Larch St, Vancouver, BC V6K 4K9)",Kitsilano Community Center,https://maps.app.goo.gl/AhgZNePWkmK73Gsz8,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476228/2_xmrfla.png,"안녕하세요, KDD 여러분! KDD에서 현재 일하고 계신 분들을 위한 모임을 준비했습니다. 
 
 이번 모임에서는 ‘밴쿠버 IT회사 옆 대나무숲’ 이라는 테마를 가지고 지금까지 일하시면서 가지고 계셨던 혹은 지금 가지고 계신 고민들을 함께 나누는 시간을 가지려고 합니다. 나와 비슷한 직종, 경력에 있는 다른 사람들은 어떤 고민을 가지고 있는지, 어떻게 풀어 나갔는지 이야기 나누면서 앞으로 내가 맞닥뜨릴 수 있는 상황에 대해서 미리 준비해볼 수도 있는 의미있는 시간을 목표로 합니다🙌🏻
 
@@ -351,8 +350,8 @@ KDD에서 모두를 위한 크리스마스 파티를 준비했습니다.
 - 대상: 직장인 (선착순 25명)
 *이번 모임은 현직에 계신분들만을 대상으로 합니다. 
 
-질문은 슬랙 KDD 채널에서 Yongju 로 DM 부탁드립니다"
-2023-11-24 19:00,11월 KDD Meetup,Online,,,"안녕하세요. 
+질문은 슬랙 KDD 채널에서 Yongju 로 DM 부탁드립니다",,$0.00,27
+recoVYds4gXYXSVgy,2023-11-24 19:00,03:00,11월 KDD Meetup,Online,,,,"안녕하세요. 
 
 시간대가 바뀌고나서 성큼 겨울에 가까워진 것 같은 가을입니다. 그리고 어느덧 시간이 정말 빨리 지나 올해 가을을 보내고, 또 한번의 레인쿠버를 맞이하게 되었네요. 
 
@@ -370,10 +369,10 @@ KDD에서 모두를 위한 크리스마스 파티를 준비했습니다.
 
 * 온라인 링크는 밋업 3일 전에 신청자분들을 대상으로 별도 이메일로 안내 드리겠습니다.
 
-감사합니다."
-2023-11-18 12:00,11월 Activity: Arcade at The Rec Room,"The Rec Room 정문 (The Amazing Brentwood 내),1920 Willingdon Ave Unit 2106, Burnaby, BC V5C 0K3",The Rec Room,,
-2023-10-28 13:30,10월 KDD Meetup,Burnaby Public Library MgGill Branch (4595 Albert St),McGill Library,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476222/linked_in_1200x627_01_vlgorl.jpg,
-2023-10-21 11:30,KDD Women in Tech,"Steamworks Brewpub (375 Water St, Vancouver, BC V6B 1B8)",,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/womenintech_gmgj1h.jpg,"KDD Women in Tech(우먼인텍)은 여성분들이 테크 분야에서 함께 성장하고 성공할 수 있는 기회를 열어주는 서브그룹입니다. 저희 우먼인텍에서는 주기적으로 다양한 이벤트와 엑티비티를 기획하고 있어요.
+감사합니다.",,$0.00,70
+rec1sddLwCOou8QQW,2023-11-18 12:00,03:00,11월 Activity: Arcade at The Rec Room,"The Rec Room 정문 (The Amazing Brentwood 내),1920 Willingdon Ave Unit 2106, Burnaby, BC V5C 0K3",The Rec Room,https://maps.app.goo.gl/U1pyGMvFXRGfATDP9,,,https://www.eventbrite.ca/e/vancouver-kddnovember-activity-arcade-at-the-rec-room-tickets-743918589527?aff=oddtdtcreator,$0.00,0
+recAKU02sqthnAIbv,2023-10-28 13:30,03:30,10월 KDD Meetup,Burnaby Public Library MgGill Branch (4595 Albert St),McGill Library,https://maps.app.goo.gl/atwugMQYe4NaNNtb6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476222/linked_in_1200x627_01_vlgorl.jpg,,,$0.00,50
+rec1jTjoCCAreujnq,2023-10-21 11:30,03:00,KDD Women in Tech,"Steamworks Brewpub (375 Water St, Vancouver, BC V6B 1B8)",,https://maps.app.goo.gl/CLz4Lie1Y6QLF9HQ6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/womenintech_gmgj1h.jpg,"KDD Women in Tech(우먼인텍)은 여성분들이 테크 분야에서 함께 성장하고 성공할 수 있는 기회를 열어주는 서브그룹입니다. 저희 우먼인텍에서는 주기적으로 다양한 이벤트와 엑티비티를 기획하고 있어요.
 
 저희 우먼인텍의 첫 번째 이벤트는 직장인과 함께하는 브런치 식사 자리를 레스토랑에서 가질 예정입니다 🤗
 
@@ -395,8 +394,8 @@ KDD에서 모두를 위한 크리스마스 파티를 준비했습니다.
 
 - 추가 문의사항
 * 담당자: 슬랙 Sarah Son (Slack @Sarah Son)
-* 이메일: subgroup@vancouverkdd.com"
-2023-09-30 13:00,9월 KDD Meetup,"Anvely, 9916 Lougheed hwy, Burnaby",Anvely,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476225/eventbrite_2160x1080_01_chdsfi.jpg,"안녕하세요! 2023년 9월 KDD Meetup 안내드립니다 
+* 이메일: subgroup@vancouverkdd.com",https://kddwomenintech.eventbrite.ca,,
+reciX9hvkt0abkyBs,2023-09-30 13:00,04:00,9월 KDD Meetup,"Anvely, 9916 Lougheed hwy, Burnaby",Anvely,https://goo.gl/maps/P3B8DPfpERh6rJvt8,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476225/eventbrite_2160x1080_01_chdsfi.jpg,"안녕하세요! 2023년 9월 KDD Meetup 안내드립니다 
 
 이번 달에는 다양한 직군의 개발자 및 디자이너를 모시고 AMA(Ask Me Anything) 패널 토크를 진행합니다.
 
@@ -417,8 +416,8 @@ KDD에서 모두를 위한 크리스마스 파티를 준비했습니다.
 
 * 도네이션: e-transfer (이메일: jane.yoonseol@gmail.com | 이름: Yoon Seo Lee), $5 ~ $20
 
-* 취소 및 기타 문의는 marketing@vancouverkdd.com으로 해주시기 바랍니다."
-2023-09-09 11:00,KOTRA 케이무브 네트워킹 데이,"505 W Broadway, Vancouver",RBC,,"﻿2023 KOTRA K-MOVE NETWORKING DAY
+* 취소 및 기타 문의는 marketing@vancouverkdd.com으로 해주시기 바랍니다.",https://forms.gle/zahfxoKKjEB3juM19,,
+recTFtKxDD0rprZTL,2023-09-09 11:00,06:00,KOTRA 케이무브 네트워킹 데이,"505 W Broadway, Vancouver",RBC,https://goo.gl/maps/wTE1iDjH9DEUPNhv9,,"﻿2023 KOTRA K-MOVE NETWORKING DAY
 
 이번 9월 KOTRA에서 주관하는 K-MOVE NETWORKING DAY에 여러분을 초대합니다.
 각 분야 취업선배와 함께 하는 커피챗과 동료 구직자들과 네트워킹 할 수 있는 기회를 놓치지 마세요!
@@ -466,8 +465,8 @@ KDD에서 모두를 위한 크리스마스 파티를 준비했습니다.
 
 문의 : 604 683 1820 (ext. 211)
 
-﻿"
-2023-09-02 14:00,[Back to School Adventures] 2023 Fall KDD Study & Group Activities,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/2023_Fall_Winter_Subgroup_Events_cxtugb.png,"안녕하세요,
+﻿",https://kmovevan.org/events/2023-networking-day,,
+recSAQuSve41ZF1hj,2023-09-02 14:00,,[Back to School Adventures] 2023 Fall KDD Study & Group Activities,,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/2023_Fall_Winter_Subgroup_Events_cxtugb.png,"안녕하세요,
 KDD에서 2023년 가을 신학기를 맞이하여 개발 능력 향상/구직 준비/네트워킹을 위한 소모임 활동을 새롭게 준비하였습니다.
 ﻿
 
@@ -491,8 +490,8 @@ KDD에서 2023년 가을 신학기를 맞이하여 개발 능력 향상/�
 
 많은 참여 부탁드립니다!
 
-★ 문의: subgroup@vancouverkdd.com"
-2023-08-26 10:00,2023 August Activity: Deep Cove Hiking,"2200 Panorama Dr, North Vancouver, BC V7G 1L2","2200 Panorama Dr, North Vancouver, BC V7G 1L2",https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/deepcove_mmlw2c.jpg,"여름이 한창인 8월, 밴쿠버 KDD에서 Deep Cove 하이킹 액티비티를 준비하였습니다.
+★ 문의: subgroup@vancouverkdd.com",,,
+recqEnmcpMUuRbptt,2023-08-26 10:00,03:00,2023 August Activity: Deep Cove Hiking,"2200 Panorama Dr, North Vancouver, BC V7G 1L2","2200 Panorama Dr, North Vancouver, BC V7G 1L2",https://goo.gl/maps/3H8AUL74hZDbkRBp7,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/deepcove_mmlw2c.jpg,"여름이 한창인 8월, 밴쿠버 KDD에서 Deep Cove 하이킹 액티비티를 준비하였습니다.
 
 밴쿠버 한인IT전문인들의 모임인 밴쿠버 KDD는 2017년 첫 모임을 시작으로 지금까지 60여 차례 온/오프라인 행사를 개최하며 밴쿠버 최고의 한인 개발자&디자이너 모임으로 자리매김하였습니다.
 
@@ -514,15 +513,15 @@ KDD에서 2023년 가을 신학기를 맞이하여 개발 능력 향상/�
 * 네이버 카페
 * 슬랙 (담당자: 윤채원, @윤채원 Jamie)
 * 이메일: subgroup@vancouverkdd.com
-"
-2023-08-07 11:00,KDD August Summer Picnic for Korean,"64P5+4C New Westminster, British Columbia",Hume Park,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/bbq_1_w3bv8r.jpg,"햇살 좋은 밴쿠버 여름의 상쾌함과 함께, KDD 회원 뿐만 아니라 가족까지 모두가 같이하는 즐거운 BBQ 파티를 준비하고 있습니다.
+",https://www.eventbrite.ca/e/vancouver-kdd-august-activity-deep-cove-hiking-tickets-700572510237?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=ebdsshcopyurl,,
+recpY0CpZYJ7rGNGO,2023-08-07 11:00,05:00,KDD August Summer Picnic for Korean,"64P5+4C New Westminster, British Columbia",Hume Park,https://goo.gl/maps/4ST2eMVfEEnDWDym8,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/bbq_1_w3bv8r.jpg,"햇살 좋은 밴쿠버 여름의 상쾌함과 함께, KDD 회원 뿐만 아니라 가족까지 모두가 같이하는 즐거운 BBQ 파티를 준비하고 있습니다.
  
 ◈ 일 시: 8월 7일 월요일 (BC Day), 오전 11시 - 오후 4시
 ◈ 장 소: Hume Park Picnic Shelter 
 ◈ 참가비: $20 (이트랜스퍼: michaelkyj@gmail.com, 자동입금)
 참여를 원하시는 분들은 그룹별로 카카오톡을 통해 공지 사항과 준비물을 안내드릴 예정이오니, 카카오톡 아이디를 꼭 남겨주세요!
-"
-2023-07-15 10:00,2023 Tech Conference for Korean: Dive into the Future,"800 Robson Street Vancouver, BC V6Z 3B7 Canada",UBC Robson Square Theatre,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/https___cdn.evbuc.com_images_542660859_393284882175_1_original_y3h88p.jpg,"밴쿠버 총영사관과 KDD가 함께하는 2023 밴쿠버 한인 IT 컨퍼런스
+",https://kddpicnic.eventbrite.ca,,
+recvxMEmpsRi2oAOI,2023-07-15 10:00,07:00,2023 Tech Conference for Korean: Dive into the Future,"800 Robson Street Vancouver, BC V6Z 3B7 Canada",UBC Robson Square Theatre,https://goo.gl/maps/8yncRnbjPDMuGPT49,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476221/https___cdn.evbuc.com_images_542660859_393284882175_1_original_y3h88p.jpg,"밴쿠버 총영사관과 KDD가 함께하는 2023 밴쿠버 한인 IT 컨퍼런스
 
 2023 Tech Conference for Korean: Dive into the Future
 
@@ -694,8 +693,8 @@ Technological advances in AI have empowered machines to impersonate humans. The 
 
 
 
-**This event will be given in Korean language. English translation will not be provided. **"
-2023-06-16 19:00,June Networking Event for Developer & Designer,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/600_513719338_kp3p4w.webp,"안녕하세요,
+**This event will be given in Korean language. English translation will not be provided. **",https://www.eventbrite.ca/e/2023-tech-conference-for-korean-dive-into-the-future-tickets-666284202987,,
+recKOeNiKjoVYoKnL,2023-06-16 19:00,03:00,June Networking Event for Developer & Designer,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/600_513719338_kp3p4w.webp,"안녕하세요,
 6월 밴쿠버 KDD 네트워킹 이벤트를 합니다. 밴쿠버 한인IT전문인들의 모임인 밴쿠버 KDD (https://vancouverkdd.com/ )는 2017년 첫 모임을 시작으로 지금까지 60여차례 온/오프라인 모임을 개최, 밴쿠버 최고의 한인 개발자&디자이너 모임으로 자리매김 하였습니다.
 6월 16일(금)에 디자이너, 개발자 및 IT 업계에 종사하는 분들을 위한 네트워킹 이벤트를 진행하고자 합니다. 여러가지 사정으로 오프라인 모임에 참석하기 어려운 분들을 위하여 이번 6월 모임은 온라인 이벤트로 준비하였습니다.
 이번 모임에서는 발표 대신 최근의 경제 불황을 극복하고 대학 졸업 후 Google 취업에 성공한 임현욱님을 모시고 질의응답(Ask Me Anything) 시간을 갖고자 합니다. 캐나다 이민부터 UBC에서의 학업 경험, SAP, Amazon, Wealthsimple 및 Google에서의 인턴쉽 활동, 그리고 미국 취업에 대한 질문이 있으신 분들은 아래 구글 폼 링크를 통해 질문을 제출해 주세요. https://forms.gle/5zGuZ9epDAkDt66e8 이외에도 다양한 네트워킹 시간도 준비되어 있으니 경력직, 신입, 학생분들의 많은 참여를 부탁드립니다.
@@ -707,12 +706,12 @@ Technological advances in AI have empowered machines to impersonate humans. The 
 발표:
 - 경제 불황에 대처하는 취업전략 - AMA (Ask Me Anything)
 : 임현욱 (UBC CS 졸업, 구글/아마존/SAP/WealthSimple 인턴 후 구글 취업, linkedin.com/in/hyunuk )
-사전 질문 제출: https://forms.gle/5zGuZ9epDAkDt66e8"
-2023-04-29 13:00,[KDD Social Meetup] Saturday Bouldering,The Hive Bouldering Gym,"520 Industrial Ave · Vancouver, BC",https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/600_511896094_nsa1zf.webp,"안녕하세요,
+사전 질문 제출: https://forms.gle/5zGuZ9epDAkDt66e8",https://www.eventbrite.ca/e/vancouver-kdd-june-networking-event-for-developer-designer-tickets-655940584947,,
+recNoXToludhI7lMB,2023-04-29 13:00,02:00,[KDD Social Meetup] Saturday Bouldering,The Hive Bouldering Gym,"520 Industrial Ave · Vancouver, BC",https://goo.gl/maps/c8EoHCoArea85kp86,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/600_511896094_nsa1zf.webp,"안녕하세요,
 밴쿠버 케이디디는 IT 업계 종사자 및 디자이너들이 서로 교류하고 친목을 도모하는 곳입니다. 저희는 매달 다양한 테마로 온라인 및 오프라인 모임을 진행하고 있습니다. 4월 소셜 모임으로 볼더링을 준비하였습니다. 저희 커뮤니티와 함께 즐거운 시간을 보내고 싶으신 분들의 많은 참여 부탁드립니다.
 RSVP: https://kddbouldering.eventbrite.ca
-감사합니다."
-2023-03-25 14:00,KDD 3월 오프라인 모임 안내,Creekside Community Centre,Multipurpose room 2,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/600_511207003_hqatyq.webp,"안녕하세요, 밴쿠버 KDD에서 3월 네트워킹 이벤트를 소개합니다!
+감사합니다.",https://kddbouldering.eventbrite.ca,,
+reclBMBi9tqylj7dk,2023-03-25 14:00,03:00,KDD 3월 오프라인 모임 안내,Creekside Community Centre,Multipurpose room 2,https://goo.gl/maps/bwsYngNLumviYS4g9,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476220/600_511207003_hqatyq.webp,"안녕하세요, 밴쿠버 KDD에서 3월 네트워킹 이벤트를 소개합니다!
 ​
 밴쿠버 한인IT전문인들의 모임인 밴쿠버 KDD (https://vancouverkdd.com/ )는 2017년 첫 모임을 시작으로 지금까지 50회 이상 온/오프라인 모임을 개최, 밴쿠버 최고의 한인 개발자&디자이너 모임으로 자리매김 하였습니다.
 ​
@@ -723,8 +722,8 @@ RSVP: https://kddbouldering.eventbrite.ca
 날짜: 2023년 3월 25일 (토) 2 - 5pm
 장소: Multipurpose room 2 @ Creekside Community Centre (https://goo.gl/maps/bwsYngNLumviYS4g9)
 인원: 35명 (인원이 모두 채워지면 폼이 닫히니 일찍 신청하시기 바랍니다)
-신청: https://kddmarchevent.eventbrite.ca"
-2023-02-18 12:45,KDD 2월 소셜 모임,"3360 Victoria Dr · Vancouver, BC",Trout Lake Community Centre (Trout lake community center ice link),https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/600_510480194_wdzkbk.webp,"안녕하세요!
+신청: https://kddmarchevent.eventbrite.ca",https://kddmarchevent.eventbrite.ca,,
+recELQzQbe20O7ui9,2023-02-18 12:45,02:00,KDD 2월 소셜 모임,"3360 Victoria Dr · Vancouver, BC",Trout Lake Community Centre (Trout lake community center ice link),https://goo.gl/maps/VyvAxfNMN5SduZqN7,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/600_510480194_wdzkbk.webp,"안녕하세요!
 ​
 다가오는 2월 18일 토요일 오후 12시 45분에 친목 모임을 하려고 합니다. 겨울 시즌인 만큼 함께 아이스 스케이트타고 카페에서 이야기 나누어요! 참가비용은 당일 아이스링크장에 직접 지불하시면 됩니다. KDD 회원이라면 누구나 참여 가능하며 자주 뵙는 분들, 처음오시는 분들 모두 환영합니다.
 ​
@@ -733,8 +732,8 @@ Where: Trout lake community center ice link
 What: 아이스 스케이팅 & 커피
 Fee : 입장료 $6.86 + 대화료 $3.46 + 커피값 + Tax / 현장에서 각자 부담
 RSVP: https://www.eventbrite.ca/e/vancouver-kdd-feb-ice-skating-soiree-tickets-536662761767
-​"
-2023-01-15 13:00,KDD 2023 Jan Offline Meet-up,"1 Athletes Way · Vancouver, BC",Multipurpose room 3 @ Creekside Community Recreation Centre,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/600_509714651_fwlqbc.webp,"안녕하세요!
+​",https://www.eventbrite.ca/e/vancouver-kdd-feb-ice-skating-soiree-tickets-536662761767,,
+recWM5ZsSV7Ds5MnQ,2023-01-15 13:00,03:00,KDD 2023 Jan Offline Meet-up,"1 Athletes Way · Vancouver, BC",Multipurpose room 3 @ Creekside Community Recreation Centre,https://goo.gl/maps/NpGrDk4DWpq71tJj9,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/600_509714651_fwlqbc.webp,"안녕하세요!
 2023년 새해가 밝았습니다. 2022년은 모두 잘 마무리 하셨나요? 드디어 기다리던 KDD 오프라인 모임이 1월 15일에 열릴 예정입니다. KDD는 월간 모임은 한인 IT 종사자들과 자유롭게 네트워킹하고 기술 트랜드에 대해 함께 이야기하는 모임입니다. 이번 모임에서는 지난 레쥬메 세션에 이어 테크니컬 인터뷰 준비에 대한 발표가 있을 예정입니다. 디자인관련 발표도 예정이니 많은 참여 바랍니다.
 날짜: 2023년 1월 15일 (일) 1 - 4pm
 장소: Multipurpose room 2 @ Creekside Community Centre (https://goo.gl/maps/bwsYngNLumviYS4g9)
@@ -746,8 +745,8 @@ RSVP: https://www.eventbrite.ca/e/vancouver-kdd-feb-ice-skating-soiree-tickets-
 13:50 - 14:20 Emotional Design: How to Design Products with Emotions by Jung
 14:20 - 15:00 직종별 네트워킹 (개발자/디자이너/자유그룹)
 15:00 - 16:00 자유네트워킹
-16:00 - 뒷풀이"
-2022-11-05 12:00,KDD Monthly Meetup,"1 Athletes Way · Vancouver, BC",Multipurpose room 3@ Creekside Community Centre,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/KDD_Nov_e90dad9f6b_fyasbt.jpg,"안녕하세요!
+16:00 - 뒷풀이",https://forms.gle/ZHUVeh6w5eEZZRz2A,,
+rec12WdvQwmTXBKaX,2022-11-05 12:00,03:00,KDD Monthly Meetup,"1 Athletes Way · Vancouver, BC",Multipurpose room 3@ Creekside Community Centre,https://www.google.com/maps/search/?api=1&query=49.271687%2C%20-123.10546,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/KDD_Nov_e90dad9f6b_fyasbt.jpg,"안녕하세요!
 모두가 기다리던 KDD월간 모임이 돌아왔습니다! 지난 8월 이후 오랜만에 열리는 오프라인 모임입니다. KDD는 월간 모임은 한인 IT 종사자들과 자유롭게 네트워킹하고 기술 트랜드에 대해 함께 이야기하는 모임입니다. 특히 이번 모임에서는 빅테크가 좋아하는 레쥬메 작성법에 대한 발표가 있을 예정이니 많은 관심과 기대 부탁드립니다.
 ****이번 모임 장소는 여러분들의 기부금으로 대관하려고 합니다. 기부는 자율이며 기부 여부에 관계없이 참여하시는 모든 분들을 환영합니다! $5 이상 $20 이하로 자유롭게 기부 부탁드립니다. (총 장소 대관 비용인 $173.25 모금을 목표로 하며 기부 금액이 초과되면 계좌를 닫도록 하겠습니다.) 당일날 현금 도네이션도 열려 있으니 많은 응원 부탁드립니다. 😉 ****
 기부금: e-transfer(michaelkyj@gmail.com | 이름: YONGJU KWON)
@@ -761,8 +760,8 @@ RSVP: https://www.eventbrite.ca/e/vancouver-kdd-feb-ice-skating-soiree-tickets-
 1:20 - 2:10 직종별 네트워킹 (개발자/디자이너/자유그룹)
 2:10 - 3:00 자유네트워킹
 *자리가 한정되어 있어 인원이 마감되면 참석이 제한될 예정이니 빠르게 RSVP부탁드립니다.
-"
-2022-09-30 19:00,KDD 9월 온라인 모임,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/600_507395912_kysitq.webp,"안녕하세요! 이번달 월 마지막 주 금요일 9월 30일 7시에 KDD 모임이 열립니다. 이번 KDD Meet-up은 한인 개발자 및 디자이너, 매니저분들과 네트워킹 할 수 있는 온라인 모입니다. 네트워킹 외에도 취업 선배들에게 취업 관련하여 무엇이든 물어보는 Q&A 세션도 준비되었습니다. 밴쿠버 외 도시 및 한국에 거주하시는 분들도 환영하니 많은 참여 바랍니다.-날짜: 2022년 9월 30일 금요일
+",https://www.meetup.com/vancouver-kdd/events/289422557/,,
+recl7C4xtoG3mQMOu,2022-09-30 19:00,03:00,KDD 9월 온라인 모임,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/600_507395912_kysitq.webp,"안녕하세요! 이번달 월 마지막 주 금요일 9월 30일 7시에 KDD 모임이 열립니다. 이번 KDD Meet-up은 한인 개발자 및 디자이너, 매니저분들과 네트워킹 할 수 있는 온라인 모입니다. 네트워킹 외에도 취업 선배들에게 취업 관련하여 무엇이든 물어보는 Q&A 세션도 준비되었습니다. 밴쿠버 외 도시 및 한국에 거주하시는 분들도 환영하니 많은 참여 바랍니다.-날짜: 2022년 9월 30일 금요일
 - 시간: 저녁 7시
 - 장소: 온라인 Zoom meeting (아래 폼으로 RSVP하면 줌 링크가 제공됩니다.)
 - 신청: https://forms.gle/PFVhvLd1Xg1ATiqe7
@@ -773,15 +772,15 @@ RSVP: https://www.eventbrite.ca/e/vancouver-kdd-feb-ice-skating-soiree-tickets-
 - 무엇이든 물어보세요(구직자를 위한 Q&A) - 개발자
 - 무엇이든 물어보세요(구직자를 위한 Q&A) - 디자이너
 - 자유 주제
-9:00 - After Party (자유네트워킹 & 보드게임)"
-2022-07-29 19:00,KDD Bowling Night,"5502 Lougheed Hwy. · Burnaby, BC",REVS,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_505531737_nu3cnr.webp,"안녕하세요!
+9:00 - After Party (자유네트워킹 & 보드게임)",https://www.meetup.com/vancouver-kdd/events/288766533/,,
+recrjloB7TU1rbxUI,2022-07-29 19:00,02:00,KDD Bowling Night,"5502 Lougheed Hwy. · Burnaby, BC",REVS,https://www.google.com/maps/search/?api=1&query=49.26404%2C%20-122.983635,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_505531737_nu3cnr.webp,"안녕하세요!
 7월 KDD 정기모임은 친목도 다질겸 같이 볼링을 치려고 합니다! 처음 혹은 혼자 참석하시는 분들도 한인 디자이너&개발자와 네트워킹의 기회이니 많은 참여 바랍니다! (볼링 못치셔도 괜찮습니다!)- 날짜: 7월 29일 (금) 19시 - 21시 | 18시 50분까지 도착해주세요!
 - 비용: 게임+음식+볼링화 $30 | 게임+볼링화 $25
 - 장소: REVS (https://goo.gl/maps/ozjB9DrNg7AV4ksV9)
 - 신청: https://forms.gle/FNPDDv11Zm1aeYsJ6
 - 인원:선착순 24명
-금요일 저녁 KDD와 함께 즐거운 시간 보내요!"
-2022-06-24 19:00,KDD April Offline Meet-up,Zoom,,,"안녕하세요! 
+금요일 저녁 KDD와 함께 즐거운 시간 보내요!",https://www.meetup.com/vancouver-kdd/events/287178560/,,
+recmmYmabmfuNzz2U,2022-06-24 19:00,03:00,KDD April Offline Meet-up,Zoom,,,,"안녕하세요! 
 
 여름이 다가오는데 아직도 날이 흐려 아쉽네요. 야외활동을 하지 못하는 아쉬운 마음을 KDD 온라인 모임에서 전환해보아요! 시간/공간 제약상 오프라인 모임에 참석하지 못하셨던 분들을 위해 이번 모임은 오랜만에 다시 Zoom에서 진행하려고 합니다. 
 
@@ -803,8 +802,8 @@ RSVP: https://www.eventbrite.ca/e/vancouver-kdd-feb-ice-skating-soiree-tickets-
 Allen Kim - Software Engineer (DevOps) @ EA
 Jae Hyeok Jang - Software Engineer @ AWS
 Donggu (Harrison) Lee - Senior ML / Data Engineer
-"
-2022-05-21 13:00,2022 Tech Conference for Korean: Visioning & Enlightenment,"800 Robson St · Vancouver, BC",UBC Robson Square Theatre,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/1_bf3e5a5d35_ngc5ec.png,"밴쿠버 총 영사관과 한인 IT전문인 커뮤니티 KDD에서 IT 분야 재직자 및 구직자 분을 위한 오프라인 행사를 개최합니다.
+",https://forms.gle/mpw7WVHxB11f1HCAA,,
+recFn8WAkHfBRc41d,2022-05-21 13:00,04:00,2022 Tech Conference for Korean: Visioning & Enlightenment,"800 Robson St · Vancouver, BC",UBC Robson Square Theatre,https://www.google.com/maps/search/?api=1&query=49.282925%2C%20-123.12039,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476219/1_bf3e5a5d35_ngc5ec.png,"밴쿠버 총 영사관과 한인 IT전문인 커뮤니티 KDD에서 IT 분야 재직자 및 구직자 분을 위한 오프라인 행사를 개최합니다.
 이번 행사는 재직자의 인사이트를 향상시켜줄 IT 및 Design 교수님들의 강연이 있을 예정입니다. 강연은 IT의 트랜드와 미래라는 주제로 진행되며 강연 후에는 참여자간 네트워킹의 시간도 마련되었이니 재직자분들의 많은 신청 바랍니다!
 강연과 더불어 재직자 및 학생들을 위한 멘토링 세션이 준비되었습니다. 마이크로소프트, 아마존, 구글 등 빅테크부터 스타트업까지 다양한 분야에서 활약중인 멘토분들이 취업 노하우를 전수해 주실 예정입니다. 개발 및 다지인 분야 취업에 대한 궁금증도 풀어 볼 수 있는 시간, 구직자 및 학생분들은 놓치지 마세요!
 - 일시: 5월 21일 토요일 오후1:00 - 5:00
@@ -823,8 +822,8 @@ By 이진무 (Gene Moo Lee, Associate Professor, Information Systems & Analytics
 우리는 페이스북과 인스타그램의 사진, 유튜브와 틱톡의 영상 등 시각적인 데이터를 소셜미디어와 온라인 플랫폼에서 가장 먼저 접하게 됩니다. 온라인 플랫폼의 이러한 시각적 데이터셋은 소비자 행동, 비즈니스 전략 및 사회적 현상에 대한 지식을 발전시킬 수 있는 기회가 됩니다. 이 강연에서는 컴퓨터 비전과 딥 러닝을 사용해 시각적 데이터 분석 솔루션을 제공하는 최근 연구 세가지를 소개합니다.
 [Design] 창의적인 생각과 기술 (Creative Minds and Technology)
 By 김우남 (Woonam Kim, Associate Professor, 3D Computer Animation, Emily Carr University)
-우리는 빠르게 발전하는 과학기술 속에서 살고 있고 모든 사회분야에서 Creative Minds의 중요성은 더욱 강조되고 있습니다. 이 강의를 통해 우리는 과학기술과 예술이 만나는 접점에서 발생하는 다양한 혁신의 가능성과 그것을 만들어내는 가장 중요한 능력인 Creative Minds에 대해 고찰해 볼수 있습니다."
-2022-04-24 13:00,April KDD in-person Meetup,"1169 Pinetree Way · Coquitlam, BC","Coquitlam Public Library, City Centre Branch",https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_503498667_a90ief.webp,"안녕하세요!
+우리는 빠르게 발전하는 과학기술 속에서 살고 있고 모든 사회분야에서 Creative Minds의 중요성은 더욱 강조되고 있습니다. 이 강의를 통해 우리는 과학기술과 예술이 만나는 접점에서 발생하는 다양한 혁신의 가능성과 그것을 만들어내는 가장 중요한 능력인 Creative Minds에 대해 고찰해 볼수 있습니다.",https://www.eventbrite.ca/e/2022-tech-conference-for-korean-visioning-enlightenment-tickets-335818370787,,
+recTePSRRBsbtVvxO,2022-04-24 13:00,03:00,April KDD in-person Meetup,"1169 Pinetree Way · Coquitlam, BC","Coquitlam Public Library, City Centre Branch",https://www.google.com/maps/search/?api=1&query=49.28104%2C%20-122.79268,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_503498667_a90ief.webp,"안녕하세요!
 4월 24일 일요일 오후 1시에 KDD의 4월 오프라인 모임이 열립니다.
 KDD는 매 달 한인 개발자, 디자이너 및 IT업계 종사자분들이 만나 테크 관련 이야기를 나누고 친목도 다지는 모임을 주최하고 있습니다.
 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임도 Topic별 소그룹을 운영할 예정입니다. 관심사가 같은분들끼리 이야기 나눌 수 있도록 그룹을 준비하겠습니다. LinkedIn Review 그룹에서는 서로 링크드인을 리뷰하고 더 매력적인 지원자로 보이기 위한 꿀팁도 나눠 보려고 합니다.
@@ -843,8 +842,8 @@ KDD는 매 달 한인 개발자, 디자이너 및 IT업계 종사자분들이 �
 - Side Project Plan or Swag
 - 자유주제
 3:10 - 4:00 직군별 그룹
-4:00 - After Party"
-2022-04-16 12:30,<KDD 원데이 클래스: Machine Learning for Everybody>,"1169 Pinetree Way · Coquitlam, BC","Coquitlam Public Library, City Centre Branch",,"KDD 원데이 클래스는 IT 정보를 공유하고 Hands-on으로 실습하며 기술을 익혀보는 프로그램입니다. 이번 세션에서는 머신러닝의 기초를 배워보려고 합니다. 세션에 참여하시면 머신러닝이 무엇이며 기초 머신러닝 모델 및 공부 방법을 배우실 수 있습니다.
+4:00 - After Party",https://www.meetup.com/vancouver-kdd/events/285362694/,,
+recykBhwQH7AYfPB9,2022-04-16 12:30,04:30,<KDD 원데이 클래스: Machine Learning for Everybody>,"1169 Pinetree Way · Coquitlam, BC","Coquitlam Public Library, City Centre Branch",https://www.google.com/maps/search/?api=1&query=49.28104%2C%20-122.79268,,"KDD 원데이 클래스는 IT 정보를 공유하고 Hands-on으로 실습하며 기술을 익혀보는 프로그램입니다. 이번 세션에서는 머신러닝의 기초를 배워보려고 합니다. 세션에 참여하시면 머신러닝이 무엇이며 기초 머신러닝 모델 및 공부 방법을 배우실 수 있습니다.
 - 비용: 무료
 - 대상: 머신러닝 비전공자 10명
 1. Random Forest와 Decision Tree의 차이를 아신다면 이번 세션에 적합하지 않아요.
@@ -858,8 +857,8 @@ KDD는 매 달 한인 개발자, 디자이너 및 IT업계 종사자분들이 �
 3. 데이터 분석을 위한 툴 : Numpy, Pandas, Scikit learn
 4. 머신러닝 스코어: Accuracy, Precision, Recall, F1
 5. Hands-on: Kaggle Competition
-- 신청: https://forms.gle/ehsJc3HZDBZS1ETj6"
-2022-03-26 14:00,KDD March Offline Meetup,"1169 Pinetree Way · Coquitlam, BC","Coquitlam Public Library, City Centre Branch",https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_502834029_xe0txp.webp,"안녕하세요,
+- 신청: https://forms.gle/ehsJc3HZDBZS1ETj6",https://www.meetup.com/vancouver-kdd/events/285180663/,,
+rechWU259MlTHoTiW,2022-03-26 14:00,02:00,KDD March Offline Meetup,"1169 Pinetree Way · Coquitlam, BC","Coquitlam Public Library, City Centre Branch",https://www.google.com/maps/search/?api=1&query=49.28104%2C%20-122.79268,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_502834029_xe0txp.webp,"안녕하세요,
 이제 코로나의 시대가 저물고 일상으로 돌아가고 있네요. 이번 모임은 오랜만에 오프라인으로 진행하고자 합니다.
 KDD는 매 달 한인 개발자, 디자이너 및 IT업계 종사자분들이 만나 테크 관련 이야기를 나누고 친목도 다지는 모임을 주최하고 있습니다.
 이번 모임은 Open Networking, 소주제 Discussion 및 Lightning Talk 코너를 준비했습니다. Lightning Talk은 5-10분 사이 짧은 시간동안 테크/디자인 관련 주제로 사전에 신청받아 발표하는 세션입니다. 모든 멤버에게 열려있는 오픈 스피킹 세션인 만큼 앞으로 많은 관심 부탁드립니다. 자세한 사항은 모임에서 공지드리겠습니다.
@@ -877,8 +876,8 @@ KDD는 매 달 한인 개발자, 디자이너 및 IT업계 종사자분들이 �
 - 디자이너에게 필요한 Soft Skills
 - 자유주제
 4:00 - After Party
-*Covid19 백신(2차 이상) 접종 필수"
-2022-02-25 19:00,KDD 2월 온라인 모임 | Feb 2022 Virtual Meetup,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_502281734_hskl0o.webp,"어느덧 입춘이 다가오네요!
+*Covid19 백신(2차 이상) 접종 필수",https://www.meetup.com/vancouver-kdd/events/284749847/,,
+recshPYB52hVyw92O,2022-02-25 19:00,03:00,KDD 2월 온라인 모임 | Feb 2022 Virtual Meetup,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756476218/600_502281734_hskl0o.webp,"어느덧 입춘이 다가오네요!
 비록 날은 춥지만 해가 길어지고 봄이 오는게 느껴지네요.
 KDD는 매 달 한인 개발자, 디자이너 및 IT업계 종사자분들이 만나 테크 관련 이야기를 나누고 친목도 다지는 모임을 주최하고 있습니다.
 이번 모임 역시 모두의 안전을 위해 온라인으로 진행하고자 합니다. 지난 투표 결과 2월 모임은 금요일 저녁 7시에 열기로 하였습니다.
@@ -898,8 +897,8 @@ KDD는 매 달 한인 개발자, 디자이너 및 IT업계 종사자분들이 �
 7. 2 여름 휴가 계획 및 가고싶은 여행지
 8. 3 자유주제
 9. 9:40 - After Party
-"
-2022-01-28 19:00,KDD 1월 온라인 모임 | January 2022 Virtual Meetup,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477173/600_501623654_amz2wo.webp,"KDD 1월 온라인 모임 | January 2022 Virtual Meetup
+",https://www.meetup.com/vancouver-kdd/events/284261429/,,
+recVYJ4c3d2irkamT,2022-01-28 19:00,03:00,KDD 1월 온라인 모임 | January 2022 Virtual Meetup,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477173/600_501623654_amz2wo.webp,"KDD 1월 온라인 모임 | January 2022 Virtual Meetup
 2022년이 시작한지도 벌써 한달이 지났습니다. 새해에도 모두 건강하고 좋은 일이 있으시길 바래요!
 KDD에서는 매달 한인 개발자, 디자이너 및 IT업계 종사자분들이 만나 테크 관련 이야기를 나누고 친목을 다지는 모임은 주최하고 있습니다.
 코로나 이슈로 오프라인 모임이 제한되는 관계로 이번달 모임은 온라인으로 진행하고자 합니다. 지난 투표 결과에 따라 1월 모임은 금요일 저녁 7시에 열기로 했습니다. 이번 모임에서는 1부에 테크 관련 주제로 브레이크아웃룸으로 나눠 자유롭게 이야기 나누고 2부에서는 테크 외 주제를 준비했습니다.
@@ -922,8 +921,8 @@ KDD에서는 매달 한인 개발자, 디자이너 및 IT업계 종사자분들�
 - 한국과 캐나다 직장 생활 비교
 - 자유주제
 - 9:40 ~ After Party
-"
-2021-12-19 19:00,KDD Christmas Party,"4501 North Rd #109A · Burnaby, BC",Standing Egg Coffee,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477173/20211220_p_foe07m.jpg,"2021년 KDD와 함께해주신 멤버분들께 감사 인사를 드립니다.
+",https://www.meetup.com/vancouver-kdd/events/283521891/,,
+recUKne8F2OsGFIkM,2021-12-19 19:00,03:00,KDD Christmas Party,"4501 North Rd #109A · Burnaby, BC",Standing Egg Coffee,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477173/20211220_p_foe07m.jpg,"2021년 KDD와 함께해주신 멤버분들께 감사 인사를 드립니다.
 이번 모임은 크리스마스를 맞아서 in-person 파티를 진행하려고 합니다.
 크리스마스 하면 역시 선물이 빠질 수 없죠! 참여자들 간 친목을 다지고 선물도 공유하기 위해 Secret Santa Game을 준비했습니다! 게임 참여를 원하시면 $20 상당의 포장된 선물을 준비해주세요.
 자세한 게임 진행 방식은 당일 날 안내해드리겠습니다.
@@ -935,8 +934,8 @@ KDD에서는 매달 한인 개발자, 디자이너 및 IT업계 종사자분들�
 - 드레스코드: 블랙&레드
 - RSVP: https://vancouverkdd.com/events/8
 본 행사는 Covid 2차 백신 접종자만 참여 가능하며 취식 외에는 마스크 착용을 부탁드립니다.
-12월 19일에 KDD와 함께 즐거움을 나눠요!"
-2021-11-06 13:30,2021 IT Career Guide & Networking,"1133 W Hastings St · Vancouver, BC",Pinnacle Hotel Harbourfront,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477173/2021-11-07-05_cimkok.jpg,"밴쿠버 영사관과 한인 IT전문인 커뮤니티 KDD에서 구직자 분들, 이직 희망자 분들에게 도움이 될 수 있는 오프라인 행사를 밴쿠버 총영사관과 함께 개최합니다.
+12월 19일에 KDD와 함께 즐거움을 나눠요!",https://www.meetup.com/vancouver-kdd/events/282601888/,,
+recFvFYg3eKBV4E3w,2021-11-06 13:30,03:00,2021 IT Career Guide & Networking,"1133 W Hastings St · Vancouver, BC",Pinnacle Hotel Harbourfront,https://goo.gl/maps/X1LxbAT8WiWWu6ck9,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477173/2021-11-07-05_cimkok.jpg,"밴쿠버 영사관과 한인 IT전문인 커뮤니티 KDD에서 구직자 분들, 이직 희망자 분들에게 도움이 될 수 있는 오프라인 행사를 밴쿠버 총영사관과 함께 개최합니다.
 마이크로소프트, 아마존, SAP, Cisco, 마스터카드, 텔러스 등 밴쿠버 소재 빅테크 기업들에 재직중인 멘토분들과 유니티, EA, A Thinking Ape등 게임회사에 재직중인 멘토분들, 그리고 중견기업, 스타트업에서 활약중인 멘토분들이 취업 노하우를 전수해 주실 예정입니다. 클라우드, 금융, 보안, 게임등 다양한 산업에 대한 견문도 넓히고 개발, 디자인, 데이터사이언스 분야 취업에 대한 궁금증도 풀어볼수 있는 시간, 구직자 분들 및 학생분들은 놓치지 마세요.
 일시: 11월 6일 토요일 오후1:30 - 4:30
 장소: Pinnacle Hotel Harbourfront Cordova Ballroom
@@ -945,8 +944,8 @@ KDD에서는 매달 한인 개발자, 디자이너 및 IT업계 종사자분들�
 프로그램: 레쥬메 및 포트폴리오 리뷰, 구직자와의 Q&A (구직 노하우, 인터뷰 팁 공유), 네트워킹이벤트
 코로나 안전수칙을 지키기 위해 2차 접종 완료 백신카드(QR코드) 필수이며 실내에서는 마스크를 반드시 착용 하셔야 합니다.
 레쥬메 및 포트폴리오 리뷰를 받고자 하는 분들은 티켓 구매시 레쥬메리뷰를 추가해주시고 구글폼으로 레쥬메를 이벤트 전에 제출 바랍니다.
-"
-2021-09-26 11:00,KDD Potluck Party | KDD 팟럭 파티,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477172/600_498961526_g7bntx.webp,"한가위의 풍요로움을 나누고자 KDD Potluck 파티가 9월 26일 일요일에 열립니다.
+",https://www.meetup.com/vancouver-kdd/events/281659303/,,
+rec12azxY1CrclZu7,2021-09-26 11:00,04:00,KDD Potluck Party | KDD 팟럭 파티,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477172/600_498961526_g7bntx.webp,"한가위의 풍요로움을 나누고자 KDD Potluck 파티가 9월 26일 일요일에 열립니다.
 한가위를 맞아 KDD에서 Offline 모임을 준비하였습니다. 이번 모임은 KDD멤버 뿐만아니라 가족/친구분들과 함께 참여가 가능하며 참석하시는 분들이 스스로 음식을 준비하고 나눠 먹는 Potluck으로 진행하고자 합니다.
 신청 링크: https://docs.google.com/forms/d/e/1FAIpQLSe5FDs19XPBW5TZeqBzJ65b4BCAgZ5iDBEsYVaYP10BJQ2BnQ/viewform?usp=sf_link
 일시: 9월 26일 (일요일) 오전 11시 - 오후 3시
@@ -965,8 +964,8 @@ Potluck외에도 참석자분간의 다양한 네트워킹 프로그램도 마�
 KDD 9월 팟럭 진행 관련 안내
 내일 강수확률 100%에 강우주의보가 내린 상황이라 부득이하게 모임은 온라인으로 진행될 예정입니다.
 이번 모임은 원래 팟럭에서 예정되어 있었던 스피드 네트워킹과 추가로 소셜게임을 할 예정이에요. (참여 인원수에 따라 조정 예정) 모임이 예정되어 있었던 오전 11시에 모임이 시작되며 온라인으로 점심도 가볍게 먹으며 모임을 진행하도록 하겠습니다. (다양한 먹방 환영하며 식사할때 편하게 비디오 off하셔도 좋습니다!)
-줌 링크는 내일 오전에 슬랙을 통해 안내드리며 사전에 신청해주신 분들은 메일로 미리 안내드리겠습니다! 그럼 모두 내일 모임에서 뵐게요!"
-2021-08-26 19:00,KDD 8월 온라인 모임 | August 2021 Virtual Meetup,Zoom,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477172/Copy_of_FRIDAY_NIGHT_MEET_UP_1_5a3f173e9b_q9uvet.png,"KDD 8월 온라인 모임 | August 2021 Virtual Meetup
+줌 링크는 내일 오전에 슬랙을 통해 안내드리며 사전에 신청해주신 분들은 메일로 미리 안내드리겠습니다! 그럼 모두 내일 모임에서 뵐게요!",https://www.meetup.com/vancouver-kdd/events/280907844/,,
+recrz9CWW1WoE7iCh,2021-08-26 19:00,03:00,KDD 8월 온라인 모임 | August 2021 Virtual Meetup,Zoom,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477172/Copy_of_FRIDAY_NIGHT_MEET_UP_1_5a3f173e9b_q9uvet.png,"KDD 8월 온라인 모임 | August 2021 Virtual Meetup
 다들 바비큐 파티는 어떠셨나요? 모임에서 못 나눈 이야기가 많아 아쉬웠다면.. 곧 있을 8월 모임에서 다시 만나요.
 지난 투표 결과에 따라 8월 온라인 모임은 목요일 저녁 7시에 열기로 했습니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 1부는 테크 관련 주제를 브레이크아웃룸을 나눠 자유롭게 이야기 나누고 2부에서는 바비큐파티 뒷풀이 방, 그리고 1부와 2부 사이에는 KDD Step-up Project Final Presentation 이 예정되어 있습니다. 이번에는 각 브레이크아웃룸에 모더레이터 없이 자유롭게 방을 이동할수 있도록 할 예정입니다. 참석 원하는 분들은 다들 RSVP해주세요!!
 - 날짜: 2021년 8월 26일 목요일
@@ -981,8 +980,8 @@ KDD 9월 팟럭 진행 관련 안내
 - 8:40 - 9:40 2부 소주제방 (브레이크아웃룸)
 - 바비큐파티 뒷풀이
 - 9:40 ~ After Party
-"
-2021-08-15 11:00,KDD BBQ Party | KDD 바비큐 파티,"975 King Albert Ave · Coquitlam, BC",버나비 Central Park,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477172/600_497917840_xf81mk.webp,"무려 1년 8개월만의 오프라인 모임!! KDD BBQ Party 가 8월 15일 일요일에 열립니다.
+",https://www.meetup.com/vancouver-kdd/events/280268514/,,
+recj0KdpgmzL7kT6j,2021-08-15 11:00,05:00,KDD BBQ Party | KDD 바비큐 파티,"975 King Albert Ave · Coquitlam, BC",버나비 Central Park,https://goo.gl/maps/wrDWzkUGRmMrh6wv6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477172/600_497917840_xf81mk.webp,"무려 1년 8개월만의 오프라인 모임!! KDD BBQ Party 가 8월 15일 일요일에 열립니다.
 최근 백신 접종 상황과 정부의 제재 조치가 완화되었기에 오랜만에 Offline 모임을 진행하게 되었습니다.
 Covid19 Pandemic 으로 인해 그 동안 만나지 못했던 그리운 분들과 네트워킹 할 수 있는 시간을 BBQ 와 함께 준비하였으니, 다들 RSVP해주세요! (신청: https://forms.gle/pi2Rdth3ezajaAPH6 )
 일시: 8월 15일, 일요일 오전 11시 – 오후 4시
@@ -1002,8 +1001,8 @@ KDD 2021 SUMMER BBQ Party
 일기예보에 따르면 해당일에 비가 올 확률이 있다고하여,
 다들 기대하고 계시는 이벤트를 취소 혹 일정 변경을 하기 보단,
 비가 오더라도 이벤트를 진행 할 수 있는 장소 (covered picnic area) 를 섭외하였습니다.
-장소 변경으로 인해 라이드가 필요하신 분들은 자유롭게 조장과 상의해주시면 감사하겠습니다."
-2021-07-30 19:00,KDD 7월 온라인 모임 | July 2021 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_497782248_vug071.webp,"지난 모임에서 안내드린대로 이번달 월 마지막주 금요일인 7월 30일! 저녁 7시에 KDD의 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 여러 주제가 동시에 다른 breakout room에서 이루어지고 스스로 원하는 주제를 찾아 이동할 수 있습니다.
+장소 변경으로 인해 라이드가 필요하신 분들은 자유롭게 조장과 상의해주시면 감사하겠습니다.",https://www.meetup.com/vancouver-kdd/events/279850702/,,
+recxd7SJS9Y1rBIEE,2021-07-30 19:00,03:00,KDD 7월 온라인 모임 | July 2021 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_497782248_vug071.webp,"지난 모임에서 안내드린대로 이번달 월 마지막주 금요일인 7월 30일! 저녁 7시에 KDD의 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 여러 주제가 동시에 다른 breakout room에서 이루어지고 스스로 원하는 주제를 찾아 이동할 수 있습니다.
 여기에 1:1 스피드네트워킹을 1부와 2부 사이에 할 예정이며 각 브레이크아웃 룸 이외에 자유주제로 네트워킹 할수 있는 브레이크 아웃 룸을 운영할 예정입니다. 참석을 원하는 분들은 다들 RSVP해주세요!!
 - 날짜: 2021년 7월 30일 금요일
 - 시간: 저녁 7- 10시 (19:00 - 22:00)
@@ -1022,8 +1021,8 @@ KDD 2021 SUMMER BBQ Party
 - 자유 주제
 - 9:40 ~ After Party
 - 8월에 있을 오프라인 모임을 기대하고 계신가요? 8월 바비큐파티 관련 자세한 안내는 7월 모임에서 해드릴 예정입니다. 그럼 모두 금요일에 뵐게요!
-"
-2021-06-18 19:00,KDD 6월 온라인 모임 | June 2021 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_496930135_xxkmca.webp,"6월 18일 금요일 저녁 7시에 KDD의 6월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 지난 5월 모임과 유사하게 여러 주제가 동시에 다른 breakout room에서 이루어지고 스스로 원하는 주제를 찾아 이동할 수 있도록 할 예정입니다.
+",https://www.meetup.com/vancouver-kdd/events/279707184/,,
+reclnfkQAHRJwkoo9,2021-06-18 19:00,03:00,KDD 6월 온라인 모임 | June 2021 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_496930135_xxkmca.webp,"6월 18일 금요일 저녁 7시에 KDD의 6월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 지난 5월 모임과 유사하게 여러 주제가 동시에 다른 breakout room에서 이루어지고 스스로 원하는 주제를 찾아 이동할 수 있도록 할 예정입니다.
 여기에 1:1 스피드네트워킹을 1부와 2부 사이에 할 예정이며 각 브레이크아웃 룸 이외에 자유주제로 네트워킹 할수 있는 브레이크 아웃 룸을 운영할 예정입니다. 다들 RSVP해주세요!!
 - 날짜: 2021년 6월 18일 금요일
 - 시간: 저녁 7 - 10시 (19:00 - 22:00)
@@ -1039,8 +1038,8 @@ KDD 2021 SUMMER BBQ Party
 - 면접관에게 직접 듣는 인터뷰 성공 전략 : 스피커 - Cisco의 Rio Jung님
 - 캐나다에서의 돈 관리 비법 - 재무 계획과 투자
 - 10:20 ~ After Party
-"
-2021-05-28 19:00,KDD 5월 온라인 모임 | May 2021 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_496499020_uldozv.webp,"바로 이번주 금요일 저녁 7시에 KDD의 5월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 지난 모임의 피드백을 반영하여 더욱 특별하게 밋업이 진행될 예정입니다.
+",https://www.meetup.com/vancouver-kdd/events/278842797/,,
+rec4UraJqEg8nnCtl,2021-05-28 19:00,03:00,KDD 5월 온라인 모임 | May 2021 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_496499020_uldozv.webp,"바로 이번주 금요일 저녁 7시에 KDD의 5월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 지난 모임의 피드백을 반영하여 더욱 특별하게 밋업이 진행될 예정입니다.
 밋업 모임은 1부와 2부로 나뉘어져서 두개의 주제가 동시에 다른 breakout room에서 이루어지고 스스로 원하는 주제를 찾아 이동할 수 있도록 할 예정입니다. (클럽 하우스와 비슷하다고 생각하시면 될것 같아요.)
 줌을 최신 버전으로 업데이트 해주셔야 소주제방(Breakout room)선택이 가능합니다. 반드시 최신버전의 줌으로 다운로드/업데이트 해주세요. 여기에 추가로, 지난 애프터파티에서 반응이 좋았던 스피드네트워킹방식의 아이스브레이킹을 1부와 2부 사이에 할 예정이에요. 다들 어서 신청해주세요!
 - 날짜: 2021년 5월 28일 금요일
@@ -1059,8 +1058,8 @@ KDD 2021 SUMMER BBQ Party
 - 10:20 ~ After Party
 - 레쥬메 로스팅이란? 레쥬메 로스팅 워크샵은 멘토분과 함께 다른 분들의 레쥬메를 보고 배울 수 있는 시간입니다.
 - 개선점을 같이 찾아보고 더 좋은 레쥬메로 본인의 레쥬메를 발전시켜보세요. 익명으로 리뷰 받기를 원하는 분은 본인의 레쥬메를 개인정보를 제외하고 RSVP폼에 올려주세요. (이름, 이메일 등 기타 본인 임을 판단할수 있는 정보를 제외할 수 있습니다. )
-"
-2021-04-23 19:00,KDD 4월 온라인 모임 | Apr 2021 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_495760984_yi4of7.webp,"KDD 4월 온라인 모임 | Apr 2021 Virtual Meetup
+",https://www.meetup.com/vancouver-kdd/events/278392930/,,
+recd7sk1i4oH114b7,2021-04-23 19:00,02:00,KDD 4월 온라인 모임 | Apr 2021 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477171/600_495760984_yi4of7.webp,"KDD 4월 온라인 모임 | Apr 2021 Virtual Meetup
 모두가 기다리던 4월 모임! 이번 금요일 저녁 7시에 KDD의 4월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임부터는 설문조사 피드백을 반영하여 더욱 특별하게 소주제방이 운영될 예정입니다.
 이전까지는 분야별 소 주제방이 있었다면 이번부터는 흥미로운 주제가 각 breakout room에서 이루어지고 스스로 원하는 주제를 찾아 이동할 수 있도록 운영할 예정입니다. (클럽 하우스와 비슷하다고 생각하시면 될것 같아요.)
 줌을 최신 버전으로 업데이트 해주셔야 소주제방(Breakout room)선택이 가능합니다. 반드시 최신버전의 줌으로 다운로드/업데이트 해주세요.
@@ -1077,8 +1076,8 @@ KDD 2021 SUMMER BBQ Party
 - 9시 이후 ~ After party (자유롭게 이동하며 1:1 대화가 가능한 gather에서 불금을 즐겨요! 새벽까지도 폭풍 수다 가능합니다.)
 -소 주제방 중 한곳에서 주니어/학생 분들을 위한 커리어토크가 약 1시간동안 진행될 예정입니다. 아마존의 시니어 개발자 분과 유니티의 시니어 UI&UX 디자이너 분이 패널로 오시니 커리어 관련 궁금한 점들을 맘껏 질문해보세요!
 -각 브레이크아웃 룸 주제는 월요일에 공개 예정입니다.
-"
-2021-03-19 19:00,KDD 3월 온라인 모임 | Mar 2021 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477170/600_495117034_mptttc.webp,"KDD 3월 온라인 모임 | Mar 2021 Virtual Meetup
+",https://www.meetup.com/vancouver-kdd/events/277633517/,,
+reclYePngRt2Ce7kK,2021-03-19 19:00,02:00,KDD 3월 온라인 모임 | Mar 2021 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477170/600_495117034_mptttc.webp,"KDD 3월 온라인 모임 | Mar 2021 Virtual Meetup
 다들 많이 기다리셨죠? 바로 3월 19일 금요일 저녁 7시에 KDD의 3월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임도 Topic별 breakout room을 운영할 예정인데요, 모임 신청 시 관심있는 분야를 최대 3개 선택해주세요. 관심사가 같은분들끼리 이야기 나눌 수 있도록 브레이크아웃 룸을 준비하겠습니다.
 NEW!! 이번엔 토픽에 링크드인 리뷰를 추가해 봤어요. 서로 링크드인 리뷰나 endorse를 해줄수도 있고 더 매력적인 지원자로 보이기 위한 꿀팁도 나눠 보려고 합니다. :) 링크드인 어떻게 꾸며야 할지 모르겠다! 하는 분들은 이 토픽을 골라 주세요.
 KDD 모임에서 꾸준하게 인기 많은 토픽이죠? 레쥬메리뷰를 원하는 분은 신청시 레쥬메리뷰 선택 후 vancouverkdd@gmail.com로 레쥬메 전달 부탁드릴게요. (멘토분들이 미리 읽어볼 수있도록 레쥬메는 18일 자정까지 보내주세요.)
@@ -1091,8 +1090,8 @@ KDD 모임에서 꾸준하게 인기 많은 토픽이죠? 레쥬메리뷰를 원
 - 토픽 별 Breakout Room : 20분씩 총 3 라운드
 - 8:30 ~ 랜덤 Large Breakout Room : 20분씩 총 2 라운드
 - 9시 이후 ~ After party (호응도에 따라 12시 까지 이어질수도 있습니다! 불금 같이 즐겨요!)
-"
-2021-02-18 19:00,KDD 2월 온라인 모임 | Feb 2021 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477170/600_494671676_sqfri2.webp,"2021년 2월 KDD의 모임, 바로 2월 18일 목요일 저녁 7시에 KDD 2월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임도 Topic별 breakout room을 운영할 예정인데요, 신청시 디자인/게임/프론트엔드/백엔드/창업 중 관심있는 분야를 최대 3개 선택해주세요. 관심사가 같은분들끼리 이야기 나눌 수 있도록 네트워킹 룸을 준비하겠습니다.
+",https://www.meetup.com/vancouver-kdd/events/276854073/,,
+recT3lupEFQYpGZzL,2021-02-18 19:00,02:00,KDD 2월 온라인 모임 | Feb 2021 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477170/600_494671676_sqfri2.webp,"2021년 2월 KDD의 모임, 바로 2월 18일 목요일 저녁 7시에 KDD 2월 모임이 열립니다. 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임도 Topic별 breakout room을 운영할 예정인데요, 신청시 디자인/게임/프론트엔드/백엔드/창업 중 관심있는 분야를 최대 3개 선택해주세요. 관심사가 같은분들끼리 이야기 나눌 수 있도록 네트워킹 룸을 준비하겠습니다.
 선택하지 않은 분들은 랜덤하게 네트워킹룸을 배정할 예정이니 신청시 꼭 선택 부탁드립니다.
 레쥬메리뷰를 원하는 분은 선택후 vancouverkdd@gmail.com로 레쥬메 전달 부탁드릴게요. (멘토분들이 미리 읽어볼 수있도록 레쥬메는 17일 자정까지 보내주세요.)
 - 날짜: 2021년 2월 18일 목요일
@@ -1105,8 +1104,8 @@ KDD 모임에서 꾸준하게 인기 많은 토픽이죠? 레쥬메리뷰를 원
 - 7:20-7:40: 발표 1 : TBD (발표 원하는 분은 DM 주세요)
 - 7:40-9:00: 토픽별 네트워킹 (Breakout Room)
 - 9:00~: After party (호응도에 따라 10시까지 이어질수 있습니다!)
-"
-2021-01-07 19:00,KDD 1월 온라인 모임 | Jan 2021 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477170/600_494210043_gzhe9n.webp,"2021년 신축년의 해가 밝았습니다. 1월 KDD의 신년모임, 바로 1월 7일 목요일 저녁 7시에 KDD 1월 모임이 열립니다.
+",https://www.meetup.com/vancouver-kdd/events/276243615/,,
+recnrfOkGn38H5Y0L,2021-01-07 19:00,02:00,KDD 1월 온라인 모임 | Jan 2021 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477170/600_494210043_gzhe9n.webp,"2021년 신축년의 해가 밝았습니다. 1월 KDD의 신년모임, 바로 1월 7일 목요일 저녁 7시에 KDD 1월 모임이 열립니다.
 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임도 Topic별 breakout room을 운영할 예정인데요, 신청시 디자인/게임/프론트엔드/백엔드/창업 중 관심있는 분야를 최대 3개 선택해주세요.
 관심사가 같은분들끼리 이야기 나눌 수 있도록 네트워킹 룸을 준비하겠습니다. 선택하지 않은 분들은 랜덤하게 네트워킹룸을 배정할 예정이니 신청시 꼭 선택 부탁드립니다.
 - 날짜: 2021년 1월 7일 목요일
@@ -1119,8 +1118,8 @@ KDD 모임에서 꾸준하게 인기 많은 토픽이죠? 레쥬메리뷰를 원
 - 7:20-7:40: 발표 1 : TBD (발표 원하는 분은 제게 연락 주세요!)
 - 7:40-9:00: 토픽별 네트워킹 (Breakout Room)
 - 9:00~: After party (호응도에 따라 10시까지 이어질수 있습니다!)
-"
-2020-12-17 19:00,KDD 12월 온라인 모임 | Dec 2020 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477696/600_493730820_umzr1j.webp,"다들 기다리셨죠? 12월 KDD의 연말 크리스마스 파티!
+",https://www.meetup.com/vancouver-kdd/events/275554087/,,
+rec1mYvMa3ru7ghoK,2020-12-17 19:00,02:00,KDD 12월 온라인 모임 | Dec 2020 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477696/600_493730820_umzr1j.webp,"다들 기다리셨죠? 12월 KDD의 연말 크리스마스 파티!
 바로 12월 17일 목요일 저녁 7시에 KDD 12월 모임이 열립니다.
 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 지난번 모임에서 반응이 좋았던 Topic별 breakout room을 다시 한번 운영할 예정입니다.
 디자인/게임/프론트엔드/백엔드/창업 중 관심있는 분야를 최대 3개 선택해주세요.
@@ -1136,8 +1135,8 @@ KDD 모임에서 꾸준하게 인기 많은 토픽이죠? 레쥬메리뷰를 원
 - 7:20-7:40: 발표 1 : TBD (발표 원하는 분은 제게 연락 주세요!)
 - 7:40-9:00: 토픽별 네트워킹 (Breakout Room)
 - 9:00~: After party (호응도에 따라 10시까지 이어질수 있습니다!)
-"
-2020-11-03 19:00,KDD 11월 온라인 모임 | Nov 2020 virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/convert_ohy1ba.jpg,"안녕하세요, 드디어 11월 모임 날짜가 정해졌습니다. 바로 11월의 첫째주 화요일, 11/3 저녁 7시에 KDD 11월 모임이 열립니다.
+",https://www.meetup.com/vancouver-kdd/events/274873979/,,
+reck4wPLJntOFrv2c,2020-11-03 19:00,02:00,KDD 11월 온라인 모임 | Nov 2020 virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/convert_ohy1ba.jpg,"안녕하세요, 드디어 11월 모임 날짜가 정해졌습니다. 바로 11월의 첫째주 화요일, 11/3 저녁 7시에 KDD 11월 모임이 열립니다.
 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 본인이 관심있는 주제로 이야기를 나눌 수 있는 Topic별 breakout room을 운영할 예정입니다.
 기존에는 랜덤하게 참석자를 정해 이야기 나누었다면, 이번엔 분야, 관심사가 같은분들끼리 이야기 나눌 수 있도록 준비했습니다. 현재 토픽은 디자인/레쥬메리뷰/게임/기타 이며 이 외에 참석률과 관심도를 보고 토픽과 인원을 조정할 예정입니다. 여러 토픽을 선택할수 있고 랜덤 네트워킹룸도 원하는 분들을 위해 돌 예정이니 신청시 꼭 선택 부탁드립니다.
 - 날짜: 2020년 11월 3일 화요일
@@ -1151,8 +1150,8 @@ KDD 모임에서 꾸준하게 인기 많은 토픽이죠? 레쥬메리뷰를 원
 - 7:40-8:00: 발표 2 : TBD by @Alice Kim @Hyunuk Lim
 - 8:00-9:00: Breakout Room
 - 9:00~: After party (호응도에 따라 10시까지 이어질수 있습니다!
-"
-2020-10-01 19:00,KDD 10월 온라인 모임 | Oct 2020 virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/600_492090711_1_xa8obe.webp,"안녕하세요. 2020년 10월 1일, 추석이지만 홈 오피스로 출근 해야 하는 이 날! KDD도 보름달 보면서 풍요로운 시간을 가지려고 합니다. 한가위인 목요일, 저녁 7시에 KDD모임에서 뵈어요.
+",https://www.meetup.com/vancouver-kdd/events/273892064/,,
+rec8lLvnrkB3ygIMQ,2020-10-01 19:00,02:00,KDD 10월 온라인 모임 | Oct 2020 virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/600_492090711_1_xa8obe.webp,"안녕하세요. 2020년 10월 1일, 추석이지만 홈 오피스로 출근 해야 하는 이 날! KDD도 보름달 보면서 풍요로운 시간을 가지려고 합니다. 한가위인 목요일, 저녁 7시에 KDD모임에서 뵈어요.
 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에서는 지난번에 호응이 좋았던 Happy hour를 다시 한번 할 예정입니다.
 Happy hour는 4-5명의 소규모방으로 나누어 드리고 참석 인원에 따라 최대한 많은 분들과 대화 나눌 수 있도록 로테이션합니다.
 원하는 음료 (맥주,와인,소주,주스 등..) 꼭 챙겨서 참석해주세요^^
@@ -1167,8 +1166,8 @@ Happy hour는 4-5명의 소규모방으로 나누어 드리고 참석 인원에 
 - 7:20-7:30: 발표 (TBD)
 - 7:30-8:30: Happy hour: breakout room rotation (참석 인원에 따라 달라질수 있습니다.)
 - 8:30-9:00: After party (호응도에 따라 10시까지 이어질수 있습니다!)
-*1페이지 PR: 현재 구직중이거나 향후 이직을 고민중이신가요? 본인의 회사를 홍보하고 싶으신가요? 좀더 길게 자기소개를 하고싶은 분들 위해 3분의 셀프 PR 시간을 드립니다. 참가 신청시 구글 슬라이드로 자유롭게 1페이지를 만들어 아래폼으로 보내주세요. 링크드인이나 웹사이트 주소를 남겨주셔도 좋습니다. :)"
-2020-09-02 19:00,KDD 9월 온라인 모임 | Sep 2020 Virtual Meetup,Online event,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/600_492090711_1_xa8obe.webp,"안녕하세요. KDD여러분, 저는 KDD organizer로 새롭게 합류한 안혜선이라고 합니다. ^^
+*1페이지 PR: 현재 구직중이거나 향후 이직을 고민중이신가요? 본인의 회사를 홍보하고 싶으신가요? 좀더 길게 자기소개를 하고싶은 분들 위해 3분의 셀프 PR 시간을 드립니다. 참가 신청시 구글 슬라이드로 자유롭게 1페이지를 만들어 아래폼으로 보내주세요. 링크드인이나 웹사이트 주소를 남겨주셔도 좋습니다. :)",https://www.meetup.com/vancouver-kdd/events/273181883/,,
+rechvBJpAFDv0pSNy,2020-09-02 19:00,02:00,KDD 9월 온라인 모임 | Sep 2020 Virtual Meetup,Online event,,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/600_492090711_1_xa8obe.webp,"안녕하세요. KDD여러분, 저는 KDD organizer로 새롭게 합류한 안혜선이라고 합니다. ^^
 2020년 9월, KDD모임이 돌아왔습니다. 9월 2일 수요일 저녁 7시!
 한인 개발자, 디자이너 분들과 네트워킹 할 수 있는 소중한 시간, 이번 모임에는 Eric님의 IT비즈니스에서 유용하게 쓸수 있는 툴에 대한 발표가 있을 예정입니다.
 더 많은 분들과 네트워킹 할수 있는 Happy hour는 4-5명의 소규모방으로 나누어 로테이션할 예정입니다. (맥주, 칵테일, 와인등 원하는 드링크도 준비해 주세요.) 해피아워의 breakout room rotation을 위해 미리 참석자 등록을 받는것이니 꼭 사전 신청 부탁드릴게요!
@@ -1185,8 +1184,8 @@ Happy hour는 4-5명의 소규모방으로 나누어 드리고 참석 인원에 
 8:30-9:00: After party (호응도에 따라 10시까지 이어질수 있습니다!)
 *1페이지 PR: 현재 구직중이거나 향후 이직을 고민중이신가요? 본인의 회사를 홍보하고 싶으신가요? 이번 모임에는 1페이지짜리 1-3분의 셀프PR 시간을 드립니다.
 참가 신청시 구글 슬라이드로 자유롭게 1페이지를 만들어 아래폼으로 보내주세요.
-https://anhyesun.typeform.com/to/gg8GKXtV"
-2019-12-19 18:00,KDD Christmas Party,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/600_487357103_higdxs.webp,"안녕하세요! KDD Christmas Party에 오실 여러분을 환영합니다!
+https://anhyesun.typeform.com/to/gg8GKXtV",https://www.meetup.com/vancouver-kdd/events/272920900/,,
+recto4pPSkjSKZY1C,2019-12-19 18:00,03:00,KDD Christmas Party,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477169/600_487357103_higdxs.webp,"안녕하세요! KDD Christmas Party에 오실 여러분을 환영합니다!
 이번 모임은 크리스마스를맞아서 크리스마스 파티와 유익하고 잼있는 발표를 같이 진행 하려고 합니다.
 발표:
 삼성에서 프로그램 매니저로 일하시고 계신 저희 KDD 맴버 이건 님께서 PM (product/project/program Manager)의 역할과 같이 일하는 팁에 대해서 유익한 이야기를 해주실 예정입니다. 요즘 대부분 IT회사에서 PM들이 늘어나고 있는 추세라서 이번 발표 또한 정말 피와 살이되는 유익한 시간될 예정이니 놓치지 마세요!
@@ -1215,8 +1214,8 @@ Time: 6-8:30
 Fee: $15 (for food and drink)
 Can’t wait to see you guys all!
 Jung
-"
-2019-12-10 18:00,"The Meetup of Meetups, Holiday Social","905 Dunsmuir St 2nd Floor · Vancouver, BC",The Blackbird Public House,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477168/600_487047791_nwvaf4.webp,"🛑 Tickets are limited and will sell out, so get yours ASAP! 🛑
+",https://www.meetup.com/vancouver-kdd/events/267158463/,,
+recAmSc66kBUfhY4d,2019-12-10 18:00,05:30,"The Meetup of Meetups, Holiday Social","905 Dunsmuir St 2nd Floor · Vancouver, BC",The Blackbird Public House,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477168/600_487047791_nwvaf4.webp,"🛑 Tickets are limited and will sell out, so get yours ASAP! 🛑
 🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
 Tickets MUST be purchased from the Eventbrite page below:
 https://www.eventbrite.ca/e/the-meetup-of-meetups-tickets-83540595169
@@ -1239,8 +1238,8 @@ Altitude Performance & Health is proud to feature Canada’s first multi-baric p
 🎁Door Prizes 🎁
 There will be some items sponsored by Realtor.com
 For years, millions of home shoppers have turned to realtor.com® to find their dream home. Operated by Move, Inc., realtor.com® offers a comprehensive list of for-sale properties, as well as the information and tools to make informed real estate decisions.
-For a full list of Meetup groups attending this event see the Eventbrite link"
-2019-10-04 18:00,Tools and tips - KDD October meetup!,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477168/600_485400165_k7l03i.webp,"밴쿠버 KDD 24번째 정모입니다!
+For a full list of Meetup groups attending this event see the Eventbrite link",https://www.meetup.com/vancouver-kdd/events/266856053/,,
+recZLS85NTHAkK6NH,2019-10-04 18:00,02:00,Tools and tips - KDD October meetup!,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477168/600_485400165_k7l03i.webp,"밴쿠버 KDD 24번째 정모입니다!
 믿업은 자기소개로 시작될 예정입니다. 간단히 이름, 직업, 믿업에 오신 이유/목적 등을 말씀하시면 됩니다.
 이번 모임에서는 새로운 tools와 tips에 대해서 발표가 있을 예정이구요, 토픽은 아래와 같습니다.
 1. Firebase extensions
@@ -1270,8 +1269,8 @@ Whimsical: IA drafting
 7:30 - 8:30: Presentation
 8:30… more fun at the pub!
 There will be a $5 fee for this meetup. We are going to use it only to buy food, so it would be great if you could give $5 to our organizers on Friday. :)
-Thank you!"
-2019-08-27 18:00,Community Night,"628 6th Ave. #600 · New Westminster, BC",CodeCore College,,"📌💻Laptops are recommended, but not required💻📌
+Thank you!",https://www.meetup.com/vancouver-kdd/events/265308230/,,
+recCsw3S9Kp5TgTTy,2019-08-27 18:00,02:30,Community Night,"628 6th Ave. #600 · New Westminster, BC",CodeCore College,,,"📌💻Laptops are recommended, but not required💻📌
 📌Please be aware that food will not be provided at this event, there are lots of good places in the area if you need though!📌
 The Google Developer Group Cloud Vancouver and Women Techmakers bring you another Community Night.
 An event bringing together people of all skill levels and areas of technology to exchange ideas, solve problems and innovate.
@@ -1305,8 +1304,8 @@ An event bringing together people of all skill levels and areas of technology to
 Please message us!!
 🙏Special thanks to CodeCore for providing us with a venue🙏
 CodeCore Developer Bootcamp is a 12-week intensive training program for Web Software Development with a focus on Node.js, Express, Ruby on Rails, React, Javascript, and more. CodeCore also has part-time fundamentals programs that teach the basics of web application development with HTML, CSS, Javascript, and Google Firebase.
-"
-2019-08-06 18:00,Community Night,"628 6th Ave. #600 · New Westminster, BC",CodeCore College,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_483442761_1_yyqwmd.webp,"🛑PLEASE ONLY SIGN UP ON ONE PARTICIPATING MEETUP PAGE🛑
+",https://www.meetup.com/vancouver-kdd/events/263970545/,,
+rectsWA8IhQtvnWwE,2019-08-06 18:00,02:30,Community Night,"628 6th Ave. #600 · New Westminster, BC",CodeCore College,,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_483442761_1_yyqwmd.webp,"🛑PLEASE ONLY SIGN UP ON ONE PARTICIPATING MEETUP PAGE🛑
 📌💻Laptops are recommended, but not required💻📌
 The Google Developer Group Cloud Vancouver and Women Techmakers bring you another Community Night.
 An event bringing together people of all skill levels and areas of technology to exchange ideas, solve problems and innovate.
@@ -1339,13 +1338,13 @@ An event bringing together people of all skill levels and areas of technology to
 ❓Do you have a group that would like to join in❓
 Please message us!!
 🙏Special thanks to CodeCore for providing us with a venue🙏
-CodeCore Developer Bootcamp is a 12-week intensive training program for Web Software Development with a focus on Node.js, Express, Ruby on Rails, React, Javascript, and more. CodeCore also has part-time fundamentals programs that teach the basics of web application development with HTML, CSS, Javascript, and Google Firebase."
-2019-08-01 18:30,KDD Summer Social Night!,"965 granville st, Vancouver , BC",Colony Bar Granville,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477168/600_483575608_pm7ml3.webp,"여러분! Welcome to our very first KDD Summer Social Night!
+CodeCore Developer Bootcamp is a 12-week intensive training program for Web Software Development with a focus on Node.js, Express, Ruby on Rails, React, Javascript, and more. CodeCore also has part-time fundamentals programs that teach the basics of web application development with HTML, CSS, Javascript, and Google Firebase.",https://www.meetup.com/vancouver-kdd/events/263465374/,,
+recctdx3Y3E2J6t3X,2019-08-01 18:30,02:30,KDD Summer Social Night!,"965 granville st, Vancouver , BC",Colony Bar Granville,https://goo.gl/maps/37i1u64BtFYwFgyC6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477168/600_483575608_pm7ml3.webp,"여러분! Welcome to our very first KDD Summer Social Night!
 저희가 다가오는 8월 1일 목요일 6:30-9시에 네트워킹 및 친목 모임을 하려고 합니다! 항상 모임을 진행하면서, 자주 뵙는 분들, 처음오시는 분들도 계신데 모임 진행 스케줄때문에 서로 같이 앉아서 이야기하는 시간이 많이 없었던거같아요. 그리고 저희 예전 멤버였고 현재 뉴욕, 구글에서 개발자로 일하고 있는 친구가 벤쿠버에 휴가차 방문한다고 해서 겸사겸사 같이 경험공유와 친목 다지는 시간이 됬으면 좋겠습니다! :) 다들 목요일날 봬요!
 ———————
 Hello everyone! You are invited to our vert first KDD Summer Social Night!
-Come join us to our social night to meet new designer & developer friends, and good food and ice cold beer! 🍻😆! See y’all on Thursday!"
-2019-07-19 18:00,Web Accessibility | KDD 7월 모임,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_483046137_liz8wu.webp,"밴쿠버 KDD 22번째 정모입니다!
+Come join us to our social night to meet new designer & developer friends, and good food and ice cold beer! 🍻😆! See y’all on Thursday!",https://www.meetup.com/vancouver-kdd/events/263571356/,,
+recE7haLvZGWTK7W1,2019-07-19 18:00,03:00,Web Accessibility | KDD 7월 모임,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_483046137_liz8wu.webp,"밴쿠버 KDD 22번째 정모입니다!
 *스폰서들입니다.
 DevHub 에서 장소를 제공해주셨고 Google 에서 음식과 맥주를 제공해주셨습니다. 스폰서들이 없었다면 이런 이벤트를 지속하기 어렵습니다. 정말 감사합니다! :)
 믿업은 자기소개로 시작될 예정입니다. 간단히 이름, 직업, 믿업에 오신 이유/목적 등을 말씀하시면 됩니다.
@@ -1385,8 +1384,8 @@ In this meet up, one of our member Daehwan Lee is going to present about ’Web 
 8:30… more fun at pub!
 If you are interested in attending this meetup, please RSVP asap so we can prepare beers and food!
 Can't wait to see you all!
-Thank you!"
-2019-06-21 18:00,KDD June 2019 Meetup | Progressive Web App,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477166/600_481031508_nb01d3.webp,"밴쿠버 KDD 21번째 정모입니다!
+Thank you!",https://www.meetup.com/vancouver-kdd/events/263088411/,,
+reczYOKo1xSwmGS1d,2019-06-21 18:00,03:00,KDD June 2019 Meetup | Progressive Web App,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477166/600_481031508_nb01d3.webp,"밴쿠버 KDD 21번째 정모입니다!
 *스폰서들입니다.
 DevHub 에서 장소를 제공해주셨고 Google 에서 음식과 맥주를 제공해주셨습니다. 스폰서들이 없었다면 이런 이벤트를 지속하기 어렵습니다. 정말 감사합니다! :)
 믿업은 자기소개로 시작될 예정입니다. 간단히 이름, 직업, 믿업에 오신 이유/목적 등을 말씀하시면 됩니다.
@@ -1426,8 +1425,8 @@ Progressive Web App
 6. 8:30… more fun at pub!
 If you are interested in attending this meetup, please RSVP asap so we can prepare beers and food!
 Can't wait to see you all!
-Thank you!"
-2019-05-16 18:00,KDD May 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477166/600_481031508_nb01d3.webp,"밴쿠버 KDD 20번째 정모입니다!
+Thank you!",https://www.meetup.com/vancouver-kdd/events/262330466/,,
+reco6KuanzVZv6PeD,2019-05-16 18:00,02:30,KDD May 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477166/600_481031508_nb01d3.webp,"밴쿠버 KDD 20번째 정모입니다!
 이번에 스폰서들입니다.
 DevHub 에서 장소를 제공해주셨고 Google 에서 음식과 맥주를 제공해주셨습니다. 스폰서들이 없었다면 이런 이벤트를 지속하기 어렵습니다. 정말 감사합니다! :)
 믿업은 자기소개로 시작될 예정입니다. 간단히 이름, 직업, 믿업에 오신 이유/목적 등을 말씀하시면 됩니다.
@@ -1465,8 +1464,8 @@ In this meet up, we’re going to introduce a software called 'Zeplin'. It is a 
 8:30… more fun at pub!
 If you are interested in attending this meetup, please RSVP before May 14th so we can prepare beers and food!
 Can't wait to see you all!
-Thank you!"
-2019-04-17 18:00,KDD April 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477166/600_480011432_t43a4u.webp,"This is KDD's 19th Meetup.
+Thank you!",https://www.meetup.com/vancouver-kdd/events/261196588/,,
+recmB47hrIbgbrCxa,2019-04-17 18:00,02:30,KDD April 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477166/600_480011432_t43a4u.webp,"This is KDD's 19th Meetup.
 As always huge thanks to our sponsors DevHub for sponsoring the venue and amenities, and Google for sponsoring the food and various expenses.
 It is hard to continue organizing the monthly meetup without their generosity, so thank you so much!
 We will start off with a quick introduction of everyone's name, what they currently do, and what they wish to achieve from attending the meetup.
@@ -1509,8 +1508,8 @@ Google 에서 음식과 맥주를 제공해주셨습니다.
 감사합니다!
 ******
 아래 링크로 들어가시면 저희 공식 채팅방에 들어가실수 있습니다.
-https://vancouverkdd.com/"
-2019-03-20 18:00,KDD March 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"This is KDD's 18th Meetup.
+https://vancouverkdd.com/",https://www.meetup.com/vancouver-kdd/events/260215890/,,
+recso1Jej2W4B9eyD,2019-03-20 18:00,02:00,KDD March 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"This is KDD's 18th Meetup.
 Sorry for skipping February Meetup.
 As always huge thanks to our sponsors DevHub for sponsoring the venue and amenities, and Google for sponsoring the food and various expenses.
 It is hard to continue organizing the monthly meetup without their generosity, so thank you so much.
@@ -1535,8 +1534,8 @@ Google 에서 음식을 제공해주셨습니다.
 이벤트는 8시에 무조건 나가야 해서 끝나고 펍에 가서 맥주 한잔 하시고 싶으시면 같이 가요 ^^
 아래 링크로 들어가시면 저희 공식 채팅방에 들어가실수 있습니다.
 https://vancouverkdd.com/
-감사합니다!"
-2019-01-24 18:00,KDD January 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
+감사합니다!",https://www.meetup.com/vancouver-kdd/events/259353398/,,
+recmvmCYb9p8JsgmT,2019-01-24 18:00,03:00,KDD January 2019 Meetup,"401 West Georgia Vancouver, BC, Canada, #600 · Vancouver, bc",Devhub and Lighthouse Labs,https://goo.gl/maps/Hp2oyjoAbWUS8YQS6,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
 This is KDD's 17th Meetup.
 Happy new Year of 2019!
 Huge thanks to our sponsors DevHub for sponsoring the venue and amenities, and Google for sponsoring the food and various expenses.
@@ -1559,8 +1558,8 @@ Google 에서 음식을 제공해주셨습니다.
 그 이후로는 자유시간이구요 친목도 다지고 원하시는분들은 같이 보드게임도 할 예정입니다.
 아래 링크로 들어가시면 저희 공식 채팅방에 들어가실수 있습니다.
 https://vancouverkdd.com/
-감사합니다!"
-2018-12-18 17:50,KDD December 2018 Meetup,"333 Seymour Street · Vancouver, bc",WeWork Office Space & Coworking,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
+감사합니다!",https://www.meetup.com/vancouver-kdd/events/257936334/,,
+rec70Nlk8ZMJ05JEr,2018-12-18 17:50,02:10,KDD December 2018 Meetup,"333 Seymour Street · Vancouver, bc",WeWork Office Space & Coworking,https://goo.gl/maps/1jLS2gLUz9UsYRGg7,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
 This is KDD's 16th Meetup.
 Happy December, the month of holidays.
 This time we will have Sandor doing a 20 minute presentation on his latest game. Following up I will bring boardgames as usual. People can choose to either play Sandor's game, boardgames, or participate in making Coup game. Following the last meetup we have rough sketch of the Coup. This time we will be focusing on the actual implementation (coding) and making hi-fi of the game.
@@ -1576,8 +1575,8 @@ Thank you!
 구글에서 무료 1년어치를 한꺼번에 스폰서를 해주셔서 매달 피자가 제공될 예정입니다.
 아래 링크로 들어가시면 저희 공식 채팅방에 들어가실수 있습니다.
 https://vancouverkdd.com/
-감사합니다!"
-2018-11-26 18:30,KDD November 2018 Meetup,"600-401 West Georgia Vancouver, BC, Canada",Devhub and Lighthouse Labs. Call Eric @ 778-918-8556 to enter,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
+감사합니다!",https://www.meetup.com/vancouver-kdd/events/257155294/,,
+recg7sX9NerRPfpcK,2018-11-26 18:30,02:30,KDD November 2018 Meetup,"600-401 West Georgia Vancouver, BC, Canada",Devhub and Lighthouse Labs. Call Eric @ 778-918-8556 to enter,https://www.google.com/maps/search/?api=1&query=49.281193%2C%20-123.114876,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
 
 This is KDD's 15th Meetup.
 
@@ -1604,8 +1603,8 @@ Thank you!
 아래 링크로 들어가시면 저희 공식 채팅방에 들어가실수 있습니다.
 https://vancouverkdd.com/
 
-감사합니다!"
-2018-10-25 18:30,KDD October 2018 Meetup,"548 Beatty Street, Vancouver, bc",Major Tom. Call Alfredo @ 778-628-3365 or Eric @ 778-918-8556,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
+감사합니다!",https://www.meetup.com/vancouver-kdd/events/256327393/,,
+recxDpBeF6o2z3gEz,2018-10-25 18:30,02:00,KDD October 2018 Meetup,"548 Beatty Street, Vancouver, bc",Major Tom. Call Alfredo @ 778-628-3365 or Eric @ 778-918-8556,https://www.google.com/maps/search/?api=1&query=49.280453%2C%20-123.109406,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
 
 This is KDD's 14th Meetup.
 
@@ -1632,8 +1631,8 @@ Thank you!
 저희 공식 채팅방에 들어오셔서 대화 하시고싶으시면 아래 주소로 들어가주세요.
 https://vancouverkdd.com/
 
-감사합니다!"
-2018-09-30 14:00,KDD September 2018 Meetup,"548 Beatty Street, Vancouver, bc",Major Tom. Call Alfredo @ 778-628-3365 or Eric @ 778-918-8556,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
+감사합니다!",https://www.meetup.com/vancouver-kdd/events/255499893/,,
+recoB9JvuuXsiUK8c,2018-09-30 14:00,04:00,KDD September 2018 Meetup,"548 Beatty Street, Vancouver, bc",Major Tom. Call Alfredo @ 778-628-3365 or Eric @ 778-918-8556,https://www.google.com/maps/search/?api=1&query=49.280453%2C%20-123.109406,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
 
 This is KDD's 13th Meetup.
 
@@ -1665,8 +1664,8 @@ Thank you!
 저희 공식 채팅방 슬랙채널에 들어오셔서 대화 하시고싶으시면 아래 주소로 들어가주세요.
 https://vancouverkdd.com/
 
-감사합니다!"
-2018-08-25 12:00,KDD 2nd August 2018 Meetup,"301-3660 Vanness Ave, Vancouver, bc",Brian Park's Home. Call Brian @ 604-349-7242 or Eric @ 778-918-8556 to enter,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
+감사합니다!",https://www.meetup.com/vancouver-kdd/events/254573391/,,
+reci9G7M1TKL225d8,2018-08-25 12:00,04:00,KDD 2nd August 2018 Meetup,"301-3660 Vanness Ave, Vancouver, bc",Brian Park's Home. Call Brian @ 604-349-7242 or Eric @ 778-918-8556 to enter,https://www.google.com/maps/search/?api=1&query=49.234882%2C%20-123.02525,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
 This is KDD's 12th Meetup.
 We will start off with introduction of KDD, and then continue with individual introduction.
 Once introduction is finished Sandor will give a quick Unity/Blender introduction. Anyone is welcome to share the projects they are working on to get feedbacks.
@@ -1683,8 +1682,8 @@ See you all there!
 인원은 15명에서 25명정도 예상하고 있습니다.
 Join KDD Slack: https://vancouverkdd.com/
 다들 꼭 봬요!
-"
-2018-08-04 12:00,KDD August 2018 Meetup,"548 Beatty Street, Vancouver, bc",Major Tom. Call Alfredo @ 778-628-3365 or Eric @ 778-918-8556,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
+",https://www.meetup.com/vancouver-kdd/events/253895155/,,
+recvfIHAEMogUmgSb,2018-08-04 12:00,04:00,KDD August 2018 Meetup,"548 Beatty Street, Vancouver, bc",Major Tom. Call Alfredo @ 778-628-3365 or Eric @ 778-918-8556,https://www.google.com/maps/search/?api=1&query=49.280453%2C%20-123.109406,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"Hello!
 
 This is KDD's 11th Meetup.
 
@@ -1714,8 +1713,8 @@ See you all there!
 
 Join KDD Slack: https://vancouverkdd.com/
 
-다들 꼭 봬요!"
-2018-06-01 18:00,KDD May 2018 Meetup,"788-601 W Broadway, Vancouver, bc","Urbanity Marketplace, Come up to 7th floor. If locked, call Eric @ 778-918-8556",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+다들 꼭 봬요!",https://www.meetup.com/vancouver-kdd/events/252952088/,,
+rec7hpQt1wonlI00A,2018-06-01 18:00,02:00,KDD May 2018 Meetup,"788-601 W Broadway, Vancouver, bc","Urbanity Marketplace, Come up to 7th floor. If locked, call Eric @ 778-918-8556",https://www.google.com/maps/search/?api=1&query=49.263737%2C%20-123.118004,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 10번째 정모입니다!
 처음에 자기소개로 시작해서 자기가 만든 프로젝트나 좋은 정보를 공유하고 싶으신분들에 한에서 발표하는 시간을 가지겠습니다.
 그 이후로는 자유시간이고 서로 대화 하시면서 친목을 다지시면 됩니다!
@@ -1725,8 +1724,8 @@ Join KDD Slack: https://vancouverkdd.com/
 장소가 크지 않아 인원은 15명까지 제한합니다.
 오시면 7층으로 올라오셔서 왼쪽편에 Urbanity Marketplace (Unit 788) 로 들어오시면 됩니다.
 혹시 잠겨있으면 778-918-8556 (에릭) 으로 연락주세요~
-Join KDD Slack: https://vancouverkdd.com/"
-2018-04-20 18:00,KDD April 2018 Meetup,"305-1166 Alberni, Vancouver, BC",Two Tall Totems,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+Join KDD Slack: https://vancouverkdd.com/",https://www.meetup.com/vancouver-kdd/events/250601727/,,
+recXCJSuH2WUPeuNV,2018-04-20 18:00,03:00,KDD April 2018 Meetup,"305-1166 Alberni, Vancouver, BC",Two Tall Totems,"https://www.google.com/maps/place/49%C2%B017'10.0%22N+123%C2%B007'32.3%22W/@49.286147,-123.1256108,18.74z/data=!4m5!3m4!1s0x0:0xc2defc59d3a070c0!8m2!3d49.286114!4d-123.125626",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 9번째 정모입니다!
 드디어 Two Tall Totems 에서 너무 감사하게 장소를 제공해 주십니다.
 같이 나눠서 먹을 밥, 간식, 술, 음료수, 과자 등등 가지고 오시면 감사하겠습니다.
@@ -1735,8 +1734,8 @@ Join KDD Slack: https://vancouverkdd.com/"
 각자 좋아하는 게임이나 놀이기구 가지고오셔도 됩니다
 인원은 한 15명정도 올 예정입니다.
 오시면 778-918-8556 으로 연락주세요~
-Join KDD Slack: https://vancouverkdd.com/"
-2018-03-23 19:00,KDD March 2018 Meetup,"9888 Cameron Street, Burnaby, bc",Call Eric @ 778-918-8556 to enter the building,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+Join KDD Slack: https://vancouverkdd.com/",https://www.meetup.com/vancouver-kdd/events/249451509/,,
+recmOsXd8E7t89z1z,2018-03-23 19:00,04:00,KDD March 2018 Meetup,"9888 Cameron Street, Burnaby, bc",Call Eric @ 778-918-8556 to enter the building,https://www.google.com/maps/search/?api=1&query=49.252235%2C%20-122.89479,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 8번째 정모입니다!
 이번에는 장소를 저희집에서 하기로 하였습니다.
 나눠서 먹을 간식, 술, 음료수 등등 가지고 오시면 감사하겠습니다.
@@ -1745,8 +1744,8 @@ Join KDD Slack: https://vancouverkdd.com/"
 보드게임, 철봉 을 준비할 예정인데 개인적으로 같이 놀수있는 게임 가지고오셔도 됩니다.
 인원은 한 15명정도 올 예정입니다.
 오시면 778-918-8556 으로 연락주세요~
-Join KDD Slack: https://vancouverkdd.com/"
-2018-02-16 18:00,KDD February 2018 Meetup,"1400-745 Thurlow Street, Vancouver, bc",Call me @ 778-918-8556 if you are late.,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+Join KDD Slack: https://vancouverkdd.com/",https://www.meetup.com/vancouver-kdd/events/248938914/,,
+recltXeYrK2OOGQfh,2018-02-16 18:00,03:00,KDD February 2018 Meetup,"1400-745 Thurlow Street, Vancouver, bc",Call me @ 778-918-8556 if you are late.,"https://www.google.com/maps/place/49%C2%B017'07.4%22N+123%C2%B007'28.2%22W/@49.2855909,-123.124591,19.58z/data=!4m5!3m4!1s0x0:0x38a027020fe7b6a8!8m2!3d49.285385!4d-123.1245",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 7번째 정모입니다!
 피자랑 음료수 값으로 한분당 5불씩 걷겠습니다.
 돈은 캐시로 가지고 오시거나 저한테 e-transfer (bosung90@gmail.com) 로 주시면 됩니다.
@@ -1754,8 +1753,8 @@ Join KDD Slack: https://vancouverkdd.com/"
 그이후로는 보드게임이 준비되어있습니다.
 14층으로 못올라오면 778-918-8556 으로 연락주세요~
 오셔서 좋은 정보도 나누고 좋은 관계도 만드세요~
-"
-2018-01-19 18:00,KDD January 2018 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-xxx-xxxx if you are late.",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+",https://www.meetup.com/vancouver-kdd/events/247391679/,,
+rec0hf8ocfOlNfbvD,2018-01-19 18:00,03:00,KDD January 2018 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-xxx-xxxx if you are late.","https://www.google.com/maps/place/Hootsuite/@49.2669266,-123.102138,18.27z/data=!4m12!1m5!3m4!2zNDnCsDE2JzAwLjEiTiAxMjPCsDA2JzA3LjkiVw!8m2!3d49.266705!4d-123.102188!3m5!1s0x5486716009ef60b3:0x946e5bb815f80597!8m2!3d49.2666587!4d-123.1021804!16s%2Fg%2F11cn6crmkz",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 6번째 정모입니다!
 피자랑 음료수 값으로 한분당 5불씩 걷겠습니다.
 돈은 캐시로 가지고 오시거나 저한테 e-transfer (bosung90@gmail.com) 로 주시면 됩니다.
@@ -1766,8 +1765,8 @@ LTC: LUMKFw9amDvkqd2YDoLdU15NGiasHxTaS4
 술은 BYOB (bring your own booze)
 첨에 간단한 Introduction to Solidity 발표가 있을 예정입니다.
 그이후에 원하시는분들은 같이 보드게임, 탁구, foosball 등등 재미있는 활동들이 준비되어있습니다.
-오셔서 좋은 정보도 나누고 좋은 관계도 만드세요~"
-2017-11-22 18:00,KDD November 2017 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-xxx-xxxx if you are late.",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+오셔서 좋은 정보도 나누고 좋은 관계도 만드세요~",https://www.meetup.com/vancouver-kdd/events/ldhmfpyxcbzb/,,
+rec12G6Yn6BJPukOX,2017-11-22 18:00,03:00,KDD November 2017 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-xxx-xxxx if you are late.","https://www.google.com/maps/place/Hootsuite/@49.2669266,-123.102138,18.27z/data=!4m12!1m5!3m4!2zNDnCsDE2JzAwLjEiTiAxMjPCsDA2JzA3LjkiVw!8m2!3d49.266705!4d-123.102188!3m5!1s0x5486716009ef60b3:0x946e5bb815f80597!8m2!3d49.2666587!4d-123.1021804!16s%2Fg%2F11cn6crmkz",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 5번째 정모입니다!
 피자랑 음료수 제공해주는대신 한분당 5불씩 걷기로 하였습니다.
 돈은 캐시로 가지고 오시거나 저한테 e-transfer (bosung90@gmail.com) 로 주시면 됩니다.
@@ -1778,20 +1777,20 @@ LTC: LgfNSnvhUHhCqPwa5wLXZmZcGwRwJxUj9q
 술은 BYOB (bring your own booze)
 첨에 간단한 Introduction to React 발표가 있을 예정입니다.
 그이후에 원하시는분들은 같이 보드게임, 탁구, foosball 등등 재미있는 활동들이 준비되어있습니다.
-오셔서 좋은 정보도 나누고 좋은 관계도 만드세요~"
-2017-10-20 18:00,KDD October 2017 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-918-8556 if you are late.",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+오셔서 좋은 정보도 나누고 좋은 관계도 만드세요~",https://www.meetup.com/vancouver-kdd/events/244878352/,,
+recw0zfiysES5ngMi,2017-10-20 18:00,03:00,KDD October 2017 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-918-8556 if you are late.","https://www.google.com/maps/place/Hootsuite/@49.2669266,-123.102138,18.27z/data=!4m12!1m5!3m4!2zNDnCsDE2JzAwLjEiTiAxMjPCsDA2JzA3LjkiVw!8m2!3d49.266705!4d-123.102188!3m5!1s0x5486716009ef60b3:0x946e5bb815f80597!8m2!3d49.2666587!4d-123.1021804!16s%2Fg%2F11cn6crmkz",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 4번째 정모입니다!
 피자랑 음료수 무료로 제공해드립니다 ^^
 술은 BYOB (bring your own booze)
 인원은 15명정도 예상하고 있습니다.
-재미있는 이야기도 나누고 좋은 정보도 공유해요."
-2017-09-21 18:00,KDD September 2017 Meetup,"111 E 5th Ave, Vancouver, BC",,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
+재미있는 이야기도 나누고 좋은 정보도 공유해요.",https://www.meetup.com/vancouver-kdd/events/243992794/,,
+recDnqwUF0Wqs3DjJ,2017-09-21 18:00,03:00,KDD September 2017 Meetup,"111 E 5th Ave, Vancouver, BC",,"https://www.google.com/maps/place/Hootsuite/@49.2669266,-123.102138,18.27z/data=!4m12!1m5!3m4!2zNDnCsDE2JzAwLjEiTiAxMjPCsDA2JzA3LjkiVw!8m2!3d49.266705!4d-123.102188!3m5!1s0x5486716009ef60b3:0x946e5bb815f80597!8m2!3d49.2666587!4d-123.1021804!16s%2Fg%2F11cn6crmkz",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"안녕하세요!
 밴쿠버 KDD 3번째 정모입니다!
 피자랑 음료수 무료로 제공해드립니다 ^^
 술은 BYOB (bring your own booze)
 인원은 15명정도 예상하고 있습니다.
-재미있는 이야기도 나누고 좋은 정보도 공유해요."
-2017-08-19 13:00,KDD August 2017 Meetup,Jericho Beach concession stand,Find us at the beach. If you don't see us call me @ 778-xxx-xxxx,https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"
+재미있는 이야기도 나누고 좋은 정보도 공유해요.",https://www.meetup.com/vancouver-kdd/events/241941551/,,
+recFdLMpPHTXOD4Cc,2017-08-19 13:00,05:00,KDD August 2017 Meetup,Jericho Beach concession stand,Find us at the beach. If you don't see us call me @ 778-xxx-xxxx,"https://www.google.com/maps/place/Jericho+Beach+Concession/@49.2716756,-123.1919776,19.05z/data=!4m14!1m7!3m6!1s0x548672f801d30751:0x9647a4a5af53d415!2sJericho+Beach+Concession!8m2!3d49.2716671!4d-123.191556!16s%2Fg%2F11b6t54nwy!3m5!1s0x548672f801d30751:0x9647a4a5af53d415!8m2!3d49.2716671!4d-123.191556!16s%2Fg%2F11b6t54nwy",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"
 안녕하세요!
 밴쿠버 KDD 2번째 정모입니다!
 이번에는 공원에서 간단한 음식과 게임을 같이 하려고 합니다
@@ -1801,8 +1800,8 @@ LTC: LgfNSnvhUHhCqPwa5wLXZmZcGwRwJxUj9q
 1:00 - 1:15 PM | Registration, welcome new members
 1:15 PM - 2:00 PM | Lunch
 2:00 PM - 6:00 PM | Ice breaker / Networking / Game
-이번에도 오셔서 좋은정보도 나누고 유익한 시간 보내세요"
-2017-07-18 18:30,July 2017 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-918-8556 if you are late.",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"저희 Vancouver KDD의 첫 모임입니다!!
+이번에도 오셔서 좋은정보도 나누고 유익한 시간 보내세요",https://www.meetup.com/vancouver-kdd/events/241941551/,,
+recV2X6ELmNJPNxcx,2017-07-18 18:30,02:00,July 2017 Meetup,"111 E 5th Ave, Vancouver, BC","This is not HootSuite headquarters, but a few blocks away. Call me @ 778-918-8556 if you are late.","https://www.google.com/maps/place/Hootsuite/@49.2669266,-123.102138,18.27z/data=!4m12!1m5!3m4!2zNDnCsDE2JzAwLjEiTiAxMjPCsDA2JzA3LjkiVw!8m2!3d49.266705!4d-123.102188!3m5!1s0x5486716009ef60b3:0x946e5bb815f80597!8m2!3d49.2666587!4d-123.1021804!16s%2Fg%2F11cn6crmkz",https://res.cloudinary.com/vancouverkdd/image/upload/v1756477167/600_468102072_d467qn.webp,"저희 Vancouver KDD의 첫 모임입니다!!
 인원은 15~20명정도 예상하고 있습니다.
 스케줄은 아래와 같습니다:
 6:30 - 6:45 PM | Registration, welcome new members
@@ -1810,4 +1809,4 @@ LTC: LgfNSnvhUHhCqPwa5wLXZmZcGwRwJxUj9q
 7:00 PM | Speaker: Eric Kim
 What is React and why is so popular?
 7:15 PM - 8:30 PM | Networking
-오셔서 좋은정보도 나누고 유익한 시간 보내세요"
+오셔서 좋은정보도 나누고 유익한 시간 보내세요",https://www.meetup.com/vancouver-kdd/events/241196303/,,

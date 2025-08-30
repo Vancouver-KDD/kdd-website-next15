@@ -26,8 +26,7 @@ export async function getPastEvents({
   limit = 1000,
   currentDate = new Date(),
 }: {limit?: number; currentDate?: Date} = {}) {
-  return events.map((event, index) => ({
-    id: event.date + index,
+  return events.map((event) => ({
     ...event,
     date: Timestamp.fromDate(new Date(event.date)),
   }))
