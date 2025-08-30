@@ -1,3 +1,4 @@
+'use server'
 import {Timestamp} from 'firebase-admin/firestore'
 import {firestore} from './app'
 import {Event} from './types'
@@ -49,7 +50,7 @@ export async function getEvent(eventId: string) {
   if (!event) {
     return null
   }
-  return {...event, date: Timestamp.fromDate(new Date(event.date))}
+  return event
 
   // return firestore
   //   .collection('Events')

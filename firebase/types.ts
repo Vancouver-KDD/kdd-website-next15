@@ -1,11 +1,10 @@
-import {Timestamp} from 'firebase-admin/firestore'
-
 export type Event = {
   id: string
-  date: Timestamp
+  date: string // CalendarDate ie YYYY-MM-DD HH:MM
   title: string
+  type?: string
   location?: string
-  image: string // can be empty string
+  image?: string
   description?: string
   locationDetails?: string
   locationLink?: string

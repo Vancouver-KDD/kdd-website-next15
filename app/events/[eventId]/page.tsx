@@ -1,5 +1,8 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import {getEvent} from '@/firebase/queries'
+import {Divider} from '@heroui/divider'
+import Tabs from './Tabs'
+import {Spacer} from '@heroui/spacer'
 
 export default async function EventPage({params}: {params: Promise<{eventId: string}>}) {
   const {eventId} = await params
@@ -14,13 +17,25 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
           {title: event?.title || 'Event Not Found'},
         ]}
       />
-      <div className="mx-auto flex max-w-screen-lg flex-col items-start px-6">
-        <div className="flex flex-col items-start">
-          <div className="text-content1-foreground text-sm font-medium opacity-50">
-            Coming Soon...
+      {event ? (
+        <>
+          <div className="mx-auto flex max-w-screen-lg flex-col items-start px-6">
+            <Divider className="my-6" />
+            <div className="text-content1-foreground font-bold opacity-60">
+              {event.type || 'ANNUAL SUMMER BBQ'}
+            </div>
+            <div className="text-content1-foreground font-medium opacity-50">
+              {new Date(event.date).toLocaleDateString()} | {event?.location}
+            </div>
           </div>
-        </div>
-      </div>
+          <div className="mx-auto flex max-w-screen-lg flex-col items-center px-6 text-center">
+            <Spacer y={4} />
+            <div className="text-6xl font-black">{event.title}</div>
+            <Spacer y={16} />
+            <Tabs event={event} />
+          </div>
+        </>
+      ) : null}
     </div>
   )
 }
