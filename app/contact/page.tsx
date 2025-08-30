@@ -9,7 +9,7 @@ import {Spacer} from '@heroui/spacer'
 export default function ContactPage() {
   return (
     <>
-      <div className="mx-auto flex max-w-screen-lg flex-col items-start">
+      <div className="mx-auto flex max-w-screen-lg flex-col items-start px-6">
         <h1 className={title()}>Contact</h1>
         <Spacer y={4} />
         <h3 className={subtitle({className: 'text-start'})}>
@@ -21,10 +21,10 @@ export default function ContactPage() {
       <Spacer y={40} />
       <div className="bg-background0 flex w-full flex-col items-center pt-4">
         <Spacer y={36} />
-        <div className={sectionTitle()}>Contact</div>
-        <div className={sectionSubtitle()}>KDD와 연결되는 가장 빠른 방법</div>
+          <div className={sectionTitle()}>Contact</div>
+          <div className={sectionSubtitle()}>KDD와 연결되는 가장 빠른 방법</div>
         <Spacer y={32} />
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="flex flex-col gap-2">
             <div className="flex justify-center gap-2">
               <EmailIcon size={28} className="drop-shadow-lg" />
