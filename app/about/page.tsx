@@ -86,7 +86,9 @@ export default function AboutPage() {
       <div className="bg-background0 w-full">
         <Spacer className="h-20 md:h-40" />
         <div className="flex flex-col items-center">
-          <h1 className={sectionTitle()}>핵심 가치</h1>
+          <h1 id="values" className={sectionTitle()}>
+            핵심 가치
+          </h1>
           <span className={sectionSubtitle()}>KDD가 함께 만들어가는 여섯 가지 마음</span>
         </div>
         <Spacer y={16} />
@@ -129,7 +131,9 @@ export default function AboutPage() {
       <div className="bg-background w-full">
         <Spacer className="h-20 md:h-40" />
         <div className="flex flex-col items-center">
-          <h1 className={sectionTitle()}>Meet the Team</h1>
+          <h1 id="meet-the-team" className={sectionTitle()}>
+            Meet the Team
+          </h1>
           <span className={sectionSubtitle()}>
             마음을 모아 KDD를 만들어가는 운영진을 소개합니다.
           </span>
