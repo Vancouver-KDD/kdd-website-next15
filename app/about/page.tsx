@@ -87,7 +87,7 @@ export default function AboutPage() {
         <Spacer className="h-20 md:h-40" />
         <div className="flex flex-col items-center">
           <h1 id="values" className={sectionTitle()}>
-            핵심 가치
+            Values
           </h1>
           <span className={sectionSubtitle()}>KDD가 함께 만들어가는 여섯 가지 마음</span>
         </div>
