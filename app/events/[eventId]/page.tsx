@@ -1,8 +1,9 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import {getEvent} from '@/firebase/queries'
 
-export default async function EventPage({params}: {params: {eventId: string}}) {
-  const event = await getEvent(params.eventId)
+export default async function EventPage({params}: {params: Promise<{eventId: string}>}) {
+  const {eventId} = await params
+  const event = await getEvent(eventId)
 
   return (
     <div>
