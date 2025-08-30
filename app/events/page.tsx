@@ -5,7 +5,6 @@ import {button as buttonStyles} from '@heroui/theme'
 import EventGroupSVG from './EventGroupSVG'
 import {Divider} from '@heroui/divider'
 import PastEventCard from './PastEventCard'
-import {sectionSubtitle, sectionTitle} from '@/components/primitives'
 import {getPastEvents} from '@/firebase/queries'
 import {use} from 'react'
 import UpcomingEvents from './UpcomingEvents'
@@ -36,8 +35,8 @@ export default function EventsPage() {
         </Link>
       </section>
       <Spacer y={40} />
-      <section className="flex justify-center">
-        <EventGroupSVG width={458} />
+      <section className="mx-4 flex justify-center">
+        <EventGroupSVG width={458} className="w-full" />
       </section>
       <Spacer y={6} />
       <UpcomingEvents />
