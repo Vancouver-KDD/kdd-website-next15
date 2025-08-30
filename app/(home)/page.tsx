@@ -58,7 +58,6 @@ export default function Home() {
           src={kddBgConference}
           alt="KDD Conference"
           className="absolute right-0 left-0 h-[507px] object-cover"
-          objectFit="cover"
           quality={100}
         />
         <div className="absolute right-0 left-0 h-[507px] bg-black/60">
@@ -154,13 +153,16 @@ export default function Home() {
               },
             ].map((item, index) => (
               <Link key={index} href={item.link} isExternal>
-                <NextImage
-                  src={item.img}
-                  alt={item.name}
-                  width={153}
-                  height={73}
-                  className={cn('max-h-[73px] max-w-[153px] object-contain', item.className)}
-                />
+                <div className="relative h-[73px] w-[153px]">
+                  <NextImage
+                    src={item.img}
+                    alt={item.name}
+                    fill
+                    sizes="153px"
+                    className={cn('object-contain', item.className)}
+                    quality={100}
+                  />
+                </div>
               </Link>
             ))}
           </div>

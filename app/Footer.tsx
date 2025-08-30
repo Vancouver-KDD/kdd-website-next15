@@ -24,7 +24,7 @@ export default function Footer() {
       <div className="flex justify-center p-3">
         <div className="flex w-full max-w-screen-lg flex-col flex-wrap items-center justify-between text-center md:flex-row md:items-start md:text-start">
           <Link href="/">
-            <LogoBlack width={100} height={75} />
+            <LogoBlack width={100} className="object-contain dark:invert" />
           </Link>
           <div className="m-6 flex flex-col gap-5">
             <span className="text-sm font-semibold">About Us</span>

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {IconSvgProps} from '@/types'
-import NextImage from 'next/image'
+import {Image} from '@heroui/image'
 import logo from './logo.png'
 import logoBlack from './logo-black.png'
 
@@ -10,13 +10,12 @@ export const Logo: React.FC<{
   height?: number
   className?: string
 }> = ({size, width, height, className}) => (
-  <NextImage
+  <Image
     alt="KDD Logo"
     className={className}
-    height={size || height || 48}
-    src={logo}
-    width={size || width || 48}
-    quality={100}
+    height={size || height || 100}
+    src={logo.src}
+    width={size || width || 100}
   />
 )
 
@@ -26,13 +25,12 @@ export const LogoBlack: React.FC<{
   height?: number
   className?: string
 }> = ({size, width, height, className}) => (
-  <NextImage
+  <Image
     alt="KDD Logo"
     className={className}
-    height={size || height || 48}
-    src={logoBlack}
-    width={size || width || 48}
-    quality={100}
+    height={size || height || 100}
+    src={logoBlack.src}
+    width={size || width || 100}
   />
 )
 

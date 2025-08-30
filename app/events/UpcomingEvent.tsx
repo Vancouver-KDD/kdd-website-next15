@@ -15,13 +15,16 @@ export default function UpcomingEvent({
 }: Omit<Event, 'date'> & {date: string; id: string}) {
   return (
     <div className="flex h-[433px] items-center justify-center gap-6 px-4 md:gap-10 md:px-6">
-      <NextImage
-        src={image ?? 'https://placehold.co/249x353'}
-        alt="upcoming event poster"
-        width={249}
-        height={353}
-        className="max-h-[176px] max-w-[124px] rounded-lg shadow-2xl md:max-h-[353px] md:max-w-[249px]"
-      />
+      <div className="relative h-[176px] w-[124px] rounded-lg shadow-2xl md:h-[353px] md:w-[249px]">
+        <NextImage
+          src={image ?? 'https://placehold.co/249x353'}
+          alt="upcoming event poster"
+          fill
+          sizes="(min-width: 768px) 249px, 124px"
+          className="rounded-lg object-contain"
+          quality={100}
+        />
+      </div>
       <div className="flex h-full max-w-[445px] flex-col justify-center py-3 text-start">
         <div className="text-content1-foreground text-xs font-bold opacity-60">
           ANNUAL CONFERENCE

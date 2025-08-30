@@ -25,7 +25,7 @@ export const Navbar = () => {
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarBrand as="li" className="max-w-fit gap-3">
             <Link className="flex items-center justify-start gap-1" href="/">
-              <Logo width={80} height={60} />
+              <Logo width={80} className="object-contain" />
             </Link>
           </NavbarBrand>
           <ul className="ml-2 hidden justify-start sm:flex">
