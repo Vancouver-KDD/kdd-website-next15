@@ -6,7 +6,6 @@ export async function getFutureEvents({
   limit = 100,
   currentDate = new Date(),
 }: {limit?: number; currentDate?: Date} = {}) {
-  await new Promise((resolve) => setTimeout(resolve, 1000))
   return firestore
     .collection('Events')
     .where('date', '>=', Timestamp.fromDate(currentDate))
@@ -42,4 +41,21 @@ export async function getPastEvents({
   //         return {id: doc.id, ...doc.data()} as Event & {id: string}
   //       })
   //     })
+}
+
+export async function getEvent(eventId: string) {
+  // Find event from events.json
+  const event = events.find((event) => event.id === eventId)
+  if (!event) {
+    return null
+  }
+  return {...event, date: Timestamp.fromDate(new Date(event.date))}
+
+  // return firestore
+  //   .collection('Events')
+  //   .doc(eventId)
+  //   .get()
+  //   .then((doc) => {
+  //     return {id: doc.id, ...doc.data()} as Event & {id: string}
+  //   })
 }

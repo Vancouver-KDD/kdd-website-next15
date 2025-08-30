@@ -14,7 +14,7 @@ export default function EventsPage() {
   const pastEvents = use(getPastEvents({currentDate: new Date('2025-10-01')}))
 
   return (
-    <>
+    <div className="flex flex-col items-center">
       <section className="mx-auto w-full max-w-screen-lg self-start px-6">
         <h1 className={title()}>Event</h1>
         <Spacer y={4} />
@@ -83,6 +83,6 @@ export default function EventsPage() {
           ))
         })()}
       </section>
-    </>
+    </div>
   )
 }

@@ -29,7 +29,6 @@ export default function AboutPage() {
   return (
     <div className="flex w-full flex-col items-center">
       <div className="flex w-full max-w-screen-lg flex-col">
-        <Spacer y={32} />
         <section className="max-w-[588px] self-start px-6">
           <span className={title()}>About</span>
           <h1 className={title({color: 'kdd', className: 'pr-1 italic'})}> KDD</h1>

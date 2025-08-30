@@ -1,13 +1,25 @@
-import {Breadcrumbs, BreadcrumbItem} from '@heroui/breadcrumbs'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import {getEvent} from '@/firebase/queries'
 
-export default function EventPage({params}: {params: {eventId: string}}) {
+export default async function EventPage({params}: {params: {eventId: string}}) {
+  const event = await getEvent(params.eventId)
+
   return (
     <div>
-      <div className="text-content1-foreground text-sm font-medium opacity-50">Coming Soon...</div>
-      <Breadcrumbs>
-        <BreadcrumbItem>Home</BreadcrumbItem>
-        <BreadcrumbItem>Music</BreadcrumbItem>
-      </Breadcrumbs>
+      <Breadcrumbs
+        paths={[
+          {href: '/', title: 'Home'},
+          {href: '/events', title: 'Events'},
+          {title: event?.title || 'Event Not Found'},
+        ]}
+      />
+      <div className="mx-auto flex max-w-screen-lg flex-col items-start px-6">
+        <div className="flex flex-col items-start">
+          <div className="text-content1-foreground text-sm font-medium opacity-50">
+            Coming Soon...
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
