@@ -87,7 +87,7 @@ export const Navbar = () => {
 
         <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
           <ThemeSwitch />
-          <NavbarMenuToggle aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} />
+          <NavbarMenuToggle className="cursor-pointer" />
         </NavbarContent>
 
         <NavbarMenu>
