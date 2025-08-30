@@ -1,3 +1,4 @@
+'use client'
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -17,11 +18,23 @@ import {HeartFilledIcon, Logo} from '@/components/icons'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {Snippet} from '@heroui/snippet'
 import JumpToTopButton from './JumpToTopButton'
+import {useState} from 'react'
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const handleMenuClose = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <>
-      <HeroUINavbar maxWidth="lg" position="sticky" id="navbar">
+      <HeroUINavbar
+        maxWidth="lg"
+        position="sticky"
+        id="navbar"
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
           <NavbarBrand as="li" className="max-w-fit gap-3">
             <Link className="flex items-center justify-start gap-1" href="/">
@@ -74,7 +87,7 @@ export const Navbar = () => {
 
         <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
           <ThemeSwitch />
-          <NavbarMenuToggle />
+          <NavbarMenuToggle aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} />
         </NavbarContent>
 
         <NavbarMenu>
@@ -83,9 +96,10 @@ export const Navbar = () => {
               <NavbarMenuItem key={`${item}-${index}`}>
                 <Link
                   className="flex justify-center"
-                  color={index === siteConfig.navMenuItems.length - 1 ? 'danger' : 'foreground'}
+                  color={'foreground'}
                   href={item.href}
-                  size="lg">
+                  size="lg"
+                  onPress={handleMenuClose}>
                   {item.label}
                 </Link>
               </NavbarMenuItem>

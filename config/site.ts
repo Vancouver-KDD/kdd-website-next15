@@ -31,10 +31,6 @@ export const siteConfig = {
       label: '연락처',
       href: '/contact',
     },
-    {
-      label: '로그아웃',
-      href: '/logout',
-    },
   ],
   links: {
     instagram: 'https://www.instagram.com/kdd.vancouver/',
