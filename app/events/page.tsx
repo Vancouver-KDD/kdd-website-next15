@@ -56,7 +56,7 @@ export default function EventsPage() {
         <Divider />
         {(() => {
           const groups = pastEvents.reduce((acc, event) => {
-            const year = event.date.toDate().getFullYear()
+            const year = new Date(event.date).getFullYear()
             if (!acc.has(year)) acc.set(year, [])
             acc.get(year)!.push(event)
             return acc
@@ -68,16 +68,7 @@ export default function EventsPage() {
               <h3 className={labelStyles()}>{year}</h3>
               <Spacer y={9} />
               <div className="grid grid-cols-1 items-center gap-22 md:grid-cols-2 lg:grid-cols-3">
-                {events.map(
-                  (event) =>
-                    event.image && (
-                      <PastEventCard
-                        key={event.id}
-                        {...event}
-                        date={event.date.toDate().toLocaleDateString()}
-                      />
-                    )
-                )}
+                {events.map((event) => event.image && <PastEventCard key={event.id} {...event} />)}
               </div>
             </div>
           ))

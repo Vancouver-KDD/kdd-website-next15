@@ -1,8 +1,8 @@
 import {Spacer} from '@heroui/spacer'
 import {Link} from '@heroui/link'
 import {button as buttonStyles} from '@heroui/theme'
-import NextImage from 'next/image'
 import type {Event} from '@/firebase/types'
+import {Image} from '@heroui/image'
 
 export default function UpcomingEvent({
   title,
@@ -15,16 +15,12 @@ export default function UpcomingEvent({
 }: Omit<Event, 'date'> & {date: string; id: string}) {
   return (
     <div className="flex h-[433px] items-center justify-center gap-6 px-4 md:gap-10 md:px-6">
-      <div className="relative h-[176px] w-[124px] rounded-lg shadow-2xl md:h-[353px] md:w-[249px]">
-        <NextImage
-          src={image ?? 'https://placehold.co/249x353'}
-          alt="upcoming event poster"
-          fill
-          sizes="(min-width: 768px) 249px, 124px"
-          className="rounded-lg object-contain"
-          quality={100}
-        />
-      </div>
+      <Image
+        src={image ?? 'https://placehold.co/249x353'}
+        alt="upcoming event poster"
+        shadow="lg"
+        className="w-[124px] object-contain md:w-[249px]"
+      />
       <div className="flex h-full max-w-[445px] flex-col justify-center py-3 text-start">
         <div className="text-content1-foreground text-xs font-bold opacity-60">
           ANNUAL CONFERENCE
@@ -47,8 +43,8 @@ export default function UpcomingEvent({
               color: 'default',
               className: 'bg-default-100 font-light drop-shadow-lg',
             })}
-            href={'/events'}>
-            전체 이벤트 보기
+            href={`/events/${id}`}>
+            이벤트 자세히 보기
           </Link>
           <Link
             className={buttonStyles({

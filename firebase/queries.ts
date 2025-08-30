@@ -15,7 +15,12 @@ export async function getFutureEvents({
     .get()
     .then((snapshot) => {
       return snapshot.docs.map((doc) => {
-        return {id: doc.id, ...doc.data()} as Event & {id: string}
+        const eventData = doc.data()
+        return {
+          id: doc.id,
+          ...eventData,
+          date: eventData.date.toDate().toLocaleDateString('en-CA'),
+        } as Event & {id: string}
       })
     })
 }
@@ -26,10 +31,7 @@ export async function getPastEvents({
   limit = 1000,
   currentDate = new Date(),
 }: {limit?: number; currentDate?: Date} = {}) {
-  return events.map((event) => ({
-    ...event,
-    date: Timestamp.fromDate(new Date(event.date)),
-  }))
+  return events
   //   await new Promise((resolve) => setTimeout(resolve, 1000))
   //   return firestore
   //     .collection('Events')
@@ -48,15 +50,21 @@ export async function getEvent(eventId: string) {
   // Find event from events.json
   const event = events.find((event) => event.id === eventId)
   if (!event) {
-    return null
+    return firestore
+      .collection('Events')
+      .doc(eventId)
+      .get()
+      .then((doc) => {
+        const eventData = doc.data()
+        if (!eventData) {
+          return null
+        }
+        return {
+          id: doc.id,
+          ...eventData,
+          date: eventData.date.toDate().toLocaleDateString('en-CA'),
+        } as Event & {id: string}
+      })
   }
   return event
-
-  // return firestore
-  //   .collection('Events')
-  //   .doc(eventId)
-  //   .get()
-  //   .then((doc) => {
-  //     return {id: doc.id, ...doc.data()} as Event & {id: string}
-  //   })
 }

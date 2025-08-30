@@ -25,7 +25,7 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
               {event.type || 'ANNUAL SUMMER BBQ'}
             </div>
             <div className="text-content1-foreground font-medium opacity-50">
-              {new Date(event.date).toLocaleDateString()} | {event?.location}
+              {new Date(event.date).toLocaleDateString('en-CA')} | {event?.location}
             </div>
           </div>
           <div className="mx-auto flex max-w-screen-lg flex-col items-center px-6 text-center">

@@ -2,15 +2,9 @@ import {Suspense, use} from 'react'
 import UpcomingEventsCarousel from './UpcomingEventsCarousel'
 import {Skeleton} from '@heroui/skeleton'
 import {getFutureEvents} from '@/firebase/queries'
-import {Timestamp} from 'firebase-admin/firestore'
 
 export default function UpcomingEvents() {
-  const upcomingEvents = use(getFutureEvents())
-  const events = upcomingEvents.map((event) => ({
-    ...event,
-    date: firebaseTimestampToISO8601(event.date),
-    id: event.id,
-  }))
+  const events = use(getFutureEvents())
   return (
     <Suspense
       fallback={
@@ -34,8 +28,4 @@ export default function UpcomingEvents() {
       <UpcomingEventsCarousel events={events} />
     </Suspense>
   )
-}
-function firebaseTimestampToISO8601(timestamp: Timestamp) {
-  // Firebase timestamp to CalendarDate
-  return timestamp.toDate().toLocaleDateString('en-CA')
 }
