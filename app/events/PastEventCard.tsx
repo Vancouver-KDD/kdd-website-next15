@@ -12,7 +12,7 @@ export default function PastEventCard({
 }: {
   id: string
   title: string
-  image: string
+  image?: string
   date: string
 }) {
   return (
