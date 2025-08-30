@@ -84,8 +84,6 @@ export default function Home() {
       <Spacer y={52} />
 
       <section className="mx-auto max-w-screen-lg text-center">
-        <div className={sectionTitle()}>Upcoming Events</div>
-        <span className={sectionSubtitle()}>다가오는 KDD 행사를 만나보세요</span>
         <Spacer y={10} />
         <Divider orientation="horizontal" className="bg-foreground-400 w-full" />
         <Spacer y={16} />
