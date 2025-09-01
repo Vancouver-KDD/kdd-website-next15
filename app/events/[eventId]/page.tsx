@@ -34,7 +34,13 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
             <Tabs event={event} />
           </div>
         </>
-      ) : null}
+      ) : (
+        <div className="flex flex-col items-center justify-center p-10">
+          <h1 className="text-xl font-bold">
+            The event you are looking for does not exist or was deleted.
+          </h1>
+        </div>
+      )}
     </div>
   )
 }

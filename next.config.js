@@ -2,6 +2,7 @@
 const nextConfig = {
   experimental: {
     reactCompiler: true,
+    browserDebugInfoInTerminal: true,
   },
   typedRoutes: true,
   images: {

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --turbopack",
     "start": "next start",
     "firebase:projects:list": "dotenv -e .env -- sh -c 'firebase projects:list --token \"$FIREBASE_CI_TOKEN\"'"
   },

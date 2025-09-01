@@ -32,15 +32,14 @@ export const Navbar = () => {
       <HeroUINavbar
         maxWidth="lg"
         position="sticky"
-        id="navbar"
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}>
+        <NavbarBrand as="li" className="max-w-fit gap-3">
+          <Link className="flex items-center justify-start gap-1" href="/">
+            <Logo width={80} className="object-contain" />
+          </Link>
+        </NavbarBrand>
         <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-          <NavbarBrand as="li" className="max-w-fit gap-3">
-            <Link className="flex items-center justify-start gap-1" href="/">
-              <Logo width={80} className="object-contain" />
-            </Link>
-          </NavbarBrand>
           <ul className="ml-2 hidden justify-start sm:flex">
             {siteConfig.navItems.map((item) => (
               <NavbarItem key={item.href}>
@@ -91,7 +90,7 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarMenu>
-          <div className="mx-4 mt-2 flex flex-col gap-2">
+          <div className="flex flex-col gap-2 not-sm:mt-2">
             {siteConfig.navMenuItems.map((item, index) => (
               <NavbarMenuItem key={`${item}-${index}`}>
                 <Link
