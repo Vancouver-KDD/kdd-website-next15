@@ -5,6 +5,7 @@ import type {Event} from '@/firebase/types'
 import {Image} from '@heroui/image'
 
 export default function UpcomingEvent({
+  type,
   title,
   location,
   description,
@@ -22,9 +23,9 @@ export default function UpcomingEvent({
         className="w-[124px] object-contain md:w-[249px]"
       />
       <div className="flex h-full max-w-[445px] flex-col justify-center py-3 text-start">
-        <div className="text-content1-foreground text-xs font-bold opacity-60">
-          ANNUAL CONFERENCE
-        </div>
+        {!!type && (
+          <div className="text-content1-foreground text-xs font-bold opacity-60">{type}</div>
+        )}
         <Spacer y={0.5} />
         <div className="text-content1-foreground text-xs font-medium opacity-50">
           {date} | {location}
