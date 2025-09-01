@@ -30,8 +30,7 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
           </div>
           <div className="mx-auto flex max-w-screen-lg flex-col items-center px-6 text-center">
             <Spacer y={4} />
-            <div className="text-6xl font-black">{event.title}</div>
-            <Spacer y={16} />
+            <div className="mb-8 text-4xl font-black md:mb-16 md:text-6xl">{event.title}</div>
             <Tabs event={event} />
           </div>
         </>

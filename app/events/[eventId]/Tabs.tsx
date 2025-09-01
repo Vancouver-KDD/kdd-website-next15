@@ -15,7 +15,7 @@ export default function Tabs({event}: {event: Event}) {
             removeWrapper
             className="h-auto rounded-lg object-contain"
           />
-          <div className="text-start font-medium whitespace-pre-line">{event.description}</div>
+          <div className="text-start font-normal whitespace-pre-line">{event.description}</div>
         </div>
       </Tab>
       <Tab key="reviews" title="행사 후기" className="text-medium">
