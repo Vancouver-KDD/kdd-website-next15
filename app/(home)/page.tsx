@@ -1,6 +1,6 @@
 import {Link} from '@heroui/link'
 import {button as buttonStyles, cn} from '@heroui/theme'
-import {subtitle, heroTitle, sectionTitle, sectionSubtitle} from '@/components/primitives'
+import {subtitle, heroTitle, sectionTitle} from '@/components/primitives'
 import NextImage from 'next/image'
 import kddBgConference from './kdd-bg-conference.jpg'
 import {Spacer} from '@heroui/spacer'
