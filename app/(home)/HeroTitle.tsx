@@ -29,11 +29,11 @@ export function DeveloperTitle() {
   )
 }
 
-export function DesignTitle() {
+export function DesignerTitle() {
   return (
     <Typewriter
       options={{
-        strings: ['rive.    ', 'esign.   '],
+        strings: ['rive.    ', 'esigner. '],
         autoStart: true,
         loop: true,
         deleteSpeed: 0,
