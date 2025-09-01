@@ -21,18 +21,18 @@ export default function Home() {
   return (
     <div className="w-full">
       <section className="mx-auto flex max-w-[588px] flex-col px-6 py-8 md:py-10">
-        <span className={heroTitle({className: 'flex flex-row'})}>
+        <div className={heroTitle({className: 'flex flex-row'})}>
           <span className="font-black">K</span>
           <KoreanTitle />
-        </span>
-        <span className={heroTitle({className: 'flex flex-row'})}>
+        </div>
+        <div className={heroTitle({className: 'flex flex-row'})}>
           <span className="font-black">D</span>
           <DeveloperTitle />
-        </span>
-        <span className={heroTitle({className: 'flex flex-row'})}>
+        </div>
+        <div className={heroTitle({className: 'flex flex-row'})}>
           <span className="font-black">D</span>
           <DesignerTitle />
-        </span>
+        </div>
         <div className={subtitle({className: 'mt-4 mb-6'})}>
           KDD는 지식을 나누고, 새로운 가능성을 발견하며, 함께 성장하는 한인 IT 커뮤니티입니다.
         </div>

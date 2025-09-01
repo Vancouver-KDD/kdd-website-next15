@@ -1,7 +1,7 @@
 import {tv} from 'tailwind-variants'
 
 export const heroTitle = tv({
-  base: 'text-5xl font-medium tracking-tight first-letter:font-black lg:text-6xl',
+  base: 'text-5xl font-medium tracking-tight lg:text-6xl',
 })
 
 export const title = tv({
