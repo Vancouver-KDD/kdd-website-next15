@@ -5,7 +5,7 @@ export function KoreanTitle() {
   return (
     <Typewriter
       options={{
-        strings: ['Knowledge.', 'Korean.   '],
+        strings: ['nowledge.', 'orean.   '],
         autoStart: true,
         loop: true,
         deleteSpeed: 0,
@@ -19,7 +19,7 @@ export function DeveloperTitle() {
   return (
     <Typewriter
       options={{
-        strings: ['Diversity.', 'Developer.'],
+        strings: ['iversity.', 'eveloper.'],
         autoStart: true,
         loop: true,
         deleteSpeed: 0,
@@ -33,7 +33,7 @@ export function DesignTitle() {
   return (
     <Typewriter
       options={{
-        strings: ['Drive.    ', 'Design.   '],
+        strings: ['rive.    ', 'esign.   '],
         autoStart: true,
         loop: true,
         deleteSpeed: 0,

@@ -21,13 +21,16 @@ export default function Home() {
   return (
     <div className="w-full">
       <section className="mx-auto flex max-w-[588px] flex-col px-6 py-8 md:py-10">
-        <span className={heroTitle()}>
+        <span className={heroTitle({className: 'flex flex-row'})}>
+          <span className="font-black">K</span>
           <KoreanTitle />
         </span>
-        <span className={heroTitle()}>
+        <span className={heroTitle({className: 'flex flex-row'})}>
+          <span className="font-black">D</span>
           <DeveloperTitle />
         </span>
-        <span className={heroTitle()}>
+        <span className={heroTitle({className: 'flex flex-row'})}>
+          <span className="font-black">D</span>
           <DesignTitle />
         </span>
         <div className={subtitle({className: 'mt-4 mb-6'})}>
