@@ -50,8 +50,12 @@ export default function UpcomingEventsCarousel({
             )
           })}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        {events.length > 1 && (
+          <>
+            <CarouselPrevious />
+            <CarouselNext />
+          </>
+        )}
       </Carousel>
     </>
   )
