@@ -8,13 +8,15 @@ export default function Tabs({event}: {event: Event}) {
     <HerouiTabs disabledKeys={['reviews', 'photos']}>
       <Tab key="details" title="행사 디테일" className="text-medium">
         <div className="grid grid-cols-1 gap-10 py-7 md:grid-cols-2">
-          <Image
-            src={event.image ?? ''}
-            alt={'poster'}
-            shadow="lg"
-            removeWrapper
-            className="h-auto rounded-lg object-contain"
-          />
+          {!!event.image && (
+            <Image
+              src={event.image ?? ''}
+              alt={'poster'}
+              shadow="lg"
+              removeWrapper
+              className="h-auto rounded-lg object-contain"
+            />
+          )}
           <div className="text-start font-normal whitespace-pre-line">{event.description}</div>
         </div>
       </Tab>
