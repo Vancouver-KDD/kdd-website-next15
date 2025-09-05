@@ -2,7 +2,9 @@
   {
     "key": "0",
     "src": "https://placehold.co/1200x800",
-    "alt": "Mountain landscape",
+    "alt": "Placeholder Image",
+    "title": "Placeholder Image",
+    "description": "lorem ipsum dolor sit amet",
     "width": 1200,
     "height": 800
   },
@@ -10,6 +12,8 @@
     "key": "1",
     "src": "https://img.heroui.chat/image/landscape?w=1200&h=800&u=1",
     "alt": "Mountain landscape",
+    "title": "Mountain landscape",
+    "description": "lorem ipsum dolor sit amet",
     "width": 1200,
     "height": 800
   },
@@ -17,6 +21,8 @@
     "key": "2",
     "src": "https://img.heroui.chat/image/landscape?w=800&h=1200&u=2",
     "alt": "Forest view",
+    "title": "Forest view",
+    "description": "lorem ipsum dolor sit amet",
     "width": 800,
     "height": 1200
   },
@@ -24,6 +30,8 @@
     "key": "3",
     "src": "https://img.heroui.chat/image/landscape?w=900&h=600&u=3",
     "alt": "Ocean sunset",
+    "title": "Ocean sunset",
+    "description": "lorem ipsum dolor sit amet",
     "width": 900,
     "height": 600
   },
