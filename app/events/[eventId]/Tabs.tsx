@@ -6,7 +6,7 @@ import Photos from './(photos)/Photos'
 
 export default function Tabs({event}: {event: Event}) {
   return (
-    <HerouiTabs disabledKeys={['reviews']}>
+    <HerouiTabs disabledKeys={['reviews', ...(event.photos ? [] : ['photos'])]}>
       <Tab key="details" title="행사 디테일" className="text-medium">
         <div className="grid grid-cols-1 gap-10 py-7 md:grid-cols-2">
           {!!event.image && (
@@ -24,10 +24,8 @@ export default function Tabs({event}: {event: Event}) {
       <Tab key="reviews" title="행사 후기" className="text-medium">
         <div></div>
       </Tab>
-      <Tab key="photos" title="사진첩" className="text-medium">
-        <div className="w-full">
-          <Photos />
-        </div>
+      <Tab key="photos" title="사진첩" className="text-medium w-full">
+        {!!event.photos && <Photos photos={event.photos} />}
       </Tab>
     </HerouiTabs>
   )

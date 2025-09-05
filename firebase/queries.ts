@@ -1,7 +1,9 @@
 'use server'
 import {Timestamp} from 'firebase-admin/firestore'
 import {firestore} from './app'
-import {Event} from './types'
+import events from '@/app/events/events.json'
+import photos from '@/app/events/photos.json'
+import type {Event} from './types'
 
 export async function getFutureEvents({
   currentDate = new Date(),
@@ -18,12 +20,11 @@ export async function getFutureEvents({
           id: doc.id,
           ...eventData,
           date: eventData.date.toDate().toLocaleDateString('en-CA'),
+          photos,
         } as Event & {id: string}
       })
     })
 }
-
-import events from '@/app/events/events.json'
 
 export async function getPastEvents({
   currentDate = new Date(),
@@ -41,6 +42,7 @@ export async function getPastEvents({
           id: doc.id,
           ...eventData,
           date: eventData.date.toDate().toLocaleDateString('en-CA'),
+          photos,
         } as Event & {id: string}
       })
     })
@@ -64,6 +66,7 @@ export async function getEvent(eventId: string) {
           id: doc.id,
           ...eventData,
           date: eventData.date.toDate().toLocaleDateString('en-CA'),
+          photos,
         } as Event & {id: string}
       })
   }
