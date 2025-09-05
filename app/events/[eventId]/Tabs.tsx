@@ -2,10 +2,11 @@
 import {Tab, Tabs as HerouiTabs} from '@heroui/tabs'
 import {Event} from '@/firebase/types'
 import {Image} from '@heroui/image'
+import Photos from './(photos)/Photos'
 
 export default function Tabs({event}: {event: Event}) {
   return (
-    <HerouiTabs disabledKeys={['reviews', 'photos']}>
+    <HerouiTabs disabledKeys={['reviews']}>
       <Tab key="details" title="행사 디테일" className="text-medium">
         <div className="grid grid-cols-1 gap-10 py-7 md:grid-cols-2">
           {!!event.image && (
@@ -24,7 +25,9 @@ export default function Tabs({event}: {event: Event}) {
         <div></div>
       </Tab>
       <Tab key="photos" title="사진첩" className="text-medium">
-        <div></div>
+        <div className="w-full">
+          <Photos />
+        </div>
       </Tab>
     </HerouiTabs>
   )
