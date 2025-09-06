@@ -8,7 +8,7 @@ export default function Tabs({event}: {event: Event}) {
   return (
     <HerouiTabs disabledKeys={['reviews', ...(event.photos ? [] : ['photos'])]}>
       <Tab key="details" title="행사 디테일" className="text-medium">
-        <div className="grid grid-cols-1 gap-10 py-7 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-10 py-8 md:grid-cols-2">
           {!!event.image && (
             <Image
               src={event.image ?? ''}
@@ -24,8 +24,8 @@ export default function Tabs({event}: {event: Event}) {
       <Tab key="reviews" title="행사 후기" className="text-medium">
         <div></div>
       </Tab>
-      <Tab key="photos" title="사진첩" className="text-medium w-full">
-        {!!event.photos && <Photos photos={event.photos} />}
+      <Tab key="photos" title="사진첩" className="text-medium">
+        <div className="py-8">{!!event.photos && <Photos photos={event.photos} />}</div>
       </Tab>
     </HerouiTabs>
   )

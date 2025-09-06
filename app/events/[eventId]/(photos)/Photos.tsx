@@ -22,6 +22,7 @@ export default function Photos({photos}: {photos: Photo[]}) {
   return (
     <>
       <RowsPhotoAlbum
+        spacing={5}
         photos={photos}
         breakpoints={breakpoints}
         render={{
@@ -45,6 +46,7 @@ export default function Photos({photos}: {photos: Photo[]}) {
                   setOpen(true)
                   setCurrentIndex(index)
                 }}
+                radius="none"
                 isZoomed
                 width="100%"
                 src={photo.src}

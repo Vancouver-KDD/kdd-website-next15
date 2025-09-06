@@ -17,7 +17,6 @@ import {ThemeSwitch} from '@/components/theme-switch'
 import {HeartFilledIcon, Logo} from '@/components/icons'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {Snippet} from '@heroui/snippet'
-import JumpToTopButton from './JumpToTopButton'
 import {useState} from 'react'
 
 export const Navbar = () => {
@@ -106,7 +105,6 @@ export const Navbar = () => {
           </div>
         </NavbarMenu>
       </HeroUINavbar>
-      <JumpToTopButton />
     </>
   )
 }
