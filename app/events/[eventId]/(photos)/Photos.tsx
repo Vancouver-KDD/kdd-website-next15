@@ -31,13 +31,13 @@ export default function Photos({photos}: {photos: Photo[]}) {
             {photo, width, height, index}: RenderImageContext
           ) => (
             <div
-              className={cn('relative w-full', className)}
+              className={cn('relative max-h-96 w-full', className)}
               style={{
                 ...style,
                 aspectRatio: `${width} / ${height}`,
               }}>
               <Image
-                className="h-full w-full object-cover"
+                className="h-full max-h-96 w-full object-cover"
                 classNames={{
                   wrapper: 'block w-full h-full',
                 }}

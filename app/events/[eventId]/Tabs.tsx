@@ -22,14 +22,28 @@ const TABS = [
 
 export default function Tabs({event}: {event: Event}) {
   // Get key after # for example http://localhost:3000/events/rtvOYkyRMKK4F6fDEsNn#details
-  const [selected, setSelected] = useState(location.hash.split('#')[1] || TABS[0].key)
+  const [selected, setSelected] = useState(TABS[0].key)
   const disabledKeys = [TABS[1].key, ...(event.photos ? [] : [TABS[2].key])]
+
+  // Initialize selected tab from hash on client side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const key = window.location.hash.split('#')[1] || TABS[0].key
+      if (disabledKeys.includes(key) || !TABS.some((tab) => tab.key === key)) {
+        window.location.hash = TABS[0].key
+        setSelected(TABS[0].key)
+      } else {
+        setSelected(key)
+      }
+    }
+  }, [disabledKeys])
+
   // Detect when hash changes
   useEffect(() => {
     const handleHashChange = () => {
-      const key = location.hash.split('#')[1] || TABS[0].key
+      const key = window.location.hash.split('#')[1] || TABS[0].key
       if (disabledKeys.includes(key) || !TABS.some((tab) => tab.key === key)) {
-        location.hash = TABS[0].key
+        window.location.hash = TABS[0].key
         setSelected(TABS[0].key)
       } else {
         setSelected(key)
@@ -37,14 +51,14 @@ export default function Tabs({event}: {event: Event}) {
     }
     window.addEventListener('hashchange', handleHashChange)
     return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [])
+  }, [disabledKeys])
 
   return (
     <HerouiTabs
       disabledKeys={disabledKeys}
       selectedKey={selected}
       onSelectionChange={(key) => {
-        location.hash = key as string
+        window.location.hash = key as string
       }}>
       <Tab key={TABS[0].key} title={TABS[0].title} className="text-medium">
         <div className="grid grid-cols-1 gap-10 py-8 md:grid-cols-2">

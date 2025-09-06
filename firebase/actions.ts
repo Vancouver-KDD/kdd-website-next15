@@ -4,6 +4,7 @@ import {firestore} from './app'
 import events from '@/app/events/events.json'
 import photos from '@/app/events/photos.json'
 import type {Event} from './types'
+import type {Photo} from 'react-photo-album'
 
 export async function getFutureEvents({
   currentDate = new Date(),
@@ -66,9 +67,11 @@ export async function getEvent(eventId: string) {
           id: doc.id,
           ...eventData,
           date: eventData.date.toDate().toLocaleDateString('en-CA'),
-          photos: eventData.photos || photos, // Use Firestore photos if available, fallback to JSON
         } as Event & {id: string}
       })
+  }
+  if (!event.photos || event.photos.length === 0) {
+    ;(event as any).photos = photos as Photo[]
   }
   return event
 }
