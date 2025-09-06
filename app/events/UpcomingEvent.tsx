@@ -16,7 +16,7 @@ export default function UpcomingEvent({
   id,
 }: Omit<Event, 'date'> & {date: string; id: string}) {
   return (
-    <div className="flex h-[433px] items-center justify-center gap-6 px-4 md:gap-10 md:px-6">
+    <div className="flex h-[433px] flex-col items-center justify-center gap-6 px-4 md:flex-row md:gap-10 md:px-6">
       {image ? (
         <Image
           src={image}
