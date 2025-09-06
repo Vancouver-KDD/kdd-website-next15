@@ -66,7 +66,7 @@ export async function getEvent(eventId: string) {
           id: doc.id,
           ...eventData,
           date: eventData.date.toDate().toLocaleDateString('en-CA'),
-          photos,
+          photos: eventData.photos || photos, // Use Firestore photos if available, fallback to JSON
         } as Event & {id: string}
       })
   }

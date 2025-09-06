@@ -3,6 +3,9 @@ const nextConfig = {
   experimental: {
     reactCompiler: true,
     browserDebugInfoInTerminal: true,
+    serverActions: {
+      bodySizeLimit: '10mb', // For uploading images to photos
+    },
   },
   typedRoutes: true,
   images: {

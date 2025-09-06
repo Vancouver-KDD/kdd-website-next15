@@ -1,5 +1,5 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
-import {getEvent} from '@/firebase/queries'
+import {getEvent} from '@/firebase/actions'
 import {Divider} from '@heroui/divider'
 import Tabs from './Tabs'
 import {Spacer} from '@heroui/spacer'
