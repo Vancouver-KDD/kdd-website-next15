@@ -4,6 +4,7 @@ import {auth, googleProvider} from './client'
 import {create} from 'zustand'
 import {signInWithPopup, signOut} from 'firebase/auth'
 import {User} from 'firebase/auth'
+import {identifyUser, resetUser, captureUserSignIn} from '@/lib/posthog'
 
 export default function AuthClient() {
   const {setLoading, setUser, setAdmin} = useAuthStore()
@@ -13,16 +14,26 @@ export default function AuthClient() {
       setUser(user)
       if (user) {
         const idTokenResult = await user.getIdTokenResult()
-        setAdmin(idTokenResult.claims.admin === true)
+        const isAdmin = idTokenResult.claims.admin === true
+        setAdmin(isAdmin)
+
+        // Identify user in PostHog
+        identifyUser(user, isAdmin)
       } else {
         setAdmin(false)
+        // Reset PostHog user identification on logout
+        resetUser()
       }
       setLoading(false)
     })
     const unsubscribeToken = auth.onIdTokenChanged(async (user) => {
       if (user) {
         const idTokenResult = await user.getIdTokenResult()
-        setAdmin(idTokenResult.claims.admin === true)
+        const isAdmin = idTokenResult.claims.admin === true
+        setAdmin(isAdmin)
+
+        // Update PostHog user identification if admin status changes
+        identifyUser(user, isAdmin)
       } else {
         setAdmin(false)
       }
@@ -52,6 +63,9 @@ export const useAuthStore = create<{
     set({loading: true})
     await signOut(auth)
     set({user: null, loading: false})
+
+    // Reset PostHog user identification on logout
+    resetUser()
   },
   setAdmin: (admin) => set({admin}),
   setLoading: (loading) => set({loading}),
@@ -60,5 +74,10 @@ export const useAuthStore = create<{
     set({loading: true})
     const user = await signInWithPopup(auth, googleProvider)
     set({user: user.user, loading: false})
+
+    // Capture sign-in event in PostHog
+    const idTokenResult = await user.user.getIdTokenResult()
+    const isAdmin = idTokenResult.claims.admin === true
+    captureUserSignIn(user.user, isAdmin)
   },
 }))
