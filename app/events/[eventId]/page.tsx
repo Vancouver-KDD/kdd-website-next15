@@ -1,5 +1,5 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
-import {getEvent} from '@/firebase/queries'
+import {getEvent} from '@/firebase/actions/event'
 import {Divider} from '@heroui/divider'
 import Tabs from './Tabs'
 import {Spacer} from '@heroui/spacer'
@@ -30,7 +30,7 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
           </div>
           <div className="mx-auto flex max-w-screen-lg flex-col items-center px-6 text-center">
             <Spacer y={4} />
-            <div className="mb-8 text-start text-4xl font-black md:mb-16 md:text-6xl">
+            <div className="mb-8 self-stretch text-start text-4xl font-black md:mb-16 md:text-6xl">
               {event.title}
             </div>
             <Tabs event={event} />

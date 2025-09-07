@@ -1,7 +1,7 @@
 import {Suspense, use} from 'react'
 import UpcomingEventsCarousel from './UpcomingEventsCarousel'
 import {Skeleton} from '@heroui/skeleton'
-import {getFutureEvents} from '@/firebase/queries'
+import {getFutureEvents} from '@/firebase/actions/event'
 import {Spacer} from '@heroui/spacer'
 import {sectionSubtitle, sectionTitle, subtitle} from '@/components/primitives'
 

@@ -12,7 +12,7 @@ import {
 import UpcomingEvent from './UpcomingEvent'
 import UpcomingEventsCalendar from './UpcomingEventsCalendar'
 import {Event} from '@/firebase/types'
-import {useSelectedEventStore} from './selectedEventStore'
+import {useSelectedEventStore} from '@/app/store'
 
 export default function UpcomingEventsCarousel({
   events,

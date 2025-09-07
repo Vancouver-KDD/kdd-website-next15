@@ -18,5 +18,10 @@ try {
 }
 
 export const auth = getAuth(app)
-export const firestore = getFirestore(app)
+
+// Initialize Firestore and apply settings immediately
+const firestoreInstance = getFirestore(app)
+firestoreInstance.settings({ignoreUndefinedProperties: true})
+export const firestore = firestoreInstance
+
 export const storage = getStorage(app)

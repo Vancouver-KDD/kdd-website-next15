@@ -5,7 +5,7 @@ import {button as buttonStyles} from '@heroui/theme'
 import EventGroupSVG from './EventGroupSVG'
 import {Divider} from '@heroui/divider'
 import PastEventCard from './PastEventCard'
-import {getPastEvents} from '@/firebase/queries'
+import {getPastEvents} from '@/firebase/actions/event'
 import {use} from 'react'
 import UpcomingEvents from './UpcomingEvents'
 

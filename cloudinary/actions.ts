@@ -1,0 +1,72 @@
+'use server'
+
+import {firestore} from '@/firebase/app'
+import {verifyAdminToken} from '@/firebase/utils'
+import {v2 as cloudinary} from 'cloudinary'
+import {revalidatePath} from 'next/cache'
+
+// Configure Cloudinary
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+})
+
+export async function uploadEventPhoto({
+  token,
+  eventId,
+  imageData,
+  fileName,
+}: {
+  token: string
+  eventId: string
+  imageData: string
+  fileName: string
+}) {
+  try {
+    const {valid, message} = await verifyAdminToken(token)
+    if (!valid) {
+      return {success: false, error: message}
+    }
+
+    if (!eventId || !imageData) {
+      return {success: false, error: 'Missing required fields'}
+    }
+
+    // Upload to Cloudinary
+    const uploadResult = await cloudinary.uploader.upload(imageData, {
+      folder: `events/${eventId}`,
+      public_id: fileName || `photo_${Date.now()}`,
+      name: fileName || `photo_${Date.now()}`,
+      resource_type: 'image',
+    })
+    const newPhoto = {
+      key: uploadResult.public_id,
+      src: uploadResult.secure_url,
+      alt: fileName || 'Uploaded photo',
+      title: fileName || 'Uploaded photo',
+      description: `Uploaded on ${new Date().toLocaleDateString()}`,
+      width: uploadResult.width,
+      height: uploadResult.height,
+    }
+
+    const eventRef = firestore.collection('Events').doc(eventId)
+    await firestore.runTransaction(async (tx) => {
+      const eventDoc = await tx.get(eventRef)
+      if (!eventDoc.exists) {
+        return {success: false, error: 'Event not found'}
+      }
+      const eventData = eventDoc.data()
+      const photos = eventData?.photos || []
+      photos.unshift(newPhoto)
+      await tx.update(eventRef, {photos})
+    })
+    revalidatePath(`/events/${eventId}`)
+    return {
+      success: true,
+      photoUrl: uploadResult.secure_url,
+    }
+  } catch (error) {
+    return {success: false, error: 'Upload failed'}
+  }
+}

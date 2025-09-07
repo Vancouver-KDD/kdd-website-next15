@@ -17,8 +17,8 @@ import {ThemeSwitch} from '@/components/theme-switch'
 import {HeartFilledIcon, Logo} from '@/components/icons'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {Snippet} from '@heroui/snippet'
-import JumpToTopButton from './JumpToTopButton'
 import {useState} from 'react'
+import AuthNavIcon from '@/components/AuthNavIcon'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -60,6 +60,7 @@ export const Navbar = () => {
 
         <NavbarContent className="hidden basis-1/5 sm:flex sm:basis-full" justify="end">
           <NavbarItem className="hidden gap-2 sm:flex">
+            <AuthNavIcon />
             <ThemeSwitch />
           </NavbarItem>
           <NavbarItem className="hidden sm:flex">
@@ -85,6 +86,7 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
+          <AuthNavIcon />
           <ThemeSwitch />
           <NavbarMenuToggle className="cursor-pointer" />
         </NavbarContent>
@@ -106,7 +108,6 @@ export const Navbar = () => {
           </div>
         </NavbarMenu>
       </HeroUINavbar>
-      <JumpToTopButton />
     </>
   )
 }

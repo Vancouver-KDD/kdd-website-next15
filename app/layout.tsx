@@ -6,6 +6,8 @@ import {siteConfig} from '@/config/site'
 import {fontSans} from '@/config/fonts'
 import {Navbar} from '@/components/navbar'
 import Footer from './Footer'
+import JumpToTopButton from '@/components/JumpToTopButton'
+import AuthClient from '@/firebase/AuthClient'
 
 export const metadata: Metadata = {
   title: {
@@ -39,6 +41,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <Navbar />
             <main className="flex-grow pt-20 md:pt-30">{children}</main>
             <Footer />
+            <JumpToTopButton />
+            <AuthClient />
           </div>
         </Providers>
       </body>

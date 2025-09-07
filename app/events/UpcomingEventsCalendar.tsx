@@ -1,7 +1,7 @@
 'use client'
 import {Calendar, DateValue} from '@heroui/calendar'
 import {today, getLocalTimeZone, parseDate} from '@internationalized/date'
-import {useSelectedEventStore} from './selectedEventStore'
+import {useSelectedEventStore} from '@/app/store'
 
 export default function UpcomingEventsCalendar({events}: {events: {date: string; id: string}[]}) {
   const {selectedEventId, setSelectedEventId} = useSelectedEventStore()

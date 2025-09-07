@@ -1,8 +1,26 @@
 'use client'
 import {Button} from '@heroui/button'
 import {UpArrowIcon} from './icons'
+import {useState, useEffect} from 'react'
 
 export default function JumpToTopButton() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight
+      const halfScroll = documentHeight / 2
+
+      setIsVisible(scrollTop > halfScroll)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  if (!isVisible) return null
+
   return (
     <Button
       onPress={() => {
