@@ -4,7 +4,6 @@ import {Tab, Tabs as HerouiTabs} from '@heroui/tabs'
 import {Event} from '@/firebase/types'
 import {Image} from '@heroui/image'
 import Photos from './(photos)/Photos'
-import {useAuthStore} from '@/firebase/AuthClient'
 
 const TABS = [
   {
@@ -20,50 +19,35 @@ const TABS = [
     title: '행사 사진',
   },
 ]
+const DISABLED_KEYS = [TABS[1].key]
 
 export default function Tabs({event}: {event: Event}) {
   // Get key after # for example http://localhost:3000/events/rtvOYkyRMKK4F6fDEsNn#details
-  const {admin} = useAuthStore()
   const [selected, setSelected] = useState(TABS[0].key)
-  const disabledKeys = [
-    TABS[1].key,
-    ...((event.photos && event.photos.length > 0) || admin ? [] : [TABS[2].key]),
-  ]
 
-  // Initialize selected tab from hash on client side
+  // Initialize from hash and listen for hash changes
   useEffect(() => {
+    const applyFromHash = () => {
+      const key = window.location.hash.split('#')[1]
+      const keyIsValid = TABS.some((tab) => tab.key === key)
+      const keyIsDisabled = DISABLED_KEYS.includes(key)
+      const shouldForceDetails = key !== 'photos' && (keyIsDisabled || !keyIsValid)
+      setSelected(shouldForceDetails ? TABS[0].key : key)
+    }
+
     if (typeof window !== 'undefined') {
-      const key = window.location.hash.split('#')[1] || TABS[0].key
-      if (disabledKeys.includes(key) || !TABS.some((tab) => tab.key === key)) {
-        window.location.hash = TABS[0].key
-        setSelected(TABS[0].key)
-      } else {
-        setSelected(key)
-      }
+      applyFromHash()
+      window.addEventListener('hashchange', applyFromHash)
+      return () => window.removeEventListener('hashchange', applyFromHash)
     }
-  }, [disabledKeys])
-
-  // Detect when hash changes
-  useEffect(() => {
-    const handleHashChange = () => {
-      const key = window.location.hash.split('#')[1] || TABS[0].key
-      if (disabledKeys.includes(key) || !TABS.some((tab) => tab.key === key)) {
-        window.location.hash = TABS[0].key
-        setSelected(TABS[0].key)
-      } else {
-        setSelected(key)
-      }
-    }
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [disabledKeys])
+  }, [DISABLED_KEYS])
 
   return (
     <HerouiTabs
-      disabledKeys={disabledKeys}
+      disabledKeys={DISABLED_KEYS}
       selectedKey={selected}
       onSelectionChange={(key) => {
-        window.location.hash = key as string
+        window.location.hash = (key as string) || TABS[0].key
       }}>
       <Tab key={TABS[0].key} title={TABS[0].title} className="text-medium">
         <div className="grid grid-cols-1 gap-10 py-8 md:grid-cols-2">
@@ -84,7 +68,7 @@ export default function Tabs({event}: {event: Event}) {
       </Tab>
       <Tab key={TABS[2].key} title={TABS[2].title} className="text-medium">
         <div className="py-8">
-          {!!event.photos && <Photos photos={event.photos} eventId={event.id} />}
+          <Photos photos={event.photos ?? []} eventId={event.id} />
         </div>
       </Tab>
     </HerouiTabs>

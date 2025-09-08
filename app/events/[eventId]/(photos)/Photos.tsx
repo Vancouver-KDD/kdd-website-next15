@@ -70,125 +70,136 @@ export default function Photos({photos, eventId}: {photos: Photo[]; eventId: str
           }}
         />
       )}
-      <Gallery
-        gallery={RowsPhotoAlbum}
-        movePhoto={async (oldIndex, newIndex) => {
-          startTransition(() => {
-            updatePhotosOptimistic({type: 'move', oldIndex, newIndex})
-          })
-          const idToken = await user?.getIdToken()
-          if (idToken) {
-            const {success, message} = await moveEventPhoto(idToken, eventId, oldIndex, newIndex)
-            if (success) {
-            } else {
+      {photos.length === 0 ? (
+        <div className="text-default-500 text-sm">No photos yet.</div>
+      ) : (
+        <>
+          <Gallery
+            gallery={RowsPhotoAlbum}
+            movePhoto={async (oldIndex, newIndex) => {
               startTransition(() => {
-                updatePhotosOptimistic({type: 'reset', photos})
+                updatePhotosOptimistic({type: 'move', oldIndex, newIndex})
               })
-              addToast({
-                title: 'Move Photo Failed',
-                description: message,
-                color: 'danger',
-              })
-            }
-          }
-        }}
-        spacing={5}
-        photos={photosOptimistic}
-        breakpoints={breakpoints}
-        render={{
-          image: (
-            {alt = '', title, sizes, className, style, onClick}: RenderImageProps,
-            {photo, width, height, index}: RenderImageContext
-          ) => (
-            <div
-              className={cn('relative max-h-96 w-full', className)}
-              style={{
-                ...style,
-                aspectRatio: `${width} / ${height}`,
-              }}>
-              <Image
-                className={cn(
-                  'h-full max-h-96 w-full object-cover',
-                  'transition-shadow ease-in-out hover:shadow-xl hover:shadow-black/30'
-                )}
-                classNames={{
-                  wrapper: 'block w-full h-full',
-                }}
-                onClick={(e) => {
-                  onClick?.(e)
-                  setOpen(true)
-                  setCurrentIndex(index)
-                }}
-                radius="none"
-                width="100%"
-                src={photo.src}
-                sizes={sizes}
-                alt={alt}
-                title={title}
-              />
-            </div>
-          ),
-          extras: (_: object, {index}: RenderImageContext) =>
-            admin && (
-              <Button
-                as="div"
-                isIconOnly
-                variant="flat"
-                className="absolute top-1 right-1 z-10"
-                onPress={async () => {
-                  const idToken = await user?.getIdToken()
-                  if (!idToken) {
-                    return
-                  }
-                  // Remove photo from optimistic photos
+              const idToken = await user?.getIdToken()
+              if (idToken) {
+                const {success, message} = await moveEventPhoto(
+                  idToken,
+                  eventId,
+                  oldIndex,
+                  newIndex
+                )
+                if (success) {
+                } else {
                   startTransition(() => {
-                    updatePhotosOptimistic({type: 'removeAt', index})
+                    updatePhotosOptimistic({type: 'reset', photos})
                   })
-                  const {success, message} = await deleteEventPhoto(
-                    idToken,
-                    eventId,
-                    photosOptimistic[index]
-                  )
-                  if (success) {
-                    addToast({
-                      title: 'Delete Photo Success',
-                      description: message,
-                      color: 'success',
-                    })
-                  } else {
-                    // Add photo back to optimistic photos
-                    startTransition(() => {
-                      updatePhotosOptimistic({type: 'reset', photos: photosOptimistic})
-                    })
-                    addToast({
-                      title: 'Delete Photo Failed',
-                      description: message,
-                      color: 'danger',
-                    })
-                  }
-                }}>
-                <Trash2 color={colors.red[500]} />
-              </Button>
-            ),
-        }}
-        onClick={() => {}}
-      />
-      <Lightbox
-        plugins={[Captions, Counter, Fullscreen, Zoom]}
-        captions={{
-          hidden: true,
-          showToggle: true,
-          descriptionTextAlign: 'center',
-        }}
-        zoom={{
-          maxZoomPixelRatio: 4,
-          doubleClickDelay: 300,
-        }}
-        index={currentIndex}
-        open={open}
-        close={() => setOpen(false)}
-        slides={photosOptimistic}
-      />
+                  addToast({
+                    title: 'Move Photo Failed',
+                    description: message,
+                    color: 'danger',
+                  })
+                }
+              }
+            }}
+            spacing={5}
+            photos={photosOptimistic}
+            breakpoints={breakpoints}
+            render={{
+              image: (
+                {alt = '', title, sizes, className, style, onClick}: RenderImageProps,
+                {photo, width, height, index}: RenderImageContext
+              ) => (
+                <div
+                  className={cn('relative max-h-96 w-full', className)}
+                  style={{
+                    ...style,
+                    aspectRatio: `${width} / ${height}`,
+                  }}>
+                  <Image
+                    className={cn(
+                      'h-full max-h-96 w-full object-cover',
+                      'transition-shadow ease-in-out hover:shadow-xl hover:shadow-black/30'
+                    )}
+                    classNames={{
+                      wrapper: 'block w-full h-full',
+                    }}
+                    onClick={(e) => {
+                      onClick?.(e)
+                      setOpen(true)
+                      setCurrentIndex(index)
+                    }}
+                    radius="none"
+                    width="100%"
+                    src={photo.src}
+                    sizes={sizes}
+                    alt={alt}
+                    title={title}
+                  />
+                </div>
+              ),
+              extras: (_: object, {index}: RenderImageContext) =>
+                admin && (
+                  <Button
+                    as="div"
+                    isIconOnly
+                    variant="flat"
+                    className="absolute top-1 right-1 z-10"
+                    onPress={async () => {
+                      const idToken = await user?.getIdToken()
+                      if (!idToken) {
+                        return
+                      }
+                      // Remove photo from optimistic photos
+                      startTransition(() => {
+                        updatePhotosOptimistic({type: 'removeAt', index})
+                      })
+                      const {success, message} = await deleteEventPhoto(
+                        idToken,
+                        eventId,
+                        photosOptimistic[index]
+                      )
+                      if (success) {
+                        addToast({
+                          title: 'Delete Photo Success',
+                          description: message,
+                          color: 'success',
+                        })
+                      } else {
+                        // Add photo back to optimistic photos
+                        startTransition(() => {
+                          updatePhotosOptimistic({type: 'reset', photos: photosOptimistic})
+                        })
+                        addToast({
+                          title: 'Delete Photo Failed',
+                          description: message,
+                          color: 'danger',
+                        })
+                      }
+                    }}>
+                    <Trash2 color={colors.red[500]} />
+                  </Button>
+                ),
+            }}
+            onClick={() => {}}
+          />
+          <Lightbox
+            plugins={[Captions, Counter, Fullscreen, Zoom]}
+            captions={{
+              hidden: true,
+              showToggle: true,
+              descriptionTextAlign: 'center',
+            }}
+            zoom={{
+              maxZoomPixelRatio: 4,
+              doubleClickDelay: 300,
+            }}
+            index={currentIndex}
+            open={open}
+            close={() => setOpen(false)}
+            slides={photosOptimistic}
+          />
+        </>
+      )}
     </div>
   )
 }
