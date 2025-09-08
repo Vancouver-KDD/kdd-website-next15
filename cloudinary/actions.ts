@@ -36,16 +36,16 @@ export async function uploadEventPhoto({
     // Upload to Cloudinary
     const uploadResult = await cloudinary.uploader.upload(imageData, {
       folder: `events/${eventId}`,
-      public_id: fileName || `photo_${Date.now()}`,
-      name: fileName || `photo_${Date.now()}`,
+      name: fileName || `KDD_${Date.now()}`,
       resource_type: 'image',
+      overwrite: false,
     })
     const newPhoto = {
       key: uploadResult.public_id,
       src: uploadResult.secure_url,
-      alt: fileName || 'Uploaded photo',
-      title: fileName || 'Uploaded photo',
-      description: `Uploaded on ${new Date().toLocaleDateString()}`,
+      alt: 'KDD photo ' + uploadResult.created_at,
+      title: 'KDD photo ' + uploadResult.created_at,
+      description: `Uploaded on ${uploadResult.created_at}`,
       width: uploadResult.width,
       height: uploadResult.height,
     }
@@ -64,7 +64,7 @@ export async function uploadEventPhoto({
     revalidatePath(`/events/${eventId}`)
     return {
       success: true,
-      photoUrl: uploadResult.secure_url,
+      photo: newPhoto,
     }
   } catch (error) {
     return {success: false, error: 'Upload failed'}

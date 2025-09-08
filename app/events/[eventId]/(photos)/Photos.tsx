@@ -1,4 +1,5 @@
 'use client'
+
 import {startTransition, useMemo, useOptimistic, useState} from 'react'
 import {RowsPhotoAlbum} from 'react-photo-album'
 import 'react-photo-album/rows.css'
@@ -23,12 +24,34 @@ import AdminPhotoUpload from '@/app/events/[eventId]/(photos)/AdminPhotoUpload'
 import {Button} from '@heroui/button'
 import {Trash2} from 'lucide-react'
 
+type PhotosAction =
+  | {type: 'prepend'; photo: Photo}
+  | {type: 'move'; oldIndex: number; newIndex: number}
+  | {type: 'removeAt'; index: number}
+  | {type: 'reset'; photos: Photo[]}
+
 export default function Photos({photos, eventId}: {photos: Photo[]; eventId: string}) {
   const [open, setOpen] = useState(false)
   const [currentIndex, setCurrentIndex] = useState(0)
   const admin = useAuthStore((s) => s.admin)
   const {user} = useAuthStore()
-  const [photosOptimistic, updatePhotosOptimistic] = useOptimistic(photos)
+  const [photosOptimistic, updatePhotosOptimistic] = useOptimistic<Photo[], PhotosAction>(
+    photos,
+    (state, action) => {
+      switch (action.type) {
+        case 'prepend':
+          return [action.photo, ...state]
+        case 'move':
+          return arrayMove(state, action.oldIndex, action.newIndex)
+        case 'removeAt':
+          return state.filter((_, i) => i !== action.index)
+        case 'reset':
+          return action.photos
+        default:
+          return state
+      }
+    }
+  )
 
   const Gallery = useMemo(
     () => (admin ? dynamic(() => import('./SortableGallery'), {ssr: false}) : RowsPhotoAlbum),
@@ -37,12 +60,21 @@ export default function Photos({photos, eventId}: {photos: Photo[]; eventId: str
 
   return (
     <div className="flex flex-col gap-16">
-      {!!admin && <AdminPhotoUpload eventId={eventId} />}
+      {!!admin && (
+        <AdminPhotoUpload
+          eventId={eventId}
+          onUploaded={(photo) => {
+            startTransition(() => {
+              updatePhotosOptimistic({type: 'prepend', photo})
+            })
+          }}
+        />
+      )}
       <Gallery
         gallery={RowsPhotoAlbum}
         movePhoto={async (oldIndex, newIndex) => {
           startTransition(() => {
-            updatePhotosOptimistic(arrayMove(photosOptimistic, oldIndex, newIndex))
+            updatePhotosOptimistic({type: 'move', oldIndex, newIndex})
           })
           const idToken = await user?.getIdToken()
           if (idToken) {
@@ -50,7 +82,7 @@ export default function Photos({photos, eventId}: {photos: Photo[]; eventId: str
             if (success) {
             } else {
               startTransition(() => {
-                updatePhotosOptimistic(photos)
+                updatePhotosOptimistic({type: 'reset', photos})
               })
               addToast({
                 title: 'Move Photo Failed',
@@ -110,7 +142,7 @@ export default function Photos({photos, eventId}: {photos: Photo[]; eventId: str
                   }
                   // Remove photo from optimistic photos
                   startTransition(() => {
-                    updatePhotosOptimistic(photosOptimistic.filter((_, i) => i !== index))
+                    updatePhotosOptimistic({type: 'removeAt', index})
                   })
                   const {success, message} = await deleteEventPhoto(
                     idToken,
@@ -126,7 +158,7 @@ export default function Photos({photos, eventId}: {photos: Photo[]; eventId: str
                   } else {
                     // Add photo back to optimistic photos
                     startTransition(() => {
-                      updatePhotosOptimistic(photosOptimistic)
+                      updatePhotosOptimistic({type: 'reset', photos: photosOptimistic})
                     })
                     addToast({
                       title: 'Delete Photo Failed',
