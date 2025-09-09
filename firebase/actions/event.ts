@@ -7,6 +7,7 @@ import {revalidatePath} from 'next/cache'
 import {arrayMove, getErrorMessage} from '@/lib/utils'
 import {verifyAdminToken} from '../utils'
 import {v2 as cloudinary} from 'cloudinary'
+import {addSrcSetToPhoto} from '@/cloudinary/utils'
 
 export async function getFutureEvents({
   currentDate = new Date(),
@@ -19,9 +20,17 @@ export async function getFutureEvents({
     .then((snapshot) => {
       return snapshot.docs.map((doc) => {
         const eventData = doc.data()
+
+        // Add srcSet to photos if they exist
+        const photos =
+          eventData.photos?.map((photo: Photo) =>
+            addSrcSetToPhoto(photo, process.env.CLOUDINARY_CLOUD_NAME!)
+          ) || []
+
         return {
           id: doc.id,
           ...eventData,
+          photos,
           date: eventData.date.toDate().toLocaleDateString('en-CA'),
         } as Event & {id: string}
       })
@@ -40,9 +49,16 @@ export async function getPastEvents({
       return snapshot.docs.map((doc) => {
         const eventData = doc.data()
 
+        // Add srcSet to photos if they exist
+        const photos =
+          eventData.photos?.map((photo: Photo) =>
+            addSrcSetToPhoto(photo, process.env.CLOUDINARY_CLOUD_NAME!)
+          ) || []
+
         return {
           id: doc.id,
           ...eventData,
+          photos,
           date: eventData.date.toDate().toLocaleDateString('en-CA'),
         } as Event & {id: string}
       })
@@ -61,9 +77,17 @@ export async function getEvent(eventId: string) {
       if (!eventData) {
         return null
       }
+
+      // Add srcSet to photos if they exist
+      const photos =
+        eventData.photos?.map((photo: Photo) =>
+          addSrcSetToPhoto(photo, process.env.CLOUDINARY_CLOUD_NAME!)
+        ) || []
+
       return {
         id: doc.id,
         ...eventData,
+        photos,
         date: eventData.date.toDate().toLocaleDateString('en-CA'),
       } as Event & {id: string}
     })

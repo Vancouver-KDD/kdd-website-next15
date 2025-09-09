@@ -131,6 +131,9 @@ export default function Photos({photos, eventId}: {photos: Photo[]; eventId: str
                     radius="none"
                     width="100%"
                     src={photo.src}
+                    srcSet={
+                      photo.srcSet?.map((img) => `${img.src} ${img.width}w`).join(', ') || undefined
+                    }
                     sizes={sizes}
                     alt={alt}
                     title={title}
