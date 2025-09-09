@@ -15,17 +15,11 @@ try {
       privateKey: process.env.FIREBASE_PRIVATE_KEY,
     }),
   })
+  getFirestore(app).settings({ignoreUndefinedProperties: true})
 }
 
 export const auth = getAuth(app)
 
-// Initialize Firestore and apply settings immediately
-const firestoreInstance = getFirestore(app)
-try {
-  firestoreInstance.settings({ignoreUndefinedProperties: true})
-} catch (error) {
-  console.error('Error initializing Firestore:', error)
-}
-export const firestore = firestoreInstance
+export const firestore = getFirestore(app)
 
 export const storage = getStorage(app)
