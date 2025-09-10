@@ -10,7 +10,7 @@ import {use} from 'react'
 import UpcomingEvents from './UpcomingEvents'
 
 export default function EventsPage() {
-  const pastEvents = use(getPastEvents({currentDate: new Date('2025-10-01')}))
+  const pastEvents = use(getPastEvents())
 
   return (
     <div className="flex flex-col items-center">
@@ -62,7 +62,9 @@ export default function EventsPage() {
               <h3 className={labelStyles()}>{year}</h3>
               <Spacer y={9} />
               <div className="grid grid-cols-1 items-center gap-22 md:grid-cols-2 lg:grid-cols-3">
-                {events.map((event) => event.image && <PastEventCard key={event.id} {...event} />)}
+                {events.map((event) => (
+                  <PastEventCard key={event.id} {...event} />
+                ))}
               </div>
             </div>
           ))

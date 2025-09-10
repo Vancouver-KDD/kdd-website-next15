@@ -1,3 +1,5 @@
+import 'server-only'
+
 import {getApp, initializeApp} from 'firebase-admin/app'
 import {getAuth} from 'firebase-admin/auth'
 import {getFirestore} from 'firebase-admin/firestore'
@@ -19,7 +21,13 @@ try {
 }
 
 export const auth = getAuth(app)
-
 export const firestore = getFirestore(app)
-
 export const storage = getStorage(app)
+
+export async function verifyAdminToken(token: string) {
+  const decodedToken = await auth.verifyIdToken(token, true)
+  if (!decodedToken.admin) {
+    return {valid: false, message: 'Unauthorized'}
+  }
+  return {valid: true, message: 'Authorized'}
+}

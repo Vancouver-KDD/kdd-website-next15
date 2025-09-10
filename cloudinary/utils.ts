@@ -1,3 +1,4 @@
+import 'server-only'
 /**
  * Server-side Cloudinary utilities for generating srcSet
  * This file should only be used on the server side

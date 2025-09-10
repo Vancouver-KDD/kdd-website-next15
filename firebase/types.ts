@@ -2,8 +2,9 @@ import type {Photo} from 'react-photo-album'
 
 export type Event = {
   id: string
-  date: string // CalendarDate ie YYYY-MM-DD HH:MM
+  date: string // ISO string for datetime-local inputs and client-side formatting
   title: string
+  draft?: boolean
   photos?: Photo[]
   type?: string
   location?: string

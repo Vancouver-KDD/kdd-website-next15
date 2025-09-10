@@ -18,7 +18,7 @@ import {HeartFilledIcon, Logo} from '@/components/icons'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {Snippet} from '@heroui/snippet'
 import {useState} from 'react'
-import AuthNavIcon from '@/components/AuthNavIcon'
+import AuthNavButton from '@/components/AuthNavButton'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -60,7 +60,7 @@ export const Navbar = () => {
 
         <NavbarContent className="hidden basis-1/5 sm:flex sm:basis-full" justify="end">
           <NavbarItem className="hidden gap-2 sm:flex">
-            <AuthNavIcon />
+            <AuthNavButton />
             <ThemeSwitch />
           </NavbarItem>
           <NavbarItem className="hidden sm:flex">
@@ -86,7 +86,7 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
-          <AuthNavIcon />
+          <AuthNavButton />
           <ThemeSwitch />
           <NavbarMenuToggle className="cursor-pointer" />
         </NavbarContent>

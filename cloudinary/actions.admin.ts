@@ -1,7 +1,7 @@
 'use server'
 
-import {firestore} from '@/firebase/app'
-import {verifyAdminToken} from '@/firebase/utils'
+import {firestore} from '@/firebase/server'
+import {verifyAdminToken} from '@/firebase/server'
 import {v2 as cloudinary} from 'cloudinary'
 import {revalidatePath} from 'next/cache'
 

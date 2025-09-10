@@ -3,6 +3,7 @@ import {getEvent} from '@/firebase/actions/event'
 import {Divider} from '@heroui/divider'
 import Tabs from './Tabs'
 import {Spacer} from '@heroui/spacer'
+import {formatISODate} from '@/lib/utils'
 
 export default async function EventPage({params}: {params: Promise<{eventId: string}>}) {
   const {eventId} = await params
@@ -25,7 +26,7 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
               {event.type || 'MONTHLY MEETUP'}
             </div>
             <div className="text-content1-foreground font-medium opacity-50">
-              {new Date(event.date).toLocaleDateString('en-CA')} | {event?.location}
+              {formatISODate(event.date)} | {event?.location}
             </div>
           </div>
           <div className="mx-auto flex max-w-screen-lg flex-col items-center px-6 text-center">

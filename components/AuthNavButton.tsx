@@ -1,12 +1,13 @@
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
-import {LogOut, User, UserCheck, UserStar} from 'lucide-react'
+import {LogOut, User, UserCheck, UserStar, Plus} from 'lucide-react'
 import {useAuthStore} from '@/firebase/AuthClient'
 import {Button} from '@heroui/button'
 import {Input} from '@heroui/input'
-import {stepDownAsAdmin, setpUpAsAdmin} from '@/firebase/actions/auth'
+import {stepDownAsAdmin, verifyAdminPassword} from '@/firebase/actions/auth.admin'
 import {addToast} from '@heroui/toast'
+import Link from 'next/link'
 
-export default function AuthNavIcon() {
+export default function AuthNavButton() {
   const {user, admin} = useAuthStore()
   const UserIcon = user ? (admin ? UserStar : UserCheck) : User
   return (
@@ -51,6 +52,15 @@ function AuthContent() {
         {admin ? (
           <div className="flex flex-col gap-2">
             <p className="text-sm font-semibold">Thank you for your service</p>
+            <Link href="/admin/events">
+              <Button
+                color="primary"
+                variant="solid"
+                size="sm"
+                startContent={<Plus className="h-4 w-4" />}>
+                Manage Events
+              </Button>
+            </Link>
             <Button
               color="danger"
               variant="ghost"
@@ -84,7 +94,7 @@ function AuthContent() {
               if (!password || !idToken) {
                 return
               }
-              const {valid, message} = await setpUpAsAdmin(idToken, password)
+              const {valid, message} = await verifyAdminPassword(idToken, password)
               if (valid) {
                 await user.getIdToken(true)
                 addToast({

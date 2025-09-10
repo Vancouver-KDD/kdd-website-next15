@@ -2,13 +2,21 @@
 import {Calendar, DateValue} from '@heroui/calendar'
 import {today, getLocalTimeZone, parseDate} from '@internationalized/date'
 import {useSelectedEventStore} from '@/app/store'
+import {formatISODate} from '@/lib/utils'
 
 export default function UpcomingEventsCalendar({events}: {events: {date: string; id: string}[]}) {
   const {selectedEventId, setSelectedEventId} = useSelectedEventStore()
+
+  // Convert ISO dates to PDT date strings for calendar parsing
+  const eventsWithLocaleDates = events.map((e) => ({
+    ...e,
+    localeDateString: formatISODate(e.date),
+  }))
+
   const value = selectedEventId
-    ? parseDate(events.find((e) => e.id === selectedEventId)?.date ?? '')
-    : events[0]
-      ? parseDate(events[0].date)
+    ? parseDate(eventsWithLocaleDates.find((e) => e.id === selectedEventId)?.localeDateString ?? '')
+    : eventsWithLocaleDates[0]
+      ? parseDate(eventsWithLocaleDates[0].localeDateString)
       : null
   return (
     <>
@@ -16,26 +24,34 @@ export default function UpcomingEventsCalendar({events}: {events: {date: string;
         key={value?.toString()}
         aria-label="Upcoming Events Calendar"
         value={value as any}
-        minValue={events[0] ? parseDate(events[0].date) : today(getLocalTimeZone())}
+        minValue={
+          eventsWithLocaleDates[0]
+            ? parseDate(eventsWithLocaleDates[0].localeDateString)
+            : today(getLocalTimeZone())
+        }
         maxValue={
-          events[events.length - 1]
-            ? parseDate(events[events.length - 1].date)
+          eventsWithLocaleDates[eventsWithLocaleDates.length - 1]
+            ? parseDate(eventsWithLocaleDates[eventsWithLocaleDates.length - 1].localeDateString)
             : today(getLocalTimeZone())
         }
         onChange={(value) => {
           if (value) {
-            setSelectedEventId(events.find((e) => e.date === value.toString())?.id ?? null)
+            setSelectedEventId(
+              eventsWithLocaleDates.find((e) => e.localeDateString === value.toString())?.id ?? null
+            )
           } else {
             setSelectedEventId(null)
           }
         }}
         isDateUnavailable={(_date: DateValue) => {
           // Check if _date is part of dates
-          return !events.some((e) => {
-            const date = parseDate(e.date)
-            const minDate = parseDate(events[0].date)
-            const maxDate = parseDate(events[events.length - 1].date)
-            // check if _date is before events[0].date or after events[events.length - 1].date
+          return !eventsWithLocaleDates.some((e) => {
+            const date = parseDate(e.localeDateString)
+            const minDate = parseDate(eventsWithLocaleDates[0].localeDateString)
+            const maxDate = parseDate(
+              eventsWithLocaleDates[eventsWithLocaleDates.length - 1].localeDateString
+            )
+            // check if _date is before events[0].localeDateString or after events[events.length - 1].localeDateString
             // If so, return true, since it is already covered by the min and max values so it is already unavailable
             if (_date < minDate || _date > maxDate) {
               return true
