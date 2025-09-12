@@ -60,7 +60,8 @@ export default function UpcomingEvent({
           <Spacer y={1} />
           <div className="text-content1-foreground text-2xl font-medium md:text-3xl">{title}</div>
           <Spacer y={6} />
-          <div className="line-clamp-6">{description}</div>
+
+          <div className="line-clamp-8 whitespace-pre-line">{description}</div>
           <Spacer y={6} />
           <div className="flex flex-wrap gap-4">
             <Link
