@@ -4,23 +4,26 @@ import {Image} from '@heroui/image'
 import {Card} from '@heroui/card'
 import {Link} from '@heroui/link'
 import {Button} from '@heroui/button'
-import {Edit, Trash2} from 'lucide-react'
+import {Edit, Images, Trash2} from 'lucide-react'
 import {useAuthStore} from '@/firebase/AuthClient'
 import {useRouter} from 'next/navigation'
 import {addToast} from '@heroui/toast'
 import {deleteEvent} from '@/firebase/actions/event.admin'
 import {formatISODate, generateGradientSVG} from '@/lib/utils'
+import {Photo} from 'react-photo-album/dist/types'
 
 export default function PastEventCard({
   id,
   title,
   image,
   date,
+  photos,
 }: {
   id: string
   title: string
   image?: string
   date: string
+  photos?: Photo[]
 }) {
   const {user, admin} = useAuthStore()
   const router = useRouter()
@@ -82,6 +85,12 @@ export default function PastEventCard({
           </CardFooter>
         </Card>
       </Link>
+
+      {photos && photos.length > 0 && (
+        <div className="absolute right-2 bottom-5 z-20">
+          <Images className="h-4 w-4" />
+        </div>
+      )}
 
       {admin && (
         <div className="absolute top-2 right-2 z-20 opacity-0 transition-opacity group-hover:opacity-100">
