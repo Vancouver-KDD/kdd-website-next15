@@ -5,12 +5,12 @@ import {deleteEvent} from '@/firebase/actions/event.admin'
 import {useAuthStore} from '@/firebase/AuthClient'
 
 interface UseDeleteEventOptions {
-  onSuccess?: () => void
+  onSuccess?: (eventId: string) => void
   onError?: (error: unknown) => void
 }
 
 export function useDeleteEvent(options: UseDeleteEventOptions = {}) {
-  const [isDeleting, setIsDeleting] = useState(false)
+  const [deletingEventId, setDeletingEventId] = useState<string | null>(null)
   const {user} = useAuthStore()
 
   const handleDelete = async (eventId: string, eventTitle: string) => {
@@ -22,7 +22,7 @@ export function useDeleteEvent(options: UseDeleteEventOptions = {}) {
       return
     }
 
-    setIsDeleting(true)
+    setDeletingEventId(eventId)
 
     try {
       const idToken = await user.getIdToken()
@@ -34,7 +34,7 @@ export function useDeleteEvent(options: UseDeleteEventOptions = {}) {
           description: result.message,
           color: 'success',
         })
-        options.onSuccess?.()
+        options.onSuccess?.(eventId)
       } else {
         addToast({
           title: 'Error',
@@ -51,12 +51,12 @@ export function useDeleteEvent(options: UseDeleteEventOptions = {}) {
       })
       options.onError?.(error)
     } finally {
-      setIsDeleting(false)
+      setDeletingEventId(null)
     }
   }
 
   return {
     handleDelete,
-    isDeleting,
+    deletingEventId,
   }
 }

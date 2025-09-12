@@ -23,7 +23,7 @@ export default function UpcomingEvent({
   id,
 }: Omit<Event, 'date'> & {date: string; id: string}) {
   const {admin} = useAuthStore()
-  const {handleDelete, isDeleting} = useDeleteEvent({
+  const {handleDelete, deletingEventId} = useDeleteEvent({
     onSuccess: () => {
       // Reload the page to reflect changes
       window.location.reload()
@@ -112,7 +112,7 @@ export default function UpcomingEvent({
               color="danger"
               startContent={<Trash2 className="h-3 w-3" />}
               onPress={() => handleDelete(id, title)}
-              isLoading={isDeleting}
+              isLoading={deletingEventId === id}
               className="bg-white/80 backdrop-blur">
               Delete
             </Button>

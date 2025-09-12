@@ -4,6 +4,7 @@ import {firestore} from '@/firebase/server'
 import {verifyAdminToken} from '@/firebase/server'
 import {v2 as cloudinary} from 'cloudinary'
 import {revalidatePath} from 'next/cache'
+import {extractPublicIdFromUrl} from '@/cloudinary/utils'
 
 // Configure Cloudinary
 cloudinary.config({
@@ -11,6 +12,76 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 })
+
+export async function uploadEventPoster({
+  token,
+  eventId,
+  imageData,
+}: {
+  token: string
+  eventId: string
+  imageData: string
+}) {
+  const {valid, message} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, error: message}
+  }
+  if (!eventId || !imageData) {
+    return {success: false, error: 'Missing required fields'}
+  }
+
+  // Upload poster to a deterministic public_id so it overwrites when replaced
+  const publicId = `events/${eventId}/poster`
+  const uploadResult = await cloudinary.uploader.upload(imageData, {
+    public_id: publicId,
+    overwrite: true,
+    resource_type: 'image',
+  })
+
+  // Persist poster URL on the event document
+  const eventRef = firestore.collection('Events').doc(eventId)
+  await eventRef.update({image: uploadResult.secure_url})
+  revalidatePath(`/events/${eventId}`)
+  revalidatePath('/events')
+  revalidatePath('/admin/events')
+  return {success: true, imageUrl: uploadResult.secure_url}
+}
+
+export async function deleteEventPoster({token, eventId}: {token: string; eventId: string}) {
+  const {valid, message} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, error: message}
+  }
+  if (!eventId) {
+    return {success: false, error: 'Missing eventId'}
+  }
+
+  const eventRef = firestore.collection('Events').doc(eventId)
+  const snap = await eventRef.get()
+  if (!snap.exists) {
+    return {success: false, error: 'Event not found'}
+  }
+  const data = snap.data() as {image?: string}
+  const currentUrl = data?.image
+  if (!currentUrl) {
+    // Nothing to delete; ensure field cleared
+    await eventRef.update({image: null})
+    revalidatePath(`/events/${eventId}`)
+    revalidatePath('/events')
+    revalidatePath('/admin/events')
+    return {success: true}
+  }
+
+  const publicId = extractPublicIdFromUrl(currentUrl)
+  if (publicId) {
+    await cloudinary.uploader.destroy(publicId)
+  }
+  await eventRef.update({image: null})
+  revalidatePath(`/events/${eventId}`)
+  revalidatePath('/events')
+  revalidatePath('/admin/events')
+  return {success: true}
+}
 
 export async function uploadEventPhoto({
   token,

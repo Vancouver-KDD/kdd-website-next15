@@ -61,37 +61,7 @@ export async function deleteEventPhoto(token: string, eventId: string, photo: Ph
   return {success: true, message: 'Photo deleted'}
 }
 
-export async function createEvent(token: string, eventData: Omit<Event, 'id'>) {
-  const {valid, message} = await verifyAdminToken(token)
-  if (!valid) {
-    return {success: false, message}
-  }
-
-  if (!eventData.date) {
-    return {success: false, message: 'Date is required'}
-  }
-
-  try {
-    // Convert date string to Timestamp
-    const eventWithTimestamp = {
-      ...eventData,
-      date: Timestamp.fromDate(new Date(eventData.date)),
-    }
-
-    const docRef = await firestore.collection('Events').add(eventWithTimestamp)
-    revalidatePath('/events')
-    revalidatePath('/admin/events')
-    return {success: true, message: 'Event created', eventId: docRef.id}
-  } catch (error) {
-    posthog.capture('error', {
-      error: 'Failed to create event',
-      message: getErrorMessage(error, 'Failed to create event'),
-    })
-    return {success: false, message: getErrorMessage(error, 'Failed to create event')}
-  }
-}
-
-export async function updateEvent(
+export async function setEvent(
   token: string,
   eventId: string,
   eventData: Partial<Omit<Event, 'id'>>
@@ -105,9 +75,11 @@ export async function updateEvent(
     const updateData: any = {...eventData}
 
     // Convert date string to Timestamp
-    updateData.date = Timestamp.fromDate(new Date(eventData.date as string))
+    if (eventData.date) {
+      updateData.date = Timestamp.fromDate(new Date(eventData.date as string))
+    }
 
-    await firestore.collection('Events').doc(eventId).update(updateData)
+    await firestore.collection('Events').doc(eventId).set(updateData)
     revalidatePath('/events')
     revalidatePath(`/events/${eventId}`)
     return {success: true, message: 'Event updated'}
@@ -150,14 +122,54 @@ export async function deleteEvent(token: string, eventId: string) {
   }
 }
 
-export async function getEvents() {
-  return firestore
-    .collection('Events')
-    .orderBy('date', 'desc')
-    .get()
-    .then((snapshot) => {
-      return snapshot.docs.map((doc) => {
+export async function getEvents(token: string) {
+  const {valid, message} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, message}
+  }
+  return {
+    success: true,
+    events: await firestore
+      .collection('Events')
+      .orderBy('date', 'desc')
+      .get()
+      .then((snapshot) => {
+        return snapshot.docs.map((doc) => {
+          const eventData = doc.data()
+          // Add srcSet to photos if they exist
+          const photos =
+            eventData.photos?.map((photo: Photo) =>
+              addSrcSetToPhoto(photo, process.env.CLOUDINARY_CLOUD_NAME!)
+            ) || []
+
+          return {
+            id: doc.id,
+            ...eventData,
+            photos,
+            date: eventData.date.toDate().toISOString(), // Preserve date and time as ISO string
+          } as Event & {id: string}
+        })
+      }),
+  }
+}
+
+export async function getEvent(token: string, eventId: string) {
+  const {valid, message} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, message}
+  }
+  return {
+    success: true,
+    event: await firestore
+      .collection('Events')
+      .doc(eventId)
+      .get()
+      .then((doc) => {
         const eventData = doc.data()
+        if (!eventData) {
+          return null
+        }
+
         // Add srcSet to photos if they exist
         const photos =
           eventData.photos?.map((photo: Photo) =>
@@ -170,6 +182,6 @@ export async function getEvents() {
           photos,
           date: eventData.date.toDate().toISOString(), // Preserve date and time as ISO string
         } as Event & {id: string}
-      })
-    })
+      }),
+  }
 }
