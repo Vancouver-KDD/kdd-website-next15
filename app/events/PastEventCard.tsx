@@ -79,7 +79,7 @@ export default function PastEventCard({
             isZoomed
           />
 
-          <CardFooter className="absolute bottom-0 z-10 flex flex-col items-start bg-white/30 text-start backdrop-blur">
+          <CardFooter className="absolute bottom-0 z-10 flex flex-col items-start bg-white/30 pr-5 text-start backdrop-blur">
             <div className="text-sm text-black">{formatISODate(date)}</div>
             <div className="text-sm text-black">{title}</div>
           </CardFooter>
