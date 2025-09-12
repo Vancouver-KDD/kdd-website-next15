@@ -4,6 +4,8 @@ import {Tab, Tabs as HerouiTabs} from '@heroui/tabs'
 import {Event} from '@/firebase/types'
 import {Image} from '@heroui/image'
 import Photos from './(photos)/Photos'
+import {Link} from '@heroui/link'
+import {button as buttonStyles} from '@heroui/theme'
 
 const TABS = [
   {
@@ -51,15 +53,31 @@ export default function Tabs({event}: {event: Event}) {
       }}>
       <Tab key={TABS[0].key} title={TABS[0].title} className="text-medium">
         <div className="grid grid-cols-1 gap-10 py-8 md:grid-cols-2">
-          {!!event.image && (
-            <Image
-              src={event.image ?? ''}
-              alt={'poster'}
-              shadow="lg"
-              removeWrapper
-              className="h-auto rounded-lg object-contain"
-            />
-          )}
+          <div className="space-y-4">
+            {!!event.image && (
+              <Image
+                src={event.image ?? ''}
+                alt={'poster'}
+                shadow="lg"
+                removeWrapper
+                className="h-auto rounded-lg object-contain"
+              />
+            )}
+            {!!event.joinLink && (
+              <Link
+                className={buttonStyles({
+                  variant: 'shadow',
+                  radius: 'sm',
+                  size: 'md',
+                  color: 'primary',
+                  className: 'font-light',
+                })}
+                isExternal={!!event.joinLink}
+                href={event.joinLink}>
+                참여하기
+              </Link>
+            )}
+          </div>
           <div className="text-start font-normal whitespace-pre-line">{event.description}</div>
         </div>
       </Tab>
