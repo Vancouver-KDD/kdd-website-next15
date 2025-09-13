@@ -124,6 +124,11 @@ export async function setEvent(
       }
     }
 
+    if (eventData && eventData.date && new Date(eventData.date) > Timestamp.now().toDate()) {
+      // Upcoming event must be revalidated on home page
+      revalidatePath('/')
+    }
+
     revalidatePath('/events')
     revalidatePath(`/events/${eventId}`)
     return {success: true, message: 'Event updated'}
@@ -153,15 +158,26 @@ export async function deleteEvent(token: string, eventId: string) {
       })
     }
 
+    // Get event data before deletion
+    const eventDocRef = firestore.collection('Events').doc(eventId)
+    const eventData = await eventDocRef.get().then((doc) => doc.data())
+
     // Then delete the event document
-    await firestore.collection('Events').doc(eventId).delete()
+    await eventDocRef.delete()
 
     // Log user activity
     await logUserActivity(userId, 'delete_event', {
       eventId,
+      ...eventData,
     })
 
     revalidatePath('/events')
+
+    if (eventData?.date > Timestamp.now()) {
+      // Upcoming event must be revalidated on home page
+      revalidatePath('/')
+    }
+
     return {success: true, message: 'Event deleted'}
   } catch (error) {
     posthog.capture('error', {
