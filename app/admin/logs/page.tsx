@@ -47,7 +47,7 @@ export default function LogsPage() {
   const [limit, setLimit] = useState(50)
   const [filter, setFilter] = useState<LOG_EVENT_TYPE | 'all'>('all')
   const [searchTerm, setSearchTerm] = useState('')
-  const {user} = useAuthStore()
+  const {user, loading: authLoading} = useAuthStore()
 
   const loadLogs = async () => {
     setLoading(true)
@@ -85,8 +85,9 @@ export default function LogsPage() {
   }
 
   useEffect(() => {
+    if (authLoading) return
     loadLogs()
-  }, [limit])
+  }, [limit, authLoading])
 
   const filteredLogs = logs.filter((log) => {
     const matchesFilter = filter === 'all' || log.event === filter
