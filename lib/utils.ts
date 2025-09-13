@@ -144,3 +144,67 @@ export function generateGradientSVG(
 
   return `data:image/svg+xml;base64,${btoa(svg)}`
 }
+
+/**
+ * Deep equality check for objects
+ */
+export function isEqual(a: any, b: any): boolean {
+  if (a === b) return true
+  if (a == null || b == null) return a === b
+  if (typeof a !== typeof b) return false
+  if (typeof a !== 'object') return a === b
+
+  const keysA = Object.keys(a)
+  const keysB = Object.keys(b)
+
+  if (keysA.length !== keysB.length) return false
+
+  for (const key of keysA) {
+    if (!keysB.includes(key)) return false
+    if (!isEqual(a[key], b[key])) return false
+  }
+
+  return true
+}
+
+/**
+ * Find differences between two objects
+ */
+export function getObjectDiff<T extends Record<string, any>>(
+  oldObj: T,
+  newObj: Partial<T>
+): Record<string, {from: any; to: any}> {
+  const changes: Record<string, {from: any; to: any}> = {}
+
+  for (const key in newObj) {
+    if (newObj.hasOwnProperty(key)) {
+      const oldValue = oldObj[key]
+      const newValue = newObj[key]
+
+      if (!isEqual(oldValue, newValue)) {
+        changes[key] = {from: oldValue, to: newValue}
+      }
+    }
+  }
+
+  return changes
+}
+
+/**
+ * Filter object to only include non-empty string fields and other meaningful values
+ */
+export function filterMeaningfulFields<T extends Record<string, any>>(obj: T): Partial<T> {
+  const filtered: Partial<T> = {}
+
+  for (const [key, value] of Object.entries(obj)) {
+    if (typeof value === 'string') {
+      if (value.trim() !== '') {
+        filtered[key as keyof T] = value as T[keyof T]
+      }
+    } else if (value !== undefined && value !== null) {
+      filtered[key as keyof T] = value as T[keyof T]
+    }
+  }
+
+  return filtered
+}

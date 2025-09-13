@@ -1,7 +1,6 @@
 'use server'
 
-import {firestore} from '@/firebase/server'
-import {verifyAdminToken} from '@/firebase/server'
+import {firestore, verifyAdminToken, logUserActivity} from '@/firebase/server'
 import {v2 as cloudinary} from 'cloudinary'
 import {revalidatePath} from 'next/cache'
 import {extractPublicIdFromUrl} from '@/cloudinary/utils'
@@ -95,7 +94,7 @@ export async function uploadEventPhoto({
   fileName: string
 }) {
   try {
-    const {valid, message} = await verifyAdminToken(token)
+    const {valid, message, userId} = await verifyAdminToken(token)
     if (!valid) {
       return {success: false, error: message}
     }
@@ -132,6 +131,15 @@ export async function uploadEventPhoto({
       photos.unshift(newPhoto)
       await tx.update(eventRef, {photos})
     })
+
+    // Log user activity
+    await logUserActivity(userId, 'add_event_photo', {
+      eventId,
+      photoKey: newPhoto.key,
+      photoSrc: newPhoto.src,
+      fileName,
+    })
+
     revalidatePath(`/events/${eventId}`)
     return {
       success: true,
