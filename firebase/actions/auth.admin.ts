@@ -1,13 +1,28 @@
 'use server'
-import {auth} from '@/firebase/server'
+import {auth, logUserActivity} from '@/firebase/server'
 
 export async function verifyAdminPassword(token: string, password: string) {
   try {
     const decodedToken = await auth.verifyIdToken(token, true)
     if (password === process.env.KDD_ADMIN_PASSWORD) {
       await auth.setCustomUserClaims(decodedToken.uid, {admin: true})
+
+      // Log user activity
+      await logUserActivity(decodedToken.uid, 'verify_admin_password', {
+        userId: decodedToken.uid,
+        success: true,
+      })
+
       return {valid: true, message: 'Admin verified'}
     }
+
+    // Log failed attempt
+    await logUserActivity(decodedToken.uid, 'verify_admin_password', {
+      userId: decodedToken.uid,
+      success: false,
+      reason: 'Invalid password',
+    })
+
     return {valid: false, message: 'Invalid password'}
   } catch (error: unknown) {
     if (error instanceof Error) {
@@ -21,6 +36,13 @@ export async function stepDownAsAdmin(token: string) {
   try {
     const decodedToken = await auth.verifyIdToken(token, true)
     await auth.setCustomUserClaims(decodedToken.uid, {admin: false})
+
+    // Log user activity
+    await logUserActivity(decodedToken.uid, 'step_down_as_admin', {
+      userId: decodedToken.uid,
+      success: true,
+    })
+
     return {valid: true, message: 'Admin step down'}
   } catch (error: unknown) {
     if (error instanceof Error) {

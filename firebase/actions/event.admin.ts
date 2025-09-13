@@ -1,7 +1,7 @@
 'use server'
 
-import {getErrorMessage} from '@/lib/utils'
-import {firestore, verifyAdminToken} from '@/firebase/server'
+import {getErrorMessage, getObjectDiff, filterMeaningfulFields} from '@/lib/utils'
+import {firestore, verifyAdminToken, logUserActivity} from '@/firebase/server'
 import {arrayMove} from '@/lib/utils'
 import {FieldValue, Timestamp, Transaction} from 'firebase-admin/firestore'
 import {posthog} from 'posthog-js'
@@ -17,7 +17,7 @@ export async function moveEventPhoto(
   oldIndex: number,
   newIndex: number
 ) {
-  const {valid, message} = await verifyAdminToken(token)
+  const {valid, message, userId} = await verifyAdminToken(token)
   if (!valid) {
     return {success: false, message}
   }
@@ -29,6 +29,15 @@ export async function moveEventPhoto(
       const newPhotos = arrayMove(photos, oldIndex, newIndex)
       await tx.update(eventRef, {photos: newPhotos})
     })
+
+    // Log user activity
+    if (userId) {
+      await logUserActivity(userId, 'move_event_photo', {
+        eventId,
+        oldIndex,
+        newIndex,
+      })
+    }
   } catch (error) {
     posthog.capture('error', {
       error: 'Failed to move photo',
@@ -41,7 +50,7 @@ export async function moveEventPhoto(
 }
 
 export async function deleteEventPhoto(token: string, eventId: string, photo: Photo) {
-  const {valid, message} = await verifyAdminToken(token)
+  const {valid, message, userId} = await verifyAdminToken(token)
   if (!valid) {
     return {success: false, message}
   }
@@ -57,6 +66,16 @@ export async function deleteEventPhoto(token: string, eventId: string, photo: Ph
 
   const eventRef = firestore.collection('Events').doc(eventId)
   await eventRef.update({photos: FieldValue.arrayRemove(photo)})
+
+  // Log user activity
+  if (userId) {
+    await logUserActivity(userId, 'delete_event_photo', {
+      eventId,
+      photoKey: photo.key,
+      photoSrc: photo.src,
+    })
+  }
+
   revalidatePath(`/events/${eventId}`)
   return {success: true, message: 'Photo deleted'}
 }
@@ -66,7 +85,7 @@ export async function setEvent(
   eventId: string,
   eventData: Partial<Omit<Event, 'id'>>
 ) {
-  const {valid, message} = await verifyAdminToken(token)
+  const {valid, message, userId} = await verifyAdminToken(token)
   if (!valid) {
     return {success: false, message}
   }
@@ -79,7 +98,37 @@ export async function setEvent(
       updateData.date = Timestamp.fromDate(new Date(eventData.date as string))
     }
 
-    await firestore.collection('Events').doc(eventId).set(updateData)
+    // Get existing event data for comparison
+    const eventRef = firestore.collection('Events').doc(eventId)
+    const existingEventDoc = await eventRef.get()
+    const isCreate = !existingEventDoc.exists
+    const existingData = existingEventDoc.data() || {}
+
+    await eventRef.set(updateData)
+
+    // Log user activity
+    if (isCreate) {
+      // For create: only log meaningful fields
+      const createData = {
+        eventId,
+        ...filterMeaningfulFields(eventData),
+      }
+      await logUserActivity(userId, 'create_event', createData)
+    } else {
+      // For update: find and log differences
+      const changes = getObjectDiff(existingData, eventData)
+
+      // Only log if there are actual changes
+      if (Object.keys(changes).length > 0) {
+        await logUserActivity(userId, 'update_event', {eventId, ...changes})
+      }
+    }
+
+    if (eventData && eventData.date && new Date(eventData.date) > Timestamp.now().toDate()) {
+      // Upcoming event must be revalidated on home page
+      revalidatePath('/')
+    }
+
     revalidatePath('/events')
     revalidatePath(`/events/${eventId}`)
     return {success: true, message: 'Event updated'}
@@ -93,7 +142,7 @@ export async function setEvent(
 }
 
 export async function deleteEvent(token: string, eventId: string) {
-  const {valid, message} = await verifyAdminToken(token)
+  const {valid, message, userId} = await verifyAdminToken(token)
   if (!valid) {
     return {success: false, message}
   }
@@ -109,9 +158,26 @@ export async function deleteEvent(token: string, eventId: string) {
       })
     }
 
+    // Get event data before deletion
+    const eventDocRef = firestore.collection('Events').doc(eventId)
+    const eventData = await eventDocRef.get().then((doc) => doc.data())
+
     // Then delete the event document
-    await firestore.collection('Events').doc(eventId).delete()
+    await eventDocRef.delete()
+
+    // Log user activity
+    await logUserActivity(userId, 'delete_event', {
+      eventId,
+      ...eventData,
+    })
+
     revalidatePath('/events')
+
+    if (eventData?.date > Timestamp.now()) {
+      // Upcoming event must be revalidated on home page
+      revalidatePath('/')
+    }
+
     return {success: true, message: 'Event deleted'}
   } catch (error) {
     posthog.capture('error', {

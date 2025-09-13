@@ -12,6 +12,10 @@ export default function AdminPage() {
         <Link className="text-primary" href="/admin/events">
           Manage Events
         </Link>
+        <Spacer y={2} />
+        <Link className="text-primary" href="/admin/logs">
+          View User Logs
+        </Link>
         <Spacer y={4} />
       </div>
     </>
