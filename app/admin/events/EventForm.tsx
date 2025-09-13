@@ -17,7 +17,8 @@ import {Input, Textarea} from '@heroui/input'
 import {Checkbox} from '@heroui/checkbox'
 import {NumberInput} from '@heroui/number-input'
 import {DateRangePicker} from '@heroui/date-picker'
-import {parseDate, parseDateTime, getLocalTimeZone, now} from '@internationalized/date'
+import {parseDateTime, getLocalTimeZone} from '@internationalized/date'
+import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
 
 export type EventFormValues = {
   title: string
@@ -262,7 +263,15 @@ export function EventForm({event}: {event: Event & {id: string}}) {
         <Input label="Location" {...register('location')} />
         <Input label="Location Details" {...register('locationDetails')} />
         <Input label="Location Link" type="url" {...register('locationLink')} />
-        <Input label="Type" {...register('type')} />
+        <Autocomplete label="Type" {...register('type')}>
+          <AutocompleteItem key="MONTHLY MEETUP">MONTHLY MEETUP</AutocompleteItem>
+          <AutocompleteItem key="ANNUAL CONFERENCE">ANNUAL CONFERENCE</AutocompleteItem>
+          <AutocompleteItem key="STUDY GROUPS">STUDY GROUPS</AutocompleteItem>
+          <AutocompleteItem key="ONLINE MEETUP">ONLINE MEETUP</AutocompleteItem>
+          <AutocompleteItem key="MENTORSHIP">MENTORSHIP</AutocompleteItem>
+          <AutocompleteItem key="CHRISTMAS PARTY">CHRISTMAS PARTY</AutocompleteItem>
+          <AutocompleteItem key="SUMMER BBQ">SUMMER BBQ</AutocompleteItem>
+        </Autocomplete>
         <Input label="Price" type="text" {...register('price')} />
         <Controller
           name="quantity"

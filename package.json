@@ -11,6 +11,7 @@
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
+    "@heroui/autocomplete": "^2.3.28",
     "@heroui/breadcrumbs": "^2.2.20",
     "@heroui/button": "2.2.24",
     "@heroui/calendar": "^2.2.24",
