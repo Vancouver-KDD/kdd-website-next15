@@ -11,6 +11,9 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import {getLogs, LogEntry} from '@/firebase/actions/logs'
 import {LOG_EVENT_TYPE} from '@/firebase/server'
 import {useAuthStore} from '@/firebase/AuthClient'
+import {getErrorMessage} from '@/lib/utils'
+import {addToast} from '@heroui/toast'
+import posthog from 'posthog-js'
 
 const EVENT_TYPE_COLORS: Record<
   LOG_EVENT_TYPE,
@@ -44,7 +47,7 @@ export default function LogsPage() {
   const [limit, setLimit] = useState(50)
   const [filter, setFilter] = useState<LOG_EVENT_TYPE | 'all'>('all')
   const [searchTerm, setSearchTerm] = useState('')
-  const {user, admin, loading: authLoading} = useAuthStore()
+  const {user} = useAuthStore()
 
   const loadLogs = async () => {
     setLoading(true)
@@ -65,6 +68,15 @@ export default function LogsPage() {
         setError(result.message || 'Failed to load logs')
       }
     } catch (err) {
+      posthog.capture('error', {
+        error: 'Failed to load logs',
+        message: getErrorMessage(err, 'Failed to load logs'),
+      })
+      addToast({
+        title: 'Error',
+        description: getErrorMessage(err, 'Failed to load logs'),
+        color: 'danger',
+      })
       setError('Failed to load logs')
       console.error('Error loading logs:', err)
     } finally {
@@ -87,7 +99,7 @@ export default function LogsPage() {
   })
 
   const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat('en-CA', {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
@@ -123,12 +135,16 @@ export default function LogsPage() {
   return (
     <>
       <Breadcrumbs
-        paths={[{href: '/', title: 'Home'}, {href: '/admin', title: 'Admin'}, {title: 'Logs'}]}
+        paths={[
+          {href: '/', title: 'Home'},
+          {href: '/admin', title: 'Admin Dashboard'},
+          {title: 'Logs'},
+        ]}
       />
 
       <div className="mx-auto w-full max-w-screen-xl px-6 py-8">
         <div className="mb-6">
-          <h1 className="mb-4 text-3xl font-bold">System Logs</h1>
+          <h1 className="mb-4 text-3xl font-bold">User Activity Logs</h1>
 
           {/* Controls */}
           <div className="mb-6 flex flex-col gap-4 sm:flex-row">
@@ -148,11 +164,11 @@ export default function LogsPage() {
               <AutocompleteItem key="create_event">Create Event</AutocompleteItem>
               <AutocompleteItem key="update_event">Update Event</AutocompleteItem>
               <AutocompleteItem key="delete_event">Delete Event</AutocompleteItem>
-              <AutocompleteItem key="move_event_photo">Move Photo</AutocompleteItem>
-              <AutocompleteItem key="delete_event_photo">Delete Photo</AutocompleteItem>
-              <AutocompleteItem key="add_event_photo">Add Photo</AutocompleteItem>
-              <AutocompleteItem key="verify_admin_password">Admin Login</AutocompleteItem>
-              <AutocompleteItem key="step_down_as_admin">Admin Logout</AutocompleteItem>
+              <AutocompleteItem key="move_event_photo">Move Event Photo</AutocompleteItem>
+              <AutocompleteItem key="delete_event_photo">Delete Event Photo</AutocompleteItem>
+              <AutocompleteItem key="add_event_photo">Add Event Photo</AutocompleteItem>
+              <AutocompleteItem key="verify_admin_password">Admin Verified</AutocompleteItem>
+              <AutocompleteItem key="step_down_as_admin">Admin Step Down</AutocompleteItem>
             </Autocomplete>
 
             <Autocomplete
@@ -166,7 +182,7 @@ export default function LogsPage() {
               <AutocompleteItem key="200">200 logs</AutocompleteItem>
             </Autocomplete>
 
-            <Button onClick={loadLogs} color="primary">
+            <Button onPress={loadLogs} color="primary">
               Refresh
             </Button>
           </div>
@@ -177,7 +193,7 @@ export default function LogsPage() {
             <CardBody>
               <div className="text-danger text-center">
                 <p>{error}</p>
-                <Button onClick={loadLogs} color="primary" className="mt-2">
+                <Button onPress={loadLogs} color="primary" className="mt-2">
                   Retry
                 </Button>
               </div>
