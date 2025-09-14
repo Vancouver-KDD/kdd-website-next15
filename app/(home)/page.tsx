@@ -71,6 +71,7 @@ export default function Home() {
           width={3840}
           height={2560}
           quality={90}
+          priority={false}
         />
         <div className="absolute right-0 left-0 h-[507px] bg-black/60">
           <div className="flex h-full items-center justify-center">
