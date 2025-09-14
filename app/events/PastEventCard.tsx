@@ -69,7 +69,7 @@ export default function PastEventCard({
 
   return (
     <div className="group relative">
-      <Link href={`/events/${id}`}>
+      <Link href={`/events/${id}#details`}>
         <Card isHoverable shadow="lg" className="max-h-[313px] justify-center">
           <Image
             draggable={false}
@@ -85,11 +85,12 @@ export default function PastEventCard({
           </CardFooter>
         </Card>
       </Link>
-
       {photos && photos.length > 0 && (
-        <div className="absolute right-2 bottom-5 z-20">
-          <Images className="h-4 w-4" />
-        </div>
+        <Link
+          href={`/events/${id}#photos`}
+          className="text-foreground-800 absolute right-2 bottom-5 z-20">
+          <Images className="h-5 w-5" />
+        </Link>
       )}
 
       {admin && (
