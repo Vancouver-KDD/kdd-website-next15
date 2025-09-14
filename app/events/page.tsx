@@ -41,7 +41,7 @@ export default function EventsPage() {
           src={EventGroupSVG}
           width={460}
           height={314}
-          className="w-full max-w-[460px]"
+          className="w-[460px]"
           alt="Event Group"
         />
       </section>
