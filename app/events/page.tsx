@@ -2,12 +2,13 @@ import {subtitle, title, label as labelStyles} from '@/components/primitives'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
-import EventGroupSVG from './EventGroupSVG'
+import EventGroupSVG from './event-group.avif'
 import {Divider} from '@heroui/divider'
 import PastEventCard from './PastEventCard'
 import {getPastEvents} from '@/firebase/actions/event'
 import {use} from 'react'
 import UpcomingEvents from './UpcomingEvents'
+import NextImage from 'next/image'
 
 export default function EventsPage() {
   const pastEvents = use(getPastEvents())
@@ -36,7 +37,13 @@ export default function EventsPage() {
       </section>
       <Spacer y={40} />
       <section className="mx-4 flex justify-center">
-        <EventGroupSVG width={458} className="w-full" />
+        <NextImage
+          src={EventGroupSVG}
+          width={460}
+          height={314}
+          className="w-full max-w-[460px]"
+          alt="Event Group"
+        />
       </section>
       <Spacer y={6} />
       <UpcomingEvents />
