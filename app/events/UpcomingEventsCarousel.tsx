@@ -40,7 +40,7 @@ export default function UpcomingEventsCarousel({
   return (
     <>
       <UpcomingEventsCalendar events={events} />
-      <Carousel className="w-full max-w-4xl" setApi={setApi}>
+      <Carousel className="mx-auto w-full max-w-4xl" setApi={setApi}>
         <CarouselContent>
           {events.map((event) => {
             return (

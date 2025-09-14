@@ -32,20 +32,20 @@ export default function UpcomingEvent({
 
   return (
     <div className="group relative">
-      <div className="flex h-[433px] flex-col items-center justify-center gap-6 px-4 md:flex-row md:gap-10 md:px-6">
+      <div className="flex flex-col items-center justify-center gap-14 px-4 md:flex-row md:gap-10 md:px-6">
         {image ? (
           <Image
             src={image}
             alt="upcoming event poster"
             shadow="lg"
-            className="w-[124px] object-contain md:w-[249px]"
+            className="w-[249px] object-contain"
           />
         ) : (
           !joinLink && (
             <NextImage
               src={eventPosterLoading}
               alt="upcoming event poster"
-              className="w-[124px] object-contain md:w-[249px]"
+              className="w-[249px] object-contain"
             />
           )
         )}
