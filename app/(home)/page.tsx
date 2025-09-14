@@ -2,7 +2,7 @@ import {Link} from '@heroui/link'
 import {button as buttonStyles, cn} from '@heroui/theme'
 import {subtitle, heroTitle, sectionTitle} from '@/components/primitives'
 import NextImage from 'next/image'
-import kddBgConference from './kdd-bg-conference.jpg'
+import kddBgConference from './kdd-bg-conference.avif'
 import {Spacer} from '@heroui/spacer'
 import {Divider} from '@heroui/divider'
 import UpcomingEvents from '../events/UpcomingEvents'
@@ -68,7 +68,9 @@ export default function Home() {
           src={kddBgConference}
           alt="KDD Conference"
           className="absolute right-0 left-0 h-[507px] object-cover"
-          quality={100}
+          width={3840}
+          height={2560}
+          quality={90}
         />
         <div className="absolute right-0 left-0 h-[507px] bg-black/60">
           <div className="flex h-full items-center justify-center">
