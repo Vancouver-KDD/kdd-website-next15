@@ -9,7 +9,7 @@ import {Link} from '@heroui/link'
 import {button as buttonStyles} from '@heroui/theme'
 import NextImage from 'next/image'
 import {Image} from '@heroui/image'
-import kddAbout from './kdd-about1.png'
+import kddAbout from './kdd-about1.avif'
 import {Divider} from '@heroui/divider'
 import {Spacer} from '@heroui/spacer'
 import {
@@ -55,7 +55,7 @@ export default function AboutPage() {
             alt="KDD About"
             width={279}
             height={257}
-            className="mb-[-37px]"
+            className="mb-[-37px] h-auto"
           />
         </section>
         <Divider orientation="horizontal" />
