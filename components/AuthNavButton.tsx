@@ -1,10 +1,10 @@
-import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
-import {LogOut, User, UserCheck, UserStar, Plus} from 'lucide-react'
+import {stepDownAsAdmin, verifyAdminPassword} from '@/firebase/actions/auth.admin'
 import {useAuthStore} from '@/firebase/AuthClient'
 import {Button} from '@heroui/button'
 import {Input} from '@heroui/input'
-import {stepDownAsAdmin, verifyAdminPassword} from '@/firebase/actions/auth.admin'
+import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {addToast} from '@heroui/toast'
+import {LogOut, Plus, User, UserCheck, UserStar} from 'lucide-react'
 import Link from 'next/link'
 
 export default function AuthNavButton() {

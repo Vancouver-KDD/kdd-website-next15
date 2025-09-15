@@ -1,9 +1,9 @@
 'use client'
-import * as React from 'react'
-import useEmblaCarousel, {type UseEmblaCarouselType} from 'embla-carousel-react'
-import {ArrowLeft, ArrowRight} from 'lucide-react'
 import {cn} from '@/lib/utils'
 import {Button} from '@heroui/button'
+import useEmblaCarousel, {type UseEmblaCarouselType} from 'embla-carousel-react'
+import {ArrowLeft, ArrowRight} from 'lucide-react'
+import * as React from 'react'
 
 type CarouselApi = UseEmblaCarouselType[1]
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -229,4 +229,4 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 )
 CarouselNext.displayName = 'CarouselNext'
 
-export {type CarouselApi, Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext}
+export {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi}

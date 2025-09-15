@@ -1,14 +1,14 @@
-import {subtitle, title, label as labelStyles} from '@/components/primitives'
+import {label as labelStyles, subtitle, title} from '@/components/primitives'
+import {getPastEvents} from '@/firebase/actions/event'
+import {Divider} from '@heroui/divider'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
-import EventGroupSVG from './event-group.avif'
-import {Divider} from '@heroui/divider'
-import PastEventCard from './PastEventCard'
-import {getPastEvents} from '@/firebase/actions/event'
-import {use} from 'react'
-import UpcomingEvents from './UpcomingEvents'
 import NextImage from 'next/image'
+import {use} from 'react'
+import EventGroupSVG from './event-group.avif'
+import PastEventCard from './PastEventCard'
+import UpcomingEvents from './UpcomingEvents'
 
 export default function EventsPage() {
   const pastEvents = use(getPastEvents())

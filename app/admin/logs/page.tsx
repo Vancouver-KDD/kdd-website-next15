@@ -1,19 +1,19 @@
 'use client'
 
-import {useEffect, useState} from 'react'
-import {Card, CardBody, CardHeader} from '@heroui/card'
-import {Chip} from '@heroui/chip'
-import {Spinner} from '@heroui/spinner'
-import {Button} from '@heroui/button'
-import {Input} from '@heroui/input'
-import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import {getLogs, LogEntry} from '@/firebase/actions/logs'
-import {LOG_EVENT_TYPE} from '@/firebase/server'
 import {useAuthStore} from '@/firebase/AuthClient'
+import {LOG_EVENT_TYPE} from '@/firebase/server'
 import {getErrorMessage} from '@/lib/utils'
+import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
+import {Button} from '@heroui/button'
+import {Card, CardBody, CardHeader} from '@heroui/card'
+import {Chip} from '@heroui/chip'
+import {Input} from '@heroui/input'
+import {Spinner} from '@heroui/spinner'
 import {addToast} from '@heroui/toast'
 import posthog from 'posthog-js'
+import {useEffect, useState} from 'react'
 
 const EVENT_TYPE_COLORS: Record<
   LOG_EVENT_TYPE,

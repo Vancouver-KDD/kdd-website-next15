@@ -1,5 +1,5 @@
-import {cloneElement, ReactElement, RefAttributes} from 'react'
 import {useSortable} from '@dnd-kit/sortable'
+import {cloneElement, ReactElement, RefAttributes} from 'react'
 
 type SortableProps = {
   id: string

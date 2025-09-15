@@ -1,11 +1,11 @@
 'use client'
-import {useEffect, useState} from 'react'
-import {Tab, Tabs as HerouiTabs} from '@heroui/tabs'
 import {Event} from '@/firebase/types'
 import {Image} from '@heroui/image'
-import Photos from './(photos)/Photos'
 import {Link} from '@heroui/link'
+import {Tabs as HerouiTabs, Tab} from '@heroui/tabs'
 import {button as buttonStyles} from '@heroui/theme'
+import {useEffect, useState} from 'react'
+import Photos from './(photos)/Photos'
 
 const TABS = [
   {

@@ -1,8 +1,8 @@
 'use server'
-import {Timestamp} from 'firebase-admin/firestore'
-import {firestore} from '@/firebase/server'
 import {addSrcSetToPhoto} from '@/cloudinary/utils'
+import {firestore} from '@/firebase/server'
 import type {Event} from '@/firebase/types'
+import {Timestamp} from 'firebase-admin/firestore'
 import type {Photo} from 'react-photo-album'
 
 export async function getFutureEvents() {

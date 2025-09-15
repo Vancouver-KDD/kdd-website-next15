@@ -1,13 +1,14 @@
 import '@/styles/globals.css'
-import {Metadata, Viewport} from 'next'
-import clsx from 'clsx'
-import {Providers} from './providers'
-import {siteConfig} from '@/config/site'
-import {fontSans} from '@/config/fonts'
-import {Navbar} from '@/components/navbar'
-import Footer from './Footer'
+
 import JumpToTopButton from '@/components/JumpToTopButton'
+import {Navbar} from '@/components/navbar'
+import {fontSans} from '@/config/fonts'
+import {siteConfig} from '@/config/site'
 import AuthClient from '@/firebase/AuthClient'
+import clsx from 'clsx'
+import {Metadata, Viewport} from 'next'
+import Footer from './Footer'
+import {Providers} from './providers'
 
 export const metadata: Metadata = {
   title: {

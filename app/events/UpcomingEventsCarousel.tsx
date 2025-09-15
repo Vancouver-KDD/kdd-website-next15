@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from 'react'
+import {useSelectedEventStore} from '@/app/store'
 import {
   Carousel,
   CarouselApi,
@@ -9,10 +9,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import {Event} from '@/firebase/types'
+import * as React from 'react'
 import UpcomingEvent from './UpcomingEvent'
 import UpcomingEventsCalendar from './UpcomingEventsCalendar'
-import {Event} from '@/firebase/types'
-import {useSelectedEventStore} from '@/app/store'
 
 export default function UpcomingEventsCarousel({
   events,

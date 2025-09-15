@@ -1,24 +1,24 @@
 'use client'
-import {
-  Navbar as HeroUINavbar,
-  NavbarContent,
-  NavbarMenu,
-  NavbarMenuToggle,
-  NavbarBrand,
-  NavbarItem,
-  NavbarMenuItem,
-} from '@heroui/navbar'
+import AuthNavButton from '@/components/AuthNavButton'
+import {HeartFilledIcon, Logo} from '@/components/icons'
+import {ThemeSwitch} from '@/components/theme-switch'
+import {siteConfig} from '@/config/site'
 import {Button} from '@heroui/button'
 import {Link} from '@heroui/link'
-import {link as linkStyles} from '@heroui/theme'
-import clsx from 'clsx'
-import {siteConfig} from '@/config/site'
-import {ThemeSwitch} from '@/components/theme-switch'
-import {HeartFilledIcon, Logo} from '@/components/icons'
+import {
+  Navbar as HeroUINavbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+} from '@heroui/navbar'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {Snippet} from '@heroui/snippet'
+import {link as linkStyles} from '@heroui/theme'
+import clsx from 'clsx'
 import {useState} from 'react'
-import AuthNavButton from '@/components/AuthNavButton'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

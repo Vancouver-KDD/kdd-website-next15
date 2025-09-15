@@ -1,8 +1,9 @@
 import * as React from 'react'
+
 import {IconSvgProps} from '@/types'
 import {Image} from '@heroui/image'
-import logo from './logo.png'
 import logoBlack from './logo-black.png'
+import logo from './logo.png'
 
 export const Logo: React.FC<{
   size?: number

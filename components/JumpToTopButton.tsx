@@ -1,7 +1,7 @@
 'use client'
 import {Button} from '@heroui/button'
+import {useEffect, useState} from 'react'
 import {UpArrowIcon} from './icons'
-import {useState, useEffect} from 'react'
 
 export default function JumpToTopButton() {
   const [isVisible, setIsVisible] = useState(false)

@@ -1,7 +1,6 @@
 'use server'
 
-import {firestore, verifyAdminToken} from '@/firebase/server'
-import {LOG_EVENT_TYPE} from '@/firebase/server'
+import {firestore, LOG_EVENT_TYPE, verifyAdminToken} from '@/firebase/server'
 
 export type LogEntry = {
   id: string

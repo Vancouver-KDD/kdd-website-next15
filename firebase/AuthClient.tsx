@@ -1,10 +1,9 @@
 'use client'
+import {captureUserSignIn, identifyUser, resetUser} from '@/lib/posthog'
+import {signInWithPopup, signOut, User} from 'firebase/auth'
 import {useEffect} from 'react'
-import {auth, googleProvider} from './client'
 import {create} from 'zustand'
-import {signInWithPopup, signOut} from 'firebase/auth'
-import {User} from 'firebase/auth'
-import {identifyUser, resetUser, captureUserSignIn} from '@/lib/posthog'
+import {auth, googleProvider} from './client'
 
 export default function AuthClient() {
   const {setLoading, setUser, setAdmin} = useAuthStore()

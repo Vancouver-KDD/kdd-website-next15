@@ -6,6 +6,6 @@
   "semi": false,
   "trailingComma": "es5",
   "printWidth": 100,
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindFunctions": ["tv", "clsx"]
+  "plugins": ["prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
+  "tailwindFunctions": ["tv", "clsx", "cn"]
 }

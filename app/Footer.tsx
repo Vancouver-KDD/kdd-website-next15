@@ -1,17 +1,17 @@
 import {
-  GithubIcon,
   DiscordIcon,
+  GithubIcon,
+  InstagramIcon,
   LinkedInIcon,
   LogoBlack,
-  ThreadsIcon,
-  InstagramIcon,
   SlackIcon,
+  ThreadsIcon,
   YoutubeIcon,
 } from '@/components/icons'
-import {Link} from '@heroui/link'
-import {tv} from 'tailwind-variants'
 import {siteConfig} from '@/config/site'
+import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
+import {tv} from 'tailwind-variants'
 
 const footerLinkStyles = tv({
   base: 'text-foreground flex justify-center md:justify-start',

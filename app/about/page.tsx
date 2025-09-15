@@ -1,18 +1,4 @@
 import {
-  sectionSubtitle,
-  sectionTitle,
-  subtitle,
-  title,
-  label as labelStyles,
-} from '@/components/primitives'
-import {Link} from '@heroui/link'
-import {button as buttonStyles} from '@heroui/theme'
-import NextImage from 'next/image'
-import {Image} from '@heroui/image'
-import kddAbout from './kdd-about1.avif'
-import {Divider} from '@heroui/divider'
-import {Spacer} from '@heroui/spacer'
-import {
   DiscordIcon,
   EmailIcon,
   FacebookIcon,
@@ -23,6 +9,20 @@ import {
   ThreadsIcon,
   TwitterIcon,
 } from '@/components/icons'
+import {
+  label as labelStyles,
+  sectionSubtitle,
+  sectionTitle,
+  subtitle,
+  title,
+} from '@/components/primitives'
+import {Divider} from '@heroui/divider'
+import {Image} from '@heroui/image'
+import {Link} from '@heroui/link'
+import {Spacer} from '@heroui/spacer'
+import {button as buttonStyles} from '@heroui/theme'
+import NextImage from 'next/image'
+import kddAbout from './kdd-about1.avif'
 import members from './members.json'
 
 export default function AboutPage() {

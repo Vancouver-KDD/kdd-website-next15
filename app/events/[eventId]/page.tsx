@@ -1,9 +1,9 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import {getEvent} from '@/firebase/actions/event'
-import {Divider} from '@heroui/divider'
-import Tabs from './Tabs'
-import {Spacer} from '@heroui/spacer'
 import {formatISODate} from '@/lib/utils'
+import {Divider} from '@heroui/divider'
+import {Spacer} from '@heroui/spacer'
+import Tabs from './Tabs'
 
 export default async function EventPage({params}: {params: Promise<{eventId: string}>}) {
   const {eventId} = await params

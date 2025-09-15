@@ -1,5 +1,5 @@
 'use client'
-import {Breadcrumbs as HerouiBreadcrumbs, BreadcrumbItem} from '@heroui/breadcrumbs'
+import {BreadcrumbItem, Breadcrumbs as HerouiBreadcrumbs} from '@heroui/breadcrumbs'
 
 export default function Breadcrumbs({paths}: {paths: {href?: string; title: string}[]}) {
   return (

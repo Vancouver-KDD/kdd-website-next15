@@ -1,12 +1,12 @@
 'use client'
 
-import {useCallback, useMemo, useRef, useState} from 'react'
-import {Image} from '@heroui/image'
+import {getErrorMessage} from '@/lib/utils'
 import {Button} from '@heroui/button'
+import {Image} from '@heroui/image'
+import {addToast} from '@heroui/toast'
 import {Trash2} from 'lucide-react'
 import posthog from 'posthog-js'
-import {addToast} from '@heroui/toast'
-import {getErrorMessage} from '@/lib/utils'
+import {useCallback, useMemo, useRef, useState} from 'react'
 
 type PosterDropzoneProps = {
   imageUrl?: string

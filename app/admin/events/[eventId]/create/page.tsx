@@ -1,8 +1,8 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
-import {Spacer} from '@heroui/spacer'
-import {Card, CardBody, CardHeader} from '@heroui/card'
 import {EventForm} from '@/app/admin/events/EventForm'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import {isoToLocalDateTimeInput} from '@/lib/utils'
+import {Card, CardBody, CardHeader} from '@heroui/card'
+import {Spacer} from '@heroui/spacer'
 
 export default async function CreateEventPage({params}: {params: Promise<{eventId: string}>}) {
   const {eventId} = await params

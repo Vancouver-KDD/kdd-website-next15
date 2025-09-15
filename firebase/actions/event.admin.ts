@@ -1,15 +1,14 @@
 'use server'
 
-import {getErrorMessage, getObjectDiff, filterMeaningfulFields} from '@/lib/utils'
-import {firestore, verifyAdminToken, logUserActivity} from '@/firebase/server'
-import {arrayMove} from '@/lib/utils'
-import {FieldValue, Timestamp, Transaction} from 'firebase-admin/firestore'
-import {posthog} from 'posthog-js'
-import {revalidatePath} from 'next/cache'
 import {deleteEventPhotos, deletePhoto} from '@/cloudinary/actions.server'
-import {Photo} from 'react-photo-album/dist/types'
-import {Event} from '@/firebase/types'
 import {addSrcSetToPhoto} from '@/cloudinary/utils'
+import {firestore, logUserActivity, verifyAdminToken} from '@/firebase/server'
+import {Event} from '@/firebase/types'
+import {arrayMove, filterMeaningfulFields, getErrorMessage, getObjectDiff} from '@/lib/utils'
+import {FieldValue, Timestamp, Transaction} from 'firebase-admin/firestore'
+import {revalidatePath} from 'next/cache'
+import {posthog} from 'posthog-js'
+import {Photo} from 'react-photo-album/dist/types'
 
 export async function moveEventPhoto(
   token: string,

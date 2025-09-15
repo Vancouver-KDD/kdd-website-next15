@@ -1,8 +1,8 @@
-import {useState} from 'react'
-import {addToast} from '@heroui/toast'
-import {getErrorMessage} from '@/lib/utils'
 import {deleteEvent} from '@/firebase/actions/event.admin'
 import {useAuthStore} from '@/firebase/AuthClient'
+import {getErrorMessage} from '@/lib/utils'
+import {addToast} from '@heroui/toast'
+import {useState} from 'react'
 
 interface UseDeleteEventOptions {
   onSuccess?: (eventId: string) => void

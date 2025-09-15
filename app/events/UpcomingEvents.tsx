@@ -1,9 +1,9 @@
+import {sectionSubtitle, sectionTitle, subtitle} from '@/components/primitives'
+import {getFutureEvents} from '@/firebase/actions/event'
+import {Skeleton} from '@heroui/skeleton'
+import {Spacer} from '@heroui/spacer'
 import {Suspense, use} from 'react'
 import UpcomingEventsCarousel from './UpcomingEventsCarousel'
-import {Skeleton} from '@heroui/skeleton'
-import {getFutureEvents} from '@/firebase/actions/event'
-import {Spacer} from '@heroui/spacer'
-import {sectionSubtitle, sectionTitle, subtitle} from '@/components/primitives'
 
 export default function UpcomingEvents() {
   const events = use(getFutureEvents())

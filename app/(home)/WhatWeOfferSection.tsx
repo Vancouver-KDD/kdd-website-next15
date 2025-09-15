@@ -1,6 +1,6 @@
 'use client'
-import {Card, CardBody, CardFooter} from '@heroui/card'
 import {sectionTitle} from '@/components/primitives'
+import {Card, CardBody, CardFooter} from '@heroui/card'
 import {Image} from '@heroui/image'
 import {Spacer} from '@heroui/spacer'
 

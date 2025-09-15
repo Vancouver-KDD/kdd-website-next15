@@ -1,5 +1,5 @@
-import posthog from 'posthog-js'
 import {User} from 'firebase/auth'
+import posthog from 'posthog-js'
 
 /**
  * PostHog utility functions for user identification and event tracking

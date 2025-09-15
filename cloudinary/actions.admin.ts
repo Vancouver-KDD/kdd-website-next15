@@ -1,9 +1,9 @@
 'use server'
 
-import {firestore, verifyAdminToken, logUserActivity} from '@/firebase/server'
+import {extractPublicIdFromUrl} from '@/cloudinary/utils'
+import {firestore, logUserActivity, verifyAdminToken} from '@/firebase/server'
 import {v2 as cloudinary} from 'cloudinary'
 import {revalidatePath} from 'next/cache'
-import {extractPublicIdFromUrl} from '@/cloudinary/utils'
 
 // Configure Cloudinary
 cloudinary.config({
