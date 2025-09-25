@@ -45,7 +45,7 @@ export default function AboutPage() {
               color: 'default',
               className: 'bg-default-100 font-light drop-shadow-lg',
             })}
-            href={'/events'}>
+            href={'/events#upcoming-events'}>
             Join our Next Event
           </Link>
         </section>

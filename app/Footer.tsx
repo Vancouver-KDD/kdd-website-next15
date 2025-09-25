@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
           <div className="m-6 flex flex-col gap-5">
             <span className="text-sm font-semibold">Events</span>
-            <Link className={footerLinkStyles()} href="/events">
+            <Link className={footerLinkStyles()} href="/events#upcoming-events">
               <span className="text-sm">Upcoming Events</span>
             </Link>
             <Link className={footerLinkStyles()} href="/events#past-events">

@@ -46,7 +46,9 @@ export default function EventsPage() {
         />
       </section>
       <Spacer y={6} />
-      <UpcomingEvents />
+      <section id="upcoming-events" className="w-full">
+        <UpcomingEvents />
+      </section>
       <section id="past-events" className="mx-auto w-full max-w-screen-lg self-start px-6">
         <div className="text-center">
           <h1 className={title()}>Past Events</h1>

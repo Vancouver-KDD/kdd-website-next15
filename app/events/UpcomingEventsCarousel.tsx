@@ -38,7 +38,7 @@ export default function UpcomingEventsCarousel({
     })
   }, [api])
   return (
-    <>
+    <div className="flex flex-col items-center">
       <UpcomingEventsCalendar events={events} />
       <Carousel className="mx-auto w-full max-w-4xl" setApi={setApi}>
         <CarouselContent>
@@ -57,6 +57,6 @@ export default function UpcomingEventsCarousel({
           </>
         )}
       </Carousel>
-    </>
+    </div>
   )
 }
