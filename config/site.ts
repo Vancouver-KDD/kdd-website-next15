@@ -6,29 +6,29 @@ export const siteConfig = {
     'Vancouver KDD Website for the Vancouver KDD Chapter. Korean Developers and Designers in Vancouver.',
   navItems: [
     {
-      label: '소개',
+      label: 'About',
       href: '/about',
     },
     {
-      label: '이벤트',
+      label: 'Events',
       href: '/events',
     },
     {
-      label: '연락처',
+      label: 'Contact',
       href: '/contact',
     },
   ],
   navMenuItems: [
     {
-      label: '소개',
+      label: 'About',
       href: '/about',
     },
     {
-      label: '이벤트',
+      label: 'Events',
       href: '/events',
     },
     {
-      label: '연락처',
+      label: 'Contact',
       href: '/contact',
     },
   ],

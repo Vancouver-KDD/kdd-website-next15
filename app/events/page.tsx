@@ -16,7 +16,7 @@ export default function EventsPage() {
   return (
     <div className="flex flex-col items-center">
       <section className="mx-auto w-full max-w-screen-lg self-start px-6">
-        <h1 className={title()}>Event</h1>
+        <h1 className={title()}>Events</h1>
         <Spacer y={4} />
         <h3 className={subtitle({className: 'max-w-[540px]'})}>
           KDD는 매월 정기 모임과 연례 컨퍼런스를 통해 지식과 경험을 나누고 있습니다. 다가오는
