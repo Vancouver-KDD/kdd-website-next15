@@ -18,7 +18,7 @@ export default async function CreateEventPage({params}: {params: Promise<{eventI
         ]}
       />
       <Spacer y={4} />
-      <div className="mx-auto flex w-full max-w-screen-lg flex-col px-6">
+      <div className="mx-auto flex w-full max-w-5xl flex-col px-6">
         <Card className="mb-6">
           <CardHeader>
             <h3 className="text-lg font-semibold">Create New Event</h3>

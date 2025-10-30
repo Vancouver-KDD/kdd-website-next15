@@ -20,7 +20,7 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
       />
       {event ? (
         <>
-          <div className="mx-auto flex max-w-screen-lg flex-col items-start px-6">
+          <div className="mx-auto flex max-w-5xl flex-col items-start px-6">
             <Divider className="my-6" />
             <div className="text-content1-foreground font-bold opacity-60">
               {event.type || 'MONTHLY MEETUP'}
@@ -29,7 +29,7 @@ export default async function EventPage({params}: {params: Promise<{eventId: str
               {formatISODate(event.date)} | {event?.location}
             </div>
           </div>
-          <div className="mx-auto flex max-w-screen-lg flex-col items-center px-6 text-center">
+          <div className="mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
             <Spacer y={4} />
             <div className="mb-8 self-stretch text-start text-4xl font-black md:mb-16 md:text-6xl">
               {event.title}

@@ -22,7 +22,7 @@ export default function Footer() {
     <footer>
       <Spacer className="h-10 md:h-20" />
       <div className="flex justify-center p-3">
-        <div className="flex w-full max-w-screen-lg flex-col flex-wrap items-center justify-between text-center md:flex-row md:items-start md:text-start">
+        <div className="flex w-full max-w-5xl flex-col flex-wrap items-center justify-between text-center md:flex-row md:items-start md:text-start">
           <Link href="/">
             <LogoBlack width={100} className="object-contain dark:invert" />
           </Link>

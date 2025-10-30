@@ -104,7 +104,7 @@ export default function AdminEventsPage() {
       />
       <Spacer y={4} />
 
-      <div className="container mx-auto flex max-w-screen-lg flex-col px-6">
+      <div className="container mx-auto flex max-w-5xl flex-col px-6">
         <Link className="self-end" href={`/admin/events/${crypto.randomUUID()}/create`}>
           <Button color="primary" startContent={<Plus className="h-4 w-4" />}>
             Create Event

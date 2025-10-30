@@ -15,7 +15,7 @@ export default function EventsPage() {
 
   return (
     <div className="flex flex-col items-center">
-      <section className="mx-auto w-full max-w-screen-lg self-start px-6">
+      <section className="mx-auto w-full max-w-5xl self-start px-6">
         <h1 className={title()}>Events</h1>
         <Spacer y={4} />
         <h3 className={subtitle({className: 'max-w-[540px]'})}>
@@ -49,7 +49,7 @@ export default function EventsPage() {
       <section id="upcoming-events" className="w-full">
         <UpcomingEvents />
       </section>
-      <section id="past-events" className="mx-auto w-full max-w-screen-lg self-start px-6">
+      <section id="past-events" className="mx-auto w-full max-w-5xl self-start px-6">
         <div className="text-center">
           <h1 className={title()}>Past Events</h1>
           <Spacer y={4} />

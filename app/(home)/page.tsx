@@ -89,7 +89,7 @@ export default function Home() {
       </section>
       <Spacer y={52} />
 
-      <section className="mx-auto max-w-screen-lg text-center">
+      <section className="mx-auto max-w-5xl text-center">
         <Spacer y={10} />
         <Divider orientation="horizontal" className="bg-foreground-400 w-full" />
         <Spacer y={16} />
@@ -103,7 +103,7 @@ export default function Home() {
 
       <section className="bg-background0 flex flex-col items-center px-6">
         <Spacer y={40} />
-        <div className="max-w-screen-lg text-center">
+        <div className="max-w-5xl text-center">
           <div className={sectionTitle()}>Sponsors & Partners</div>
           <Spacer y={16} />
           <div className="flex flex-wrap justify-center gap-10">

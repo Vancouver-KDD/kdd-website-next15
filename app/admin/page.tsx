@@ -7,7 +7,7 @@ export default function AdminPage() {
     <>
       <Breadcrumbs paths={[{href: '/', title: 'Home'}, {title: 'Admin Dashboard'}]} />
       <Spacer y={4} />
-      <div className="mx-auto flex w-full max-w-screen-lg flex-col px-6">
+      <div className="mx-auto flex w-full max-w-5xl flex-col px-6">
         <Spacer y={4} />
         <Link className="text-primary" href="/admin/events">
           Manage Events

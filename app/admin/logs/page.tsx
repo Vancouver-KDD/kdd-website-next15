@@ -143,7 +143,7 @@ export default function LogsPage() {
         ]}
       />
 
-      <div className="mx-auto w-full max-w-screen-xl px-6 py-8">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
         <div className="mb-6">
           <h1 className="mb-4 text-3xl font-bold">User Activity Logs</h1>
 

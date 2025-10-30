@@ -3,7 +3,7 @@ import {BreadcrumbItem, Breadcrumbs as HerouiBreadcrumbs} from '@heroui/breadcru
 
 export default function Breadcrumbs({paths}: {paths: {href?: string; title: string}[]}) {
   return (
-    <div className="mx-auto flex w-full max-w-screen-lg flex-col items-start px-6">
+    <div className="mx-auto flex w-full max-w-5xl flex-col items-start px-6">
       <HerouiBreadcrumbs>
         {paths.map((path) => (
           <BreadcrumbItem key={path.href} href={path.href}>

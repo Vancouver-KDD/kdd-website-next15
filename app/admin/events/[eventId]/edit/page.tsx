@@ -127,7 +127,7 @@ export default function EditEventPage({params}: {params: Promise<{eventId: strin
         ]}
       />
       <Spacer y={12} />
-      <div className="mx-auto flex w-full max-w-screen-lg flex-col px-6">
+      <div className="mx-auto flex w-full max-w-5xl flex-col px-6">
         <Card>
           <CardHeader>
             <h3 className="text-lg font-semibold">Event Details</h3>

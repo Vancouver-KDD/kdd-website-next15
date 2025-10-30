@@ -28,7 +28,7 @@ import members from './members.json'
 export default function AboutPage() {
   return (
     <div className="flex w-full flex-col items-center">
-      <div className="flex w-full max-w-screen-lg flex-col">
+      <div className="flex w-full max-w-5xl flex-col">
         <section className="max-w-[588px] self-start px-6">
           <span className={title()}>About</span>
           <h1 className={title({color: 'kdd', className: 'pr-1 italic'})}> KDD</h1>
@@ -92,7 +92,7 @@ export default function AboutPage() {
           <span className={sectionSubtitle()}>KDD가 함께 만들어가는 여섯 가지 마음</span>
         </div>
         <Spacer y={16} />
-        <div className="mx-auto max-w-screen-lg px-6 md:px-12">
+        <div className="mx-auto max-w-5xl px-6 md:px-12">
           <section className="grid grid-cols-1 justify-items-center gap-22 text-center sm:grid-cols-[repeat(2,minmax(0,249px))] sm:place-content-center sm:justify-items-start sm:text-start lg:grid-cols-[repeat(3,minmax(0,249px))]">
             <Label
               icon="🤝"
@@ -139,7 +139,7 @@ export default function AboutPage() {
           </span>
           <Spacer y={16} />
           <div className={labelStyles()}>Leadership</div>
-          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+          <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-2 place-items-center gap-y-10 sm:gap-y-20 md:grid-cols-4">
               {members.Leadership.map((member, index) => (
                 <CardMember key={index} {...member} />
@@ -148,7 +148,7 @@ export default function AboutPage() {
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Partner Team</div>
-          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+          <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
               {members['Partner Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
@@ -157,7 +157,7 @@ export default function AboutPage() {
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Study Team</div>
-          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+          <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
               {members['Study Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
@@ -166,7 +166,7 @@ export default function AboutPage() {
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Design Team</div>
-          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+          <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
               {members['Design Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
@@ -175,7 +175,7 @@ export default function AboutPage() {
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Marketing Team</div>
-          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+          <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
               {members['Marketing Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
@@ -184,7 +184,7 @@ export default function AboutPage() {
             <Divider orientation="horizontal" className="my-9" />
           </div>
           <div className={labelStyles()}>Operation Team</div>
-          <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+          <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
             <div className="grid grid-cols-1 justify-center justify-items-center gap-10">
               {members['Operations Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
@@ -194,7 +194,7 @@ export default function AboutPage() {
           <div className="bg-background0 flex flex-col items-center self-stretch">
             <Spacer y={24} />
             <div className={labelStyles()}>Board Members</div>
-            <div className="w-full max-w-screen-lg self-center px-4 py-9 sm:px-12">
+            <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
               <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
                 {members['Board Members'].map((member, index) => (
                   <CardMember key={index} {...member} />

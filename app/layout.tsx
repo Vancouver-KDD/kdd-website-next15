@@ -40,7 +40,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Providers themeProps={{attribute: 'class', defaultTheme: 'light'}}>
           <div className="relative flex h-screen flex-col">
             <Navbar />
-            <main className="flex-grow pt-20 md:pt-30">{children}</main>
+            <main className="grow pt-20 md:pt-30">{children}</main>
             <Footer />
             <JumpToTopButton />
             <AuthClient />

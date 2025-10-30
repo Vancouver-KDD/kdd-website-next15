@@ -6,7 +6,7 @@ import {Spacer} from '@heroui/spacer'
 
 export default function WhatWeOfferSection() {
   return (
-    <section className="mx-auto w-full max-w-screen-lg text-center">
+    <section className="mx-auto w-full max-w-5xl text-center">
       <div className={sectionTitle()}>What We Offer</div>
       <Spacer y={4} />
       <div className="grid grid-cols-1 place-items-center gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:[&>*:nth-child(-n+3)]:place-self-start sm:[&>*:nth-child(4n-2)]:place-self-start sm:[&>*:nth-child(4n-3)]:place-self-start">

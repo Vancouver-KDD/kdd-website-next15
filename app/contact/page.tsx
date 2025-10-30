@@ -9,7 +9,7 @@ import {Spacer} from '@heroui/spacer'
 export default function ContactPage() {
   return (
     <>
-      <div className="mx-auto flex max-w-screen-lg flex-col items-start px-6">
+      <div className="mx-auto flex max-w-5xl flex-col items-start px-6">
         <h1 className={title()}>Contact</h1>
         <Spacer y={4} />
         <h3 className={subtitle({className: 'text-start'})}>
