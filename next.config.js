@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactCompiler: true,
   experimental: {
-    reactCompiler: true,
     browserDebugInfoInTerminal: true,
     serverActions: {
       bodySizeLimit: '10mb', // For uploading images to photos
