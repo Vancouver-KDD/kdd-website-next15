@@ -5,7 +5,7 @@ import {deleteEventPoster, uploadEventPoster} from '@/cloudinary/actions.admin'
 import {setEvent} from '@/firebase/actions/event.admin'
 import {useAuthStore} from '@/firebase/AuthClient'
 import type {Event} from '@/firebase/types'
-import {getErrorMessage, isoToLocalDateTimeInput, PDT_TIMEZONE} from '@/lib/utils'
+import {dateValueToISOString, getErrorMessage, isoToLocalDateTimeInput} from '@/lib/utils'
 import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
 import {Button} from '@heroui/button'
 import {Checkbox} from '@heroui/checkbox'
@@ -243,9 +243,23 @@ export function EventForm({event}: {event: Event & {id: string}}) {
               }
               onChange={(value) => {
                 const startIso = value?.start
-                  ? value.start.toDate(PDT_TIMEZONE).toISOString()
+                  ? dateValueToISOString({
+                      year: value.start.year,
+                      month: value.start.month,
+                      day: value.start.day,
+                      hour: value.start.hour,
+                      minute: value.start.minute,
+                    })
                   : ''
-                const endIso = value?.end ? value.end.toDate(PDT_TIMEZONE).toISOString() : ''
+                const endIso = value?.end
+                  ? dateValueToISOString({
+                      year: value.end.year,
+                      month: value.end.month,
+                      day: value.end.day,
+                      hour: value.end.hour,
+                      minute: value.end.minute,
+                    })
+                  : ''
                 field.onChange(startIso)
                 if (startIso && endIso) {
                   const durationMinutes = Math.max(

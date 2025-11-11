@@ -84,6 +84,60 @@ export function isoToLocalDateTimeInput(isoDateString: string) {
   }
 }
 
+// Convert a DateValue from @internationalized/date to an ISO string
+// This ensures the date/time is correctly interpreted in PDT timezone
+// and converted to UTC for storage
+// Uses a reliable method: find the UTC time that formats to the desired time in the target timezone
+export function dateValueToISOString(
+  dateValue: {year: number; month: number; day: number; hour: number; minute: number},
+  timezone: string = PDT_TIMEZONE
+): string {
+  // Create a formatter for the target timezone
+  const formatter = new Intl.DateTimeFormat('en-CA', {
+    timeZone: timezone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  })
+
+  // Strategy: Find the UTC time that, when formatted in the target timezone, equals our desired time
+  // We'll search within a reasonable range (±14 hours covers all timezone offsets including DST)
+  const searchRange = 14 // hours
+
+  // Start with a UTC date at the target hour on the target date (treating it as if it were UTC)
+  // This gives us a good starting point
+  const dateStr = `${dateValue.year.toString().padStart(4, '0')}-${dateValue.month.toString().padStart(2, '0')}-${dateValue.day.toString().padStart(2, '0')}T${dateValue.hour.toString().padStart(2, '0')}:${dateValue.minute.toString().padStart(2, '0')}:00Z`
+  const baseDate = new Date(dateStr)
+
+  // Search for the correct UTC time by testing offsets
+  // This handles DST and timezone variations correctly
+  for (let offsetHours = -searchRange; offsetHours <= searchRange; offsetHours++) {
+    const testDate = new Date(baseDate.getTime() + offsetHours * 60 * 60 * 1000)
+    const parts = formatter.formatToParts(testDate)
+
+    const get = (type: string) => parseInt(parts.find((p) => p.type === type)?.value || '0')
+
+    // Check if this UTC time formats to our desired time in the target timezone
+    if (
+      get('year') === dateValue.year &&
+      get('month') === dateValue.month &&
+      get('day') === dateValue.day &&
+      get('hour') === dateValue.hour &&
+      get('minute') === dateValue.minute
+    ) {
+      return testDate.toISOString()
+    }
+  }
+
+  // Fallback: if search didn't find a match (shouldn't happen), return the base date
+  // This handles edge cases but should rarely be needed
+  return baseDate.toISOString()
+}
+
 // Color pairs for harmonious gradients - [400 shade, 200 shade]
 const GRADIENT_COLORS = [
   ['#a78bfa', '#c4b5fd'], // purple-400, purple-200
