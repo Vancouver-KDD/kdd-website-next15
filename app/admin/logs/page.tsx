@@ -99,7 +99,8 @@ export default function LogsPage() {
     return matchesFilter && matchesSearch
   })
 
-  const formatDate = (date: Date) => {
+  const formatDate = (date: string | Date) => {
+    const dateObj = typeof date === 'string' ? new Date(date) : date
     return new Intl.DateTimeFormat('en-CA', {
       year: 'numeric',
       month: 'short',
@@ -107,7 +108,7 @@ export default function LogsPage() {
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-    }).format(date)
+    }).format(dateObj)
   }
 
   const formatData = (data: any) => {
