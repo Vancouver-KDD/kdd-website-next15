@@ -88,6 +88,47 @@ function serializeForDiscord(value: any): any {
   return value
 }
 
+// Helper function to filter out unchanged fields (where from === to)
+function filterChangedFields(data: any): any {
+  if (!data || typeof data !== 'object') {
+    return data
+  }
+
+  const filtered: any = {}
+
+  for (const [key, value] of Object.entries(data)) {
+    // Check if this is a diff object with 'from' and 'to' properties
+    if (
+      value &&
+      typeof value === 'object' &&
+      'from' in value &&
+      'to' in value &&
+      Object.keys(value).length === 2
+    ) {
+      // Serialize both values for comparison
+      const serializedFrom = serializeForDiscord(value.from)
+      const serializedTo = serializeForDiscord(value.to)
+
+      // Compare serialized values - only include if they're different
+      const fromStr = JSON.stringify(serializedFrom)
+      const toStr = JSON.stringify(serializedTo)
+
+      if (fromStr !== toStr) {
+        filtered[key] = {
+          from: serializedFrom,
+          to: serializedTo,
+        }
+      }
+      // Skip if they're the same
+    } else {
+      // Not a diff object, include as-is (it's already a change)
+      filtered[key] = serializeForDiscord(value)
+    }
+  }
+
+  return filtered
+}
+
 // Helper function to post log to Discord webhook
 async function postLogToDiscord(
   event: LOG_EVENT_TYPE,
@@ -101,10 +142,7 @@ async function postLogToDiscord(
 
   try {
     // Map event types to emoji and color
-    const eventConfig: Record<
-      LOG_EVENT_TYPE,
-      {emoji: string; color: number; label: string}
-    > = {
+    const eventConfig: Record<LOG_EVENT_TYPE, {emoji: string; color: number; label: string}> = {
       create_event: {emoji: '✨', color: 0x00ff00, label: 'Create Event'},
       update_event: {emoji: '📝', color: 0x0099ff, label: 'Update Event'},
       delete_event: {emoji: '🗑️', color: 0xff0000, label: 'Delete Event'},
@@ -118,15 +156,52 @@ async function postLogToDiscord(
     const config = eventConfig[event]
     const timestamp = new Date().toISOString()
 
-    // Format data for display (serialize first to handle Timestamps)
+    // Format data for display - filter out unchanged fields and serialize
     let dataString = 'No additional data'
     if (data && Object.keys(data).length > 0) {
       try {
-        const serializedData = serializeForDiscord(data)
-        dataString = JSON.stringify(serializedData, null, 2)
-        // Truncate if too long (Discord has limits)
-        if (dataString.length > 1000) {
-          dataString = dataString.substring(0, 1000) + '\n... (truncated)'
+        // Filter out unchanged fields (where from === to)
+        const changedData = filterChangedFields(data)
+
+        // Only show if there are actual changes
+        if (Object.keys(changedData).length > 0) {
+          dataString = JSON.stringify(changedData, null, 2)
+          // Truncate if too long (Discord has limits)
+          if (dataString.length > 1000) {
+            dataString = dataString.substring(0, 1000) + '\n... (truncated)'
+          }
+        } else {
+          // All diff fields were filtered out, but check if there's any non-diff metadata
+          const hasMetadata = Object.keys(data).some(
+            (key) =>
+              !(
+                data[key] &&
+                typeof data[key] === 'object' &&
+                'from' in data[key] &&
+                'to' in data[key] &&
+                Object.keys(data[key]).length === 2
+              )
+          )
+          if (hasMetadata) {
+            // Show only non-diff metadata
+            const metadata: any = {}
+            for (const [key, value] of Object.entries(data)) {
+              if (
+                !(
+                  value &&
+                  typeof value === 'object' &&
+                  'from' in value &&
+                  'to' in value &&
+                  Object.keys(value).length === 2
+                )
+              ) {
+                metadata[key] = serializeForDiscord(value)
+              }
+            }
+            dataString = JSON.stringify(metadata, null, 2)
+          } else {
+            dataString = 'No changes detected'
+          }
         }
       } catch {
         dataString = String(data)
@@ -189,11 +264,15 @@ export async function logUserActivity(uid: string, event: LOG_EVENT_TYPE, data: 
   })
 
   // Post to Discord webhook (non-blocking)
-  postLogToDiscord(event, {
-    uid: userInfo.uid,
-    email: userInfo.email,
-    displayName: userInfo.displayName,
-  }, data).catch((error) => {
+  postLogToDiscord(
+    event,
+    {
+      uid: userInfo.uid,
+      email: userInfo.email,
+      displayName: userInfo.displayName,
+    },
+    data
+  ).catch((error) => {
     // Already handled in function, but catch here too for safety
     console.error('Discord webhook error:', error)
   })
