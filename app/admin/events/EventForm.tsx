@@ -66,7 +66,7 @@ export function EventForm({event}: {event: Event & {id: string}}) {
     if (event) {
       form.reset({
         title: event.title || '',
-        date: isoToLocalDateTimeInput(event.date) || '',
+        date: event.date || '', // Store ISO string, not local format
         draft: event.draft || false,
         location: event.location || '',
         description: event.description || '',
