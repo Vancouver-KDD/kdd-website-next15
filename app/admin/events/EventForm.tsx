@@ -5,7 +5,7 @@ import {deleteEventPoster, uploadEventPoster} from '@/cloudinary/actions.admin'
 import {setEvent} from '@/firebase/actions/event.admin'
 import {useAuthStore} from '@/firebase/AuthClient'
 import type {Event} from '@/firebase/types'
-import {getErrorMessage, isoToLocalDateTimeInput} from '@/lib/utils'
+import {getErrorMessage, isoToLocalDateTimeInput, PDT_TIMEZONE} from '@/lib/utils'
 import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
 import {Button} from '@heroui/button'
 import {Checkbox} from '@heroui/checkbox'
@@ -14,7 +14,7 @@ import {Form} from '@heroui/form'
 import {Input, Textarea} from '@heroui/input'
 import {NumberInput} from '@heroui/number-input'
 import {addToast} from '@heroui/toast'
-import {getLocalTimeZone, parseDateTime} from '@internationalized/date'
+import {parseDateTime} from '@internationalized/date'
 import {useRouter} from 'next/navigation'
 import posthog from 'posthog-js'
 import {useEffect, useState} from 'react'
@@ -243,9 +243,9 @@ export function EventForm({event}: {event: Event & {id: string}}) {
               }
               onChange={(value) => {
                 const startIso = value?.start
-                  ? value.start.toDate(getLocalTimeZone()).toISOString()
+                  ? value.start.toDate(PDT_TIMEZONE).toISOString()
                   : ''
-                const endIso = value?.end ? value.end.toDate(getLocalTimeZone()).toISOString() : ''
+                const endIso = value?.end ? value.end.toDate(PDT_TIMEZONE).toISOString() : ''
                 field.onChange(startIso)
                 if (startIso && endIso) {
                   const durationMinutes = Math.max(

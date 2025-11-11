@@ -23,7 +23,7 @@ export function getErrorMessage(error: unknown, defaultMessage?: string) {
 }
 
 // PDT timezone constant
-const PDT_TIMEZONE = 'America/Vancouver'
+export const PDT_TIMEZONE = 'America/Vancouver'
 
 export function formatISODate(isoDateString: string, options?: Intl.DateTimeFormatOptions) {
   if (!isoDateString) return ''
