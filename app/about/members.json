@@ -1,23 +1,7 @@
 {
   "Leadership": [
     {
-      "title": "PRESIDENT",
-      "name": "권용주",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_Yongju_sqxbyu.jpg",
-      "description1": "",
-      "description2": "",
-      "socialLinks": []
-    },
-    {
-      "title": "VP - Internal",
-      "name": "박진아",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_Jinah_cdncrj.jpg",
-      "description1": "",
-      "description2": "",
-      "socialLinks": []
-    },
-    {
-      "title": "VP - External",
+      "title": "President",
       "name": "이윤서",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1758821611/yoon-seo-kdd2_qqfja4.jpg",
       "description1": "",
@@ -25,30 +9,15 @@
       "socialLinks": []
     },
     {
-      "title": "VP - Finance",
-      "name": "한우경",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_wukyung_lxqzio.jpg",
-      "description1": "",
-      "description2": "",
-      "socialLinks": []
-    }
-  ],
-  "Partner Team": [
-    {
-      "name": "김기훈",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_Ki_ecctw6.jpg",
+      "title": "VP",
+      "name": "박진아",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_Jinah_cdncrj.jpg",
       "description1": "",
       "description2": "",
       "socialLinks": []
     },
     {
-      "name": "이동구",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756484467/Profie_harrison_cmdvzi.jpg",
-      "description1": "",
-      "description2": "",
-      "socialLinks": []
-    },
-    {
+      "title": "Treasurer",
       "name": "이정은",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_jamie_h26m5m.jpg",
       "description1": "",
@@ -56,17 +25,44 @@
       "socialLinks": []
     }
   ],
-  "Study Team": [
+  "Operations Team": [
     {
-      "name": "허은정",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756485261/Profie_eunjeong_v3bnpx.jpg",
+      "title": "Monthly Meetup Lead",
+      "name": "손예준",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_Yejune_xxvybg.jpg",
       "description1": "",
       "description2": "",
       "socialLinks": []
     },
     {
+      "title": "IT Conference Lead",
+      "name": "김기훈",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_Ki_ecctw6.jpg",
+      "description1": "",
+      "description2": "",
+      "socialLinks": []
+    },
+    {
+      "title": "Career Network Meetup Lead",
+      "name": "이동구",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756484467/Profie_harrison_cmdvzi.jpg",
+      "description1": "",
+      "description2": "",
+      "socialLinks": []
+    }
+  ],
+  "Study Team": [
+    {
+      "title": "Lead",
       "name": "임지수",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_jisoo_kc37tb.jpg",
+      "description1": "",
+      "description2": "",
+      "socialLinks": []
+    },
+    {
+      "name": "허은정",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756485261/Profie_eunjeong_v3bnpx.jpg",
       "description1": "",
       "description2": "",
       "socialLinks": []
@@ -74,15 +70,16 @@
   ],
   "Design Team": [
     {
-      "name": "이세빈",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_sebin_a8pgcw.jpg",
+      "title": "Lead",
+      "name": "박다운",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756485261/Profie_crystal_p2c9ym.jpg",
       "description1": "",
       "description2": "",
       "socialLinks": []
     },
     {
-      "name": "박다운",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756485261/Profie_crystal_p2c9ym.jpg",
+      "name": "이세빈",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_sebin_a8pgcw.jpg",
       "description1": "",
       "description2": "",
       "socialLinks": []
@@ -97,24 +94,9 @@
   ],
   "Marketing Team": [
     {
+      "title": "Lead",
       "name": "이주현",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_aspyn_nkfmbh.jpg",
-      "description1": "",
-      "description2": "",
-      "socialLinks": []
-    },
-    {
-      "name": "손예준",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_Yejune_xxvybg.jpg",
-      "description1": "",
-      "description2": "",
-      "socialLinks": []
-    }
-  ],
-  "Operations Team": [
-    {
-      "name": "조지현",
-      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_heart_axz5kx.jpg",
       "description1": "",
       "description2": "",
       "socialLinks": []

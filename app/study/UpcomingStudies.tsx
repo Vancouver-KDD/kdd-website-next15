@@ -1,14 +1,14 @@
 'use client'
 import {sectionSubtitle, sectionTitle, subtitle} from '@/components/primitives'
-import {getFutureEvents} from '@/firebase/actions/event'
+import {getFutureStudies} from '@/firebase/actions/study'
 import {Skeleton} from '@heroui/skeleton'
 import {Spacer} from '@heroui/spacer'
 import {Suspense, use} from 'react'
-import UpcomingEventsCarousel from './UpcomingEventsCarousel'
+import UpcomingStudiesCarousel from './UpcomingStudiesCarousel'
 
 import {Event} from '@/firebase/types'
 
-export default function UpcomingEvents({events}: {events: (Event & {id: string})[]}) {
+export default function UpcomingStudies({studies}: {studies: (Event & {id: string})[]}) {
   return (
     <Suspense
       fallback={
@@ -29,19 +29,19 @@ export default function UpcomingEvents({events}: {events: (Event & {id: string})
           </div>
         </div>
       }>
-      {events.length > 0 ? (
+      {studies.length > 0 ? (
         <>
-          <h1 className={sectionTitle({className: 'text-center'})}>Upcoming Events</h1>
+          <h1 className={sectionTitle({className: 'text-center'})}>Upcoming Studies</h1>
           <h3 className={sectionSubtitle({className: 'text-center'})}>
-            다가오는 KDD 행사를 만나보세요
+            다가오는 KDD 스터디를 만나보세요
           </h3>
           <Spacer y={6} />
-          <UpcomingEventsCarousel events={events} />
+          <UpcomingStudiesCarousel studies={studies} />
         </>
       ) : (
         <div className="flex flex-col items-center text-center">
           <Spacer y={8} />
-          <div className="text-3xl font-bold">No Upcoming Events</div>
+          <div className="text-3xl font-bold">No Upcoming Studies</div>
           <Spacer y={4} />
           <div className={subtitle({className: 'opacity-60'})}>Please check back later</div>
           <Spacer y={8} />

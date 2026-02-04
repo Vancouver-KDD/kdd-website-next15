@@ -149,3 +149,71 @@ export async function uploadEventPhoto({
     return {success: false, error: 'Upload failed'}
   }
 }
+
+export async function uploadStudyPhoto({
+  token,
+  studyId,
+  imageData,
+  fileName,
+}: {
+  token: string
+  studyId: string
+  imageData: string
+  fileName: string
+}) {
+  try {
+    const {valid, message, userId} = await verifyAdminToken(token)
+    if (!valid) {
+      return {success: false, error: message}
+    }
+
+    if (!studyId || !imageData) {
+      return {success: false, error: 'Missing required fields'}
+    }
+
+    // Upload to Cloudinary
+    const uploadResult = await cloudinary.uploader.upload(imageData, {
+      folder: `studies/${studyId}`,
+      name: fileName || `KDD_STUDY_${Date.now()}`,
+      resource_type: 'image',
+      overwrite: false,
+    })
+    const newPhoto = {
+      key: uploadResult.public_id,
+      src: uploadResult.secure_url,
+      alt: 'KDD Study photo ' + uploadResult.created_at,
+      title: 'KDD Study photo ' + uploadResult.created_at,
+      description: `Uploaded on ${uploadResult.created_at}`,
+      width: uploadResult.width,
+      height: uploadResult.height,
+    }
+
+    const studyRef = firestore.collection('Studies').doc(studyId)
+    await firestore.runTransaction(async (tx) => {
+      const studyDoc = await tx.get(studyRef)
+      if (!studyDoc.exists) {
+        return {success: false, error: 'Study not found'}
+      }
+      const studyData = studyDoc.data()
+      const photos = studyData?.photos || []
+      photos.unshift(newPhoto)
+      await tx.update(studyRef, {photos})
+    })
+
+    // Log user activity
+    await logUserActivity(userId, 'add_study_photo' as any, {
+      studyId,
+      photoKey: newPhoto.key,
+      photoSrc: newPhoto.src,
+      fileName,
+    })
+
+    revalidatePath(`/study/${studyId}`)
+    return {
+      success: true,
+      photo: newPhoto,
+    }
+  } catch (error) {
+    return {success: false, error: 'Upload failed'}
+  }
+}

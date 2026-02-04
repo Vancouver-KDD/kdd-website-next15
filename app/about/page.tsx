@@ -1,3 +1,4 @@
+'use client'
 import {
   DiscordIcon,
   EmailIcon,
@@ -16,6 +17,9 @@ import {
   subtitle,
   title,
 } from '@/components/primitives'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 import {Divider} from '@heroui/divider'
 import {Image} from '@heroui/image'
 import {Link} from '@heroui/link'
@@ -26,15 +30,16 @@ import kddAbout from './kdd-about1.avif'
 import members from './members.json'
 
 export default function AboutPage() {
+  const {t} = useTranslation({...en, ...ko})
   return (
     <div className="flex w-full flex-col items-center">
       <div className="flex w-full max-w-5xl flex-col">
         <section className="max-w-[588px] self-start px-6">
-          <span className={title()}>About</span>
+          <span className={title()}>{t('about.hero.title')}</span>
           <h1 className={title({color: 'kdd', className: 'pr-1 italic'})}> KDD</h1>
           <Spacer y={4} />
           <h3 className={subtitle()}>
-            KDD는 지식을 나누고, 새로운 가능성을 발견하며, 함께 성장하는 한인 IT 커뮤니티입니다.
+            {t('about.hero.subtitle')}
           </h3>
           <Spacer y={6} />
           <Link
@@ -46,7 +51,7 @@ export default function AboutPage() {
               className: 'bg-default-100 font-light drop-shadow-lg',
             })}
             href={'/events#upcoming-events'}>
-            Join our Next Event
+            {t('about.join_event')}
           </Link>
         </section>
         <section className="flex flex-col items-end self-stretch">
@@ -61,22 +66,10 @@ export default function AboutPage() {
         <Divider orientation="horizontal" />
         <section className="self-center px-6 md:px-[96px]">
           <div className="max-w-[734px] py-16">
-            <h1 className={sectionTitle()}>Our Story</h1>
+            <h1 className={sectionTitle()}>{t('about.story.title')}</h1>
             <Spacer y={9} />
-            <p className="text-lg">
-              KDD는 2017년, 밴쿠버에서 활동하던 한 개발자의 작은 바람에서 시작되었습니다.
-              <br />
-              <br />
-              “서로 다른 분야의 한인이 모여, 함께 이야기하고 시너지를 내어 무언가를 도모할 수 있는
-              장이 있으면 좋겠다”는 마음이 출발점이었습니다.
-              <br />
-              <br />첫 만남 이후, 뜻을 함께하는 사람들이 점차 늘어나면서 KDD는 
-              <b>한인 IT 종사자들이 자유롭게 연결되고 성장할 수 있는 커뮤니티</b>로 자리 잡았습니다.
-              <br />
-              <br />
-              오늘날 KDD는 정기적인 밋업, 멘토링, 연례 컨퍼런스를 통해 지식과 경험을 공유하며, 한인
-              IT 커뮤니티의 지속적인 성장과 전문적 네트워킹을 지원하는 플랫폼으로 발전해가고
-              있습니다.
+            <p className="text-lg whitespace-pre-line">
+              {t('about.story.description')}
             </p>
           </div>
         </section>
@@ -87,42 +80,42 @@ export default function AboutPage() {
         <Spacer className="h-20 md:h-40" />
         <div className="flex flex-col items-center">
           <h1 id="values" className={sectionTitle()}>
-            Values
+            {t('about.values.title')}
           </h1>
-          <span className={sectionSubtitle()}>KDD가 함께 만들어가는 여섯 가지 마음</span>
+          <span className={sectionSubtitle()}>{t('about.values.subtitle')}</span>
         </div>
         <Spacer y={16} />
         <div className="mx-auto max-w-5xl px-6 md:px-12">
           <section className="grid grid-cols-1 justify-items-center gap-22 text-center sm:grid-cols-[repeat(2,minmax(0,249px))] sm:place-content-center sm:justify-items-start sm:text-start lg:grid-cols-[repeat(3,minmax(0,249px))]">
             <Label
               icon="🤝"
-              label="Sharing"
-              description="지식과 경험을 나누며 함께 성장할 수 있는 장을 제공합니다."
+              label={t('about.values.items.sharing')}
+              description={t('about.values.items.sharing_desc')}
             />
             <Label
               icon="🌱"
-              label="Growth"
-              description="전문성을 키우고 네트워크를 확장할 기회를 제공합니다."
+              label={t('about.values.items.growth')}
+              description={t('about.values.items.growth_desc')}
             />
             <Label
               icon="👥"
-              label="Connections"
-              description="언제든 의지하고 도움을 얻을 수 있는 커뮤니티를 제공합니다."
+              label={t('about.values.items.connections')}
+              description={t('about.values.items.connections_desc')}
             />
             <Label
               icon="✨"
-              label="Inspiration"
-              description="새로운 시도와 다양한 이야기로 창의적 변화를 이끌어냅니다."
+              label={t('about.values.items.inspiration')}
+              description={t('about.values.items.inspiration_desc')}
             />
             <Label
               icon="🌎"
-              label="Collaboration"
-              description="협력 프로젝트와 파트너십을 통해 더 큰 가능성을 만듭니다."
+              label={t('about.values.items.collaboration')}
+              description={t('about.values.items.collaboration_desc')}
             />
             <Label
               icon="💼"
-              label="Opportunity"
-              description="커리어와 성장을 위한 발판을 제공합니다."
+              label={t('about.values.items.opportunity')}
+              description={t('about.values.items.opportunity_desc')}
             />
           </section>
         </div>
@@ -132,25 +125,25 @@ export default function AboutPage() {
         <Spacer className="h-20 md:h-40" />
         <div className="flex flex-col items-center">
           <h1 id="meet-the-team" className={sectionTitle()}>
-            Meet the Team
+            {t('about.team.title')}
           </h1>
           <span className={sectionSubtitle()}>
-            마음을 모아 KDD를 만들어가는 운영진을 소개합니다.
+            {t('about.team.subtitle')}
           </span>
           <Spacer y={16} />
           <div className={labelStyles()}>Leadership</div>
           <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-            <div className="grid grid-cols-2 place-items-center gap-y-10 sm:gap-y-20 md:grid-cols-4">
+            <div className="flex flex-wrap items-end justify-center gap-10 sm:gap-20">
               {members.Leadership.map((member, index) => (
                 <CardMember key={index} {...member} />
               ))}
             </div>
             <Divider orientation="horizontal" className="my-9" />
           </div>
-          <div className={labelStyles()}>Partner Team</div>
+          <div className={labelStyles()}>Operation Team</div>
           <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-            <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
-              {members['Partner Team'].map((member, index) => (
+            <div className="flex flex-wrap items-end justify-center gap-10 sm:gap-20">
+              {members['Operations Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
               ))}
             </div>
@@ -158,7 +151,7 @@ export default function AboutPage() {
           </div>
           <div className={labelStyles()}>Study Team</div>
           <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-            <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
+            <div className="flex flex-wrap items-end justify-center gap-10 sm:gap-20">
               {members['Study Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
               ))}
@@ -167,7 +160,7 @@ export default function AboutPage() {
           </div>
           <div className={labelStyles()}>Design Team</div>
           <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-            <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
+            <div className="flex flex-wrap items-end justify-center gap-10 sm:gap-20">
               {members['Design Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
               ))}
@@ -176,17 +169,8 @@ export default function AboutPage() {
           </div>
           <div className={labelStyles()}>Marketing Team</div>
           <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-            <div className="grid grid-cols-[repeat(2,minmax(0,200px))] justify-center justify-items-center gap-10">
+            <div className="flex flex-wrap items-end justify-center gap-10 sm:gap-20">
               {members['Marketing Team'].map((member, index) => (
-                <CardMember key={index} {...member} />
-              ))}
-            </div>
-            <Divider orientation="horizontal" className="my-9" />
-          </div>
-          <div className={labelStyles()}>Operation Team</div>
-          <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-            <div className="grid grid-cols-1 justify-center justify-items-center gap-10">
-              {members['Operations Team'].map((member, index) => (
                 <CardMember key={index} {...member} />
               ))}
             </div>
@@ -195,7 +179,7 @@ export default function AboutPage() {
             <Spacer y={24} />
             <div className={labelStyles()}>Board Members</div>
             <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-              <div className="grid grid-cols-2 gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
+              <div className="grid grid-cols-2 items-end gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
                 {members['Board Members'].map((member, index) => (
                   <CardMember key={index} {...member} />
                 ))}
@@ -256,7 +240,7 @@ const CardMember = ({
 }) => {
   return (
     <div className="flex max-w-[200px] flex-col items-center gap-5 text-center">
-      <div>
+      <div className="flex flex-col items-center">
         <div className="text-default-500 mb-1 text-sm">{title}</div>
         <Image
           as={NextImage}
@@ -270,28 +254,35 @@ const CardMember = ({
           quality={100}
         />
       </div>
-      <div>
+      <div className="flex flex-col items-center">
         <div className="text-sm font-semibold">{name}</div>
+        <Link
+          href={socialLinks.find((link) => link.type === 'linkedin')?.url || '#'}
+          isExternal
+          className="mt-1 transition-transform hover:scale-110">
+          <LinkedInIcon size={20} className="text-default-800" />
+        </Link>
         <div className="text-default-500 text-sm">{description1}</div>
         <div className="text-default-500 text-sm">{description2}</div>
       </div>
-      <div className="flex flex-wrap gap-2 px-2 drop-shadow-md">
-        {socialLinks.map((link, index) => (
-          <Link
-            key={index}
-            href={link.type === 'email' ? `mailto:${link.url}` : link.url}
-            isExternal>
-            {link.type === 'linkedin' && <LinkedInIcon size={24} className="text-default-800" />}
-            {link.type === 'github' && <GithubIcon size={24} className="text-default-800" />}
-            {link.type === 'email' && <EmailIcon size={24} className="text-default-800" />}
-            {link.type === 'website' && <LinkIcon size={24} className="text-default-800" />}
-            {link.type === 'instagram' && <InstagramIcon size={24} className="text-default-800" />}
-            {link.type === 'facebook' && <FacebookIcon size={24} className="text-default-800" />}
-            {link.type === 'twitter' && <TwitterIcon size={24} className="text-default-800" />}
-            {link.type === 'discord' && <DiscordIcon size={24} className="text-default-800" />}
-            {link.type === 'threads' && <ThreadsIcon size={24} className="text-default-800" />}
-          </Link>
-        ))}
+      <div className="flex flex-wrap justify-center gap-2 px-2 drop-shadow-md">
+        {socialLinks
+          .filter((link) => link.type !== 'linkedin')
+          .map((link, index) => (
+            <Link
+              key={index}
+              href={link.type === 'email' ? `mailto:${link.url}` : link.url}
+              isExternal>
+              {link.type === 'github' && <GithubIcon size={24} className="text-default-800" />}
+              {link.type === 'email' && <EmailIcon size={24} className="text-default-800" />}
+              {link.type === 'website' && <LinkIcon size={24} className="text-default-800" />}
+              {link.type === 'instagram' && <InstagramIcon size={24} className="text-default-800" />}
+              {link.type === 'facebook' && <FacebookIcon size={24} className="text-default-800" />}
+              {link.type === 'twitter' && <TwitterIcon size={24} className="text-default-800" />}
+              {link.type === 'discord' && <DiscordIcon size={24} className="text-default-800" />}
+              {link.type === 'threads' && <ThreadsIcon size={24} className="text-default-800" />}
+            </Link>
+          ))}
       </div>
     </div>
   )

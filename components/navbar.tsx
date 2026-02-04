@@ -1,8 +1,12 @@
 'use client'
 import AuthNavButton from '@/components/AuthNavButton'
 import {HeartFilledIcon, Logo} from '@/components/icons'
+import {LanguageSwitch} from '@/components/language-switch'
 import {ThemeSwitch} from '@/components/theme-switch'
 import {siteConfig} from '@/config/site'
+import {useI18nStore, useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 import {Button} from '@heroui/button'
 import {Link} from '@heroui/link'
 import {
@@ -22,6 +26,7 @@ import {useState} from 'react'
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const {t} = useTranslation({...en, ...ko})
 
   const handleMenuClose = () => {
     setIsMenuOpen(false)
@@ -51,7 +56,7 @@ export const Navbar = () => {
                   color="foreground"
                   href={item.href}
                   isBlock>
-                  {item.label}
+                  {t(`nav.${item.label.toLowerCase()}`)}
                 </Link>
               </NavbarItem>
             ))}
@@ -59,9 +64,10 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarContent className="hidden basis-1/5 sm:flex sm:basis-full" justify="end">
-          <NavbarItem className="hidden gap-2 sm:flex">
+          <NavbarItem className="hidden flex-row items-center gap-2 sm:flex">
             <AuthNavButton />
             <ThemeSwitch />
+            <LanguageSwitch />
           </NavbarItem>
           <NavbarItem className="hidden sm:flex">
             <Popover placement="bottom-end">
@@ -70,7 +76,7 @@ export const Navbar = () => {
                   className="text-default-600 bg-default-100 text-sm font-normal"
                   startContent={<HeartFilledIcon className="text-danger" />}
                   variant="flat">
-                  스폰서
+                  {t('nav.sponsor')}
                 </Button>
               </PopoverTrigger>
               <PopoverContent>
@@ -85,9 +91,10 @@ export const Navbar = () => {
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
+        <NavbarContent className="basis-1 items-center pl-4 sm:hidden" justify="end">
           <AuthNavButton />
           <ThemeSwitch />
+          <LanguageSwitch />
           <NavbarMenuToggle className="cursor-pointer" />
         </NavbarContent>
 
@@ -101,7 +108,7 @@ export const Navbar = () => {
                   href={item.href}
                   size="lg"
                   onPress={handleMenuClose}>
-                  {item.label}
+                  {t(`nav.${item.label.toLowerCase()}`)}
                 </Link>
               </NavbarMenuItem>
             ))}

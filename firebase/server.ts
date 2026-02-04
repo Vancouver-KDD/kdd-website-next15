@@ -41,6 +41,11 @@ export type LOG_EVENT_TYPE =
   | 'add_event_photo'
   | 'verify_admin_password'
   | 'step_down_as_admin'
+  | 'move_event_to_study'
+  | 'add_study_photo'
+  | 'move_study_photo'
+  | 'delete_study_photo'
+  | 'delete_study'
 
 // Helper function to serialize values for JSON (handles Firestore Timestamps, etc.)
 function serializeForDiscord(value: any): any {
@@ -151,6 +156,11 @@ async function postLogToDiscord(
       add_event_photo: {emoji: '📸', color: 0x00ff00, label: 'Add Photo'},
       verify_admin_password: {emoji: '🔐', color: 0x00ff00, label: 'Admin Login'},
       step_down_as_admin: {emoji: '👋', color: 0xffaa00, label: 'Admin Logout'},
+      move_event_to_study: {emoji: '📦', color: 0x9966ff, label: 'Move to Study'},
+      add_study_photo: {emoji: '📸', color: 0x00ff00, label: 'Add Study Photo'},
+      move_study_photo: {emoji: '🔄', color: 0xffaa00, label: 'Move Study Photo'},
+      delete_study_photo: {emoji: '❌', color: 0xff5500, label: 'Delete Study Photo'},
+      delete_study: {emoji: '🗑️', color: 0xff0000, label: 'Delete Study'},
     }
 
     const config = eventConfig[event]

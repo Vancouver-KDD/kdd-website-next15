@@ -1,12 +1,14 @@
 import '@/styles/globals.css'
 
 import JumpToTopButton from '@/components/JumpToTopButton'
+import {LanguageSync} from '@/components/language-sync'
 import {Navbar} from '@/components/navbar'
 import {fontSans} from '@/config/fonts'
 import {siteConfig} from '@/config/site'
 import AuthClient from '@/firebase/AuthClient'
 import clsx from 'clsx'
 import {Metadata, Viewport} from 'next'
+import {Suspense} from 'react'
 import Footer from './Footer'
 import {Providers} from './providers'
 
@@ -40,10 +42,15 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Providers themeProps={{attribute: 'class', defaultTheme: 'light'}}>
           <div className="relative flex h-screen flex-col">
             <Navbar />
-            <main className="grow pt-20 md:pt-30">{children}</main>
+            <main className="grow pt-20 md:pt-30">
+              <Suspense fallback={<div className="flex h-96 items-center justify-center font-bold opacity-30">Loading...</div>}>
+                {children}
+              </Suspense>
+            </main>
             <Footer />
             <JumpToTopButton />
             <AuthClient />
+            <LanguageSync />
           </div>
         </Providers>
       </body>

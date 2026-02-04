@@ -1,3 +1,4 @@
+'use client'
 import {
   DiscordIcon,
   GithubIcon,
@@ -9,6 +10,9 @@ import {
   YoutubeIcon,
 } from '@/components/icons'
 import {siteConfig} from '@/config/site'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {tv} from 'tailwind-variants'
@@ -18,6 +22,7 @@ const footerLinkStyles = tv({
 })
 
 export default function Footer() {
+  const {t} = useTranslation({...en, ...ko})
   return (
     <footer>
       <Spacer className="h-10 md:h-20" />
@@ -27,30 +32,39 @@ export default function Footer() {
             <LogoBlack width={100} className="object-contain dark:invert" />
           </Link>
           <div className="m-6 flex flex-col gap-5">
-            <span className="text-sm font-semibold">About Us</span>
+            <span className="text-sm font-semibold">{t('nav.about_us')}</span>
             <Link className={footerLinkStyles()} href="/about">
-              <span className="text-sm">Our Story</span>
+              <span className="text-sm">{t('nav.our_story')}</span>
             </Link>
             <Link className={footerLinkStyles()} href="/about#values">
-              <span className="text-sm">Values</span>
+              <span className="text-sm">{t('nav.values')}</span>
             </Link>
             <Link className={footerLinkStyles()} href="/about#meet-the-team">
-              <span className="text-sm">Meet the Team</span>
+              <span className="text-sm">{t('nav.meet_the_team')}</span>
             </Link>
           </div>
           <div className="m-6 flex flex-col gap-5">
-            <span className="text-sm font-semibold">Events</span>
+            <span className="text-sm font-semibold">{t('nav.events')}</span>
             <Link className={footerLinkStyles()} href="/events#upcoming-events">
-              <span className="text-sm">Upcoming Events</span>
+              <span className="text-sm">{t('nav.upcoming_events')}</span>
             </Link>
             <Link className={footerLinkStyles()} href="/events#past-events">
-              <span className="text-sm">Past Events</span>
+              <span className="text-sm">{t('nav.past_events')}</span>
             </Link>
           </div>
           <div className="m-6 flex flex-col gap-5">
-            <span className="text-sm font-semibold">Contact Us</span>
+            <span className="text-sm font-semibold">{t('nav.study')}</span>
+            <Link className={footerLinkStyles()} href="/study#upcoming-studies">
+              <span className="text-sm">{t('study.sections.upcoming')}</span>
+            </Link>
+            <Link className={footerLinkStyles()} href="/study#past-studies">
+              <span className="text-sm">{t('study.sections.past')}</span>
+            </Link>
+          </div>
+          <div className="m-6 flex flex-col gap-5">
+            <span className="text-sm font-semibold">{t('nav.contact')}</span>
             <Link className={footerLinkStyles()} href="/contact">
-              <span className="text-sm">Contact Us</span>
+              <span className="text-sm">{t('nav.contact_us')}</span>
             </Link>
           </div>
           <ul className="mt-4 flex max-w-40 flex-wrap justify-center md:justify-start">

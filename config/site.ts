@@ -14,6 +14,10 @@ export const siteConfig = {
       href: '/events',
     },
     {
+      label: 'Study',
+      href: '/study',
+    },
+    {
       label: 'Contact',
       href: '/contact',
     },
@@ -26,6 +30,10 @@ export const siteConfig = {
     {
       label: 'Events',
       href: '/events',
+    },
+    {
+      label: 'Study',
+      href: '/study',
     },
     {
       label: 'Contact',

@@ -234,3 +234,54 @@ export const HeartFilledIcon = ({size = 24, width, height, ...props}: IconSvgPro
     />
   </svg>
 )
+
+export const KaAIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    height={size || height}
+    width={size || width}
+    {...props}>
+    {/* A */}
+    <path d="M5 16l3-8 3 8m-6-3h6" />
+    {/* 가 (Approximated with ㄱ and ㅏ) */}
+    <path d="M15 8h4v5" />
+    <path d="M21 7v10M21 12h2" />
+  </svg>
+)
+
+export const HangeulIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    height={size || height}
+    width={size || width}
+    {...props}>
+    <path d="M7 8h5v6" />
+    <path d="M15 7v10M15 12h3" />
+  </svg>
+)
+
+export const AlphabetIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    height={size || height}
+    width={size || width}
+    {...props}>
+    <path d="M7 16l5-10 5 10" />
+    <path d="M9 13h6" />
+  </svg>
+)

@@ -1,0 +1,98 @@
+{
+  "ko": {
+    "nav": {
+      "about": "소개",
+      "events": "이벤트",
+      "study": "스터디",
+      "contact": "연락처",
+      "sponsor": "스폰서",
+      "our_story": "Our Story",
+      "values": "Values",
+      "meet_the_team": "Meet the Team",
+      "upcoming_events": "Upcoming Events",
+      "past_events": "Past Events",
+      "contact_us": "Contact Us",
+      "about_us": "About Us"
+    },
+    "events": {
+      "hero": {
+        "title": "Events",
+        "subtitle": "KDD는 매월 정기 모임과 연례 컨퍼런스를 통해 지식과 경험을 나누고 있습니다. 다가오는 이벤트를 확인하고 함께하세요."
+      },
+      "sections": {
+        "past": "Past Events",
+        "past_subtitle": "지난 KDD 행사들을 돌아보세요."
+      }
+    },
+    "home": {
+      "hero": {
+        "title": "Vancouver Korean Developers & Designers",
+        "subtitle": "KDD는 밴쿠버의 한인 IT 전문가들이 모여 지식을 나누고 함께 성장하는 커뮤니티입니다."
+      },
+      "sections": {
+        "upcoming": "Upcoming Events",
+        "past": "Past Events"
+      }
+    },
+    "study": {
+      "hero": {
+        "title": "Studies",
+        "subtitle": "KDD의 스터디는 단순한 학습을 넘어\n사람들과 함께 고민하고, 경험을 나누며 성장하는 과정입니다.\n\nKDD에서 공식적으로 운영하는 스터디부터\n멤버들이 직접 제안하고 리드하는 스터디까지,\n다양한 형태의 학습 모임이 열려 있습니다."
+      },
+      "sections": {
+        "upcoming": "Upcoming Studies",
+        "past": "Past Studies",
+        "past_subtitle": "지난 KDD 스터디들을 돌아보세요."
+      }
+    },
+    "about": {
+      "hero": {
+        "title": "About",
+        "subtitle": "KDD는 지식을 나누고, 새로운 가능성을 발견하며, 함께 성장하는 한인 IT 커뮤니티입니다."
+      },
+      "story": {
+        "title": "Our Story",
+        "description": "KDD는 2017년, 밴쿠버에서 활동하던 한 개발자의 작은 바람에서 시작되었습니다.\n\n“서로 다른 분야의 한인이 모여, 함께 이야기하고 시너지를 내어 무언가를 도모할 수 있는 장이 있으면 좋겠다”는 마음이 출발점이었습니다.\n\n첫 만남 이후, 뜻을 함께하는 사람들이 점차 늘어나면서 KDD는 한인 IT 종사자들이 자유롭게 연결되고 성장할 수 있는 커뮤니티로 자리 잡았습니다.\n\n오늘날 KDD는 정기적인 밋업, 멘토링, 연례 컨퍼런스를 통해 지식과 경험을 공유하며, 한인 IT 커뮤니티의 지속적인 성장과 전문적 네트워킹을 지원하는 플랫폼으로 발전해가고 있습니다."
+      },
+      "values": {
+        "title": "Values",
+        "subtitle": "KDD가 함께 만들어가는 여섯 가지 마음",
+        "items": {
+          "sharing": "Sharing",
+          "sharing_desc": "지식과 경험을 나누며 함께 성장할 수 있는 장을 제공합니다.",
+          "growth": "Growth",
+          "growth_desc": "전문성을 키우고 네트워크를 확장할 기회를 제공합니다.",
+          "connections": "Connections",
+          "connections_desc": "언제든 의지하고 도움을 얻을 수 있는 커뮤니티를 제공합니다.",
+          "inspiration": "Inspiration",
+          "inspiration_desc": "새로운 시도와 다양한 이야기로 창의적 변화를 이끌어냅니다.",
+          "collaboration": "Collaboration",
+          "collaboration_desc": "협력 프로젝트와 파트너십을 통해 더 큰 가능성을 만듭니다.",
+          "opportunity": "Opportunity",
+          "opportunity_desc": "커리어와 성장을 위한 발판을 제공합니다."
+        }
+      },
+      "team": {
+        "title": "Meet the Team",
+        "subtitle": "마음을 모아 KDD를 만들어가는 운영진을 소개합니다."
+      },
+      "join_event": "Join our Next Event"
+    },
+    "contact": {
+      "hero": {
+        "title": "Contact",
+        "subtitle": "궁금한 점이나 협력 제안이 있으신가요?\n언제든 KDD에 연락주세요."
+      },
+      "sections": {
+        "subtitle": "KDD와 연결되는 가장 빠른 방법",
+        "email": "Email Us",
+        "discord": "Join Our Discord",
+        "instagram": "Follow Us"
+      },
+      "buttons": {
+        "discord": "Join Discord",
+        "instagram": "Follow Us"
+      }
+    }
+  }
+}

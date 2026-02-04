@@ -1,0 +1,98 @@
+{
+  "en": {
+    "nav": {
+      "about": "About",
+      "events": "Events",
+      "study": "Study",
+      "contact": "Contact",
+      "sponsor": "Sponsor",
+      "our_story": "Our Story",
+      "values": "Values",
+      "meet_the_team": "Meet the Team",
+      "upcoming_events": "Upcoming Events",
+      "past_events": "Past Events",
+      "contact_us": "Contact Us",
+      "about_us": "About Us"
+    },
+    "events": {
+      "hero": {
+        "title": "Events",
+        "subtitle": "KDD shares knowledge and experience through monthly regular meetings and annual conferences. Check out upcoming events and join us."
+      },
+      "sections": {
+        "past": "Past Events",
+        "past_subtitle": "Look back at previous KDD events."
+      }
+    },
+    "home": {
+      "hero": {
+        "title": "Korean Developers and Designers in Vancouver",
+        "subtitle": "KDD is a community for Korean IT professionals in Vancouver to share knowledge and grow together."
+      },
+      "sections": {
+        "upcoming": "Upcoming Events",
+        "past": "Past Events"
+      }
+    },
+    "study": {
+      "hero": {
+        "title": "Studies",
+        "subtitle": "KDD studies go beyond simple learning.\nIt's a process of growing together by sharing experiences and concerns.\n\nFrom official KDD studies to member-proposed groups,\nvarious forms of learning meetings are open."
+      },
+      "sections": {
+        "upcoming": "Upcoming Studies",
+        "past": "Past Studies",
+        "past_subtitle": "Look back at previous KDD studies."
+      }
+    },
+    "about": {
+      "hero": {
+        "title": "About",
+        "subtitle": "KDD is a community for Korean IT professionals in Vancouver to share knowledge, discover new possibilities, and grow together."
+      },
+      "story": {
+        "title": "Our Story",
+        "description": "KDD began in 2017 with a small wish from a developer working in Vancouver.\n\nThe starting point was the hope that there would be a place where Koreans from different fields could gather, talk together, and create synergy to pursue something.\n\nAfter the first meeting, as the number of like-minded people gradually increased, KDD became a community where Korean IT professionals can freely connect and grow.\n\nToday, KDD is developing into a platform that shares knowledge and experience through regular meetups, mentoring, and annual conferences, and supports continuous growth and professional networking of the Korean IT community."
+      },
+      "values": {
+        "title": "Values",
+        "subtitle": "Six hearts that KDD creates together",
+        "items": {
+          "sharing": "Sharing",
+          "sharing_desc": "Provides a place to share knowledge and experience to grow together.",
+          "growth": "Growth",
+          "growth_desc": "Provides opportunities to develop expertise and expand networks.",
+          "connections": "Connections",
+          "connections_desc": "Provides a community you can rely on and get help from anytime.",
+          "inspiration": "Inspiration",
+          "inspiration_desc": "Leads creative change through new attempts and diverse stories.",
+          "collaboration": "Collaboration",
+          "collaboration_desc": "Creates greater possibilities through cooperative projects and partnerships.",
+          "opportunity": "Opportunity",
+          "opportunity_desc": "Provides a stepping stone for career and growth."
+        }
+      },
+      "team": {
+        "title": "Meet the Team",
+        "subtitle": "Introducing the organizers who work together to create KDD."
+      },
+      "join_event": "Join our Next Event"
+    },
+    "contact": {
+      "hero": {
+        "title": "Contact",
+        "subtitle": "Do you have any questions or collaboration proposals?\nPlease contact KDD anytime."
+      },
+      "sections": {
+        "subtitle": "The fastest way to connect with KDD",
+        "email": "Email Us",
+        "discord": "Join Our Discord",
+        "instagram": "Follow Us"
+      },
+      "buttons": {
+        "discord": "Join Discord",
+        "instagram": "Follow Us"
+      }
+    }
+  }
+}
