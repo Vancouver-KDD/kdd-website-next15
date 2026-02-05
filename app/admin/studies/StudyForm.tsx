@@ -2,19 +2,21 @@
 
 import {PosterDropzone} from '@/app/admin/events/PosterDropzone'
 import {deleteEventPoster, uploadEventPoster} from '@/cloudinary/actions.admin'
-import {setEvent, moveStudyToEvent} from '@/firebase/actions/event.admin'
 import {setStudy, moveEventToStudy} from '@/firebase/actions/study.admin'
+import {setEvent, moveStudyToEvent} from '@/firebase/actions/event.admin' 
+// Wait, I clarified this in EventForm.
+// moveStudyToEvent -> event.admin.ts
+// moveEventToStudy -> study.admin.ts
 import {useAuthStore} from '@/firebase/AuthClient'
 import type {Event} from '@/firebase/types'
 import {dateValueToISOString, getErrorMessage, isoToLocalDateTimeInput} from '@/lib/utils'
-import {EVENT_SUBTYPES, STUDY_SUBTYPES} from '@/lib/constants' // Added constants
+import {EVENT_SUBTYPES, STUDY_SUBTYPES} from '@/lib/constants'
 import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
 import {Button} from '@heroui/button'
-import {Checkbox} from '@heroui/checkbox'
 import {DateRangePicker} from '@heroui/date-picker'
 import {Form} from '@heroui/form'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
-// import {Radio, RadioGroup} from '@heroui/radio' // Failed to install
+// import {Radio, RadioGroup} from '@heroui/radio' // Failed import
 import {Input, Textarea} from '@heroui/input'
 import {NumberInput} from '@heroui/number-input'
 import {addToast} from '@heroui/toast'
@@ -24,87 +26,66 @@ import posthog from 'posthog-js'
 import {useEffect, useState} from 'react'
 import {Controller, useForm} from 'react-hook-form'
 
-export type EventFormValues = {
+export type StudyFormValues = {
   title: string
   date: string
   // draft?: boolean // Deprecated
   status: 'draft' | 'published' | 'hidden'
   location?: string
   description?: string
-  typeFilter: string // 'Event' or 'Study'
-  type?: string // Sub-type
-  locationDetails?: string
-  locationLink?: string
-  joinLink?: string
-  duration?: string
-  price?: string
   quantity?: string
   image?: string
+  typeFilter: string
+  type?: string
 }
 
-export function EventForm({event}: {event: Event & {id: string}}) {
+export function StudyForm({study}: {study: Event & {id: string}}) {
   const router = useRouter()
   const {user} = useAuthStore()
   const [loading, setLoading] = useState(false)
   const [isUploadingPoster, setIsUploadingPoster] = useState(false)
 
-  const form = useForm<EventFormValues>({
+  const form = useForm<StudyFormValues>({
     defaultValues: {
       title: '',
       date: '',
-      status: 'draft', // Default to draft for new items
+      status: 'draft',
       location: '',
       description: '',
-      typeFilter: 'Event', // Default to Event
-      type: '',
-      locationDetails: '',
-      locationLink: '',
-      joinLink: '',
-      duration: '',
-      price: '',
       quantity: '',
       image: '',
+      typeFilter: 'Study',
+      type: '',
     },
   })
   const {register, handleSubmit, watch, setValue, control} = form
   const imageUrl = watch('image')
 
   useEffect(() => {
-    if (event) {
-      // Determine efficient typeFilter
-      // Status migration logic:
-      // 1. prefer event.status
-      // 2. fallback to event.draft (true -> hidden)
-      // 3. fallback to published (false/undefined)
+    if (study) {
       let status: 'draft' | 'published' | 'hidden' = 'published'
-      if (event.status) {
-        status = event.status
-      } else if (event.draft) {
+      if (study.status) {
+        status = study.status
+      } else if (study.draft) {
         status = 'hidden'
       }
 
       form.reset({
-        title: event.title || '',
-        date: event.date || '', // Store ISO string, not local format
+        title: study.title || '',
+        date: study.date || '',
         status,
-        location: event.location || '',
-        description: event.description || '',
-        typeFilter: 'Event', // Initialize as Event
-        type: event.type || '',
-        locationDetails: event.locationDetails || '',
-        locationLink: event.locationLink || '',
-        joinLink: event.joinLink || '',
-        duration: event.duration?.toString() || '',
-        price: event.price || '',
-        quantity: event.quantity?.toString() || '',
-        image: event.image || '',
+        location: study.location || '',
+        description: study.description || '',
+        quantity: study.quantity?.toString() || '',
+        image: study.image || '',
+        type: study.type || 'STUDY GROUP',
       })
     }
-  }, [event, form.reset])
+  }, [study, form.reset])
 
   const handlePosterFile = async (file: File) => {
-    const eventId = event.id
-    if (!user || !eventId) {
+    const studyId = study.id
+    if (!user || !studyId) {
       return form.getValues('image') || ''
     }
     setIsUploadingPoster(true)
@@ -116,15 +97,18 @@ export function EventForm({event}: {event: Event & {id: string}}) {
         reader.readAsDataURL(file)
       })
       const idToken = await user.getIdToken()
+      // Reusing uploadEventPoster as logic is identical, 
+      // though ideally we might rename to uploadPoster generic or uploadStudyPoster wrapper
+      // But underlying it just saves to Cloudinary with an ID, so it's fine.
       const res = await uploadEventPoster({
         token: idToken,
-        eventId,
+        eventId: studyId, // Using studyId as eventId
         imageData: dataUrl,
       })
       if (res.success) {
         addToast({
           title: 'Poster uploaded',
-          description: `Poster ${event ? 'updated' : 'attached to event'}`,
+          description: `Poster ${study ? 'updated' : 'attached'}`,
           color: 'success',
         })
         return res.imageUrl as string
@@ -156,14 +140,15 @@ export function EventForm({event}: {event: Event & {id: string}}) {
   }
 
   const handlePosterDelete = async () => {
-    const eventId = event.id
-    if (!user || !eventId) return
+    const studyId = study.id
+    if (!user || !studyId) return
     const token = await user.getIdToken()
-    const res = await deleteEventPoster({token, eventId})
+    // Reusing deleteEventPoster
+    const res = await deleteEventPoster({token, eventId: studyId})
     if (res.success) {
       addToast({
         title: 'Poster removed',
-        description: 'Poster deleted from event',
+        description: 'Poster deleted',
         color: 'success',
       })
     } else {
@@ -179,66 +164,57 @@ export function EventForm({event}: {event: Event & {id: string}}) {
     }
   }
 
-  const onSubmit = async (values: EventFormValues) => {
+  const onSubmit = async (values: StudyFormValues) => {
     if (!user) return
     setLoading(true)
     try {
       const idToken = await user.getIdToken()
-      const eventData = {
+      const studyData = {
         ...values,
-        duration: values.duration ? parseInt(values.duration) : undefined,
         quantity: values.quantity ? parseInt(values.quantity) : undefined,
-        price: values.price || undefined,
-        // Sync legacy draft field for compatibility if needed, or just rely on status
-        draft: values.status === 'hidden' || values.status === 'draft', 
+        draft: values.status === 'hidden' || values.status === 'draft',
       }
-      delete (eventData as any).typeFilter // Remove typeFilter from saved data
+      delete (studyData as any).typeFilter
 
       let result
-      const isMigration = values.typeFilter === 'Study'
+      const isMigration = values.typeFilter === 'Event'
 
-      if (isMigration && event.id) {
-          // Migrating Event -> Study
-          // 1. First move it
-          const moveRes = await moveEventToStudy(idToken, event.id)
-          if (!moveRes.success) throw new Error(moveRes.message)
-          
-          // 2. Then update it with new data in the new location
-          // Note: moveEventToStudy keeps the same ID
-          result = await setStudy(idToken, event.id, eventData)
-      } else if (isMigration && !event.id) {
-          // Creating new Study from Event Form (unlikely but handling it)
-           // Actually setStudy creates if ID doesn't exist, but we need ID. 
-           // If creating, we should just use setStudy directly on a new ID if we were creating a study,
-           // but here we are in EventForm. 
-           // Standard flow: standard Create uses setEvent. 
-           // If user selected 'Study' on Create Event page:
-           // We should probably just call setStudy with a new ID if creating.
-           // However, EventForm is passed an event with an ID (even for create, see page.tsx using randomUUID)
-           result = await setStudy(idToken, event.id, eventData)
+      if (isMigration && study.id) {
+          // Migrating Study -> Event
+          // 1. Move it
+           const {moveStudyToEvent} = await import('@/firebase/actions/event.admin')
+           const moveRes = await moveStudyToEvent(idToken, study.id)
+           if (!moveRes.success) throw new Error(moveRes.message)
+
+          // 2. Update new event
+           const {setEvent} = await import('@/firebase/actions/event.admin')
+           result = await setEvent(idToken, study.id, studyData)
+      } else if (isMigration && !study.id) {
+          // Create new Event from Study Form
+           const {setEvent} = await import('@/firebase/actions/event.admin')
+           result = await setEvent(idToken, study.id, studyData)
       } else {
-          // Normal Event Create/Update
-          result = await setEvent(idToken, event.id, eventData)
+          // Normal Study Update
+          result = await setStudy(idToken, study.id, studyData)
       }
 
       if (result.success) {
         addToast({title: 'Success', description: result.message, color: 'success'})
-        // Redirect based on destination type
-        if (isMigration || values.typeFilter === 'Study') {
-            return router.push('/admin/studies')
+        if (isMigration || values.typeFilter === 'Event') {
+            return router.push('/admin/events')
         }
-        return router.push('/admin/events')
+        return router.push('/admin/studies')
       } else {
         addToast({title: 'Error', description: result.message, color: 'danger'})
       }
     } catch (error) {
       posthog.capture('error', {
-        error: 'Failed to save event',
-        message: getErrorMessage(error, 'Failed to save event'),
+        error: 'Failed to set study',
+        message: getErrorMessage(error, 'Failed to set study'),
       })
       addToast({
         title: 'Error',
-        description: getErrorMessage(error, 'Failed to save event'),
+        description: `Failed to ${study ? 'update' : 'create'} study`,
         color: 'danger',
       })
     } finally {
@@ -276,22 +252,13 @@ export function EventForm({event}: {event: Event & {id: string}}) {
               hideTimeZone
               isRequired
               showMonthAndYearPickers
-              aria-label="Date & Time"
-              label={`Date & Time (${(() => {
-                const duration = Number(watch('duration'))
-                if (!duration || isNaN(duration)) return undefined
-                const hours = Math.floor(duration / 60)
-                const minutes = duration % 60
-                return `Duration: ${hours}:${minutes.toString().padStart(2, '0')}`
-              })()} hours)`}
+              aria-label="Date"
+              label="Date"
               popoverProps={{isNonModal: true}}
-              value={field.value ? parseIsoToDateRange(field.value, Number(watch('duration'))) : null}
+              value={field.value ? parseIsoToDateRange(field.value) : null}
               onChange={(value: any) => {
-                 const {startIso, durationMinutes} = parseDateRangeToIso(value)
-                 field.onChange(startIso)
-                 if (durationMinutes !== null) {
-                    setValue('duration', String(durationMinutes), {shouldDirty: true})
-                 }
+                const isoDate = parseDateRangeToIso(value)
+                field.onChange(isoDate)
               }}
               onBlur={field.onBlur}
               name={field.name}
@@ -299,9 +266,7 @@ export function EventForm({event}: {event: Event & {id: string}}) {
           )}
         />
         <Input label="Location" {...register('location')} />
-        <Input label="Location Details" {...register('locationDetails')} />
-        <Input label="Location Link" type="url" {...register('locationLink')} />
-
+        
         {/* Type Selection (Event vs Study) */}
         <Autocomplete 
             label="Type" 
@@ -326,7 +291,6 @@ export function EventForm({event}: {event: Event & {id: string}}) {
             }
         </Autocomplete>
 
-        <Input label="Price" type="text" {...register('price')} />
         <Controller
           name="quantity"
           control={control}
@@ -340,7 +304,6 @@ export function EventForm({event}: {event: Event & {id: string}}) {
             />
           )}
         />
-        <Input label="Join Link" type="url" {...register('joinLink')} />
       </div>
       <Textarea label="Description" {...register('description')} rows={4} />
       
@@ -395,10 +358,7 @@ export function EventForm({event}: {event: Event & {id: string}}) {
                   size="sm" 
                   variant="flat" 
                   color="danger" 
-                  onPress={() => {
-                    // Navigate back to the appropriate list based on current status (or default to events)
-                    router.push('/admin/events')
-                  }}
+                  onPress={() => router.push('/admin/studies')}
                 >
                   Yes
                 </Button>
@@ -417,46 +377,31 @@ export function EventForm({event}: {event: Event & {id: string}}) {
           </PopoverContent>
         </Popover>
         <Button type="submit" color="primary" isLoading={loading || isUploadingPoster}>
-          {event ? 'Update' : 'Create'}
+          {study ? 'Update' : 'Create'}
         </Button>
       </div>
     </Form>
   )
 }
 
-// Helpers for Date Range (extracted for cleaner component)
-function parseIsoToDateRange(isoStart: string, durationMinutes: number = 0): any {
-    if (!isoStart) return null
+// Helpers
+function parseIsoToDateRange(iso: string): any {
+    if (!iso) return null
     try {
-        const start = parseDateTime(isoToLocalDateTimeInput(isoStart))
-        const endIso = new Date(new Date(isoStart).getTime() + durationMinutes * 60000).toISOString()
-        const end = parseDateTime(isoToLocalDateTimeInput(endIso))
-        return {start, end}
+        const date = parseDateTime(isoToLocalDateTimeInput(iso))
+        return {start: date, end: date}
     } catch (e) {
         return null
     }
 }
 
 function parseDateRangeToIso(value: any) {
-    if (!value?.start) return {startIso: '', durationMinutes: null}
-    const startIso = dateValueToISOString({
+    if (!value?.start) return ''
+    return dateValueToISOString({
         year: value.start.year,
         month: value.start.month,
         day: value.start.day,
         hour: 'hour' in value.start ? value.start.hour : 0,
         minute: 'minute' in value.start ? value.start.minute : 0,
     })
-    
-    let durationMinutes = null
-    if (value?.end && startIso) {
-         const endIso = dateValueToISOString({
-            year: value.end.year,
-            month: value.end.month,
-            day: value.end.day,
-            hour: 'hour' in value.end ? value.end.hour : 0,
-            minute: 'minute' in value.end ? value.end.minute : 0,
-        })
-        durationMinutes = Math.max(0, Math.round((new Date(endIso).getTime() - new Date(startIso).getTime()) / 60000))
-    }
-    return {startIso, durationMinutes}
 }

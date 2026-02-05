@@ -4,7 +4,7 @@ import {Button} from '@heroui/button'
 import {Input} from '@heroui/input'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {addToast} from '@heroui/toast'
-import {LogOut, Plus, User, UserCheck, UserStar} from 'lucide-react'
+import {LayoutDashboard, LogOut, User, UserCheck, UserStar} from 'lucide-react'
 import Link from 'next/link'
 
 export default function AuthNavButton() {
@@ -52,13 +52,13 @@ function AuthContent() {
         {admin ? (
           <div className="flex flex-col gap-2">
             <p className="text-sm font-semibold">Thank you for your service</p>
-            <Link href="/admin/events">
+            <Link href="/admin">
               <Button
                 color="primary"
                 variant="solid"
                 size="sm"
-                startContent={<Plus className="h-4 w-4" />}>
-                Manage Events
+                startContent={<LayoutDashboard className="h-4 w-4" />}>
+                Admin Dashboard
               </Button>
             </Link>
             <Button

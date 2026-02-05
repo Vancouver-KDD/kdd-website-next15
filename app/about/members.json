@@ -214,6 +214,50 @@
         }
       ]
     }
+  ],
+  "Past Chairs": [
+    {
+      "title": "2023–2025",
+      "name": "권용주",
+      "englishName": "Yongju Kwon",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_Yongju_sqxbyu.jpg",
+      "description1": "",
+      "description2": "",
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/yongjukwon/"
+        }
+      ]
+    },
+    {
+      "title": "2020–2023",
+      "name": "안혜선",
+      "englishName": "Hyesun An",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756476900/1720669662792_kxhbta.jpg",
+      "description1": "",
+      "description2": "",
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/anhyesun/"
+        }
+      ]
+    },
+    {
+      "title": "2017–2020",
+      "name": "김보성",
+      "englishName": "Eric Bosung Kim",
+      "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756476822/1667635130046_prvxnu.jpg",
+      "description1": "",
+      "description2": "",
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/bosung90/"
+        }
+      ]
+    }
   ]
 }
 

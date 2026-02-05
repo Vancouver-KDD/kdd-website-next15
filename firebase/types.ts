@@ -4,7 +4,8 @@ export type Event = {
   id: string
   date: string // ISO string for datetime-local inputs and client-side formatting
   title: string
-  draft?: boolean
+  draft?: boolean // Deprecated, use status
+  status?: 'draft' | 'published' | 'hidden'
   photos?: Photo[]
   type?: string
   location?: string

@@ -1,10 +1,10 @@
 'use client'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
-import {getEvents} from '@/firebase/actions/event.admin'
+import {getStudies} from '@/firebase/actions/study.admin'
 import {useAuthStore} from '@/firebase/AuthClient'
 import type {Event} from '@/firebase/types'
-import {useDeleteEvent} from '@/hooks/useDeleteEvent'
+import {deleteStudy} from '@/firebase/actions/study.admin'
 import {cn, formatISODate, getErrorMessage} from '@/lib/utils'
 import {Button} from '@heroui/button'
 import {Card, CardBody, CardHeader} from '@heroui/card'
@@ -19,30 +19,26 @@ import {useRouter} from 'next/navigation'
 import posthog from 'posthog-js'
 import {useEffect, useState} from 'react'
 
-export default function AdminEventsPage() {
+export default function AdminStudiesPage() {
   const {user, admin, loading: authLoading} = useAuthStore()
   const router = useRouter()
-  const [events, setEvents] = useState<(Event & {id: string})[]>([])
+  const [studies, setStudies] = useState<(Event & {id: string})[]>([])
   const [loading, setLoading] = useState(true)
-  const {handleDelete, deletingEventId} = useDeleteEvent({
-    onSuccess: (eventId) => {
-      setEvents((prevEvents) => prevEvents.filter((event) => event.id !== eventId))
-    },
-  })
+  const [deletingStudyId, setDeletingStudyId] = useState<string | null>(null)
 
   useEffect(() => {
-    loadEvents()
+    loadStudies()
   }, [admin])
 
-  const loadEvents = async () => {
+  const loadStudies = async () => {
     setLoading(true)
     try {
       const token = await user?.getIdToken()
       if (!token) return
-      const {success, events, message} = await getEvents(token)
+      const {success, studies, message} = await getStudies(token)
       if (!success) {
         posthog.capture('error', {
-          error: 'Failed to load events',
+          error: 'Failed to load studies',
           message: message,
         })
         addToast({
@@ -51,20 +47,41 @@ export default function AdminEventsPage() {
           color: 'danger',
         })
       } else {
-        setEvents(events || [])
+        setStudies(studies || [])
       }
     } catch (error) {
       posthog.capture('error', {
-        error: 'Failed to load events',
-        message: getErrorMessage(error, 'Failed to load events'),
+        error: 'Failed to load studies',
+        message: getErrorMessage(error, 'Failed to load studies'),
       })
       addToast({
         title: 'Error',
-        description: getErrorMessage(error, 'Failed to load events'),
+        description: getErrorMessage(error, 'Failed to load studies'),
         color: 'danger',
       })
     } finally {
       setLoading(false)
+    }
+  }
+
+  const handleDelete = async (studyId: string, title?: string) => {
+    if (!confirm(`Are you sure you want to delete "${title || 'this study'}"?`)) return
+
+    setDeletingStudyId(studyId)
+    try {
+        const token = await user?.getIdToken()
+        if (!token) return
+        const res = await deleteStudy(token, studyId)
+        if (res.success) {
+            addToast({title: 'Success', description: 'Study deleted', color: 'success'})
+            setStudies((prev) => prev.filter((s) => s.id !== studyId))
+        } else {
+            addToast({title: 'Error', description: res.message, color: 'danger'})
+        }
+    } catch (error) {
+        addToast({title: 'Error', description: 'Failed to delete study', color: 'danger'})
+    } finally {
+        setDeletingStudyId(null)
     }
   }
 
@@ -88,28 +105,23 @@ export default function AdminEventsPage() {
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">
           <div className="border-primary h-32 w-32 animate-spin rounded-full border-b-2"></div>
-          <p className="mt-4">Loading events...</p>
+          <p className="mt-4">Loading studies...</p>
         </div>
       </div>
     )
   }
 
-  const postedEvents = events.filter((e) => {
-      // Legacy: !draft and no status -> published
-      // New: status === 'published'
-      if (e.status) return e.status === 'published'
-      return !e.draft
+  const postedStudies = studies.filter((s) => {
+       if (s.status) return s.status === 'published'
+       return !s.draft
   })
   
-  const hiddenEvents = events.filter((e) => {
-      // Legacy: draft is true -> hidden
-      // New: status === 'hidden'
-      if (e.status) return e.status === 'hidden'
-      return e.draft
+  const hiddenStudies = studies.filter((s) => {
+       if (s.status) return s.status === 'hidden'
+       return s.draft
   })
 
-  // New Concept: Draft (Unfinished) -> only available via new status field
-  const draftEvents = events.filter((e) => e.status === 'draft')
+  const draftStudies = studies.filter((s) => s.status === 'draft')
 
   return (
     <>
@@ -117,45 +129,45 @@ export default function AdminEventsPage() {
         paths={[
           {href: '/', title: 'Home'},
           {href: '/admin', title: 'Admin Dashboard'},
-          {title: 'Events'},
+          {title: 'Studies'},
         ]}
       />
       <Spacer y={4} />
 
       <div className="container mx-auto flex max-w-5xl flex-col px-6">
-        <Link className="self-end" href={`/admin/events/${crypto.randomUUID()}/create`}>
+        <Link className="self-end" href={`/admin/studies/${crypto.randomUUID()}/create`}>
           <Button color="primary" startContent={<Plus className="h-4 w-4" />}>
-            Create Event
+            Create Study
           </Button>
         </Link>
         <Spacer y={4} />
 
-        <Tabs aria-label="Event Status">
-            <Tab key="draft" title={<div className="flex items-center gap-2"><span>📝</span> Draft <Chip size="sm" variant="flat">{draftEvents.length}</Chip></div>}>
-                 <EventList 
-                    events={draftEvents} 
+        <Tabs aria-label="Study Status">
+            <Tab key="draft" title={<div className="flex items-center gap-2"><span>📝</span> Draft <Chip size="sm" variant="flat">{draftStudies.length}</Chip></div>}>
+                 <StudyList 
+                    studies={draftStudies} 
                     router={router} 
                     handleDelete={handleDelete} 
-                    deletingEventId={deletingEventId}
-                    emptyMessage="No draft events." 
+                    deletingStudyId={deletingStudyId}
+                    emptyMessage="No draft studies." 
                 />
             </Tab>
-            <Tab key="posted" title={<div className="flex items-center gap-2"><span>🚀</span> Posted <Chip size="sm" variant="flat">{postedEvents.length}</Chip></div>}>
-                <EventList 
-                    events={postedEvents} 
+            <Tab key="posted" title={<div className="flex items-center gap-2"><span>🚀</span> Posted <Chip size="sm" variant="flat">{postedStudies.length}</Chip></div>}>
+                <StudyList 
+                    studies={postedStudies} 
                     router={router} 
                     handleDelete={handleDelete} 
-                    deletingEventId={deletingEventId} 
-                    emptyMessage="No posted events."
+                    deletingStudyId={deletingStudyId}
+                    emptyMessage="No posted studies." 
                 />
             </Tab>
-            <Tab key="hidden" title={<div className="flex items-center gap-2"><span>🔒</span> Hidden <Chip size="sm" variant="flat">{hiddenEvents.length}</Chip></div>}>
-                <EventList 
-                    events={hiddenEvents} 
+            <Tab key="hidden" title={<div className="flex items-center gap-2"><span>🔒</span> Hidden <Chip size="sm" variant="flat">{hiddenStudies.length}</Chip></div>}>
+                <StudyList 
+                    studies={hiddenStudies} 
                     router={router} 
                     handleDelete={handleDelete} 
-                    deletingEventId={deletingEventId}
-                    emptyMessage="No hidden events." 
+                    deletingStudyId={deletingStudyId}
+                    emptyMessage="No hidden studies." 
                 />
             </Tab>
         </Tabs>
@@ -164,14 +176,14 @@ export default function AdminEventsPage() {
   )
 }
 
-function EventList({events, router, handleDelete, deletingEventId, emptyMessage}: {
-    events: (Event & {id: string})[], 
+function StudyList({studies, router, handleDelete, deletingStudyId, emptyMessage}: {
+    studies: (Event & {id: string})[], 
     router: any, 
     handleDelete: any, 
-    deletingEventId: string | null,
+    deletingStudyId: string | null,
     emptyMessage: string
 }) {
-    if (events.length === 0) {
+    if (studies.length === 0) {
         return (
             <div className="py-6 text-center border-dashed border-2 rounded-xl flex flex-col items-center justify-center text-default-400">
                 <p>{emptyMessage}</p>
@@ -181,13 +193,13 @@ function EventList({events, router, handleDelete, deletingEventId, emptyMessage}
 
     return (
         <div className="grid gap-4">
-          {events.map((event) => (
-            <Card key={event.id} className={cn('w-full', event.draft && 'opacity-60')}>
+          {studies.map((study) => (
+            <Card key={study.id} className={cn('w-full', study.draft && 'opacity-60')}>
               <CardHeader className="flex items-start justify-between">
                 <div className="bg-default-50 mr-4 flex h-14 w-14 items-center justify-center overflow-hidden rounded-md border">
-                  {event.image ? (
+                  {study.image ? (
                     <Image 
-                        src={event.image} 
+                        src={study.image} 
                         alt="Poster" 
                         className="h-full w-full object-cover" 
                         radius="none"
@@ -196,11 +208,11 @@ function EventList({events, router, handleDelete, deletingEventId, emptyMessage}
                   ) : null}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold">{event.title}</h3>
+                  <h3 className="text-lg font-semibold">{study.title}</h3>
                   <div className="text-default-500 mt-2 flex items-start gap-4 text-sm">
                     <div className="flex items-start gap-1">
                       <Calendar className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                      {formatISODate(event.date, {
+                      {formatISODate(study.date, {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric',
@@ -208,35 +220,35 @@ function EventList({events, router, handleDelete, deletingEventId, emptyMessage}
                         minute: '2-digit',
                       })}
                     </div>
-                    {event.location && (
+                    {study.location && (
                       <div className="flex items-start gap-1">
                         <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                        {event.location}
+                        {study.location}
                       </div>
                     )}
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  {event.draft && (
+                  {study.draft && (
                     <Chip size="sm" variant="flat" color="warning">
                       Hidden
                     </Chip>
                   )}
-                  <Chip color={new Date(event.date) > new Date() ? 'success' : 'default'} size="sm">
-                    {new Date(event.date) > new Date() ? 'Upcoming' : 'Past'}
+                  <Chip color={new Date(study.date) > new Date() ? 'success' : 'default'} size="sm">
+                    {new Date(study.date) > new Date() ? 'Upcoming' : 'Past'}
                   </Chip>
                 </div>
               </CardHeader>
               <CardBody>
-                {event.description && (
-                  <p className="text-default-600 mb-4 line-clamp-3 text-sm">{event.description}</p>
+                {study.description && (
+                  <p className="text-default-600 mb-4 line-clamp-3 text-sm">{study.description}</p>
                 )}
                 <div className="flex gap-2">
                   <Button
                     size="sm"
                     variant="flat"
                     startContent={<Edit className="h-4 w-4" />}
-                    onPress={() => router.push(`/admin/events/${event.id}/edit`)}>
+                    onPress={() => router.push(`/admin/studies/${study.id}/edit`)}>
                     Edit
                   </Button>
                   <Button
@@ -244,14 +256,14 @@ function EventList({events, router, handleDelete, deletingEventId, emptyMessage}
                     color="danger"
                     variant="flat"
                     startContent={<Trash2 className="h-4 w-4" />}
-                    onPress={() => handleDelete(event.id, event.title)}
-                    isLoading={deletingEventId === event.id}>
+                    onPress={() => handleDelete(study.id, study.title)}
+                    isLoading={deletingStudyId === study.id}>
                     Delete
                   </Button>
                   <Button
                     size="sm"
                     variant="flat"
-                    onPress={() => router.push(`/events/${event.id}`)}>
+                    onPress={() => router.push(`/study/${study.id}`)}>
                     View
                   </Button>
                 </div>

@@ -86,7 +86,7 @@ export default function HomeClient({futureEvents}: {futureEvents: (Event & {id: 
               <span className={sectionTitle()}>KDD at a Glance</span>
               <Spacer y={6} />
               <span className="text-md md:text-lg">
-                {t('home.hero.subtitle')}
+                {t('home.hero.at_a_glance_subtitle')}
               </span>
             </div>
           </div>

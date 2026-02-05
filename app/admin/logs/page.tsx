@@ -32,6 +32,9 @@ const EVENT_TYPE_COLORS: Record<
   move_study_photo: 'secondary',
   delete_study_photo: 'danger',
   delete_study: 'danger',
+  create_study: 'success',
+  update_study: 'primary',
+  move_study_to_event: 'secondary',
 }
 
 const EVENT_TYPE_LABELS: Record<LOG_EVENT_TYPE, string> = {
@@ -48,6 +51,9 @@ const EVENT_TYPE_LABELS: Record<LOG_EVENT_TYPE, string> = {
   move_study_photo: 'Move Study Photo',
   delete_study_photo: 'Delete Study Photo',
   delete_study: 'Delete Study',
+  create_study: 'Create Study',
+  update_study: 'Update Study',
+  move_study_to_event: 'Move to Event',
 }
 
 export default function LogsPage() {
@@ -186,6 +192,9 @@ export default function LogsPage() {
               <AutocompleteItem key="move_study_photo">Move Study Photo</AutocompleteItem>
               <AutocompleteItem key="delete_study_photo">Delete Study Photo</AutocompleteItem>
               <AutocompleteItem key="delete_study">Delete Study</AutocompleteItem>
+              <AutocompleteItem key="create_study">Create Study</AutocompleteItem>
+              <AutocompleteItem key="update_study">Update Study</AutocompleteItem>
+              <AutocompleteItem key="move_study_to_event">Move to Event</AutocompleteItem>
             </Autocomplete>
 
             <Autocomplete

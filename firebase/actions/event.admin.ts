@@ -250,3 +250,47 @@ export async function getEvent(token: string, eventId: string) {
       }),
   }
 }
+
+export async function moveStudyToEvent(token: string, studyId: string) {
+  const {valid, message, userId} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, message}
+  }
+
+  try {
+    const studyRef = firestore.collection('Studies').doc(studyId)
+    const studyDoc = await studyRef.get()
+
+    if (!studyDoc.exists) {
+      return {success: false, message: 'Study not found'}
+    }
+
+    const studyData = studyDoc.data()
+    const eventRef = firestore.collection('Events').doc(studyId) // Keep same ID
+
+    // Add to Events collection
+    await eventRef.set({
+      ...studyData,
+      type: 'Event',
+    })
+
+    // Delete from Studies collection
+    await studyRef.delete()
+
+    // Log activity
+    if (userId) {
+      await logUserActivity(userId, 'move_study_to_event', { 
+        studyId,
+        title: studyData?.title,
+      })
+    }
+
+    revalidatePath('/events')
+    revalidatePath('/study')
+    revalidatePath(`/events/${studyId}`)
+
+    return {success: true, message: `Moved "${studyData?.title}" to Events`}
+  } catch (error) {
+    return {success: false, message: getErrorMessage(error, 'Failed to move study')}
+  }
+}

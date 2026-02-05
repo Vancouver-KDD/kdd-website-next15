@@ -187,6 +187,99 @@ export default function AboutPage() {
             </div>
             <Spacer className="h-20 md:h-40" />
           </div>
+          <div className="bg-background flex flex-col items-center self-stretch">
+            <Spacer y={24} />
+            <div className={labelStyles()}>{t('about.team.past_chairs')}</div>
+            <div className="w-full self-center px-4 py-9 sm:px-12">
+              <div className="flex flex-col items-center">
+                {members['Past Chairs'].map((member, index) => (
+                  <CardPastChair
+                    key={index}
+                    {...member}
+                    isFirst={index === 0}
+                    isLast={index === members['Past Chairs'].length - 1}
+                  />
+                ))}
+              </div>
+            </div>
+            <Spacer className="h-20 md:h-40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const CardPastChair = ({
+  title,
+  image,
+  name,
+  englishName,
+  socialLinks,
+  isFirst,
+  isLast,
+}: {
+  title?: string
+  image: string
+  name: string
+  englishName?: string
+  socialLinks: {
+    type: string
+    url: string
+  }[]
+  isFirst?: boolean
+  isLast?: boolean
+}) => {
+  return (
+    <div className="relative flex min-h-[120px] w-full justify-center py-6 transition-colors hover:bg-default-50/50">
+      {/* Timeline Vertical line in the middle */}
+      <div className="absolute inset-y-0 left-1/2 flex w-0.5 -translate-x-1/2 flex-col items-center">
+        <div className={`w-full flex-1 ${isFirst ? 'bg-transparent' : 'bg-default-200'}`} />
+        <div className="bg-default-400 z-10 h-3 w-3 shrink-0 rounded-full md:h-4 md:w-4" />
+        <div className={`w-full flex-1 ${isLast ? 'bg-transparent' : 'bg-default-200'}`} />
+      </div>
+
+      {/* Content Split: Year on Left, Profile on Right */}
+      <div className="flex w-full max-w-2xl items-center">
+        {/* Left Side: Year */}
+        <div className="flex flex-1 justify-end pr-8 md:pr-12">
+          <div className="text-default-500 font-medium text-sm md:text-base">
+            {title}
+          </div>
+        </div>
+
+        {/* Right Side: Profile */}
+        <div className="flex flex-1 items-center gap-4 pl-8 md:gap-6 md:pl-12">
+          <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-full shadow-sm md:h-20 md:w-20">
+            {image ? (
+              <Image
+                as={NextImage}
+                src={image}
+                alt={name}
+                width={80}
+                height={80}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className="bg-default-100 flex h-full w-full items-center justify-center text-4xl">
+                👤
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center gap-3">
+              <div className="text-lg font-bold md:text-xl">{name}</div>
+              <Link
+                href={socialLinks.find((link) => link.type === 'linkedin')?.url || '#'}
+                isExternal
+                className="transition-transform hover:scale-110">
+                <LinkedInIcon size={20} className="text-default-600" />
+              </Link>
+            </div>
+            {englishName && (
+              <div className="text-default-400 text-sm md:text-base">{englishName}</div>
+            )}
+          </div>
         </div>
       </div>
     </div>

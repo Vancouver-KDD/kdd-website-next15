@@ -9,7 +9,7 @@
       "our_story": "Our Story",
       "values": "Values",
       "meet_the_team": "Meet the Team",
-      "upcoming_events": "Upcoming Events",
+      "upcoming_events": "Next Event",
       "past_events": "Past Events",
       "contact_us": "Contact Us",
       "about_us": "About Us"
@@ -27,10 +27,11 @@
     "home": {
       "hero": {
         "title": "Korean Developers and Designers in Vancouver",
-        "subtitle": "KDD is a community for Korean IT professionals in Vancouver to share knowledge and grow together."
+        "subtitle": "KDD is a community for Korean IT professionals in Vancouver to share knowledge and grow together.",
+        "at_a_glance_subtitle": "KDD (Korean Developers & Designers) is the largest Korean IT community in Western Canada, founded in 2017. We are a platform where various IT professionals, including developers, designers, planners, and students, gather to share knowledge and experience, collaborate, and grow together."
       },
       "sections": {
-        "upcoming": "Upcoming Events",
+        "upcoming": "Next Event",
         "past": "Past Events"
       }
     },
@@ -74,7 +75,8 @@
       },
       "team": {
         "title": "Meet the Team",
-        "subtitle": "Introducing the organizers who work together to create KDD."
+        "subtitle": "Introducing the organizers who work together to create KDD.",
+        "past_chairs": "Past Chairs"
       },
       "join_event": "Join our Next Event"
     },
