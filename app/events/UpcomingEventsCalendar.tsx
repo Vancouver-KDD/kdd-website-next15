@@ -24,14 +24,14 @@ export default function UpcomingEventsCalendar({events}: {events: {date: string;
       aria-label="Upcoming Events Calendar"
       value={value as any}
       minValue={
-        eventsWithLocaleDates[0]
+        (eventsWithLocaleDates[0]
           ? parseDate(eventsWithLocaleDates[0].localeDateString)
-          : today(getLocalTimeZone())
+          : today(getLocalTimeZone())) as any
       }
       maxValue={
-        eventsWithLocaleDates[eventsWithLocaleDates.length - 1]
+        (eventsWithLocaleDates[eventsWithLocaleDates.length - 1]
           ? parseDate(eventsWithLocaleDates[eventsWithLocaleDates.length - 1].localeDateString)
-          : today(getLocalTimeZone())
+          : today(getLocalTimeZone())) as any
       }
       onChange={(value) => {
         if (value) {
@@ -52,7 +52,7 @@ export default function UpcomingEventsCalendar({events}: {events: {date: string;
           )
           // check if _date is before events[0].localeDateString or after events[events.length - 1].localeDateString
           // If so, return true, since it is already covered by the min and max values so it is already unavailable
-          if (_date < minDate || _date > maxDate) {
+          if (_date.compare(minDate as any) < 0 || _date.compare(maxDate as any) > 0) {
             return true
           }
           // Return true if and only if the date is the same as the event date

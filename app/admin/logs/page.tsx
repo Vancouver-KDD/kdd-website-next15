@@ -27,6 +27,11 @@ const EVENT_TYPE_COLORS: Record<
   add_event_photo: 'success',
   verify_admin_password: 'default',
   step_down_as_admin: 'warning',
+  move_event_to_study: 'secondary',
+  add_study_photo: 'success',
+  move_study_photo: 'secondary',
+  delete_study_photo: 'danger',
+  delete_study: 'danger',
 }
 
 const EVENT_TYPE_LABELS: Record<LOG_EVENT_TYPE, string> = {
@@ -38,6 +43,11 @@ const EVENT_TYPE_LABELS: Record<LOG_EVENT_TYPE, string> = {
   add_event_photo: 'Add Photo',
   verify_admin_password: 'Admin Login',
   step_down_as_admin: 'Admin Logout',
+  move_event_to_study: 'Move to Study',
+  add_study_photo: 'Add Study Photo',
+  move_study_photo: 'Move Study Photo',
+  delete_study_photo: 'Delete Study Photo',
+  delete_study: 'Delete Study',
 }
 
 export default function LogsPage() {
@@ -171,6 +181,11 @@ export default function LogsPage() {
               <AutocompleteItem key="add_event_photo">Add Event Photo</AutocompleteItem>
               <AutocompleteItem key="verify_admin_password">Admin Verified</AutocompleteItem>
               <AutocompleteItem key="step_down_as_admin">Admin Step Down</AutocompleteItem>
+              <AutocompleteItem key="move_event_to_study">Move to Study</AutocompleteItem>
+              <AutocompleteItem key="add_study_photo">Add Study Photo</AutocompleteItem>
+              <AutocompleteItem key="move_study_photo">Move Study Photo</AutocompleteItem>
+              <AutocompleteItem key="delete_study_photo">Delete Study Photo</AutocompleteItem>
+              <AutocompleteItem key="delete_study">Delete Study</AutocompleteItem>
             </Autocomplete>
 
             <Autocomplete

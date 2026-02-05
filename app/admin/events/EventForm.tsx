@@ -227,7 +227,7 @@ export function EventForm({event}: {event: Event & {id: string}}) {
               })()} hours)`}
               popoverProps={{isNonModal: true}}
               value={
-                field.value
+                (field.value
                   ? {
                       start: parseDateTime(isoToLocalDateTimeInput(field.value)),
                       end: parseDateTime(
@@ -239,16 +239,16 @@ export function EventForm({event}: {event: Event & {id: string}}) {
                         )
                       ),
                     }
-                  : null
+                  : null) as any
               }
-              onChange={(value) => {
+              onChange={(value: any) => {
                 const startIso = value?.start
                   ? dateValueToISOString({
                       year: value.start.year,
                       month: value.start.month,
                       day: value.start.day,
-                      hour: value.start.hour,
-                      minute: value.start.minute,
+                      hour: 'hour' in value.start ? value.start.hour : 0,
+                      minute: 'minute' in value.start ? value.start.minute : 0,
                     })
                   : ''
                 const endIso = value?.end
@@ -256,8 +256,8 @@ export function EventForm({event}: {event: Event & {id: string}}) {
                       year: value.end.year,
                       month: value.end.month,
                       day: value.end.day,
-                      hour: value.end.hour,
-                      minute: value.end.minute,
+                      hour: 'hour' in value.end ? value.end.hour : 0,
+                      minute: 'minute' in value.end ? value.end.minute : 0,
                     })
                   : ''
                 field.onChange(startIso)
