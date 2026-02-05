@@ -3,126 +3,217 @@
     {
       "title": "President",
       "name": "이윤서",
+      "englishName": "Jane YS Lee",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1758821611/yoon-seo-kdd2_qqfja4.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/jane-ys-lee/"
+        }
+      ]
     },
     {
       "title": "VP",
       "name": "박진아",
+      "englishName": "Jinah Pak",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_Jinah_cdncrj.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/jinah-pak/"
+        }
+      ]
     },
     {
       "title": "Treasurer",
       "name": "이정은",
+      "englishName": "Jamie Lee",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_jamie_h26m5m.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/jamiejungeunlee/"
+        }
+      ]
     }
   ],
   "Operations Team": [
     {
       "title": "Monthly Meetup Lead",
       "name": "손예준",
+      "englishName": "June Shon",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_Yejune_xxvybg.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/juneshon/"
+        }
+      ]
     },
     {
       "title": "IT Conference Lead",
       "name": "김기훈",
+      "englishName": "Ki Kim",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_Ki_ecctw6.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/ki-kim-pmp-psm-eit-ba262489/"
+        }
+      ]
     },
     {
-      "title": "Career Network Meetup Lead",
+      "title": "Career Network Lead",
       "name": "이동구",
+      "englishName": "Harrison Lee",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756484467/Profie_harrison_cmdvzi.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/donggu-lee/"
+        }
+      ]
     }
   ],
   "Study Team": [
     {
       "title": "Lead",
       "name": "임지수",
+      "englishName": "Jisoo Im",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_jisoo_kc37tb.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/jisoo-im/"
+        }
+      ]
     },
     {
       "name": "허은정",
+      "englishName": "Eunjeong Hur",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756485261/Profie_eunjeong_v3bnpx.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/eunjeonghur/"
+        }
+      ]
     }
   ],
   "Design Team": [
     {
       "title": "Lead",
       "name": "박다운",
+      "englishName": "Crystal Park",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756485261/Profie_crystal_p2c9ym.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/dawoon-crystal/"
+        }
+      ]
     },
     {
       "name": "이세빈",
+      "englishName": "Sebin Lee",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473513/Profie_sebin_a8pgcw.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/sebin-leeee/"
+        }
+      ]
     },
     {
       "name": "남궁미나",
+      "englishName": "Minah Namgung",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756532502/Profie_mina_ehxqzj.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/minanamgung/"
+        }
+      ]
     }
   ],
   "Marketing Team": [
     {
       "title": "Lead",
       "name": "이주현",
+      "englishName": "Aspyn Lee",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756473512/Profie_aspyn_nkfmbh.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/aspynlee/"
+        }
+      ]
     }
   ],
   "Board Members": [
     {
       "name": "김보성",
+      "englishName": "Eric Bosung Kim",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756476822/1667635130046_prvxnu.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/bosung90/"
+        }
+      ]
     },
     {
       "name": "권정아",
+      "englishName": "Jung Kwon",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756476885/1742588919709_sdw8ru.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/jungkwon/"
+        }
+      ]
     },
     {
       "name": "안혜선",
+      "englishName": "Hyesun An",
       "image": "https://res.cloudinary.com/vancouverkdd/image/upload/v1756476900/1720669662792_kxhbta.jpg",
       "description1": "",
       "description2": "",
-      "socialLinks": []
+      "socialLinks": [
+        {
+          "type": "linkedin",
+          "url": "https://www.linkedin.com/in/anhyesun/"
+        }
+      ]
     }
   ]
 }
+

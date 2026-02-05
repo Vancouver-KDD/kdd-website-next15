@@ -215,6 +215,7 @@ const CardMember = ({
   title,
   image,
   name,
+  englishName,
   description1,
   description2,
   socialLinks,
@@ -222,19 +223,11 @@ const CardMember = ({
   title?: string
   image: string
   name: string
+  englishName?: string
   description1: string
   description2: string
   socialLinks: {
-    type:
-      | 'linkedin'
-      | 'github'
-      | 'email'
-      | 'website'
-      | 'instagram'
-      | 'facebook'
-      | 'twitter'
-      | 'discord'
-      | 'threads'
+    type: string
     url: string
   }[]
 }) => {
@@ -256,6 +249,7 @@ const CardMember = ({
       </div>
       <div className="flex flex-col items-center">
         <div className="text-sm font-semibold">{name}</div>
+        {englishName && <div className="text-default-500 text-xs">{englishName}</div>}
         <Link
           href={socialLinks.find((link) => link.type === 'linkedin')?.url || '#'}
           isExternal
