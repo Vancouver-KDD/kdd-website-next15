@@ -20,3 +20,16 @@ export type Event = {
   price?: string // 10.00
   quantity?: number
 }
+
+export interface Comment {
+  id: string
+  targetId: string
+  userId: string
+  userDisplayName: string
+  userPhotoURL: string
+  text: string
+  createdAt: number
+  updatedAt?: number
+  parentId?: string
+  reactions?: Record<string, string[]>
+}

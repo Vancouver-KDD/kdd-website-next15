@@ -9,6 +9,7 @@ import Photos from './(photos)/Photos'
 import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import CommentSection from '@/components/CommentSection'
 
 const TABS = [
   { key: 'details' },
@@ -41,7 +42,8 @@ export default function Tabs({event}: {event: Event}) {
   }, [DISABLED_KEYS])
 
   return (
-    <HerouiTabs
+    <>
+      <HerouiTabs
       disabledKeys={DISABLED_KEYS}
       selectedKey={selected}
       onSelectionChange={(key) => {
@@ -86,5 +88,7 @@ export default function Tabs({event}: {event: Event}) {
         </div>
       </Tab>
     </HerouiTabs>
+    {selected !== 'photos' && <CommentSection targetId={event.id} />}
+    </>
   )
 }

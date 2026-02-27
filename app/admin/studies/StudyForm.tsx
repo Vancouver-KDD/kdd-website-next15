@@ -206,7 +206,7 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
         if (isMigration || values.typeFilter === 'Event') {
             return router.push('/admin/events')
         }
-        return router.push('/admin/studies')
+        return router.push('/admin/studies' as any)
       } else {
         addToast({title: 'Error', description: result.message, color: 'danger'})
       }
@@ -378,7 +378,7 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
                   size="sm" 
                   variant="flat" 
                   color="danger" 
-                  onPress={() => router.push('/admin/studies')}
+                  onPress={() => router.push('/admin/studies' as any)}
                 >
                   Yes
                 </Button>

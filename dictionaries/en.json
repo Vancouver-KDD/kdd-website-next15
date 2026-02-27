@@ -6,6 +6,47 @@
       "past": "Past",
       "hidden": "Hidden"
     },
+    "profile": {
+      "my_profile": "My Profile",
+      "settings": "Settings",
+      "activity": "Activity History",
+      "change_name": "Change Name",
+      "upload_avatar": "Upload Avatar",
+      "my_comments": "My Comments",
+      "liked_comments": "Reacted Comments",
+      "save_changes": "Save Changes",
+      "cancel": "Cancel",
+      "update_success": "Profile updated successfully.",
+      "occupation": "Occupation / Affiliation",
+      "profile_section": "1. Profile",
+      "admin_section": "2. Admin Access",
+      "verify_admin": "Verify Admin Privileges",
+      "admin_verified": "Admin privileges verified.",
+      "request_admin": "Request Admin Access",
+      "admin_pending": "Request Pending",
+      "accept_invite": "Accept",
+      "admin_failed": "No admin privileges found for this email."
+    },
+    "comments": {
+      "title": "Comments",
+      "loading": "Loading comments...",
+      "empty": "No comments yet. Be the first to comment!",
+      "reply_button": "Reply",
+      "edit_button": "Edit",
+      "edited": "(Edited)",
+      "delete_button": "Delete",
+      "save_button": "Save",
+      "cancel_button": "Cancel",
+      "placeholder": "Add a comment...",
+      "submit_button": "Submit",
+      "login_required": "Please log in to leave a comment.",
+      "messages": {
+        "added": "Comment added successfully.",
+        "deleted": "Comment removed.",
+        "delete_confirm": "Are you sure you want to delete this comment?",
+        "error": "Failed to action comment."
+      }
+    },
     "nav": {
       "about": "About",
       "events": "Events",

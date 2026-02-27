@@ -225,7 +225,7 @@ export function EventForm({event}: {event: Event & {id: string}}) {
         addToast({title: 'Success', description: result.message, color: 'success'})
         // Redirect based on destination type
         if (isMigration || values.typeFilter === 'Study') {
-            return router.push('/admin/studies')
+            return router.push('/admin/studies' as any)
         }
         return router.push('/admin/events')
       } else {

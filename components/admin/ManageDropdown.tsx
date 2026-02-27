@@ -22,7 +22,7 @@ export default function ManageDropdown() {
           disabledKeys={['speakers']}
           onAction={(key: Key) => {
              if (key === 'events') router.push('/admin/events')
-             if (key === 'studies') router.push('/admin/studies')
+             if (key === 'studies') router.push('/admin/studies' as any)
           }}
           itemClasses={{
             base: 'gap-3',

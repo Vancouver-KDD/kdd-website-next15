@@ -6,6 +6,47 @@
       "past": "종료됨",
       "hidden": "숨김"
     },
+    "profile": {
+      "my_profile": "내 프로필",
+      "settings": "설정",
+      "activity": "활동 내역",
+      "change_name": "이름 변경",
+      "upload_avatar": "프로필 사진 업로드",
+      "my_comments": "작성한 댓글",
+      "liked_comments": "좋아요/반응한 댓글",
+      "save_changes": "변경사항 저장",
+      "cancel": "취소",
+      "update_success": "프로필이 성공적으로 업데이트되었습니다.",
+      "occupation": "직업 / 소속",
+      "profile_section": "1. 프로필",
+      "admin_section": "2. 운영진 권한",
+      "verify_admin": "운영진 권한 확인",
+      "admin_verified": "운영진 권한이 확인되었습니다.",
+      "request_admin": "운영진 권한 요청",
+      "admin_pending": "권한 요청 대기 중",
+      "accept_invite": "수락",
+      "admin_failed": "운영진 권한을 찾을 수 없습니다."
+    },
+    "comments": {
+      "title": "댓글",
+      "loading": "댓글 불러오는 중...",
+      "empty": "아직 댓글이 없습니다. 첫 댓글을 남겨주세요!",
+      "reply_button": "답글",
+      "edit_button": "수정",
+      "edited": "(수정됨)",
+      "delete_button": "삭제",
+      "save_button": "저장",
+      "cancel_button": "취소",
+      "placeholder": "댓글을 입력하세요...",
+      "submit_button": "등록",
+      "login_required": "댓글을 남기려면 로그인해주세요.",
+      "messages": {
+        "added": "댓글이 등록되었습니다.",
+        "deleted": "댓글이 삭제되었습니다.",
+        "delete_confirm": "이 댓글을 삭제하시겠습니까?",
+        "error": "작업을 실패했습니다."
+      }
+    },
     "nav": {
       "about": "소개",
       "events": "이벤트",

@@ -1,11 +1,14 @@
-import {stepDownAsAdmin, verifyAdminPassword} from '@/firebase/actions/auth.admin'
+
 import {useAuthStore} from '@/firebase/AuthClient'
 import {Button} from '@heroui/button'
 import {Input} from '@heroui/input'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
 import {addToast} from '@heroui/toast'
-import {LayoutDashboard, LogOut, User, UserCheck, UserStar} from 'lucide-react'
+import {LayoutDashboard, LogOut, User, UserCheck, UserStar, UserCircle} from 'lucide-react'
 import Link from 'next/link'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 
 export default function AuthNavButton() {
   const {user, admin} = useAuthStore()
@@ -26,6 +29,7 @@ export default function AuthNavButton() {
 
 function AuthContent() {
   const {user, loading, signInWithGoogle, logout, admin} = useAuthStore()
+  const {t} = useTranslation({...en, ...ko})
 
   if (loading) {
     return (
@@ -39,21 +43,24 @@ function AuthContent() {
     return (
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
-          <span className="text-sm">{user.displayName || user.email}</span>
-          <Button
-            color="danger"
-            variant="ghost"
-            size="sm"
-            onPress={logout}
-            startContent={<LogOut className="h-4 w-4" />}>
-            Logout
-          </Button>
+          <span className="text-sm font-semibold truncate max-w-[150px]">{user.displayName || user.email}</span>
         </div>
-        {admin ? (
-          <div className="flex flex-col gap-2">
-            <p className="text-sm font-semibold">Thank you for your service</p>
-            <Link href="/admin">
+        <div className="flex flex-col gap-2 mt-2">
+          <Link href={"/profile" as any} className="w-full">
+            <Button
+              className="w-full justify-start"
+              color="primary"
+              variant="flat"
+              size="sm"
+              startContent={<UserCircle className="h-4 w-4" />}>
+              {t('profile.my_profile')}
+            </Button>
+          </Link>
+
+          {admin && (
+            <Link href="/admin" className="w-full">
               <Button
+                className="w-full justify-start"
                 color="primary"
                 variant="solid"
                 size="sm"
@@ -61,62 +68,18 @@ function AuthContent() {
                 Admin Dashboard
               </Button>
             </Link>
-            <Button
-              color="danger"
-              variant="ghost"
-              size="sm"
-              onPress={async () => {
-                const idToken = await user.getIdToken()
-                const {valid, message} = await stepDownAsAdmin(idToken)
-                if (valid) {
-                  await user.getIdToken(true)
-                  addToast({
-                    title: 'Step Down as Admin Success',
-                    description: message,
-                    color: 'success',
-                  })
-                } else {
-                  addToast({
-                    title: 'Step Down as Admin Failed',
-                    description: message,
-                    color: 'danger',
-                  })
-                }
-              }}>
-              Step Down as Admin
-            </Button>
-          </div>
-        ) : (
-          <form
-            action={async (formData) => {
-              const password = formData.get('password') as string
-              const idToken = await user.getIdToken()
-              if (!password || !idToken) {
-                return
-              }
-              const {valid, message} = await verifyAdminPassword(idToken, password)
-              if (valid) {
-                await user.getIdToken(true)
-                addToast({
-                  title: 'Verify Admin Success',
-                  description: message,
-                  color: 'success',
-                })
-              } else {
-                addToast({
-                  title: 'Verify Admin Failed',
-                  description: message,
-                  color: 'danger',
-                })
-              }
-            }}
-            className="flex flex-col gap-2">
-            <Input isRequired label="Admin Password" name="password" type="password" />
-            <Button type="submit" color="primary" variant="solid">
-              Verify
-            </Button>
-          </form>
-        )}
+          )}
+
+          <Button
+            className="w-full justify-start"
+            color="danger"
+            variant="flat"
+            size="sm"
+            onPress={logout}
+            startContent={<LogOut className="h-4 w-4" />}>
+            Logout
+          </Button>
+        </div>
       </div>
     )
   }
