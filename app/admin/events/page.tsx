@@ -133,7 +133,7 @@ export default function AdminEventsPage() {
         </Link>
         <Spacer y={4} />
 
-        <Tabs aria-label="Event Status">
+        <Tabs aria-label="Event Status" defaultSelectedKey="posted">
             <Tab key="draft" title={<div className="flex items-center gap-2"><span>📝</span> Draft <Chip size="sm" variant="flat">{draftEvents.length}</Chip></div>}>
                  <EventList 
                     events={draftEvents} 

@@ -145,7 +145,7 @@ export default function AdminStudiesPage() {
         </Link>
         <Spacer y={4} />
 
-        <Tabs aria-label="Study Status">
+        <Tabs aria-label="Study Status" defaultSelectedKey="posted">
             <Tab key="draft" title={<div className="flex items-center gap-2"><span>📝</span> Draft <Chip size="sm" variant="flat">{draftStudies.length}</Chip></div>}>
                  <StudyList 
                     studies={draftStudies} 
