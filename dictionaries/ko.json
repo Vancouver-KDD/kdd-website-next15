@@ -1,5 +1,11 @@
 {
   "ko": {
+    "chips": {
+      "upcoming": "예정됨",
+      "ongoing": "진행중",
+      "past": "종료됨",
+      "hidden": "숨김"
+    },
     "nav": {
       "about": "소개",
       "events": "이벤트",
@@ -20,8 +26,19 @@
         "subtitle": "KDD는 매월 정기 모임과 연례 컨퍼런스를 통해 지식과 경험을 나누고 있습니다. 다가오는 이벤트를 확인하고 함께하세요."
       },
       "sections": {
+        "upcoming": "Upcoming Events",
+        "upcoming_subtitle": "다가오는 KDD 행사를 만나보세요",
         "past": "Past Events",
         "past_subtitle": "지난 KDD 행사들을 돌아보세요."
+      },
+      "buttons": {
+        "details": "이벤트 자세히 보기",
+        "join": "참여하기"
+      },
+      "tabs": {
+        "details": "행사 정보",
+        "reviews": "행사 후기",
+        "photos": "행사 사진"
       }
     },
     "home": {
@@ -42,8 +59,20 @@
       },
       "sections": {
         "upcoming": "Upcoming Studies",
+        "upcoming_subtitle": "다가오는 KDD 스터디를 만나보세요",
+        "ongoing": "Ongoing Studies",
+        "ongoing_subtitle": "현재 진행 중인 KDD 스터디입니다.",
         "past": "Past Studies",
         "past_subtitle": "지난 KDD 스터디들을 돌아보세요."
+      },
+      "buttons": {
+        "details": "스터디 자세히 보기",
+        "join": "참여하기"
+      },
+      "tabs": {
+        "details": "스터디 정보",
+        "reviews": "스터디 후기",
+        "photos": "스터디 사진"
       }
     },
     "about": {

@@ -5,10 +5,14 @@ import {Skeleton} from '@heroui/skeleton'
 import {Spacer} from '@heroui/spacer'
 import {Suspense, use} from 'react'
 import UpcomingStudiesCarousel from './UpcomingStudiesCarousel'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 
 import {Event} from '@/firebase/types'
 
 export default function UpcomingStudies({studies}: {studies: (Event & {id: string})[]}) {
+  const {t} = useTranslation({...en, ...ko})
   return (
     <Suspense
       fallback={
@@ -31,9 +35,9 @@ export default function UpcomingStudies({studies}: {studies: (Event & {id: strin
       }>
       {studies.length > 0 ? (
         <>
-          <h1 className={sectionTitle({className: 'text-center'})}>Upcoming Studies</h1>
+          <h1 className={sectionTitle({className: 'text-center'})}>{t('study.sections.upcoming')}</h1>
           <h3 className={sectionSubtitle({className: 'text-center'})}>
-            다가오는 KDD 스터디를 만나보세요
+            {t('study.sections.upcoming_subtitle')}
           </h3>
           <Spacer y={6} />
           <UpcomingStudiesCarousel studies={studies} />

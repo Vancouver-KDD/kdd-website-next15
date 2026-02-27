@@ -16,8 +16,11 @@ import {Spacer} from '@heroui/spacer'
 import {addToast} from '@heroui/toast'
 import {Calendar, Edit, MapPin, Plus, Trash2} from 'lucide-react'
 import {useRouter} from 'next/navigation'
-import posthog from 'posthog-js'
 import {useEffect, useState} from 'react'
+import posthog from 'posthog-js'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 
 export default function AdminEventsPage() {
   const {user, admin, loading: authLoading} = useAuthStore()
@@ -171,6 +174,7 @@ function EventList({events, router, handleDelete, deletingEventId, emptyMessage}
     deletingEventId: string | null,
     emptyMessage: string
 }) {
+    const {t} = useTranslation({...en, ...ko})
     if (events.length === 0) {
         return (
             <div className="py-6 text-center border-dashed border-2 rounded-xl flex flex-col items-center justify-center text-default-400">
@@ -219,12 +223,14 @@ function EventList({events, router, handleDelete, deletingEventId, emptyMessage}
                 <div className="flex gap-2">
                   {event.draft && (
                     <Chip size="sm" variant="flat" color="warning">
-                      Hidden
+                      {t('chips.hidden')}
                     </Chip>
                   )}
-                  <Chip color={new Date(event.date) > new Date() ? 'success' : 'default'} size="sm">
-                    {new Date(event.date) > new Date() ? 'Upcoming' : 'Past'}
-                  </Chip>
+                  {new Date(event.date) > new Date() ? (
+                    <Chip size="sm" classNames={{base: "bg-amber-600", content: "text-white font-medium"}}>{t('chips.upcoming')}</Chip>
+                  ) : (
+                    <Chip color="default" size="sm">{t('chips.past')}</Chip>
+                  )}
                 </div>
               </CardHeader>
               <CardBody>

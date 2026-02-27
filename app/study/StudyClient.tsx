@@ -24,9 +24,11 @@ import {Event} from '@/firebase/types'
 
 export default function StudyClient({
   futureStudies,
+  ongoingStudies,
   pastStudies,
 }: {
   futureStudies: (Event & {id: string})[]
+  ongoingStudies: (Event & {id: string})[]
   pastStudies: (Event & {id: string})[]
 }) {
   const {t} = useTranslation({...en, ...ko})
@@ -66,6 +68,29 @@ export default function StudyClient({
       <section id="upcoming-studies" className="w-full">
         <UpcomingStudies studies={futureStudies} />
       </section>
+
+      {ongoingStudies.length > 0 && (
+        <>
+          <Spacer className="h-20 md:h-40" />
+          <section id="ongoing-studies" className="mx-auto w-full max-w-5xl self-start px-6">
+            <div className="text-center">
+              <h1 className={sectionTitle({className: 'text-center'})}>{t('study.sections.ongoing')}</h1>
+              <h3 className={sectionSubtitle({className: 'text-center'})}>
+                {t('study.sections.ongoing_subtitle')}
+              </h3>
+            </div>
+            <Spacer y={6} />
+            <Divider />
+            <Spacer y={16} />
+            <div className="grid grid-cols-1 items-center gap-22 md:grid-cols-2 lg:grid-cols-3">
+              {ongoingStudies.map((study) => (
+                <PastStudyCard key={study.id} {...study} />
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
       <Spacer className="h-20 md:h-40" />
       <section id="past-studies" className="mx-auto w-full max-w-5xl self-start px-6">
         <div className="text-center">

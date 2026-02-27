@@ -6,6 +6,9 @@ import {Tabs as HerouiTabs, Tab} from '@heroui/tabs'
 import {button as buttonStyles} from '@heroui/theme'
 import {useEffect, useState} from 'react'
 import Photos from './(photos)/Photos'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 
 const TABS = [
   {
@@ -24,6 +27,8 @@ const TABS = [
 const DISABLED_KEYS = [TABS[1].key]
 
 export default function Tabs({event}: {event: Event}) {
+  const {t} = useTranslation({...en, ...ko})
+  
   // Get key after # for example http://localhost:3000/events/rtvOYkyRMKK4F6fDEsNn#details
   const [selected, setSelected] = useState(TABS[0].key)
 
@@ -51,7 +56,7 @@ export default function Tabs({event}: {event: Event}) {
       onSelectionChange={(key) => {
         window.location.hash = (key as string) || TABS[0].key
       }}>
-      <Tab key={TABS[0].key} title={TABS[0].title} className="text-medium">
+      <Tab key={TABS[0].key} title={t(`study.tabs.${TABS[0].key}`)} className="text-medium">
         <div className="grid grid-cols-1 gap-10 py-8 md:grid-cols-2">
           <div className="space-y-4">
             {!!event.image && (
@@ -74,17 +79,17 @@ export default function Tabs({event}: {event: Event}) {
                 })}
                 isExternal={!!event.joinLink}
                 href={event.joinLink}>
-                참여하기
+                {t('study.buttons.join')}
               </Link>
             )}
           </div>
           <div className="text-start font-normal whitespace-pre-line">{event.description}</div>
         </div>
       </Tab>
-      <Tab key={TABS[1].key} title={TABS[1].title} className="text-medium">
+      <Tab key={TABS[1].key} title={t(`study.tabs.${TABS[1].key}`)} className="text-medium">
         <div></div>
       </Tab>
-      <Tab key={TABS[2].key} title={TABS[2].title} className="text-medium">
+      <Tab key={TABS[2].key} title={t(`study.tabs.${TABS[2].key}`)} className="text-medium">
         <div className="py-8">
           <Photos photos={event.photos ?? []} studyId={event.id} />
         </div>

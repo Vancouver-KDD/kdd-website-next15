@@ -37,9 +37,9 @@ export async function uploadEventPoster({
     resource_type: 'image',
   })
 
-  // Persist poster URL on the event document
+  // Persist poster URL on the event document. Use set with merge in case the document doesn't exist yet (e.g. during creation)
   const eventRef = firestore.collection('Events').doc(eventId)
-  await eventRef.update({image: uploadResult.secure_url})
+  await eventRef.set({image: uploadResult.secure_url}, {merge: true})
   revalidatePath(`/events/${eventId}`)
   revalidatePath('/events')
   revalidatePath('/admin/events')
@@ -79,6 +79,76 @@ export async function deleteEventPoster({token, eventId}: {token: string; eventI
   revalidatePath(`/events/${eventId}`)
   revalidatePath('/events')
   revalidatePath('/admin/events')
+  return {success: true}
+}
+
+export async function uploadStudyPoster({
+  token,
+  studyId,
+  imageData,
+}: {
+  token: string
+  studyId: string
+  imageData: string
+}) {
+  const {valid, message} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, error: message}
+  }
+  if (!studyId || !imageData) {
+    return {success: false, error: 'Missing required fields'}
+  }
+
+  // Upload poster to a deterministic public_id so it overwrites when replaced
+  const publicId = `studies/${studyId}/poster`
+  const uploadResult = await cloudinary.uploader.upload(imageData, {
+    public_id: publicId,
+    overwrite: true,
+    resource_type: 'image',
+  })
+
+  // Persist poster URL on the study document. Use set with merge in case the document doesn't exist yet (e.g. during creation)
+  const studyRef = firestore.collection('Studies').doc(studyId)
+  await studyRef.set({image: uploadResult.secure_url}, {merge: true})
+  revalidatePath(`/study/${studyId}`)
+  revalidatePath('/study')
+  revalidatePath('/admin/studies')
+  return {success: true, imageUrl: uploadResult.secure_url}
+}
+
+export async function deleteStudyPoster({token, studyId}: {token: string; studyId: string}) {
+  const {valid, message} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, error: message}
+  }
+  if (!studyId) {
+    return {success: false, error: 'Missing studyId'}
+  }
+
+  const studyRef = firestore.collection('Studies').doc(studyId)
+  const snap = await studyRef.get()
+  if (!snap.exists) {
+    return {success: false, error: 'Study not found'}
+  }
+  const data = snap.data() as {image?: string}
+  const currentUrl = data?.image
+  if (!currentUrl) {
+    // Nothing to delete; ensure field cleared
+    await studyRef.update({image: null})
+    revalidatePath(`/study/${studyId}`)
+    revalidatePath('/study')
+    revalidatePath('/admin/studies')
+    return {success: true}
+  }
+
+  const publicId = extractPublicIdFromUrl(currentUrl)
+  if (publicId) {
+    await cloudinary.uploader.destroy(publicId)
+  }
+  await studyRef.update({image: null})
+  revalidatePath(`/study/${studyId}`)
+  revalidatePath('/study')
+  revalidatePath('/admin/studies')
   return {success: true}
 }
 

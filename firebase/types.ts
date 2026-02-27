@@ -6,6 +6,8 @@ export type Event = {
   title: string
   draft?: boolean // Deprecated, use status
   status?: 'draft' | 'published' | 'hidden'
+  endDate?: string // ISO string for datetime-local inputs
+  isOngoing?: boolean // Overrides dates
   photos?: Photo[]
   type?: string
   location?: string

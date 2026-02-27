@@ -11,6 +11,9 @@ import {button as buttonStyles} from '@heroui/theme'
 import {Edit, Trash2} from 'lucide-react'
 import NextImage from 'next/image'
 import eventPosterLoading from './event-poster-loading.avif'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 
 export default function UpcomingEvent({
   type,
@@ -22,6 +25,7 @@ export default function UpcomingEvent({
   date,
   id,
 }: Omit<Event, 'date'> & {date: string; id: string}) {
+  const {t} = useTranslation({...en, ...ko})
   const {admin} = useAuthStore()
   const {handleDelete, deletingEventId} = useDeleteEvent({
     onSuccess: () => {
@@ -73,7 +77,7 @@ export default function UpcomingEvent({
                 className: 'bg-default-100 font-light drop-shadow-lg',
               })}
               href={`/events/${id}`}>
-              이벤트 자세히 보기
+              {t('events.buttons.details')}
             </Link>
             {!!joinLink && (
               <Link
@@ -86,7 +90,7 @@ export default function UpcomingEvent({
                 })}
                 isExternal={!!joinLink}
                 href={joinLink}>
-                참여하기
+                {t('events.buttons.join')}
               </Link>
             )}
           </div>

@@ -1,9 +1,14 @@
 'use client'
+import {deleteStudy} from '@/firebase/actions/study.admin'
+import {useAuthStore} from '@/firebase/AuthClient'
 import {formatISODate, generateGradientSVG} from '@/lib/utils'
+import {Button} from '@heroui/button'
 import {Card, CardFooter} from '@heroui/card'
 import {Image} from '@heroui/image'
 import {Link} from '@heroui/link'
-import {Images} from 'lucide-react'
+import {addToast} from '@heroui/toast'
+import {Edit, Images, Trash2} from 'lucide-react'
+import {useRouter} from 'next/navigation'
 import {Photo} from 'react-photo-album/dist/types'
 
 export default function PastStudyCard({
@@ -11,14 +16,57 @@ export default function PastStudyCard({
   title,
   image,
   date,
+  endDate,
   photos,
 }: {
   id: string
   title: string
   image?: string
   date: string
+  endDate?: string
   photos?: Photo[]
 }) {
+  const {user, admin} = useAuthStore()
+  const router = useRouter()
+
+  const handleDelete = async () => {
+    if (!user) return
+
+    if (!confirm(`Are you sure you want to delete "${title}"? This action cannot be undone.`)) {
+      return
+    }
+
+    try {
+      const idToken = await user.getIdToken()
+      const result = await deleteStudy(idToken, id)
+
+      if (result.success) {
+        addToast({
+          title: 'Success',
+          description: result.message,
+          color: 'success',
+        })
+        window.location.reload()
+      } else {
+        addToast({
+          title: 'Error',
+          description: result.message,
+          color: 'danger',
+        })
+      }
+    } catch (error) {
+      addToast({
+        title: 'Error',
+        description: 'Failed to delete study',
+        color: 'danger',
+      })
+    }
+  }
+
+  const handleEdit = () => {
+    router.push(`/admin/studies/${id}/edit` as Extract<Parameters<typeof router.push>[0], string>)
+  }
+
   return (
     <div className="group relative">
       <Link href={`/study/${id}#details`}>
@@ -32,7 +80,7 @@ export default function PastStudyCard({
           />
 
           <CardFooter className="absolute bottom-0 z-10 flex flex-col items-start bg-white/30 pr-5 text-start backdrop-blur">
-            <div className="text-sm text-black">{formatISODate(date)}</div>
+            <div className="text-sm text-black">{formatISODate(date)}{endDate ? ` ~ ${formatISODate(endDate)}` : ''}</div>
             <div className="text-sm text-black">{title}</div>
           </CardFooter>
         </Card>
@@ -43,6 +91,31 @@ export default function PastStudyCard({
           className="text-foreground-800 absolute right-2 bottom-5 z-20">
           <Images className="h-5 w-5" />
         </Link>
+      )}
+
+      {admin && (
+        <div className="absolute top-2 right-2 z-20 opacity-0 transition-opacity group-hover:opacity-100">
+          <div className="flex gap-1">
+            <Button
+              size="sm"
+              variant="flat"
+              color="primary"
+              startContent={<Edit className="h-3 w-3" />}
+              onPress={handleEdit}
+              className="bg-white/80 backdrop-blur">
+              Edit
+            </Button>
+            <Button
+              size="sm"
+              variant="flat"
+              color="danger"
+              startContent={<Trash2 className="h-3 w-3" />}
+              onPress={handleDelete}
+              className="bg-white/80 backdrop-blur">
+              Delete
+            </Button>
+          </div>
+        </div>
       )}
     </div>
   )

@@ -1,7 +1,7 @@
 'use client'
 
 import {PosterDropzone} from '@/app/admin/events/PosterDropzone'
-import {deleteEventPoster, uploadEventPoster} from '@/cloudinary/actions.admin'
+import {deleteStudyPoster, uploadStudyPoster} from '@/cloudinary/actions.admin'
 import {setStudy, moveEventToStudy} from '@/firebase/actions/study.admin'
 import {setEvent, moveStudyToEvent} from '@/firebase/actions/event.admin' 
 // Wait, I clarified this in EventForm.
@@ -13,6 +13,7 @@ import {dateValueToISOString, getErrorMessage, isoToLocalDateTimeInput} from '@/
 import {EVENT_SUBTYPES, STUDY_SUBTYPES} from '@/lib/constants'
 import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
 import {Button} from '@heroui/button'
+import {Checkbox} from '@heroui/checkbox'
 import {DateRangePicker} from '@heroui/date-picker'
 import {Form} from '@heroui/form'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
@@ -29,6 +30,8 @@ import {Controller, useForm} from 'react-hook-form'
 export type StudyFormValues = {
   title: string
   date: string
+  endDate?: string
+  isOngoing: boolean
   // draft?: boolean // Deprecated
   status: 'draft' | 'published' | 'hidden'
   location?: string
@@ -49,6 +52,8 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
     defaultValues: {
       title: '',
       date: '',
+      endDate: '',
+      isOngoing: false,
       status: 'draft',
       location: '',
       description: '',
@@ -73,6 +78,8 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
       form.reset({
         title: study.title || '',
         date: study.date || '',
+        endDate: study.endDate || '',
+        isOngoing: study.isOngoing || false,
         status,
         location: study.location || '',
         description: study.description || '',
@@ -97,12 +104,9 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
         reader.readAsDataURL(file)
       })
       const idToken = await user.getIdToken()
-      // Reusing uploadEventPoster as logic is identical, 
-      // though ideally we might rename to uploadPoster generic or uploadStudyPoster wrapper
-      // But underlying it just saves to Cloudinary with an ID, so it's fine.
-      const res = await uploadEventPoster({
+      const res = await uploadStudyPoster({
         token: idToken,
-        eventId: studyId, // Using studyId as eventId
+        studyId: studyId,
         imageData: dataUrl,
       })
       if (res.success) {
@@ -143,8 +147,7 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
     const studyId = study.id
     if (!user || !studyId) return
     const token = await user.getIdToken()
-    // Reusing deleteEventPoster
-    const res = await deleteEventPoster({token, eventId: studyId})
+    const res = await deleteStudyPoster({token, studyId: studyId})
     if (res.success) {
       addToast({
         title: 'Poster removed',
@@ -255,16 +258,33 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
               aria-label="Date"
               label="Date"
               popoverProps={{isNonModal: true}}
-              value={field.value ? parseIsoToDateRange(field.value) : null}
+              value={field.value ? parseIsoToDateRange(field.value, watch('endDate')) : null}
               onChange={(value: any) => {
-                const isoDate = parseDateRangeToIso(value)
-                field.onChange(isoDate)
+                const {startIso, endIso} = parseDateRangeToIso(value)
+                field.onChange(startIso)
+                setValue('endDate', endIso, {shouldDirty: true})
               }}
               onBlur={field.onBlur}
               name={field.name}
             />
           )}
         />
+        
+        <div className="flex items-center mt-2 col-span-1 md:col-span-2">
+          <Controller
+            name="isOngoing"
+            control={control}
+            render={({field}) => (
+              <Checkbox
+                isSelected={field.value}
+                onValueChange={field.onChange}
+              >
+                <span className="text-sm">This is an ongoing study. This overrides the dates to automatically put it in the Ongoing Studies section.</span>
+              </Checkbox>
+            )}
+          />
+        </div>
+
         <Input label="Location" {...register('location')} />
         
         {/* Type Selection (Event vs Study) */}
@@ -385,23 +405,35 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
 }
 
 // Helpers
-function parseIsoToDateRange(iso: string): any {
-    if (!iso) return null
+function parseIsoToDateRange(isoStart: string, isoEnd?: string): any {
+    if (!isoStart) return null
     try {
-        const date = parseDateTime(isoToLocalDateTimeInput(iso))
-        return {start: date, end: date}
+        const start = parseDateTime(isoToLocalDateTimeInput(isoStart))
+        const end = isoEnd ? parseDateTime(isoToLocalDateTimeInput(isoEnd)) : start
+        return {start, end}
     } catch (e) {
         return null
     }
 }
 
 function parseDateRangeToIso(value: any) {
-    if (!value?.start) return ''
-    return dateValueToISOString({
+    if (!value?.start) return {startIso: '', endIso: ''}
+    const startIso = dateValueToISOString({
         year: value.start.year,
         month: value.start.month,
         day: value.start.day,
         hour: 'hour' in value.start ? value.start.hour : 0,
         minute: 'minute' in value.start ? value.start.minute : 0,
     })
+    let endIso = ''
+    if (value.end) {
+        endIso = dateValueToISOString({
+            year: value.end.year,
+            month: value.end.month,
+            day: value.end.day,
+            hour: 'hour' in value.end ? value.end.hour : 0,
+            minute: 'minute' in value.end ? value.end.minute : 0,
+        })
+    }
+    return {startIso, endIso}
 }

@@ -1,5 +1,11 @@
 {
   "en": {
+    "chips": {
+      "upcoming": "Upcoming",
+      "ongoing": "Ongoing",
+      "past": "Past",
+      "hidden": "Hidden"
+    },
     "nav": {
       "about": "About",
       "events": "Events",
@@ -20,8 +26,19 @@
         "subtitle": "KDD shares knowledge and experience through monthly regular meetings and annual conferences. Check out upcoming events and join us."
       },
       "sections": {
+        "upcoming": "Upcoming Events",
+        "upcoming_subtitle": "Discover upcoming KDD Events",
         "past": "Past Events",
         "past_subtitle": "Look back at previous KDD events."
+      },
+      "buttons": {
+        "details": "View Details",
+        "join": "Join Now"
+      },
+      "tabs": {
+        "details": "Event Details",
+        "reviews": "Reviews",
+        "photos": "Photos"
       }
     },
     "home": {
@@ -42,8 +59,20 @@
       },
       "sections": {
         "upcoming": "Upcoming Studies",
+        "upcoming_subtitle": "Discover upcoming KDD Studies",
+        "ongoing": "Ongoing Studies",
+        "ongoing_subtitle": "Current study groups in progress.",
         "past": "Past Studies",
         "past_subtitle": "Look back at previous KDD studies."
+      },
+      "buttons": {
+        "details": "View Details",
+        "join": "Join Now"
+      },
+      "tabs": {
+        "details": "Study Details",
+        "reviews": "Reviews",
+        "photos": "Photos"
       }
     },
     "about": {

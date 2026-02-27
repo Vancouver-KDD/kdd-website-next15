@@ -3,6 +3,7 @@ import {getStudy} from '@/firebase/actions/study'
 import {formatISODate} from '@/lib/utils'
 import {Divider} from '@heroui/divider'
 import {Spacer} from '@heroui/spacer'
+import AdminEditButton from '@/components/admin/AdminEditButton'
 import Tabs from './Tabs'
 
 export default async function StudyPage({params}: {params: Promise<{studyId: string}>}) {
@@ -10,7 +11,8 @@ export default async function StudyPage({params}: {params: Promise<{studyId: str
   const study = await getStudy(studyId)
 
   return (
-    <div>
+    <div className="relative">
+      {study && <AdminEditButton editUrl={`/admin/studies/${study.id}/edit`} />}
       <Breadcrumbs
         paths={[
           {href: '/', title: 'Home'},

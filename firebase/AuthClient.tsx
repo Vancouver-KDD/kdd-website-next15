@@ -12,12 +12,17 @@ export default function AuthClient() {
     const unsubscribeAuth = auth.onAuthStateChanged(async (user) => {
       setUser(user)
       if (user) {
-        const idTokenResult = await user.getIdTokenResult()
-        const isAdmin = idTokenResult.claims.admin === true
-        setAdmin(isAdmin)
+        try {
+          const idTokenResult = await user.getIdTokenResult()
+          const isAdmin = idTokenResult.claims.admin === true
+          setAdmin(isAdmin)
 
-        // Identify user in PostHog
-        identifyUser(user, isAdmin)
+          // Identify user in PostHog
+          identifyUser(user, isAdmin)
+        } catch (error) {
+          console.error('Failed to get token result on auth state change:', error)
+          setAdmin(false)
+        }
       } else {
         setAdmin(false)
         // Reset PostHog user identification on logout
@@ -27,12 +32,17 @@ export default function AuthClient() {
     })
     const unsubscribeToken = auth.onIdTokenChanged(async (user) => {
       if (user) {
-        const idTokenResult = await user.getIdTokenResult()
-        const isAdmin = idTokenResult.claims.admin === true
-        setAdmin(isAdmin)
+        try {
+          const idTokenResult = await user.getIdTokenResult()
+          const isAdmin = idTokenResult.claims.admin === true
+          setAdmin(isAdmin)
 
-        // Update PostHog user identification if admin status changes
-        identifyUser(user, isAdmin)
+          // Update PostHog user identification if admin status changes
+          identifyUser(user, isAdmin)
+        } catch (error) {
+          console.error('Failed to get token result on token change:', error)
+          setAdmin(false)
+        }
       } else {
         setAdmin(false)
       }

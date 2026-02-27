@@ -16,8 +16,11 @@ import {Spacer} from '@heroui/spacer'
 import {addToast} from '@heroui/toast'
 import {Calendar, Edit, MapPin, Plus, Trash2} from 'lucide-react'
 import {useRouter} from 'next/navigation'
-import posthog from 'posthog-js'
 import {useEffect, useState} from 'react'
+import posthog from 'posthog-js'
+import {useTranslation} from '@/lib/i18n'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 
 export default function AdminStudiesPage() {
   const {user, admin, loading: authLoading} = useAuthStore()
@@ -183,6 +186,7 @@ function StudyList({studies, router, handleDelete, deletingStudyId, emptyMessage
     deletingStudyId: string | null,
     emptyMessage: string
 }) {
+    const {t} = useTranslation({...en, ...ko})
     if (studies.length === 0) {
         return (
             <div className="py-6 text-center border-dashed border-2 rounded-xl flex flex-col items-center justify-center text-default-400">
@@ -231,12 +235,23 @@ function StudyList({studies, router, handleDelete, deletingStudyId, emptyMessage
                 <div className="flex gap-2">
                   {study.draft && (
                     <Chip size="sm" variant="flat" color="warning">
-                      Hidden
+                      {t('chips.hidden')}
                     </Chip>
                   )}
-                  <Chip color={new Date(study.date) > new Date() ? 'success' : 'default'} size="sm">
-                    {new Date(study.date) > new Date() ? 'Upcoming' : 'Past'}
-                  </Chip>
+                  {(() => {
+                    const now = new Date()
+                    const startDate = new Date(study.date)
+                    const endDate = study.endDate ? new Date(study.endDate) : null
+                    const isNaturallyOngoing = startDate < now && endDate && endDate >= now
+                    
+                    if (study.isOngoing || isNaturallyOngoing) {
+                      return <Chip size="sm" classNames={{base: "bg-emerald-600", content: "text-white font-medium"}}>{t('chips.ongoing')}</Chip>
+                    }
+                    if (startDate > now) {
+                      return <Chip size="sm" classNames={{base: "bg-amber-600", content: "text-white font-medium"}}>{t('chips.upcoming')}</Chip>
+                    }
+                    return <Chip color="default" size="sm">{t('chips.past')}</Chip>
+                  })()}
                 </div>
               </CardHeader>
               <CardBody>
