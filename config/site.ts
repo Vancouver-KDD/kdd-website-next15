@@ -21,6 +21,10 @@ export const siteConfig = {
       label: 'Contact',
       href: '/contact',
     },
+    {
+      label: 'Get_Involved',
+      href: '/get-involved',
+    },
   ],
   navMenuItems: [
     {
@@ -38,6 +42,10 @@ export const siteConfig = {
     {
       label: 'Contact',
       href: '/contact',
+    },
+    {
+      label: 'Get_Involved',
+      href: '/get-involved',
     },
   ],
   links: {
