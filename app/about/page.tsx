@@ -179,7 +179,7 @@ export default function AboutPage() {
             <Spacer y={24} />
             <div className={labelStyles()}>Board Members</div>
             <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-              <div className="grid grid-cols-2 items-end gap-10 place-self-center md:grid-cols-[repeat(3,minmax(0,200px))]">
+              <div className="flex flex-wrap items-end justify-center gap-10 sm:gap-20 place-self-center">
                 {members['Board Members'].map((member, index) => (
                   <CardMember key={index} {...member} />
                 ))}
@@ -242,14 +242,14 @@ const CardPastChair = ({
       {/* Content Split: Year on Left, Profile on Right */}
       <div className="flex w-full max-w-2xl items-center">
         {/* Left Side: Year */}
-        <div className="flex flex-1 justify-end pr-8 md:pr-12">
-          <div className="text-default-500 font-medium text-sm md:text-base">
+        <div className="flex flex-1 justify-center md:justify-end pr-0 sm:pr-4 md:pr-12">
+          <div className="text-default-500 font-medium text-sm md:text-base text-center">
             {title}
           </div>
         </div>
 
         {/* Right Side: Profile */}
-        <div className="flex flex-1 items-center gap-4 pl-8 md:gap-6 md:pl-12">
+        <div className="flex flex-1 items-center justify-center md:justify-start gap-2 pl-0 sm:pl-4 md:gap-6 md:pl-12">
           <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-full shadow-sm md:h-20 md:w-20">
             {image ? (
               <Image

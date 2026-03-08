@@ -30,12 +30,12 @@ export default function DashboardCharts({events}: DashboardChartsProps) {
   const barData = sortedEvents
     .filter((e) => (e.quantity || 0) > 0)
     .map((e) => ({
-      name: e.title.length > 20 ? `${e.title.substring(0, 20)}...` : e.title,
+      name: e.title.length > 25 ? `${e.title.substring(0, 25)}...` : e.title,
       participants: e.quantity || 0,
       fullTitle: e.title,
       date: e.date,
     }))
-    .slice(-10) // Show last 10 events
+    .slice(-5) // Show last 5 events
 
   // 2. Accumulated Participants (Line Chart)
   // Group by year or just cumulative over all time
@@ -70,10 +70,10 @@ export default function DashboardCharts({events}: DashboardChartsProps) {
                 angle={-45}
                 textAnchor="end"
                 interval={0}
-                height={60}
-                tick={{fontSize: 10}}
+                height={100}
+                tick={{fontSize: 12}}
               />
-              <YAxis />
+              <YAxis domain={[0, 'auto']} />
               <Tooltip
                 content={({active, payload}: any) => {
                   if (active && payload && payload.length) {

@@ -61,11 +61,12 @@ export default function LumaSyncButton({events}: {events: Event[]}) {
     <Button
       color="primary"
       variant="flat"
-      startContent={<RefreshCw size={18} />}
       isLoading={loading}
       onPress={handleSync}
+      className="min-w-10 px-2 sm:px-4"
     >
-      Sync Luma Data
+      <RefreshCw size={18} />
+      <span className="hidden sm:inline">Sync Luma Data</span>
     </Button>
   )
 }

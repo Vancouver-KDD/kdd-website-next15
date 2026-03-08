@@ -297,17 +297,26 @@ export default function AdminPage() {
       <Breadcrumbs paths={[{href: '/', title: 'Home'}, {title: 'Admin Dashboard'}]} />
       <Spacer y={4} />
       <div className="mx-auto flex w-full max-w-7xl flex-col px-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold">Admin Dashboard</h1>
-            <LumaSyncButton events={events} />
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <div className="flex items-center justify-between sm:justify-start sm:gap-4">
+            <h1 className="text-xl sm:text-2xl font-bold truncate">Admin Dashboard</h1>
+            <div className="hidden sm:block">
+              <LumaSyncButton events={events} />
+            </div>
+            <div className="sm:hidden block">
+              <ManageDropdown />
+            </div>
           </div>
-          <div className="flex gap-4">
-             <Button as={Link} color="primary" variant="flat" href="/admin/logs">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+             <div className="sm:hidden block">
+               <LumaSyncButton events={events} />
+             </div>
+             <Button as={Link} color="primary" variant="flat" href="/admin/logs" className="flex-1 sm:flex-none">
               View User Logs
             </Button>
-            
-            <ManageDropdown />
+            <div className="hidden sm:block">
+              <ManageDropdown />
+            </div>
           </div>
         </div>
         
