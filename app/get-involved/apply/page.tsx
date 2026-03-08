@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { sectionTitle, subtitle, title } from '@/components/primitives'
 import { Spacer } from '@heroui/spacer'
 import { Link } from '@heroui/link'
@@ -16,27 +17,32 @@ export default function ApplyPage() {
           </Link>
         </div>
         <section className="mb-12">
-          <div className="text-center mb-10">
-            <h1 className={title({ color: 'kdd', className: 'italic pr-2' })}>🌿 KDD 2026 운영진 모집</h1>
-            <Spacer y={4} />
-            <h3 className={subtitle()}>
-              KDD를 함께 만들어갈 새로운 운영진을 찾습니다.
-            </h3>
+          <div className="text-center w-full flex flex-col items-center">
+            <div className="flex justify-center w-full">
+              <Image 
+                src="/images/recruiting/recruiting_main.png" 
+                alt="Join Our Team" 
+                width={600} 
+                height={750} 
+                className="w-full max-w-xl h-auto object-contain shadow-lg rounded-[28px]"
+              />
+            </div>
           </div>
 
-          <div className="bg-default-50 rounded-2xl p-6 md:p-10 mb-10 text-default-700 leading-relaxed max-w-4xl mx-auto shadow-sm">
+          <div className="mt-10 md:mt-16 mb-10 text-default-700 leading-relaxed w-full max-w-xl mx-auto">
             <p className="mb-4">
-              <strong>Vancouver KDD (Korean Developers & Designers)</strong>는 2017년부터 이어져온 캐나다 서부 최고 커뮤니티입니다.<br/>
-              개발자, 디자이너, PM, 데이터, 비즈니스 직군 등 다양한 분야의 분들이 만나 배우고 성장하는 커뮤니티입니다.
+              <strong>Vancouver KDD (Korean Developers & Designers)</strong>는 2017년부터 이어져 온 밴쿠버 한인 IT 커뮤니티입니다. 개발자, 디자이너, PM, 데이터, 비즈니스 등 다양한 분야의 사람들이 만나 서로 배우고 연결되는 공간입니다.
+            </p>
+            <p className="mb-4">
+              2026년, KDD는 커뮤니티의 방향을 더욱 또렷하게 다듬고 더 깊이 있는 교류를 만들어가는 한 해가 되고자 합니다.
             </p>
             <p className="mb-8">
-              2026년, KDD는 운영의 깊이를 더하고 커뮤니티의 방향성을 또렷하게 다듬어가는 해가 되고자 합니다.<br/>
-              그 여정을 함께해주실 운영진을 모집합니다.
+              그 여정을 함께 만들어갈 운영진을 모집합니다.
             </p>
 
-            <Divider className="my-8" />
+            <Divider className="my-14" />
 
-            <div className="flex flex-col gap-8 md:grid md:grid-cols-2">
+            <div className="flex flex-col gap-8">
               <div>
                 <h4 className="text-xl font-bold mb-3 flex items-center gap-2">✅ 이런 분을 찾습니다</h4>
                 <ul className="list-disc list-inside space-y-2 text-default-600 ml-2">
@@ -92,15 +98,17 @@ export default function ApplyPage() {
               </div>
             </div>
 
-            <Divider className="my-8" />
+            <Divider className="my-14" />
 
             <div className="text-center">
               <p className="text-lg font-medium text-foreground mb-4">
-                KDD 운영진으로 함께하며<br/>
+                KDD 운영진으로 함께하며
+              </p>
+              <p className="text-lg font-medium text-foreground mb-4">
                 한인 IT 커뮤니티의 연결을 더욱 의미 있게 만들어갈 분들을 기다립니다. 🚀
               </p>
-              <p className="text-default-500">
-                📩 문의: <a href="mailto:vancouverkdd@gmail.com" className="hover:underline text-primary">vancouverkdd@gmail.com</a>
+              <p className="text-default-500 flex items-center justify-center gap-1">
+                <span className="text-xl">💌</span> 문의: <a href="mailto:vancouverkdd@gmail.com" className="hover:underline text-primary">vancouverkdd@gmail.com</a>
               </p>
             </div>
           </div>
