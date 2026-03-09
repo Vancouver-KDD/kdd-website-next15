@@ -1,16 +1,16 @@
-import { NextResponse } from 'next/server';
-import { firestore } from '@/firebase/server';
+import {firestore} from '@/firebase/server'
+import {NextResponse} from 'next/server'
 
 export async function GET() {
   try {
     const logsSnapshot = await firestore
-        .collection('Logs')
-        .orderBy('createdAt', 'desc')
-        .limit(50)
-        .get();
-    const logs = logsSnapshot.docs.map(d => ({id: d.id, ...d.data()}));
-    return NextResponse.json(logs);
+      .collection('Logs')
+      .orderBy('createdAt', 'desc')
+      .limit(50)
+      .get()
+    const logs = logsSnapshot.docs.map((d) => ({id: d.id, ...d.data()}))
+    return NextResponse.json(logs)
   } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({error: error.message}, {status: 500})
   }
 }

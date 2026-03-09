@@ -1,9 +1,9 @@
+import AdminEditButton from '@/components/admin/AdminEditButton'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import {getEvent} from '@/firebase/actions/event'
 import {formatISODate} from '@/lib/utils'
 import {Divider} from '@heroui/divider'
 import {Spacer} from '@heroui/spacer'
-import AdminEditButton from '@/components/admin/AdminEditButton'
 import Tabs from './Tabs'
 
 export default async function EventPage({params}: {params: Promise<{eventId: string}>}) {

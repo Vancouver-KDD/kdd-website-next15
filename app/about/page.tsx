@@ -17,9 +17,9 @@ import {
   subtitle,
   title,
 } from '@/components/primitives'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useTranslation} from '@/lib/i18n'
 import {Divider} from '@heroui/divider'
 import {Image} from '@heroui/image'
 import {Link} from '@heroui/link'
@@ -38,9 +38,7 @@ export default function AboutPage() {
           <span className={title()}>{t('about.hero.title')}</span>
           <h1 className={title({color: 'kdd', className: 'pr-1 italic'})}> KDD</h1>
           <Spacer y={4} />
-          <h3 className={subtitle()}>
-            {t('about.hero.subtitle')}
-          </h3>
+          <h3 className={subtitle()}>{t('about.hero.subtitle')}</h3>
           <Spacer y={6} />
           <Link
             className={buttonStyles({
@@ -68,9 +66,7 @@ export default function AboutPage() {
           <div className="max-w-[734px] py-16">
             <h1 className={sectionTitle()}>{t('about.story.title')}</h1>
             <Spacer y={9} />
-            <p className="text-lg whitespace-pre-line">
-              {t('about.story.description')}
-            </p>
+            <p className="text-lg whitespace-pre-line">{t('about.story.description')}</p>
           </div>
         </section>
         <Divider orientation="horizontal" />
@@ -127,9 +123,7 @@ export default function AboutPage() {
           <h1 id="meet-the-team" className={sectionTitle()}>
             {t('about.team.title')}
           </h1>
-          <span className={sectionSubtitle()}>
-            {t('about.team.subtitle')}
-          </span>
+          <span className={sectionSubtitle()}>{t('about.team.subtitle')}</span>
           <Spacer y={16} />
           <div className={labelStyles()}>Leadership</div>
           <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
@@ -179,7 +173,7 @@ export default function AboutPage() {
             <Spacer y={24} />
             <div className={labelStyles()}>Board Members</div>
             <div className="w-full max-w-5xl self-center px-4 py-9 sm:px-12">
-              <div className="flex flex-wrap items-end justify-center gap-10 sm:gap-20 place-self-center">
+              <div className="flex flex-wrap items-end justify-center gap-10 place-self-center sm:gap-20">
                 {members['Board Members'].map((member, index) => (
                   <CardMember key={index} {...member} />
                 ))}
@@ -231,7 +225,7 @@ const CardPastChair = ({
   isLast?: boolean
 }) => {
   return (
-    <div className="relative flex min-h-[120px] w-full justify-center py-6 transition-colors hover:bg-default-50/50">
+    <div className="hover:bg-default-50/50 relative flex min-h-[120px] w-full justify-center py-6 transition-colors">
       {/* Timeline Vertical line in the middle */}
       <div className="absolute inset-y-0 left-1/2 flex w-0.5 -translate-x-1/2 flex-col items-center">
         <div className={`w-full flex-1 ${isFirst ? 'bg-transparent' : 'bg-default-200'}`} />
@@ -242,14 +236,14 @@ const CardPastChair = ({
       {/* Content Split: Year on Left, Profile on Right */}
       <div className="flex w-full max-w-2xl items-center">
         {/* Left Side: Year */}
-        <div className="flex flex-1 justify-center md:justify-end pr-0 sm:pr-4 md:pr-12">
-          <div className="text-default-500 font-medium text-sm md:text-base text-center">
+        <div className="flex flex-1 justify-center pr-0 sm:pr-4 md:justify-end md:pr-12">
+          <div className="text-default-500 text-center text-sm font-medium md:text-base">
             {title}
           </div>
         </div>
 
         {/* Right Side: Profile */}
-        <div className="flex flex-1 items-center justify-center md:justify-start gap-2 pl-0 sm:pl-4 md:gap-6 md:pl-12">
+        <div className="flex flex-1 items-center justify-center gap-2 pl-0 sm:pl-4 md:justify-start md:gap-6 md:pl-12">
           <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-full shadow-sm md:h-20 md:w-20">
             {image ? (
               <Image
@@ -363,7 +357,9 @@ const CardMember = ({
               {link.type === 'github' && <GithubIcon size={24} className="text-default-800" />}
               {link.type === 'email' && <EmailIcon size={24} className="text-default-800" />}
               {link.type === 'website' && <LinkIcon size={24} className="text-default-800" />}
-              {link.type === 'instagram' && <InstagramIcon size={24} className="text-default-800" />}
+              {link.type === 'instagram' && (
+                <InstagramIcon size={24} className="text-default-800" />
+              )}
               {link.type === 'facebook' && <FacebookIcon size={24} className="text-default-800" />}
               {link.type === 'twitter' && <TwitterIcon size={24} className="text-default-800" />}
               {link.type === 'discord' && <DiscordIcon size={24} className="text-default-800" />}

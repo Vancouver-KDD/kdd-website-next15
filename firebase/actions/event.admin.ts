@@ -279,7 +279,7 @@ export async function moveStudyToEvent(token: string, studyId: string) {
 
     // Log activity
     if (userId) {
-      await logUserActivity(userId, 'move_study_to_event', { 
+      await logUserActivity(userId, 'move_study_to_event', {
         studyId,
         title: studyData?.title,
       })

@@ -1,8 +1,8 @@
 'use client'
 import {heroTitle, sectionTitle, subtitle} from '@/components/primitives'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useTranslation} from '@/lib/i18n'
 import {Divider} from '@heroui/divider'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
@@ -40,9 +40,7 @@ export default function HomeClient({futureEvents}: {futureEvents: (Event & {id: 
           <span className="font-black">D</span>
           <DesignerTitle />
         </div>
-        <div className={subtitle({className: 'mt-4 mb-6'})}>
-          {t('home.hero.subtitle')}
-        </div>
+        <div className={subtitle({className: 'mt-4 mb-6'})}>{t('home.hero.subtitle')}</div>
 
         <div className="flex gap-6">
           <Link
@@ -85,9 +83,7 @@ export default function HomeClient({futureEvents}: {futureEvents: (Event & {id: 
             <div className="max-w-[926px] border-y-1 border-solid border-white px-16 py-8 text-white md:px-24 md:py-12">
               <span className={sectionTitle()}>KDD at a Glance</span>
               <Spacer y={6} />
-              <span className="text-md md:text-lg">
-                {t('home.hero.at_a_glance_subtitle')}
-              </span>
+              <span className="text-md md:text-lg">{t('home.hero.at_a_glance_subtitle')}</span>
             </div>
           </div>
         </div>

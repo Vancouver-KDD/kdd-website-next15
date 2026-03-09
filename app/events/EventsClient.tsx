@@ -6,16 +6,14 @@ import {
   subtitle,
   title,
 } from '@/components/primitives'
-import {getPastEvents} from '@/firebase/actions/event'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useTranslation} from '@/lib/i18n'
 import {Divider} from '@heroui/divider'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
 import NextImage from 'next/image'
-import {use} from 'react'
 import EventGroupSVG from './event-group.avif'
 import PastEventCard from './PastEventCard'
 import UpcomingEvents from './UpcomingEvents'
@@ -36,9 +34,7 @@ export default function EventsClient({
       <section className="mx-auto w-full max-w-5xl self-start px-6">
         <h1 className={title()}>{t('nav.events')}</h1>
         <Spacer y={4} />
-        <h3 className={subtitle({className: 'max-w-[540px]'})}>
-          {t('events.hero.subtitle')}
-        </h3>
+        <h3 className={subtitle({className: 'max-w-[540px]'})}>{t('events.hero.subtitle')}</h3>
         <Spacer y={8} />
         <Link
           href="/about"

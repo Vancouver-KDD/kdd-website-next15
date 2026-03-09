@@ -1,13 +1,12 @@
 'use client'
 import {sectionSubtitle, sectionTitle, subtitle} from '@/components/primitives'
-import {getFutureStudies} from '@/firebase/actions/study'
-import {Skeleton} from '@heroui/skeleton'
-import {Spacer} from '@heroui/spacer'
-import {Suspense, use} from 'react'
-import UpcomingStudiesCarousel from './UpcomingStudiesCarousel'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useTranslation} from '@/lib/i18n'
+import {Skeleton} from '@heroui/skeleton'
+import {Spacer} from '@heroui/spacer'
+import {Suspense} from 'react'
+import UpcomingStudiesCarousel from './UpcomingStudiesCarousel'
 
 import {Event} from '@/firebase/types'
 
@@ -35,7 +34,9 @@ export default function UpcomingStudies({studies}: {studies: (Event & {id: strin
       }>
       {studies.length > 0 ? (
         <>
-          <h1 className={sectionTitle({className: 'text-center'})}>{t('study.sections.upcoming')}</h1>
+          <h1 className={sectionTitle({className: 'text-center'})}>
+            {t('study.sections.upcoming')}
+          </h1>
           <h3 className={sectionSubtitle({className: 'text-center'})}>
             {t('study.sections.upcoming_subtitle')}
           </h3>

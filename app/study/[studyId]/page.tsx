@@ -1,9 +1,9 @@
+import AdminEditButton from '@/components/admin/AdminEditButton'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import {getStudy} from '@/firebase/actions/study'
 import {formatISODate} from '@/lib/utils'
 import {Divider} from '@heroui/divider'
 import {Spacer} from '@heroui/spacer'
-import AdminEditButton from '@/components/admin/AdminEditButton'
 import Tabs from './Tabs'
 
 export default async function StudyPage({params}: {params: Promise<{studyId: string}>}) {

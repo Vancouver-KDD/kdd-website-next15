@@ -1,5 +1,5 @@
 'use server'
-import {auth, logUserActivity, firestore} from '@/firebase/server'
+import {auth, firestore, logUserActivity} from '@/firebase/server'
 import {FieldValue} from 'firebase-admin/firestore'
 
 export async function acceptAdminInvite(token: string) {
@@ -8,11 +8,12 @@ export async function acceptAdminInvite(token: string) {
     const userEmail = decodedToken.email
 
     if (!userEmail) {
-       return {valid: false, message: 'No email found for this user'}
+      return {valid: false, message: 'No email found for this user'}
     }
 
     // Check if there is an invite for this user
-    const snapshot = await firestore.collection('admin_invites')
+    const snapshot = await firestore
+      .collection('admin_invites')
       .where('email', '==', userEmail.toLowerCase().trim())
       .where('status', '==', 'pending')
       .get()
@@ -27,19 +28,19 @@ export async function acceptAdminInvite(token: string) {
     await firestore.collection('admin_whitelist').doc(userEmail).set({
       addedBy: inviteDoc.data().addedBy,
       addedAt: FieldValue.serverTimestamp(),
-      email: userEmail
+      email: userEmail,
     })
 
     // 2. Mark invite as accepted
     await inviteDoc.ref.update({
       status: 'accepted',
       acceptedAt: FieldValue.serverTimestamp(),
-      acceptedByUid: decodedToken.uid
+      acceptedByUid: decodedToken.uid,
     })
 
     // 3. Grant claims
     await auth.setCustomUserClaims(decodedToken.uid, {admin: true})
-    
+
     await logUserActivity(decodedToken.uid, 'verify_admin_password', {
       userId: decodedToken.uid,
       email: userEmail,
@@ -62,10 +63,11 @@ export async function declineAdminInvite(token: string) {
     const userEmail = decodedToken.email
 
     if (!userEmail) {
-       return {valid: false, message: 'No email found for this user'}
+      return {valid: false, message: 'No email found for this user'}
     }
 
-    const snapshot = await firestore.collection('admin_invites')
+    const snapshot = await firestore
+      .collection('admin_invites')
       .where('email', '==', userEmail.toLowerCase().trim())
       .where('status', '==', 'pending')
       .get()
@@ -79,7 +81,7 @@ export async function declineAdminInvite(token: string) {
     await inviteDoc.ref.update({
       status: 'declined',
       declinedAt: FieldValue.serverTimestamp(),
-      declinedByUid: decodedToken.uid
+      declinedByUid: decodedToken.uid,
     })
 
     await logUserActivity(decodedToken.uid, 'verify_admin_password', {
@@ -100,16 +102,17 @@ export async function checkPendingInvite(token: string) {
   try {
     const decodedToken = await auth.verifyIdToken(token, true)
     const userEmail = decodedToken.email
-    if (!userEmail) return { hasInvite: false }
+    if (!userEmail) return {hasInvite: false}
 
-    const snapshot = await firestore.collection('admin_invites')
+    const snapshot = await firestore
+      .collection('admin_invites')
       .where('email', '==', userEmail.toLowerCase().trim())
       .where('status', '==', 'pending')
       .get()
 
-    return { hasInvite: !snapshot.empty }
+    return {hasInvite: !snapshot.empty}
   } catch (error) {
-    return { hasInvite: false }
+    return {hasInvite: false}
   }
 }
 
@@ -155,25 +158,24 @@ export async function addAdminByEmail(token: string, newAdminEmail: string) {
     }
 
     if (!newAdminEmail) return {valid: false, message: 'Invalid email'}
-    
+
     // Create pending invite instead of direct whitelist
     await firestore.collection('admin_invites').add({
       addedBy: decodedToken.uid,
       addedAt: FieldValue.serverTimestamp(),
       email: newAdminEmail.toLowerCase().trim(),
-      status: 'pending'
+      status: 'pending',
     })
-    
+
     // (We no longer attempt proactive sync, they must accept it themselves)
 
     await logUserActivity(decodedToken.uid, 'verify_admin_password', {
       action: 'invited_admin',
       targetEmail: newAdminEmail,
-      success: true
+      success: true,
     })
 
     return {valid: true, message: `Successfully invited ${newAdminEmail} to become an admin.`}
-
   } catch (error: unknown) {
     if (error instanceof Error) {
       return {valid: false, message: error.message}
@@ -193,12 +195,12 @@ export async function requestAdminAccess(token: string, name: string) {
       email: userEmail,
       name,
       status: 'pending',
-      requestedAt: FieldValue.serverTimestamp()
+      requestedAt: FieldValue.serverTimestamp(),
     })
 
     await logUserActivity(decodedToken.uid, 'verify_admin_password', {
       action: 'requested_admin_access',
-      success: true
+      success: true,
     })
 
     return {valid: true, message: 'Admin request sent successfully!'}
@@ -217,23 +219,26 @@ export async function fetchAdminRequests(token: string) {
       return {success: false, requests: [], message: 'Unauthorized'}
     }
 
-    const snapshot = await firestore.collection('admin_requests').where('status', '==', 'pending').get()
-    
+    const snapshot = await firestore
+      .collection('admin_requests')
+      .where('status', '==', 'pending')
+      .get()
+
     // Hard-filter: If they are already an active admin, don't show their obsolete requests anymore
     const activeAdminsRes = await fetchActiveAdmins(token)
-    const activeEmails = activeAdminsRes.success ? activeAdminsRes.admins.map(a => a.email) : []
+    const activeEmails = activeAdminsRes.success ? activeAdminsRes.admins.map((a) => a.email) : []
 
     const requests = snapshot.docs
-      .map(doc => {
+      .map((doc) => {
         const data = doc.data()
         return {
           id: doc.id,
           ...data,
           email: data.email || '',
-          requestedAt: data?.requestedAt ? data.requestedAt.toMillis() : undefined
+          requestedAt: data?.requestedAt ? data.requestedAt.toMillis() : undefined,
         }
       })
-      .filter(req => !activeEmails.includes(req.email))
+      .filter((req) => !activeEmails.includes(req.email))
 
     return {success: true, requests}
   } catch (error) {
@@ -248,33 +253,33 @@ export async function fetchActiveAdmins(token: string) {
       return {success: false, admins: [], message: 'Unauthorized'}
     }
 
-    // 1. Fetch exactly from the Whitelist DB. This effectively bypasses the Auth.listUsers() 
+    // 1. Fetch exactly from the Whitelist DB. This effectively bypasses the Auth.listUsers()
     // 1-hour cache propagation delay, ensuring users who stepped down vanish immediately.
     const snapshot = await firestore.collection('admin_whitelist').get()
-    const whitelistDocs = snapshot.docs.map(doc => doc.data())
-    
-    // We can still try to grab listUsers just to fetch proper UIDs for React keys if needed, 
+    const whitelistDocs = snapshot.docs.map((doc) => doc.data())
+
+    // We can still try to grab listUsers just to fetch proper UIDs for React keys if needed,
     // but we strictly FILTER based on the whitelist documents.
     const listUsersResult = await auth.listUsers(1000)
 
-    const admins = whitelistDocs.map(data => {
-      const u = listUsersResult.users.find(uu => uu.email === data.email)
+    const admins = whitelistDocs.map((data) => {
+      const u = listUsersResult.users.find((uu) => uu.email === data.email)
       return {
         id: u ? u.uid : data.email,
         email: data.email,
         addedBy: data.addedBy || 'System',
-        addedAt: data.addedAt ? data.addedAt.toMillis() : undefined
+        addedAt: data.addedAt ? data.addedAt.toMillis() : undefined,
       }
     })
 
     // Auto-inject Super Admin if missing from the Whitelist DB.
-    if (!admins.find(a => a.email === 'vancouverkdd@gmail.com')) {
-      const vKdd = listUsersResult.users.find(u => u.email === 'vancouverkdd@gmail.com')
+    if (!admins.find((a) => a.email === 'vancouverkdd@gmail.com')) {
+      const vKdd = listUsersResult.users.find((u) => u.email === 'vancouverkdd@gmail.com')
       admins.push({
         id: vKdd ? vKdd.uid : 'vancouverkdd@gmail.com',
         email: 'vancouverkdd@gmail.com',
         addedBy: 'System',
-        addedAt: undefined
+        addedAt: undefined,
       })
     }
 
@@ -295,7 +300,7 @@ export async function approveAdminRequest(token: string, requestId: string, user
     await firestore.collection('admin_whitelist').doc(userEmail.toLowerCase().trim()).set({
       addedBy: decodedToken.uid,
       addedAt: FieldValue.serverTimestamp(),
-      email: userEmail.toLowerCase().trim()
+      email: userEmail.toLowerCase().trim(),
     })
 
     // 2. Delete the request explicitly instead of just marking it approved,
@@ -321,7 +326,7 @@ export async function denyAdminRequest(token: string, requestId: string) {
     await firestore.collection('admin_requests').doc(requestId).update({
       status: 'denied',
       resolvedAt: FieldValue.serverTimestamp(),
-      resolvedBy: decodedToken.uid
+      resolvedBy: decodedToken.uid,
     })
 
     return {valid: true, message: `Request denied`}
@@ -363,14 +368,17 @@ export async function fetchPendingAdminInvites(token: string) {
       return {success: false, invites: [], message: 'Unauthorized'}
     }
 
-    const snapshot = await firestore.collection('admin_invites').where('status', '==', 'pending').get()
-    
-    const invites = snapshot.docs.map(doc => {
+    const snapshot = await firestore
+      .collection('admin_invites')
+      .where('status', '==', 'pending')
+      .get()
+
+    const invites = snapshot.docs.map((doc) => {
       const data = doc.data()
       return {
         id: doc.id,
         email: data.email || '',
-        addedAt: data?.addedAt ? data.addedAt.toMillis() : undefined
+        addedAt: data?.addedAt ? data.addedAt.toMillis() : undefined,
       }
     })
 

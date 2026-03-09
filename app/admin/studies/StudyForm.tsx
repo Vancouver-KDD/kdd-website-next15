@@ -2,15 +2,14 @@
 
 import {PosterDropzone} from '@/app/admin/events/PosterDropzone'
 import {deleteStudyPoster, uploadStudyPoster} from '@/cloudinary/actions.admin'
-import {setStudy, moveEventToStudy} from '@/firebase/actions/study.admin'
-import {setEvent, moveStudyToEvent} from '@/firebase/actions/event.admin' 
+import {setStudy} from '@/firebase/actions/study.admin'
 // Wait, I clarified this in EventForm.
 // moveStudyToEvent -> event.admin.ts
 // moveEventToStudy -> study.admin.ts
 import {useAuthStore} from '@/firebase/AuthClient'
 import type {Event} from '@/firebase/types'
-import {dateValueToISOString, getErrorMessage, isoToLocalDateTimeInput} from '@/lib/utils'
 import {EVENT_SUBTYPES, STUDY_SUBTYPES} from '@/lib/constants'
+import {dateValueToISOString, getErrorMessage, isoToLocalDateTimeInput} from '@/lib/utils'
 import {Autocomplete, AutocompleteItem} from '@heroui/autocomplete'
 import {Button} from '@heroui/button'
 import {Checkbox} from '@heroui/checkbox'
@@ -183,28 +182,28 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
       const isMigration = values.typeFilter === 'Event'
 
       if (isMigration && study.id) {
-          // Migrating Study -> Event
-          // 1. Move it
-           const {moveStudyToEvent} = await import('@/firebase/actions/event.admin')
-           const moveRes = await moveStudyToEvent(idToken, study.id)
-           if (!moveRes.success) throw new Error(moveRes.message)
+        // Migrating Study -> Event
+        // 1. Move it
+        const {moveStudyToEvent} = await import('@/firebase/actions/event.admin')
+        const moveRes = await moveStudyToEvent(idToken, study.id)
+        if (!moveRes.success) throw new Error(moveRes.message)
 
-          // 2. Update new event
-           const {setEvent} = await import('@/firebase/actions/event.admin')
-           result = await setEvent(idToken, study.id, studyData)
+        // 2. Update new event
+        const {setEvent} = await import('@/firebase/actions/event.admin')
+        result = await setEvent(idToken, study.id, studyData)
       } else if (isMigration && !study.id) {
-          // Create new Event from Study Form
-           const {setEvent} = await import('@/firebase/actions/event.admin')
-           result = await setEvent(idToken, study.id, studyData)
+        // Create new Event from Study Form
+        const {setEvent} = await import('@/firebase/actions/event.admin')
+        result = await setEvent(idToken, study.id, studyData)
       } else {
-          // Normal Study Update
-          result = await setStudy(idToken, study.id, studyData)
+        // Normal Study Update
+        result = await setStudy(idToken, study.id, studyData)
       }
 
       if (result.success) {
         addToast({title: 'Success', description: result.message, color: 'success'})
         if (isMigration || values.typeFilter === 'Event') {
-            return router.push('/admin/events')
+          return router.push('/admin/events')
         }
         return router.push('/admin/studies' as any)
       } else {
@@ -269,46 +268,43 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
             />
           )}
         />
-        
-        <div className="flex items-center mt-2 col-span-1 md:col-span-2">
+
+        <div className="col-span-1 mt-2 flex items-center md:col-span-2">
           <Controller
             name="isOngoing"
             control={control}
             render={({field}) => (
-              <Checkbox
-                isSelected={field.value}
-                onValueChange={field.onChange}
-              >
-                <span className="text-sm">This is an ongoing study. This overrides the dates to automatically put it in the Ongoing Studies section.</span>
+              <Checkbox isSelected={field.value} onValueChange={field.onChange}>
+                <span className="text-sm">
+                  This is an ongoing study. This overrides the dates to automatically put it in the
+                  Ongoing Studies section.
+                </span>
               </Checkbox>
             )}
           />
         </div>
 
         <Input label="Location" {...register('location')} />
-        
+
         {/* Type Selection (Event vs Study) */}
-        <Autocomplete 
-            label="Type" 
-            selectedKey={watch('typeFilter')}
-            onSelectionChange={(key) => setValue('typeFilter', key as string, {shouldDirty: true})}
-            isRequired
-        >
-           <AutocompleteItem key="Event">Event</AutocompleteItem>
-           <AutocompleteItem key="Study">Study</AutocompleteItem>
+        <Autocomplete
+          label="Type"
+          selectedKey={watch('typeFilter')}
+          onSelectionChange={(key) => setValue('typeFilter', key as string, {shouldDirty: true})}
+          isRequired>
+          <AutocompleteItem key="Event">Event</AutocompleteItem>
+          <AutocompleteItem key="Study">Study</AutocompleteItem>
         </Autocomplete>
 
         {/* Sub-type Selection */}
-        <Autocomplete 
-            label="Sub-type" 
-            {...register('type')}
-            selectedKey={watch('type')}
-            onSelectionChange={(key) => setValue('type', key as string, {shouldDirty: true})}
-        >
-            {isEvent 
-                ? EVENT_SUBTYPES.map((t) => <AutocompleteItem key={t.key}>{t.label}</AutocompleteItem>)
-                : STUDY_SUBTYPES.map((t) => <AutocompleteItem key={t.key}>{t.label}</AutocompleteItem>)
-            }
+        <Autocomplete
+          label="Sub-type"
+          {...register('type')}
+          selectedKey={watch('type')}
+          onSelectionChange={(key) => setValue('type', key as string, {shouldDirty: true})}>
+          {isEvent
+            ? EVENT_SUBTYPES.map((t) => <AutocompleteItem key={t.key}>{t.label}</AutocompleteItem>)
+            : STUDY_SUBTYPES.map((t) => <AutocompleteItem key={t.key}>{t.label}</AutocompleteItem>)}
         </Autocomplete>
 
         <Controller
@@ -326,40 +322,37 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
         />
       </div>
       <Textarea label="Description" {...register('description')} rows={4} />
-      
+
       <Controller
         name="status"
         control={control}
         render={({field}) => (
-            <div className="flex flex-col gap-2">
-                <label className="text-small text-default-500">Status</label>
-                <div className="flex gap-2 p-1 bg-default-100 rounded-lg w-fit">
-                    <Button 
-                        size="sm"
-                        variant={field.value === 'draft' ? 'solid' : 'light'}
-                        color={field.value === 'draft' ? 'primary' : 'default'}
-                        onPress={() => field.onChange('draft')}
-                    >
-                        Draft
-                    </Button>
-                    <Button 
-                        size="sm"
-                        variant={field.value === 'published' ? 'solid' : 'light'}
-                        color={field.value === 'published' ? 'success' : 'default'}
-                        onPress={() => field.onChange('published')}
-                    >
-                        Posted
-                    </Button>
-                    <Button 
-                        size="sm"
-                        variant={field.value === 'hidden' ? 'solid' : 'light'}
-                        color={field.value === 'hidden' ? 'warning' : 'default'}
-                        onPress={() => field.onChange('hidden')}
-                    >
-                        Hidden
-                    </Button>
-                </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-small text-default-500">Status</label>
+            <div className="bg-default-100 flex w-fit gap-2 rounded-lg p-1">
+              <Button
+                size="sm"
+                variant={field.value === 'draft' ? 'solid' : 'light'}
+                color={field.value === 'draft' ? 'primary' : 'default'}
+                onPress={() => field.onChange('draft')}>
+                Draft
+              </Button>
+              <Button
+                size="sm"
+                variant={field.value === 'published' ? 'solid' : 'light'}
+                color={field.value === 'published' ? 'success' : 'default'}
+                onPress={() => field.onChange('published')}>
+                Posted
+              </Button>
+              <Button
+                size="sm"
+                variant={field.value === 'hidden' ? 'solid' : 'light'}
+                color={field.value === 'hidden' ? 'warning' : 'default'}
+                onPress={() => field.onChange('hidden')}>
+                Hidden
+              </Button>
             </div>
+          </div>
         )}
       />
 
@@ -372,24 +365,22 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
           </PopoverTrigger>
           <PopoverContent className="p-4">
             <div className="flex flex-col gap-2">
-              <p className="font-semibold px-1">Leave without saving?</p>
+              <p className="px-1 font-semibold">Leave without saving?</p>
               <div className="flex gap-2">
-                <Button 
-                  size="sm" 
-                  variant="flat" 
-                  color="danger" 
-                  onPress={() => router.push('/admin/studies' as any)}
-                >
+                <Button
+                  size="sm"
+                  variant="flat"
+                  color="danger"
+                  onPress={() => router.push('/admin/studies' as any)}>
                   Yes
                 </Button>
-                <Button 
-                  size="sm" 
-                  color="warning" 
+                <Button
+                  size="sm"
+                  color="warning"
                   onPress={() => {
                     setValue('status', 'draft')
                     handleSubmit(onSubmit)()
-                  }}
-                >
+                  }}>
                   Save this to draft
                 </Button>
               </div>
@@ -406,34 +397,34 @@ export function StudyForm({study}: {study: Event & {id: string}}) {
 
 // Helpers
 function parseIsoToDateRange(isoStart: string, isoEnd?: string): any {
-    if (!isoStart) return null
-    try {
-        const start = parseDateTime(isoToLocalDateTimeInput(isoStart))
-        const end = isoEnd ? parseDateTime(isoToLocalDateTimeInput(isoEnd)) : start
-        return {start, end}
-    } catch (e) {
-        return null
-    }
+  if (!isoStart) return null
+  try {
+    const start = parseDateTime(isoToLocalDateTimeInput(isoStart))
+    const end = isoEnd ? parseDateTime(isoToLocalDateTimeInput(isoEnd)) : start
+    return {start, end}
+  } catch (e) {
+    return null
+  }
 }
 
 function parseDateRangeToIso(value: any) {
-    if (!value?.start) return {startIso: '', endIso: ''}
-    const startIso = dateValueToISOString({
-        year: value.start.year,
-        month: value.start.month,
-        day: value.start.day,
-        hour: 'hour' in value.start ? value.start.hour : 0,
-        minute: 'minute' in value.start ? value.start.minute : 0,
+  if (!value?.start) return {startIso: '', endIso: ''}
+  const startIso = dateValueToISOString({
+    year: value.start.year,
+    month: value.start.month,
+    day: value.start.day,
+    hour: 'hour' in value.start ? value.start.hour : 0,
+    minute: 'minute' in value.start ? value.start.minute : 0,
+  })
+  let endIso = ''
+  if (value.end) {
+    endIso = dateValueToISOString({
+      year: value.end.year,
+      month: value.end.month,
+      day: value.end.day,
+      hour: 'hour' in value.end ? value.end.hour : 0,
+      minute: 'minute' in value.end ? value.end.minute : 0,
     })
-    let endIso = ''
-    if (value.end) {
-        endIso = dateValueToISOString({
-            year: value.end.year,
-            month: value.end.month,
-            day: value.end.day,
-            hour: 'hour' in value.end ? value.end.hour : 0,
-            minute: 'minute' in value.end ? value.end.minute : 0,
-        })
-    }
-    return {startIso, endIso}
+  }
+  return {startIso, endIso}
 }

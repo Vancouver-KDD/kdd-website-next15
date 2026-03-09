@@ -3,8 +3,8 @@
 import {scrapeLumaEvent} from '@/app/actions/scrape-luma'
 import {updateEventParticipantCount} from '@/app/actions/update-event'
 import {Event} from '@/firebase/types'
-import {addToast} from '@heroui/toast'
 import {Button} from '@heroui/button'
+import {addToast} from '@heroui/toast'
 import {RefreshCw} from 'lucide-react'
 import {useState} from 'react'
 
@@ -39,12 +39,11 @@ export default function LumaSyncButton({events}: {events: Event[]}) {
         description: `Updated ${updatedCount} events from Luma.`,
         color: 'success',
       })
-      
+
       if (updatedCount > 0) {
         // Hard reload to refresh server components
-        window.location.reload() 
+        window.location.reload()
       }
-
     } catch (error) {
       console.error('Sync error:', error)
       addToast({
@@ -63,8 +62,7 @@ export default function LumaSyncButton({events}: {events: Event[]}) {
       variant="flat"
       isLoading={loading}
       onPress={handleSync}
-      className="min-w-10 px-2 sm:px-4"
-    >
+      className="min-w-10 px-2 sm:px-4">
       <RefreshCw size={18} />
       <span className="hidden sm:inline">Sync Luma Data</span>
     </Button>

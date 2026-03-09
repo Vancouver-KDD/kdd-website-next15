@@ -1,15 +1,15 @@
 'use client'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
+import {deleteStudy} from '@/firebase/actions/study.admin'
 import {useAuthStore} from '@/firebase/AuthClient'
 import type {Event} from '@/firebase/types'
-import {deleteStudy} from '@/firebase/actions/study.admin'
+import {useTranslation} from '@/lib/i18n'
 import {formatISODate} from '@/lib/utils'
 import {Button} from '@heroui/button'
 import {Image} from '@heroui/image'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
-import {useTranslation} from '@/lib/i18n'
-import en from '@/dictionaries/en.json'
-import ko from '@/dictionaries/ko.json'
 import {button as buttonStyles} from '@heroui/theme'
 import {addToast} from '@heroui/toast'
 import {Edit, Trash2} from 'lucide-react'
@@ -28,7 +28,7 @@ export default function UpcomingStudy({
   const {t} = useTranslation({...en, ...ko})
   const {user, admin} = useAuthStore()
   const [isDeleting, setIsDeleting] = useState(false)
-  
+
   const handleDelete = async () => {
     if (!user) return
 
@@ -60,7 +60,7 @@ export default function UpcomingStudy({
       setIsDeleting(false)
     }
   }
-  
+
   return (
     <div className="group relative">
       <div className="flex flex-col items-center justify-center gap-14 px-4 md:flex-row md:gap-10 md:px-6">

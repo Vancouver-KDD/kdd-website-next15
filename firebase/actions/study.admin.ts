@@ -186,10 +186,10 @@ export async function setStudy(
         }
       }
     }
-    
+
     // Check if revalidation is needed on home/study pages
     if (studyData && studyData.date && new Date(studyData.date) > Timestamp.now().toDate()) {
-       revalidatePath('/study')
+      revalidatePath('/study')
     }
 
     revalidatePath('/study')
@@ -232,34 +232,34 @@ export async function getStudies(token: string) {
 }
 
 export async function getStudy(token: string, studyId: string) {
-    const {valid, message} = await verifyAdminToken(token)
-    if (!valid) {
-      return {success: false, message}
-    }
-    return {
-      success: true,
-      study: await firestore
-        .collection('Studies')
-        .doc(studyId)
-        .get()
-        .then((doc) => {
-          const studyData = doc.data()
-          if (!studyData) {
-            return null
-          }
-  
-          // Add srcSet to photos if they exist
-          const photos =
-            studyData.photos?.map((photo: Photo) =>
-              addSrcSetToPhoto(photo, process.env.CLOUDINARY_CLOUD_NAME!)
-            ) || []
-  
-          return {
-            id: doc.id,
-            ...studyData,
-            photos,
-            date: studyData.date.toDate().toISOString(), 
-          } as Event & {id: string}
-        }),
-    }
+  const {valid, message} = await verifyAdminToken(token)
+  if (!valid) {
+    return {success: false, message}
   }
+  return {
+    success: true,
+    study: await firestore
+      .collection('Studies')
+      .doc(studyId)
+      .get()
+      .then((doc) => {
+        const studyData = doc.data()
+        if (!studyData) {
+          return null
+        }
+
+        // Add srcSet to photos if they exist
+        const photos =
+          studyData.photos?.map((photo: Photo) =>
+            addSrcSetToPhoto(photo, process.env.CLOUDINARY_CLOUD_NAME!)
+          ) || []
+
+        return {
+          id: doc.id,
+          ...studyData,
+          photos,
+          date: studyData.date.toDate().toISOString(),
+        } as Event & {id: string}
+      }),
+  }
+}

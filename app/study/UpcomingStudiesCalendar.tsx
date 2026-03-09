@@ -4,7 +4,11 @@ import {formatISODate} from '@/lib/utils'
 import {Calendar, DateValue} from '@heroui/calendar'
 import {getLocalTimeZone, parseDate, today} from '@internationalized/date'
 
-export default function UpcomingStudiesCalendar({studies}: {studies: {date: string; id: string}[]}) {
+export default function UpcomingStudiesCalendar({
+  studies,
+}: {
+  studies: {date: string; id: string}[]
+}) {
   const {selectedEventId, setSelectedEventId} = useSelectedEventStore()
 
   const studiesWithLocaleDates = studies.map((s) => ({
@@ -13,7 +17,9 @@ export default function UpcomingStudiesCalendar({studies}: {studies: {date: stri
   }))
 
   const value = selectedEventId
-    ? parseDate(studiesWithLocaleDates.find((s) => s.id === selectedEventId)?.localeDateString ?? '')
+    ? parseDate(
+        studiesWithLocaleDates.find((s) => s.id === selectedEventId)?.localeDateString ?? ''
+      )
     : studiesWithLocaleDates[0]
       ? parseDate(studiesWithLocaleDates[0].localeDateString)
       : null

@@ -10,9 +10,9 @@ import {
   YoutubeIcon,
 } from '@/components/icons'
 import {siteConfig} from '@/config/site'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useTranslation} from '@/lib/i18n'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {tv} from 'tailwind-variants'

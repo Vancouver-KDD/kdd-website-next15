@@ -16,7 +16,7 @@ export default function AuthClient() {
           const idTokenResult = await user.getIdTokenResult()
           const isAdmin = idTokenResult.claims.admin === true
           setAdmin(isAdmin)
-          
+
           const isSuper = user.email === 'vancouverkdd@gmail.com'
           setSuperAdmin(isSuper)
 
@@ -41,7 +41,7 @@ export default function AuthClient() {
           const idTokenResult = await user.getIdTokenResult()
           const isAdmin = idTokenResult.claims.admin === true
           setAdmin(isAdmin)
-          
+
           const isSuper = user.email === 'vancouverkdd@gmail.com'
           setSuperAdmin(isSuper)
 

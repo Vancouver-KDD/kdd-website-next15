@@ -11,8 +11,8 @@ import {
 } from '@/components/ui/carousel'
 import {Event} from '@/firebase/types'
 import * as React from 'react'
-import UpcomingStudy from './UpcomingStudy'
 import UpcomingStudiesCalendar from './UpcomingStudiesCalendar'
+import UpcomingStudy from './UpcomingStudy'
 
 export default function UpcomingStudiesCarousel({
   studies,

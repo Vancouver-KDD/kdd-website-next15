@@ -80,7 +80,10 @@ export default function PastStudyCard({
           />
 
           <CardFooter className="absolute bottom-0 z-10 flex flex-col items-start bg-white/30 pr-5 text-start backdrop-blur">
-            <div className="text-sm text-black">{formatISODate(date)}{endDate ? ` ~ ${formatISODate(endDate)}` : ''}</div>
+            <div className="text-sm text-black">
+              {formatISODate(date)}
+              {endDate ? ` ~ ${formatISODate(endDate)}` : ''}
+            </div>
             <div className="text-sm text-black">{title}</div>
           </CardFooter>
         </Card>

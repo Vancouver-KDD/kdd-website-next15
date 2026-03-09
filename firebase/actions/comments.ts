@@ -1,8 +1,8 @@
 'use server'
 
 import {firestore} from '@/firebase/server'
-import {Comment} from '../types'
 import {FieldValue, Timestamp} from 'firebase-admin/firestore'
+import {Comment} from '../types'
 
 export async function addComment(commentData: Omit<Comment, 'id' | 'createdAt'>) {
   try {
@@ -21,18 +21,16 @@ export async function addComment(commentData: Omit<Comment, 'id' | 'createdAt'>)
 export async function getComments(targetId: string): Promise<Comment[]> {
   try {
     const commentsRef = firestore.collection('comments')
-    const querySnapshot = await commentsRef
-      .where('targetId', '==', targetId)
-      .get()
+    const querySnapshot = await commentsRef.where('targetId', '==', targetId).get()
 
     const comments: Comment[] = []
-    
+
     querySnapshot.forEach((docSnap) => {
       const data = docSnap.data()
       // Fallback if createdAt hasn't been written fully by server timestamp yet
       const createdAtMillis = data.createdAt ? (data.createdAt as Timestamp).toMillis() : Date.now()
       const updatedAtMillis = data.updatedAt ? (data.updatedAt as Timestamp).toMillis() : undefined
-      
+
       comments.push({
         id: docSnap.id,
         targetId: data.targetId,
@@ -71,7 +69,7 @@ export async function editComment(commentId: string, newText: string) {
   try {
     await firestore.collection('comments').doc(commentId).update({
       text: newText,
-      updatedAt: FieldValue.serverTimestamp()
+      updatedAt: FieldValue.serverTimestamp(),
     })
     return {success: true}
   } catch (error) {
@@ -80,16 +78,21 @@ export async function editComment(commentId: string, newText: string) {
   }
 }
 
-export async function toggleCommentReaction(commentId: string, userId: string, emoji: string, isAdding: boolean) {
+export async function toggleCommentReaction(
+  commentId: string,
+  userId: string,
+  emoji: string,
+  isAdding: boolean
+) {
   try {
     const docRef = firestore.collection('comments').doc(commentId)
     if (isAdding) {
       await docRef.update({
-        [`reactions.${emoji}`]: FieldValue.arrayUnion(userId)
+        [`reactions.${emoji}`]: FieldValue.arrayUnion(userId),
       })
     } else {
       await docRef.update({
-        [`reactions.${emoji}`]: FieldValue.arrayRemove(userId)
+        [`reactions.${emoji}`]: FieldValue.arrayRemove(userId),
       })
     }
     return {success: true}

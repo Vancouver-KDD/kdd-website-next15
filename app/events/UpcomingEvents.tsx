@@ -1,13 +1,12 @@
 'use client'
 import {sectionSubtitle, sectionTitle, subtitle} from '@/components/primitives'
-import {getFutureEvents} from '@/firebase/actions/event'
-import {Skeleton} from '@heroui/skeleton'
-import {Spacer} from '@heroui/spacer'
-import {Suspense, use} from 'react'
-import UpcomingEventsCarousel from './UpcomingEventsCarousel'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useTranslation} from '@/lib/i18n'
+import {Skeleton} from '@heroui/skeleton'
+import {Spacer} from '@heroui/spacer'
+import {Suspense} from 'react'
+import UpcomingEventsCarousel from './UpcomingEventsCarousel'
 
 import {Event} from '@/firebase/types'
 
@@ -35,7 +34,9 @@ export default function UpcomingEvents({events}: {events: (Event & {id: string})
       }>
       {events.length > 0 ? (
         <>
-          <h1 className={sectionTitle({className: 'text-center'})}>{t('events.sections.upcoming')}</h1>
+          <h1 className={sectionTitle({className: 'text-center'})}>
+            {t('events.sections.upcoming')}
+          </h1>
           <h3 className={sectionSubtitle({className: 'text-center'})}>
             {t('events.sections.upcoming_subtitle')}
           </h3>

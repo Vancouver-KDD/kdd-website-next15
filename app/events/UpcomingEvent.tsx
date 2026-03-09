@@ -1,7 +1,10 @@
 'use client'
+import en from '@/dictionaries/en.json'
+import ko from '@/dictionaries/ko.json'
 import {useAuthStore} from '@/firebase/AuthClient'
 import type {Event} from '@/firebase/types'
 import {useDeleteEvent} from '@/hooks/useDeleteEvent'
+import {useTranslation} from '@/lib/i18n'
 import {formatISODate} from '@/lib/utils'
 import {Button} from '@heroui/button'
 import {Image} from '@heroui/image'
@@ -11,9 +14,6 @@ import {button as buttonStyles} from '@heroui/theme'
 import {Edit, Trash2} from 'lucide-react'
 import NextImage from 'next/image'
 import eventPosterLoading from './event-poster-loading.avif'
-import {useTranslation} from '@/lib/i18n'
-import en from '@/dictionaries/en.json'
-import ko from '@/dictionaries/ko.json'
 
 export default function UpcomingEvent({
   type,

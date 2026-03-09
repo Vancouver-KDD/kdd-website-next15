@@ -1,6 +1,5 @@
 'use client'
 
-import AdminPhotoUpload from './AdminPhotoUpload'
 import {useAuthStore} from '@/firebase/AuthClient'
 import {deleteStudyPhoto, moveStudyPhoto} from '@/firebase/actions/study.admin'
 import {arrayMove} from '@dnd-kit/sortable'
@@ -22,6 +21,7 @@ import 'yet-another-react-lightbox/plugins/counter.css'
 import Fullscreen from 'yet-another-react-lightbox/plugins/fullscreen'
 import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 import 'yet-another-react-lightbox/styles.css'
+import AdminPhotoUpload from './AdminPhotoUpload'
 
 type PhotosAction =
   | {type: 'prepend'; photo: Photo}

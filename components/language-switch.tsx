@@ -18,10 +18,7 @@ export const LanguageSwitch = () => {
   return (
     <Popover isOpen={isOpen} onOpenChange={setIsOpen} placement="bottom-end">
       <PopoverTrigger>
-        <Button
-          className="bg-default-100 text-default-600 font-bold"
-          radius="full"
-          variant="flat">
+        <Button className="bg-default-100 text-default-600 font-bold" radius="full" variant="flat">
           <div className="flex items-center gap-2">
             <Globe size={18} className="text-default-500" />
             <div className="bg-default-300 h-3 w-[1px]" />

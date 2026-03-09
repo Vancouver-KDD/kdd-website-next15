@@ -1,14 +1,11 @@
-
-import {useAuthStore} from '@/firebase/AuthClient'
-import {Button} from '@heroui/button'
-import {Input} from '@heroui/input'
-import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
-import {addToast} from '@heroui/toast'
-import {LayoutDashboard, LogOut, User, UserCheck, UserStar, UserCircle} from 'lucide-react'
-import Link from 'next/link'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useAuthStore} from '@/firebase/AuthClient'
+import {useTranslation} from '@/lib/i18n'
+import {Button} from '@heroui/button'
+import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
+import {LayoutDashboard, LogOut, User, UserCheck, UserCircle, UserStar} from 'lucide-react'
+import Link from 'next/link'
 
 export default function AuthNavButton() {
   const {user, admin} = useAuthStore()
@@ -43,10 +40,12 @@ function AuthContent() {
     return (
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
-          <span className="text-sm font-semibold truncate max-w-[150px]">{user.displayName || user.email}</span>
+          <span className="max-w-[150px] truncate text-sm font-semibold">
+            {user.displayName || user.email}
+          </span>
         </div>
-        <div className="flex flex-col gap-2 mt-2">
-          <Link href={"/profile" as any} className="w-full">
+        <div className="mt-2 flex flex-col gap-2">
+          <Link href={'/profile' as any} className="w-full">
             <Button
               className="w-full justify-start"
               color="primary"

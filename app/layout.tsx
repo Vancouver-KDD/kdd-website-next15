@@ -43,7 +43,12 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
             <main className="grow pt-20 md:pt-30">
-              <Suspense fallback={<div className="flex h-96 items-center justify-center font-bold opacity-30">Loading...</div>}>
+              <Suspense
+                fallback={
+                  <div className="flex h-96 items-center justify-center font-bold opacity-30">
+                    Loading...
+                  </div>
+                }>
                 {children}
               </Suspense>
             </main>

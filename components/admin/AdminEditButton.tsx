@@ -20,8 +20,7 @@ export default function AdminEditButton({editUrl}: {editUrl: string}) {
           color="primary"
           variant="shadow"
           startContent={<Edit className="h-4 w-4" />}
-          className="bg-primary shadow-lg"
-        >
+          className="bg-primary shadow-lg">
           Edit Page (Admin)
         </Button>
       </Link>

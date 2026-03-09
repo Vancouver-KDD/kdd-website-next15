@@ -6,18 +6,16 @@ import {
   subtitle,
   title,
 } from '@/components/primitives'
-import {getPastStudies} from '@/firebase/actions/study'
-import {useTranslation} from '@/lib/i18n'
 import en from '@/dictionaries/en.json'
 import ko from '@/dictionaries/ko.json'
+import {useTranslation} from '@/lib/i18n'
 import {Divider} from '@heroui/divider'
 import {Link} from '@heroui/link'
 import {Spacer} from '@heroui/spacer'
 import {button as buttonStyles} from '@heroui/theme'
 import NextImage from 'next/image'
-import {use} from 'react'
-import StudyGroupImg from './study-group.png'
 import PastStudyCard from './PastStudyCard'
+import StudyGroupImg from './study-group.png'
 import UpcomingStudies from './UpcomingStudies'
 
 import {Event} from '@/firebase/types'
@@ -74,7 +72,9 @@ export default function StudyClient({
           <Spacer className="h-20 md:h-40" />
           <section id="ongoing-studies" className="mx-auto w-full max-w-5xl self-start px-6">
             <div className="text-center">
-              <h1 className={sectionTitle({className: 'text-center'})}>{t('study.sections.ongoing')}</h1>
+              <h1 className={sectionTitle({className: 'text-center'})}>
+                {t('study.sections.ongoing')}
+              </h1>
               <h3 className={sectionSubtitle({className: 'text-center'})}>
                 {t('study.sections.ongoing_subtitle')}
               </h3>

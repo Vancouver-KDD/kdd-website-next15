@@ -1,8 +1,8 @@
 'use client'
 
+import {Button} from '@heroui/button'
 import {Listbox, ListboxItem} from '@heroui/listbox'
 import {Popover, PopoverContent, PopoverTrigger} from '@heroui/popover'
-import {Button} from '@heroui/button'
 import {useRouter} from 'next/navigation'
 import {Key} from 'react'
 
@@ -21,29 +21,19 @@ export default function ManageDropdown() {
           aria-label="Manage Actions"
           disabledKeys={['speakers']}
           onAction={(key: Key) => {
-             if (key === 'events') router.push('/admin/events')
-             if (key === 'studies') router.push('/admin/studies' as any)
+            if (key === 'events') router.push('/admin/events')
+            if (key === 'studies') router.push('/admin/studies' as any)
           }}
           itemClasses={{
             base: 'gap-3',
-          }}
-        >
-          <ListboxItem
-            key="events"
-            startContent={<span className="text-xl">📅</span>}
-          >
+          }}>
+          <ListboxItem key="events" startContent={<span className="text-xl">📅</span>}>
             Manage Events
           </ListboxItem>
-          <ListboxItem
-            key="studies"
-            startContent={<span className="text-xl">📚</span>}
-          >
+          <ListboxItem key="studies" startContent={<span className="text-xl">📚</span>}>
             Manage Studies
           </ListboxItem>
-          <ListboxItem
-            key="speakers"
-            startContent={<span className="text-xl">🎤</span>}
-          >
+          <ListboxItem key="speakers" startContent={<span className="text-xl">🎤</span>}>
             Manage Speakers
           </ListboxItem>
         </Listbox>

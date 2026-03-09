@@ -22,7 +22,7 @@ interface DashboardChartsProps {
 export default function DashboardCharts({events}: DashboardChartsProps) {
   // Process data for charts
   const sortedEvents = [...events].sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
   )
 
   // 1. Participant Count per Event (Bar Chart)
@@ -41,7 +41,7 @@ export default function DashboardCharts({events}: DashboardChartsProps) {
   // Group by year or just cumulative over all time
   let cumulativeCount = 0
   const releaseYear = 2017 // Assuming KDD started around then or just track all data
-  
+
   const lineData = sortedEvents
     .filter((e) => (e.quantity || 0) > 0)
     .map((e) => {
@@ -81,9 +81,7 @@ export default function DashboardCharts({events}: DashboardChartsProps) {
                       <div className="rounded-lg border bg-white p-2 shadow-sm">
                         <p className="font-bold">{payload[0].payload.fullTitle}</p>
                         <p className="text-sm">{payload[0].payload.date}</p>
-                        <p className="text-sm text-primary">
-                          Participants: {payload[0].value}
-                        </p>
+                        <p className="text-primary text-sm">Participants: {payload[0].value}</p>
                       </div>
                     )
                   }
