@@ -190,7 +190,7 @@ export default function GetInvolvedPage() {
                 href="/get-involved/apply"
                 className="group relative mb-2 block w-full cursor-pointer overflow-hidden rounded-[20px] text-center shadow-md">
                 <Image
-                  src="/images/recruiting/event_consulate.png"
+                  src="/images/recruiting/recruiting_2_revised.png"
                   alt="Event Coordinator Consulate"
                   width={500}
                   height={625}
