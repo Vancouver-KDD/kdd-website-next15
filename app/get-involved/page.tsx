@@ -12,6 +12,8 @@ import Image from 'next/image'
 
 export default function GetInvolvedPage() {
   type ColorType = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger'
+  const speakerMentorCtaHref =
+    'https://docs.google.com/forms/d/e/1FAIpQLSfc7f-Fs7d0GmnQF_Vjzvfv2vWjut4QD3n5_Hj3jeL4daI2yw/viewform?usp=sharing&ouid=102905398126551253955'
 
   const openPositions: {
     badgeText: string
@@ -99,7 +101,7 @@ export default function GetInvolvedPage() {
         <section className="w-full px-6 py-16 md:px-[96px]">
           <div className="flex flex-col items-center">
             <h2 className={sectionTitle()}>모집 중인 포지션</h2>
-            <Spacer y={12} />
+            <Spacer y={5} />
           </div>
 
           <section id="getinvolved_accordian" className="hidden">
@@ -163,85 +165,41 @@ export default function GetInvolvedPage() {
             </Accordion>
           </section>
 
-          <div className="mt-16 grid w-full grid-cols-1 justify-items-center gap-12 md:grid-cols-2">
-            {/* Marketing Associate */}
-            <div className="flex w-full max-w-md flex-col items-center">
-              <Link
-                href="/get-involved/apply"
-                className="group relative mb-2 block w-full cursor-pointer overflow-hidden rounded-[20px] text-center shadow-md">
-                <Image
-                  src="/images/recruiting/marketing.png"
-                  alt="Marketing Associate"
-                  width={500}
-                  height={625}
-                  className="h-auto w-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-[1.05]"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="bg-primary translate-y-4 transform rounded-full px-8 py-3 font-bold text-white shadow-lg transition-all duration-300 group-hover:translate-y-0">
-                    지원하기
-                  </span>
-                </div>
-              </Link>
-            </div>
+          <div className="border-default-200 bg-default-50 mx-auto mt-6 w-full max-w-3xl rounded-[28px] border px-6 py-10 text-center shadow-sm md:mt-10 md:px-10">
+            <p className="text-foreground text-xl font-semibold tracking-tight md:text-2xl">
+              2026 운영진 참가 신청이 마감되었습니다. 감사합니다.
+            </p>
+            <p className="text-default-500 mt-3 text-sm leading-relaxed md:text-base">
+              스피커나 멘토 활동으로 KDD와 함께하고 싶다면 아래 링크를 확인해주세요.
+            </p>
 
-            {/* Event Coordinator - Consulate */}
-            <div className="flex w-full max-w-md flex-col items-center">
-              <Link
-                href="/get-involved/apply"
-                className="group relative mb-2 block w-full cursor-pointer overflow-hidden rounded-[20px] text-center shadow-md">
-                <Image
-                  src="/images/recruiting/recruiting_2_revised.png"
-                  alt="Event Coordinator Consulate"
-                  width={500}
-                  height={625}
-                  className="h-auto w-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-[1.05]"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="bg-primary translate-y-4 transform rounded-full px-8 py-3 font-bold text-white shadow-lg transition-all duration-300 group-hover:translate-y-0">
-                    지원하기
-                  </span>
-                </div>
-              </Link>
-            </div>
-
-            {/* Event Coordinator - Career Networking */}
-            <div className="flex w-full max-w-md flex-col items-center">
-              <Link
-                href="/get-involved/apply"
-                className="group relative mb-2 block w-full cursor-pointer overflow-hidden rounded-[20px] text-center shadow-md">
-                <Image
-                  src="/images/recruiting/event_career.png"
-                  alt="Event Coordinator Career"
-                  width={500}
-                  height={625}
-                  className="h-auto w-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-[1.05]"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="bg-primary translate-y-4 transform rounded-full px-8 py-3 font-bold text-white shadow-lg transition-all duration-300 group-hover:translate-y-0">
-                    지원하기
-                  </span>
-                </div>
-              </Link>
-            </div>
-
-            {/* Event Coordinator - Monthly Meet-Up */}
-            <div className="flex w-full max-w-md flex-col items-center">
-              <Link
-                href="/get-involved/apply"
-                className="group relative mb-2 block w-full cursor-pointer overflow-hidden rounded-[20px] text-center shadow-md">
-                <Image
-                  src="/images/recruiting/event_monthly.png"
-                  alt="Event Coordinator Monthly"
-                  width={500}
-                  height={625}
-                  className="h-auto w-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-[1.05]"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <span className="bg-primary translate-y-4 transform rounded-full px-8 py-3 font-bold text-white shadow-lg transition-all duration-300 group-hover:translate-y-0">
-                    지원하기
-                  </span>
-                </div>
-              </Link>
+            <div className="mt-6 flex justify-center">
+              {speakerMentorCtaHref ? (
+                <Link
+                  href={speakerMentorCtaHref}
+                  isExternal
+                  className={buttonStyles({
+                    color: 'primary',
+                    radius: 'full',
+                    size: 'lg',
+                    className: 'gap-2 px-8 font-bold shadow-md',
+                  })}>
+                  스피커나 멘토활동으로 KDD와 함께하기
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              ) : (
+                <span
+                  aria-disabled="true"
+                  className={buttonStyles({
+                    color: 'primary',
+                    radius: 'full',
+                    size: 'lg',
+                    className: 'cursor-not-allowed gap-2 px-8 font-bold opacity-60 shadow-none',
+                  })}>
+                  스피커나 멘토활동으로 KDD와 함께하기
+                  <ArrowUpRight className="h-4 w-4" />
+                </span>
+              )}
             </div>
           </div>
         </section>
